@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2008 Professional Edition sp1 by J. Roes (TNO Information and Communication Technology) -->
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2007-04-15">
+	<xsd:annotation>
+		<xsd:documentation>
+		
+Name: InvoiceAdditionalNL.xsd
+Status: Proposal
+Date this version: 2004-12-15
+Purpose: Defines the additional invoice schema elements for the Netherlands.
+Author(s):  TNO Telecom
+
+Changes: The StaffingOrganization and TimeCardAdditionalData schemas have now been included in the new InvoiceAdditionalNL.xsd schema. This schema now provides all additional elements for use in the UserAreas of the Invoice_NL schema.
+
+		</xsd:documentation>
+	</xsd:annotation>
+	<xsd:include schemaLocation="../StaffingOrganization.xsd"/>
+	<xsd:include schemaLocation="../TimeCardAdditionalData.xsd"/>
+	<xsd:complexType name="StaffingOrganizationTypeNL">
+		<xsd:sequence>
+			<xsd:element name="ChamberofCommerceReference" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Chamber of Commerce number</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="StaffingOrganizationNL" type="StaffingOrganizationTypeNL"/>
+</xsd:schema>

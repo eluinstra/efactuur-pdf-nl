@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc:RequestForQuotationCancellation 
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+ xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+ xmlns:doc="urn:oasis:names:specification:ubl:schema:xsd:RequestForQuotationCancellation-2"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2 ../xsdrt/maindoc/RequestForQuotationCancellation.xsd">
+    <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+    <cbc:CustomizationID>1.6</cbc:CustomizationID>
+    <cbc:ProfileID>NL</cbc:ProfileID>
+    <cbc:ID>afu12345</cbc:ID>
+    <cbc:IssueDate>2011-01-13</cbc:IssueDate>
+    <cbc:AccountingCostCode>4500123456</cbc:AccountingCostCode>
+    <cbc:RejectionNote>niet meer nodig</cbc:RejectionNote>
+    <cac:OriginatorCustomerParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeAgencyID="NL" schemeAgencyName="OIN">OIN122345</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>klant2</cbc:Name>
+            </cac:PartyName>
+            <cac:Contact>
+                <cbc:Name>I.Nkoper</cbc:Name>
+            </cac:Contact>
+        </cac:Party>
+    </cac:OriginatorCustomerParty>
+    <cac:SellerSupplierParty>
+        <cbc:CustomerAssignedAccountID>90807060</cbc:CustomerAssignedAccountID>
+        <cac:Party>
+            <cac:PartyName>
+                <cbc:Name>Leverancier BV</cbc:Name>
+            </cac:PartyName>
+            <cac:PostalAddress>
+                <cbc:StreetName>Wegweg</cbc:StreetName>
+                <cbc:BuildingNumber>1-III</cbc:BuildingNumber>
+                <cbc:CityName>Plaatsplaats</cbc:CityName>
+                <cbc:PostalZone>1234AB</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listID="ISO3166-1" listName="Country" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listVersionID="0.3">NL</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:PostalAddress>
+            <cac:Contact>
+                <cbc:Name>Ver Koper</cbc:Name>
+            </cac:Contact>
+        </cac:Party>
+    </cac:SellerSupplierParty>
+    <cac:DocumentReference>
+        <cbc:ID>55889</cbc:ID>
+        <cbc:DocumentType>Offerte</cbc:DocumentType>
+    </cac:DocumentReference>
+</doc:RequestForQuotationCancellation>

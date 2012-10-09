@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://ns.hr-xml.org/2007-04-15" elementFormDefault="qualified" version="2011-02-25">
+    <xsd:annotation>
+        <xsd:documentation>
+Extra schema om AssignmentAdditionalNL.xsd van SETU samen te voegen met HR-XML 2.5 schema's
+om problemen met de Xerces XML validator te omzeilen bij het includen van meerdere bestanden
+in dezelfde namespace.
+        </xsd:documentation>
+    </xsd:annotation>
+    <xsd:include schemaLocation="../../Assignment.xsd"/>
+    <xsd:include schemaLocation="../../StaffingWorkSite.xsd"/>
+    <xsd:include schemaLocation="../../../CPO/EntityIdType.xsd"/>
+    <xsd:import namespace="http://ns.setu.nl/2008-01" schemaLocation="../2008-01/AssignmentAdditionalNL.xsd"/>
+</xsd:schema>

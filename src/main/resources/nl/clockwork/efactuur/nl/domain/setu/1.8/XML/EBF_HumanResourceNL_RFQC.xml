@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HumanResource 	xmlns="http://ns.hr-xml.org/2007-04-15" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:nl="http://ns.setu.nl/2008-01"  
+	xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 ../SIDES/HumanResource.xsd http://ns.setu.nl/2008-01 ../SIDES/NL/2008-01/HumanResourceAdditionalNL.xsd">
+	<HumanResourceId validFrom="2011-02-15" idOwner="staffingCompany">
+		<IdValue>6515044558</IdValue>
+	</HumanResourceId>
+	<HumanResourceStatus status="rejected"/>
+	<ReferenceInformation>
+		<StaffingSupplierId idOwner="Fi">
+			<IdValue>749403745</IdValue>
+		</StaffingSupplierId>
+		<StaffingCustomerId idOwner="staffingCustomer">
+			<IdValue>858nnds9</IdValue>
+		</StaffingCustomerId>
+		<OrderId idOwner="StaffingCustomer">
+			<IdValue>55889</IdValue>
+		</OrderId>
+	</ReferenceInformation>
+	<ResourceInformation>
+		<PersonName/>
+		<EntityContactInfo>
+			<EntityName>Uit Zender</EntityName>
+			<PersonName>
+				<LegalName>Ver huurling</LegalName>
+			</PersonName>
+			<ContactMethod>
+				<PostalAddress>
+					<CountryCode>NL</CountryCode>
+					<PostalCode>1234AB</PostalCode>
+					<Municipality>Plaatsplaats</Municipality>
+					<DeliveryAddress>
+						<StreetName>Wegweg</StreetName>
+						<BuildingNumber>1 III</BuildingNumber>
+					</DeliveryAddress>
+				</PostalAddress>
+			</ContactMethod>
+		</EntityContactInfo>
+	</ResourceInformation>
+	<Profile/>
+	<Preferences/>
+	<HumanResourceComments>te laat</HumanResourceComments>
+	<UserArea>
+		<nl:HumanResourceAdditionalNL>
+			<nl:OfferId>
+				<IdValue></IdValue>
+			</nl:OfferId>
+			<nl:CustomerReportingRequirements>
+				<AdditionalRequirement requirementTitle="VersionId">1.8</AdditionalRequirement>
+			</nl:CustomerReportingRequirements>
+		</nl:HumanResourceAdditionalNL>	
+	</UserArea>
+</HumanResource>

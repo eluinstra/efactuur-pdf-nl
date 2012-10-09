@@ -1,0 +1,98 @@
+----------------------------------------
+| Releasenotes 1.6.3 UBL - DigiInkoop  |
+----------------------------------------
+
+Bugfixes
+========
+- Een Item element wordt geidentificeerd met OF een Identification OF een Description, maar NIET beiden.
+  Op een drietal plaatsen was de Description echter verplicht waardoor de Identification impliciet niet was toegestaan.
+  Deze verplichting is verwijderd:
+    - doc:OrderResponse/cac:OrderLine/cac:LineItem/cac:Item/cbc:Description
+    - doc:OrderResponse/cac:OrderLine/cac:SellerProposedSubstituteLineItem/cac:Item/cbc:Description
+    - doc:Quotation/cac:QuotationLine/cac:SellerProposedSubstituteLineItem/cac:Item/cbc:Description
+
+- De controle op Description vs Identifications was op twee plaatsen niet opgenomen,
+  deze is alsnog toegevoegd:
+    - doc:OrderResponse/cac:OrderLine/cac:SellerProposedSubstituteLineItem/cac:Item
+    -  doc:Commitment/nl-cac:CommitmentLine/cac:LineItem/cac:Item
+
+- Er zijn regels voor de inhoud van de @schemeAgencyID en @schemeAgencyName attributen van PartyIdentification/ID.
+  Deze mistten op twee plaatsen en zijn daar toegevoegd:
+    - doc:Order/cac:AccountingCustomerParty/cac:Party/cac:AgentParty/cac:PartyIdentification/cbc:ID
+    - doc:OrderResponse/cac:AccountingCustomerParty/cac:Party/cac:AgentParty/cac:PartyIdentification/cbc:ID
+
+Wijzigingen
+===========
+Er is een wijziging doorgevoerd op DespatchAdvice.
+De mogelijkheid een partij te identificeren middels een PartyIdentification/ID is toegevoegd voor:
+    - DespatchSupplierParty
+    - DeliveryCustomerParty
+
+Documentatie
+============
+Zoals in de Implementatiewijzer beschreven worden business rules van DigiInkoop gecontroleerd door middel van de regels in de schematron bestanden.
+Een groot deel van deze controles stond al beschreven in de Implementatiewijzer.
+De regels die nog niet (volledig) beschreven waren zijn in deze versie toegevoegd of aangevuld:
+- Verplichte elementen
+- Adresgegevens
+- Onderhandelingsstijl
+- Factuursoort
+- Product omschrijvingen
+- Telefoon- en faxnummers
+- Datumformaten
+- Maximale lengte cbc:ID
+- Overige controles factuur
+
+Toelichting op de opbouw van Excel's en Schematron bestanden
+============================================================
+De Excel en schematron bestanden van 1.6.3 zijn met behulp van nieuwe tooling gegenereerd.
+Dat geeft een aantal verschillen die hieronder kort worden toegelicht.
+
+Nieuwe kolommen in Excel
+------------------------
+De Excel bestanden bevatten een aantal nieuwe kolommen:
+- Nr                     : Een volgnummer volgens de structuur van het XSD Schema.
+                           Dit kan gebruikt worden om deze volgorde te herstellen nadat op een andere kolom gesorteerd was.
+- XSD node               : Indicatie van het type node op de regel:
+                           - root
+						     Hiermee wordt het ‘root’ element van een bericht aangegeven.
+							 Dat zal impliciet ook een ‘complexType’ zijn.
+                           - complexType
+						     Een complex type is een element dat zelf weer andere elementen bevat.
+							 Over het algemeen zal hierin geen waarde worden opgegeven.
+                           - element
+						     Dit geeft een element aan dat geen andere elementen meer bevat (dus geen ‘complexType’).
+							 Over het algemene zal hierin een waarde worden opgegeven.
+                           - in choice
+						     Een choice geeft aan dat er volgens het XML Schema gekozen kan worden tussen elementen.
+							 Voornaamste gevolg hiervan is dat de minOccurs van de cardinaliteit van ieder element in de choice effectief op 0 wordt gezet.
+							 Mogelijk moet er wel verplicht één van de elementen in een choice gekozen worden, dat kan echter niet in de Excel worden weergegeven.
+                           - circulair
+						     Een element dat circulair is bevat zichzelf weer als kind (eventueel met een aantal tussenliggende voorkomens).
+							 Dit kan niet in Excel worden weergegeven aangezien de structuur in theorie oneindig diep kan worden.
+							 Vanaf het derde voorkomen wordt zo’n element daarom ‘afgekapt’.
+                           - trimmed
+						     Het is mogelijk in de applicatie elementen op te geven die ook moeten worden 'afgekapt'.
+							 Voor UBL is dat gedaan voor niet ondersteunde elementen.
+							 Deze elementen hebben ook de cardinaliteit [0-0] gekregen in de DigiInkoop cardinaliteit kolom.
+                           - attribute
+						     Met dit type wordt een attribuut van een element aangegeven.
+							 Hierin kan/moet veelal een waarde worden opgegeven.
+- Element                : De naam van het element, het laatste deel van het XPath, ingesprongen volgens de structuur van het bericht.
+- Type UBL               : Het type van een element / attribuut volgens de UBL XSD schemas.
+- Definitie UBL          : De definitie van een element / attribuut zoals beschreven in de UBL XSD schemas.
+- Test DigiInkoop        : Controles ivm 'business rules' worden in deze kolom beschreven.
+                           Het formaat van deze kolom is over het algemeen een 'technische' beschrijving van de controle.
+						   De uitleg is terug te vinden in de Implementatiewijzer.
+- Definitie DigiInkoop   : In deze kolom kan een aanvullende definitie van DigiInkoop worden opgenomen.
+                           In de huidige versie wordt deze kolom slechts zeer beperkt gebruikt
+- Verwijzing DigiInkoop  : Een kolom waarin een verwijzing naar aanvullende documentatie kan worden opgenomen.
+                           Wordt in de huidige versie niet gebruikt.
+- Opmerking(en)          : Een kolom voor algemene opmerkingen bij een regel.
+                           Wordt in de huidige versie niet gebruikt.
+
+
+Afwijkingen in gegenereerde schematron
+--------------------------------------
+De schematron die gegenereerd wordt wijkt af van de vorige versie.
+Het gaat in alle gevallen om een afwijking in de (technische) opbouw van de schematron die functioneel geen invloed heeft.

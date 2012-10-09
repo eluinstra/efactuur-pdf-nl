@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc:DespatchAdvice 
+ xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+ xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+ xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+ xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+ xmlns:doc="urn:oasis:names:specification:ubl:schema:xsd:DespatchAdvice-2"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2 ../xsdrt/maindoc/DespatchAdvice.xsd">
+    <cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+    <cbc:CustomizationID>1.6</cbc:CustomizationID>
+    <cbc:ProfileID>NL</cbc:ProfileID>
+    <cbc:ID>12345678</cbc:ID>
+    <cbc:IssueDate>2012-02-22</cbc:IssueDate>
+    <cbc:Note>inhaalactie</cbc:Note>
+    <cac:DespatchSupplierParty>
+        <cac:Party>
+            <cac:PartyName>
+                <cbc:Name>Maerks-VOS</cbc:Name>
+            </cac:PartyName>
+            <cac:Contact>
+                <cbc:Name>Jannie Vos</cbc:Name>
+                <cbc:Telephone>0130-0155442</cbc:Telephone>
+                <cbc:ElectronicMail>jav@maerskvs.com.eu </cbc:ElectronicMail>
+            </cac:Contact>
+        </cac:Party>
+    </cac:DespatchSupplierParty>
+    <cac:DeliveryCustomerParty>
+        <cbc:CustomerAssignedAccountID>222222</cbc:CustomerAssignedAccountID>
+        <cac:Party>
+            <cac:PartyName>
+                <cbc:Name>klant2</cbc:Name>
+            </cac:PartyName>
+            <cac:Contact>
+                <cbc:Name>I.Nkoper@leferensier.bv</cbc:Name>
+            </cac:Contact>
+        </cac:Party>
+    </cac:DeliveryCustomerParty>
+    <cac:SellerSupplierParty>
+        <cbc:CustomerAssignedAccountID>90807030</cbc:CustomerAssignedAccountID>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeAgencyID="NL" schemeAgencyName="KvK">345345345</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name>Leverancier BV</cbc:Name>
+            </cac:PartyName>
+            <cac:Contact>
+                <cbc:Name>ver Koper</cbc:Name>
+            </cac:Contact>
+        </cac:Party>
+    </cac:SellerSupplierParty>
+    <cac:Shipment>
+        <cbc:ID>S345678</cbc:ID>
+        <cbc:DeliveryInstructions>niet aanbellen</cbc:DeliveryInstructions>
+        <cac:Consignment>
+            <cbc:ID>P567855</cbc:ID>
+        </cac:Consignment>
+        <cac:Delivery>
+            <cac:DeliveryAddress>
+                <cbc:StreetName>afleverweg</cbc:StreetName>
+                <cbc:BuildingNumber>2</cbc:BuildingNumber>
+                <cbc:PlotIdentification>naast 9</cbc:PlotIdentification>
+                <cbc:CityName>Belgieplaats</cbc:CityName>
+                <cbc:PostalZone>B-1234</cbc:PostalZone>
+                <cac:Country>
+                    <cbc:IdentificationCode listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listID="ISO3166-1" listName="Country" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listVersionID="0.3">BE</cbc:IdentificationCode>
+                </cac:Country>
+            </cac:DeliveryAddress>
+            <cac:RequestedDeliveryPeriod>
+                <cbc:EndDate>2012-01-22</cbc:EndDate>
+            </cac:RequestedDeliveryPeriod>
+            <cac:Despatch>
+                <cac:DespatchAddress>
+                    <cbc:StreetName>verzendWegweg</cbc:StreetName>
+                    <cbc:BuildingNumber>1-III</cbc:BuildingNumber>
+                    <cbc:CityName>Plaatsplaats</cbc:CityName>
+                    <cbc:PostalZone>1234AB</cbc:PostalZone>
+                    <cac:Country>
+                        <cbc:IdentificationCode listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listID="ISO3166-1" listName="Country" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode-2.0" listURI="http://docs.oasis-open.org/ubl/os-ubl-2.0/cl/gc/default/CountryIdentificationCode-2.0.gc" listVersionID="0.3">NL</cbc:IdentificationCode>
+                    </cac:Country>
+                </cac:DespatchAddress>
+            </cac:Despatch>
+        </cac:Delivery>
+    </cac:Shipment>
+    <cac:DespatchLine>
+        <cbc:ID>0101</cbc:ID>
+        <cbc:DeliveredQuantity unitCode="DZN">150</cbc:DeliveredQuantity>
+        <cac:OrderLineReference>
+            <cbc:LineID>030</cbc:LineID>
+            <cac:OrderReference>
+                <cbc:ID>PO450077635</cbc:ID>
+            </cac:OrderReference>
+        </cac:OrderLineReference>
+        <cac:Item>
+            <cbc:Description>yourt bzl</cbc:Description>
+            <cbc:CatalogueIndicator>false</cbc:CatalogueIndicator>
+            <cbc:Name>myart 10</cbc:Name>
+        </cac:Item>
+    </cac:DespatchLine>
+</doc:DespatchAdvice>

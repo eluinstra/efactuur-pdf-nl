@@ -1,0 +1,100 @@
+De Excel en schematron bestanden van 1.7 zijn met nieuwe tooling gegenereerd.
+Dat geeft een aantal verschillen die hieronder worden toegelicht.
+
+-----------------------------------------
+cardinaliteit van elementen in een choice
+-----------------------------------------
+In de vorige versies werd voor elementen in een choice de cardinaliteit getoond (in HR-XML kolom) van het element zonder de choice daarin te betrekken.
+Zo'n element was in de oude Excel ook niet als zodanig herkenbaar.
+
+In de nieuwe versie wordt de cardinaliteit van de choice meegenomen in die van het element:
+ - de minOccurs wordt '0'
+ - de maxOccurs wordt 'N' als één van beiden 'N' was
+ - de maxOccurs wordt vermenigvuldigd als beiden niet 'N' waren
+ Voorbeelden:
+  - een choice met cardinaliteit 1-N met daarin twee elementen met cardinaliteit '1-1' zal in de nieuwe versie '0-N' geven.
+  - een choice met cardinaliteit 1-1 met daarin twee elementen met cardinaliteit '1-1' zal in de nieuwe versie '0-1' geven.
+  - een choice met cardinaliteit 1-2 met daarin twee elementen met cardinaliteit '1-1' zal in de nieuwe versie '0-2' geven.
+
+Ook is zo'n element nu herkenbaar aan de tekst 'in choice' in de tweede kolom.
+
+Deze wijziging heeft alleen invloed op de representatie van het (HR-XML) schema in Excel. Het leidt niet tot wijzigingen in de schematron.
+
+--------------------------------------
+Afwijkingen in gegenereerde schematron
+--------------------------------------
+De schematron die gegenereerd wordt kan hier en daar afwijken van de vorige versie.
+Het gaat in alle gevallen om een afwijking in de (technische) opbouw van de schematron die functioneel geen invloed heeft.
+Voorbeelden:
+  - Een combinatie van Code: [X, Y, Z] | Empty bevat in de nieuwe versie twee maal een empty() test (de eerste vanuit de Code en de tweede vanuit de Empty)
+  - Een pattern dat geen rules bevat wordt in de nieuwe versie niet meer opgenomen in de schematron
+  - De volgorde van rules / asserts kan mogelijk afwijken
+  - Teksten van meldingen in de assertions wijken af
+
+----
+SETU
+----
+De nieuwe tooling maakt in de Excels onderscheid tussen aanpassingen / beperkingen o.b.v. SETU en Digi-Inkoop regels.
+In de vorige versie werden alle aanpassingen / beperkingen in dezelfde kolommen getoond.
+
+Bij het 'splitsen' van de gegevens over SETU en Digi-Inkoop kolommen zijn de gegevens opnieuw vergeleken met de SETU handleidingen.
+Daarbij is een aantal omissies en een aantal onterechte beperkingen aan het licht gekomen.
+Deze zijn in de 1.7 versie gecorrigeerd wat (functionele) afwijkingen in de gegenereerde schematron tot gevolg heeft.
+
+Concreet betreft het de volgende wijzigingen:
+HumanResource:
+- Verwijderde controles
+  - Profile/Resume/StructuredXMLResume/EducationHistory/SchoolOrInstitution was maximaal 1 keer
+  - ReferenceInformation/StaffingCustomerOrgUnitId/IdValue/@name moest leeg zijn
+  - UserArea/HumanResourceAdditionalNL/StaffingShift/Id/IdValue was maximaal 2 keer
+  - Profile/Resume/StructuredXMLResume/EducationHistory/SchoolOrInstitution/Degree was maximaal 1 keer
+  - ReferenceInformation/StaffingCustomerOrgUnitId/IdValue was maximaal 1 keer
+- Aangepaste controles:
+  - Profile/Resume/StructuredXMLResume/EducationHistory/SchoolOrInstitution/LocalInstitutionClassification/Id/@idOwner andere waarden dan opgegeven lijst zijn ook toegestaan, dus effectief geen controle meer
+  - Rates/Class Empty optie is aangevuld met code lijst [TimeInterval, timeInterval, Allowance, allowance, Expense, expense]
+- Toegevoegde controles:
+  - Profile/Resume/StructuredXMLResume/EmploymentHistory/EmployerOrg/EmployerContactInfo/PersonName/FamilyName/@primary toegevoegde Code lijst [true, false]
+  - ResourceInformation/EntityContactInfo/PersonName/FamilyName/@primary toegevoegde Code lijst [true, false]
+  - UserArea/HumanResourceAdditionalNL/SupplierContactInfo/PersonName/FamilyName/@primary toegevoegde Code lijst [true, false]
+  - UserArea/HumanResourceAdditionalNL/StaffingShift/Id moet leeg zijn
+
+Invoice:
+- Toegevoegde controles:
+  - Header/Parties verplicht ivm verplichting onderliggende elementen
+
+StaffingOrder:
+- Verwijderde controles
+  - UserArea/StaffingOrderAdditionalNL/StructuredXMLResume/Qualifications/Competency was maximaal 2 keer
+- Aangepaste controles:
+  - OrderClassification/@orderType Order met hoofdletter toegevoegd aan Code lijst
+  - StaffingPosition/PositionHeader/ShiftWork/Description Code lijst was suggestie en niet compleet, dus ook andere waarden toegestaan en effectief geen controle meer
+- Toegevoegde controles:
+  - UserArea/StaffingOrderAdditionalNL/StructuredXMLResume/EducationHistory/SchoolOrInstitution/Degree maximaal 1 keer
+
+TimeCard:
+- Verwijderde controles
+  - ApprovalInfo/Person/Id/IdValue was maximaal 1 keer
+  - ReportedTime/TimeEvent/Id/IdValue was maximaal 1 keer
+  - ReportedTime/TimeEvent/RateOrAmount/@type had een code lijst
+  - ReportedTime/TimeInterval/AdditionalData was maximaal en minimaal 1 keer
+  - SubmitterInfo/Person/Id/IdValue was maximaal 1 keer
+- Aangepaste controles:
+  - ReportedResource/Person/Id/@idOwner behalve de lijst van codes ook toegestaan leeg te laten
+  - ReportedTime/TimeInterval/Id/IdValue/@name code lijst ipv Empty
+- Toegevoegde controles:
+  - ReportedTime/Allowance maximaal 2 keer
+  - ReportedTime/TimeInterval/Allowance maximaal 2 keer
+  - ReportedTime/Expense is niet toegestaan
+  - TimeCard/ReportedTime/Allowance/Id/IdValue maximaal 1 keer
+  - ReportedTime/TimeInterval/Allowance/Id verplicht want onderliggend element verplicht
+
+------
+Overig
+------
+De code lijst voor StaffingOrder/CustomerReportingRequirements/AdditionalRequirement/@requirementTitle is geen strikte lijst meer, overige waarden zijn ook toegestaan dus effectief geen controle meer.
+
+Met behulp van een cardinaliteit met vierkante haken [0-0] wordt in de Excels aangegeven welke elementen / attributen door DigiInkoop niet verwerkt worden.
+
+Verwijzingen naar het xml.xsd bestand van W3C zijn in de .xsd bestanden van HR-XML gewijzigd:
+- van een URL (http://www.w3.org/2004/10/xml.xsd) naar een locale versie (../W3C/xml.xsd).
+Doel is het voorkomen van 'externe' verwijzingen in de .xsd bestanden.
