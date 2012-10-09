@@ -7,6 +7,33 @@
   <version>1.0-SNAPSHOT</version>
   <name>efactuur-pdf-nl</name>
   <url>http://maven.apache.org</url>
+    <distributionManagement>
+        <repository>
+            <id>maven.clockwork.nl</id>
+            <uniqueVersion>false</uniqueVersion>
+            <url>https://maven.clockwork.nl/nexus/content/repositories/releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>maven.clockwork.nl</id>
+            <uniqueVersion>false</uniqueVersion>
+            <url>https://maven.clockwork.nl/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <developers>
+        <developer>
+            <id>b.vandriel</id>
+            <name>Bas van Driel</name>
+            <email>bas.van.driel@clockwork.nl</email>
+        </developer>
+        <developer>
+            <id>a.vandeursen</id>
+            <name>Aike van Deursen</name>
+            <email>aike.van.deursen@clockwork.nl</email>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://git.clockwork.nl/dso/efactuur-pdf-nl.git</connection>
+    </scm>  
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -15,4 +42,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
 </project>
