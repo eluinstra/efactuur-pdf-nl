@@ -173,7 +173,7 @@
 				Vervaldatum: <xsl:value-of select="format-dateTime(/bericht/factuur/betalingscondities/conditie/setu_vervaldatum,$date_format)"/>		
 			</xsl:when>
 			<xsl:otherwise>
-				<xsl:if test="/bericht/factuur/referentie/factuur_oorspronkelijk/datum != ''">
+				<xsl:if test="/bericht/factuur/referentie/factuur_oorspronkelijk/verval_datum != ''">
 					Vervaldatum: <xsl:value-of select="format-date(/bericht/factuur/referentie/factuur_oorspronkelijk/verval_datum, $date_format)"/>
 				</xsl:if>
 			</xsl:otherwise>
