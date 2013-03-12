@@ -1,15 +1,9 @@
 derby.log
 target/*
 #resources/
-resources/channelProfileTooling/decrypt*
-resources/channelProfileTooling/encrypt*
-resources/channelProfileTooling/sign*
-resources/channelProfileTooling/validate*
-resources/channelProfileTooling/profiles*
-wrapper/logs
 .project
 .classpath
 .settings/*
 H:/*
-activemq-data*
-
+activemq/*
+/target
