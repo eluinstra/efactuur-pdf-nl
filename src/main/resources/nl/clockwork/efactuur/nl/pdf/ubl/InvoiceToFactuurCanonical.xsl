@@ -369,7 +369,7 @@
 					<xsl:when
 						test="/in:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID!=''">
 						<xsl:if
-							test="/in:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeAgencyID = 'XXX'">
+							test="/in:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID/@schemeAgencyName = 'XXX'">
 							<xsl:value-of
 								select="/in:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID"></xsl:value-of>
 						</xsl:if>
