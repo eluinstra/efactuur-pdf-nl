@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+    <Identification>
+        <ShortName>NL-ntb02</ShortName>
+        <LongName xml:lang="NL">ResponseCode</LongName>
+        <LongName Identifier=""/>
+        <Version>1.7</Version>
+        <CanonicalUri/>
+        <CanonicalVersionUri/>
+        <LocationUri>http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/NL-ResponseCode-1.7.gc</LocationUri>
+        <Agency>
+            <LongName xml:lang="NL">Logius Gegevensbeheer NL-Overheid</LongName>
+            <Identifier>88</Identifier>
+        </Agency>
+    </Identification>
+    <ColumnSet>
+        <Column Id="code" Use="required">
+            <ShortName>Code</ShortName>
+            <Data Type="normalizedString"/>
+        </Column>
+        <Column Id="name" Use="optional">
+            <ShortName>Name</ShortName>
+            <Data Type="string"/>
+        </Column>
+        <Key Id="codeKey">
+            <ShortName>CodeKey</ShortName>
+            <ColumnRef Ref="code"/>
+        </Key>
+    </ColumnSet>
+    <SimpleCodeList>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>OK</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>BudgetAkkoord</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>NOK</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>BudgetNietAkkoord</SimpleValue>
+            </Value>
+        </Row>
+    </SimpleCodeList>
+</gc:CodeList>

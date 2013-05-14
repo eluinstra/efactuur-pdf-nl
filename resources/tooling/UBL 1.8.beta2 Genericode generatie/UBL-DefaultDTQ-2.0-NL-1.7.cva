@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cva:ContextValueAssociation xmlns:cva="http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/"
+                             xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+							 xmlns:nl-cbc="urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonBasicComponents-2"
+							 xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+                             xmlns:x="http://www.w3.org/1999/xhtml"
+                             name="UBL-QualifiedDataTypes-2.0"
+                             version="2010-08-30 20:21:05(UTC)"
+                             id="urn:oasis:names:specification:ubl:cva:UBL-Qualified-Data-Types:2">
+   <Annotation>
+      <Description>
+         <x:p>
+        This describes all of the qualified supplementary components and 
+        business information entities for the OASIS Universal Business
+        Language (UBL) 2.0 vocabulary.
+      </x:p>
+         <x:p>
+        At this time all value qualifications are code lists, which are
+        a type of value list (the other type being identifier lists).
+        Instance metadata for UBL is described by the UN/CEFACT Core Component
+        Technical Specification (CCTS) Version 2.01.
+        The document contexts are all of the supplementary components and
+        business entities in a UBL instance that have qualified values.
+      </x:p>
+         <x:p>
+        Deze versie is gekopieerd van de UBL 2.1 versie waarbij alleen de
+		UBL 2.0 associaties zijn behouden voor codelijsten in de
+		UBL-NL oplevering.
+		De lijsten voor de Nederlandse uitbreidingen zijn toegevoegd
+		volgens dezelfde opzet als UBL.
+      </x:p>
+      </Description>
+   </Annotation>
+   <Title>
+    UBL 2.0 qualified information items
+  </Title>
+   <ValueLists>
+      <Annotation>
+         <Description>
+            <x:p>
+          These list all of the genericode files of code lists used by
+          UBL information items whose values are qualified by code lists.
+        </x:p>
+            <x:p>
+          The unique identifer <x:samp>xml:id=</x:samp> is used later in
+          this file when describing the context for each entity that has
+          a qualified value.
+        </x:p>
+            <x:p>
+          The URI value points to the genericode file associated with the 
+          identifer. The URI is hyperlinked in this report to a rendering
+          of the contents of the genericode file that follows the rendering
+          of the contexts.
+        </x:p>
+         </Description>
+      </Annotation>
+	  <!--Originele UBL lijsten, paden aangepast aan de Nederlandse oplevering -->
+      <ValueList xml:id="AllowanceChargeReason"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/AllowanceChargeReasonCode.gc"/>
+      <ValueList xml:id="Channel"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/ChannelCode.gc"/>
+      <ValueList xml:id="Chip"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/ChipCode.gc"/>
+      <ValueList xml:id="CountryIdentification"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/CountryIdentificationCode.gc"/>
+      <ValueList xml:id="Currency"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/CurrencyCode.gc"/>
+      <ValueList xml:id="DocumentStatus"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/DocumentStatusCode.gc"/>
+      <ValueList xml:id="LatitudeDirection"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/LatitudeDirectionCode.gc"/>
+      <ValueList xml:id="LineStatus"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/LineStatusCode.gc"/>
+      <ValueList xml:id="LongitudeDirection"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/LongitudeDirectionCode.gc"/>
+      <ValueList xml:id="Operator"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/OperatorCode.gc"/>
+      <ValueList xml:id="PackagingType"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/PackagingTypeCode.gc"/>
+      <ValueList xml:id="PaymentMeans"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/PaymentMeansCode.gc"/>
+      <ValueList xml:id="SubstitutionStatus"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/SubstitutionStatusCode.gc"/>
+      <ValueList xml:id="TransportEquipmentType"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/TransportEquipmentTypeCode.gc"/>
+      <ValueList xml:id="TransportMode"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/TransportModeCode.gc"/>
+      <!-- Nederlandse lijsten -->
+      <ValueList xml:id="InvoiceTypeCode"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/InvoiceTypeCode.gc"/>
+      <ValueList xml:id="ActionCode"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/ActionCode.gc"/>
+      <ValueList xml:id="DeliveryTermsCode"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/DeliveryTermsCode.gc"/>
+      <ValueList xml:id="InvoicePeriodDescriptionCode"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/InvoicePeriodDescriptionCode.gc"/>
+      <ValueList xml:id="NegotiationStyleCode"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/NegotiationStyleCode.gc"/>
+      <ValueList xml:id="ResponseCode"
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain/ubl/1.8.beta2/cl/gc/ResponseCode.gc"/>
+   </ValueLists>
+   <InstanceMetadataSets>
+      <Annotation>
+         <Description>
+            <x:p>
+          A supplementary component is a piece of metadata describing a
+          property of the list of values in which a particular value is
+          found.  For example, each code list of currency values has a
+          version and when a currency value is specified in a UBL document
+          it may be important to specify which version of the currency 
+          code list that value is found.  By knowing the list from which a
+          value is found, the semantics representated by that value are
+          unambiguous.
+        </x:p>
+            <x:p>
+          These sets of supplementary components describe where instance-level
+          metadata is found that contains values of list-level metadata from
+          genericode files.  Each set is identified in a context using that
+          set's unique <x:samp>xml:id=</x:samp> attribute.
+        </x:p>
+            <x:p>
+          Each component pairs an XPath address of the supplementary component
+          (specified in <x:samp>address=</x:samp>) relative to the item with
+          the code list value in the UBL document, with the XPath address of
+          the corresponding list-level metadata item in the genericode file
+          (specified in <x:samp>identification=</x:samp>) relative to the
+          <x:samp>&lt;Identification&gt;</x:samp> element in the code list file.
+        </x:p>
+            <x:p>
+          All supplementary components in UBL are defined by the UN/CEFACT Core
+          Component Technical Specification (CCTS) Version 2.01 dated
+          15 November 2003
+          <x:a href="http://www.unece.org/cefact/ebxml/CCTS_V2-01_Final.pdf">
+                  <x:samp>http://www.unece.org/cefact/ebxml/CCTS_V2-01_Final.pdf</x:samp>.</x:a>
+          Table 8-2 "Approved Core Component Type Content
+          and Supplementary Components" lists the various supplementary
+          components available.  The UN/CEFACT 
+          UnqualifiedDataTypeSchemaModule-2.0.xsd schema fragment specifies
+          the names of the attributes for supplementary components.
+        </x:p>
+         </Description>
+      </Annotation>
+      <InstanceMetadataSet xml:id="cctsV2.01-amount">
+         <Annotation>
+            <Description>
+               <x:p>
+            The <x:samp>Amount. Type</x:samp> supplementary component.
+          </x:p>
+            </Description>
+         </Annotation>
+         <InstanceMetadata address="../@currencyCodeListVersionID"
+                           identification="Version"/>
+      </InstanceMetadataSet>
+      <InstanceMetadataSet xml:id="cctsV2.01-code">
+         <Annotation>
+            <Description>
+               <x:p>
+            The <x:samp>Code. Type</x:samp> supplementary components.
+          </x:p>
+            </Description>
+         </Annotation>
+         <InstanceMetadata address="@listName"
+                           identification="LongName[not(@Identifier='listID')]"/>
+         <InstanceMetadata address="@listID"
+                           identification="LongName[@Identifier='listID']"/>
+         <InstanceMetadata address="@listVersionID"
+                           identification="Version"/>
+         <InstanceMetadata address="@listSchemeURI"
+                           identification="CanonicalUri"/>
+         <InstanceMetadata address="@listURI"
+                           identification="LocationUri"/>
+         <InstanceMetadata address="@listAgencyName"
+                           identification="Agency/LongName"/>
+         <InstanceMetadata address="@listAgencyID"
+                           identification="Agency/Identifier"/>
+      </InstanceMetadataSet>
+      <InstanceMetadataSet xml:id="scheme-code">
+         <Annotation>
+            <Description>
+               <x:p>
+            The <x:samp>Code. Type</x:samp> supplementary components.
+          </x:p>
+            </Description>
+         </Annotation>
+         <InstanceMetadata address="@listName"
+                           identification="LongName[not(@Identifier='schemeID')]"/>
+         <InstanceMetadata address="@schemeID"
+                           identification="LongName[@Identifier='schemeID']"/>
+         <InstanceMetadata address="@listVersionID"
+                           identification="Version"/>
+         <InstanceMetadata address="@listSchemeURI"
+                           identification="CanonicalUri"/>
+         <InstanceMetadata address="@listURI"
+                           identification="LocationUri"/>
+         <InstanceMetadata address="@listAgencyName"
+                           identification="Agency/LongName"/>
+         <InstanceMetadata address="@listAgencyID"
+                           identification="Agency/Identifier"/>
+      </InstanceMetadataSet>
+   </InstanceMetadataSets>
+   <Contexts>
+      <Annotation>
+         <Description>
+            <x:p>
+          The contexts in which various items with a qualified value
+          are specified.  
+        </x:p>
+            <x:p>
+          The <x:samp>address=</x:samp> attribute is an XPath address that
+          satisfies all of the UBL items in the instance that are qualified
+          with the indicated value lists using the indicated associated set
+          of instance-level metadata items.
+        </x:p>
+            <x:p>
+          Each context identifies the collection of supplementary components 
+          (by its identifier) where instance-level metadata is found, then
+          all value lists (by their identifier) that apply to the item being
+          addressed.
+        </x:p>
+            <x:p>
+          The contexts are listed first for attribute items and then for
+          element items.
+        </x:p>
+         </Description>
+      </Annotation>
+      <Context values="Currency"
+               metadata="cctsV2.01-amount"
+               address="@currencyID"/>
+      <Context values="AllowanceChargeReason"
+               metadata="cctsV2.01-code"
+               address="cbc:AllowanceChargeReasonCode"/>
+      <Context values="Channel"
+               metadata="cctsV2.01-code"
+               address="cbc:ChannelCode"/>
+      <Context values="Chip"
+               metadata="cctsV2.01-code"
+               address="cbc:CardChipCode"/>
+      <Context values="CountryIdentification"
+               metadata="cctsV2.01-code"
+               address="cbc:IdentificationCode"/>
+      <Context values="Currency"
+               metadata="cctsV2.01-code"
+               address="cbc:DocumentCurrencyCode | 
+                        cbc:TaxCurrencyCode | 
+                        cbc:PricingCurrencyCode | 
+                        cbc:PaymentCurrencyCode | 
+                        cbc:PaymentAlternativeCurrencyCode | 
+                        cbc:RequestedInvoiceCurrencyCode | 
+                        cbc:SourceCurrencyCode | 
+                        cbc:TargetCurrencyCode | 
+                        cbc:CurrencyCode"/>
+      <Context values="DocumentStatus"
+               metadata="cctsV2.01-code"
+               address="cbc:DocumentStatusCode"/>
+      <Context values="LatitudeDirection"
+               metadata="cctsV2.01-code"
+               address="cbc:LatitudeDirectionCode"/>
+      <Context values="LineStatus"
+               metadata="cctsV2.01-code"
+               address="cbc:LineStatusCode"/>
+      <Context values="LongitudeDirection"
+               metadata="cctsV2.01-code"
+               address="cbc:LongitudeDirectionCode"/>
+      <Context values="Operator"
+               metadata="cctsV2.01-code"
+               address="cbc:MathematicOperatorCode"/>
+      <Context values="PackagingType"
+               metadata="cctsV2.01-code"
+               address="cbc:PackagingTypeCode"/>
+      <Context values="PaymentMeans"
+               metadata="cctsV2.01-code"
+               address="cbc:PaymentMeansCode"/>
+      <Context values="SubstitutionStatus"
+               metadata="cctsV2.01-code"
+               address="cbc:SubstitutionStatusCode"/>
+      <Context values="TransportEquipmentType"
+               metadata="cctsV2.01-code"
+               address="cbc:TransportEquipmentTypeCode"/>
+      <Context values="TransportMode"
+               metadata="cctsV2.01-code"
+               address="cbc:TransportModeCode"/>
+      <!-- Contexten voor Nederlandse elementen -->
+      <Context values="InvoiceTypeCode"
+               metadata="cctsV2.01-code"
+               address="cbc:InvoiceTypeCode"/>
+      <Context values="ActionCode"
+               metadata="cctsV2.01-code"
+               address="cbc:ActionCode"/>
+      <Context values="DeliveryTermsCode"
+               metadata="scheme-code"
+               address="cac:DeliveryTerms/cbc:ID"/>
+      <Context values="InvoicePeriodDescriptionCode"
+               metadata="cctsV2.01-code"
+               address="cac:InvoicePeriod/cbc:DescriptionCode"/>
+      <Context values="NegotiationStyleCode"
+               metadata="cctsV2.01-code"
+               address="nl-cbc:NegotiationStyle"/>
+      <Context values="ResponseCode"
+               metadata="cctsV2.01-code"
+               address="cac:Response/cbc:ResponseCode"/>
+   </Contexts>
+</cva:ContextValueAssociation>

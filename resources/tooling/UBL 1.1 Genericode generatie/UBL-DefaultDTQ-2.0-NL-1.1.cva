@@ -57,49 +57,49 @@
 	  <!--Originele UBL lijsten, paden aangepast aan de Nederlandse oplevering -->
 
       <ValueList xml:id="AllowanceChargeReason"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/AllowanceChargeReasonCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/AllowanceChargeReasonCode-2.0.gc"/>
 
       <ValueList xml:id="Channel"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/ChannelCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/ChannelCode-2.0.gc"/>
 
       <ValueList xml:id="Chip"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/ChipCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/ChipCode-2.0.gc"/>
 
       <ValueList xml:id="CountryIdentification"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/CountryIdentificationCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/CountryIdentificationCode-2.0.gc"/>
 
       <ValueList xml:id="Currency"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/CurrencyCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/CurrencyCode-2.0.gc"/>
 
       <ValueList xml:id="LatitudeDirection"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/LatitudeDirectionCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/LatitudeDirectionCode-2.0.gc"/>
 
       <ValueList xml:id="LineStatus"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/LineStatusCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/LineStatusCode-2.0.gc"/>
 
       <ValueList xml:id="LongitudeDirection"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/LongitudeDirectionCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/LongitudeDirectionCode-2.0.gc"/>
 
       <ValueList xml:id="InvoiceTypeCode"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/NL-InvoiceCode-1.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/NL-InvoiceCode-1.0.gc"/>
 
       <ValueList xml:id="Operator"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/OperatorCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/OperatorCode-2.0.gc"/>
 
       <ValueList xml:id="PackagingType"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/PackagingTypeCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/PackagingTypeCode-2.0.gc"/>
 
       <ValueList xml:id="PaymentMeans"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/PaymentMeansCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/PaymentMeansCode-2.0.gc"/>
 
       <ValueList xml:id="SubstitutionStatus"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/SubstitutionStatusCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/SubstitutionStatusCode-2.0.gc"/>
 
       <ValueList xml:id="TransportEquipmentType"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/TransportEquipmentTypeCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/TransportEquipmentTypeCode-2.0.gc"/>
 
       <ValueList xml:id="TransportMode"
-                 uri="../../../src/main/resources/nl/clockwork/digifact/ubl/1.1/cl/gc/TransportModeCode-2.0.gc"/>
+                 uri="../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.1/cl/gc/TransportModeCode-2.0.gc"/>
       
    </ValueLists>
    <InstanceMetadataSets>

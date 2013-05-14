@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<TimeCard xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 ../SIDES/TimeCardAdditionalData.xsd">
+	<Id>
+		<IdValue>10000895</IdValue>
+	</Id>
+	<ReportedResource>
+		<Person>
+			<PersonName>
+				<FormattedName>Theo Tijdschrijver</FormattedName>
+			</PersonName>
+		</Person>
+	</ReportedResource>
+	<ReportedTime>
+		<PeriodStartDate>2011-02-18</PeriodStartDate>
+		<PeriodEndDate>2011-12-31</PeriodEndDate>
+		<TimeInterval type="regular">
+			<StartDateTime>2011-02-18T00:00:00</StartDateTime>
+			<EndDateTime>2000-01-01T18:44:05</EndDateTime>
+			<Duration>7.45</Duration>
+			<RateOrAmount currency="EUR" type="hourly" multiplier="100">30</RateOrAmount>
+		</TimeInterval>
+	</ReportedTime>
+	<AdditionalData>
+		<StaffingAdditionalData>
+			<CustomerReportingRequirements>
+				<AdditionalRequirement requirementTitle="VersionId">1.8</AdditionalRequirement>
+			</CustomerReportingRequirements>
+			<ReferenceInformation>
+				<StaffingSupplierId idOwner="KvK">
+					<IdValue>32458695</IdValue>
+				</StaffingSupplierId>
+				<StaffingCustomerId idOwner="OIN">
+					<IdValue>00001500045885000</IdValue>
+				</StaffingCustomerId>
+				<AssignmentId>
+					<IdValue>12</IdValue>
+				</AssignmentId>
+			</ReferenceInformation>
+		</StaffingAdditionalData>
+	</AdditionalData>
+</TimeCard>

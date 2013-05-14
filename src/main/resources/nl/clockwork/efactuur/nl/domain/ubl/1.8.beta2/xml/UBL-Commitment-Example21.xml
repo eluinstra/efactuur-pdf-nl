@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc:Commitment
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+	xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:nl-cac="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-CommonAggregateComponents-2"
+	xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+	xmlns:doc="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-Commitment-2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-Commitment-2 ../xsdrt/maindoc/Commitment-NL-1.8.xsd">
+	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+	<cbc:CustomizationID>1.8</cbc:CustomizationID>
+	<cbc:ProfileID>NL</cbc:ProfileID>
+	<cbc:ID>4500511124</cbc:ID>
+	<cbc:IssueDate>2011-01-21</cbc:IssueDate>
+	<cbc:Note>project X</cbc:Note>
+	<cbc:DocumentCurrencyCode>EUR</cbc:DocumentCurrencyCode>
+	<cbc:ActionCode>R</cbc:ActionCode>
+	<cac:DocumentReference>
+		<cbc:ID>67150556885</cbc:ID>
+	</cac:DocumentReference>
+	<cac:SellerSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="BTW">12355841</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Jansen, Etc. BV</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="OIN">000056644755000</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Ministerie Y</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">190.00</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxAmount currencyID="EUR">190.00</cbc:TaxAmount>
+			<cac:TaxCategory>
+				<cbc:Percent>19.00</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:Name>BTW</cbc:Name>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:AnticipatedMonetaryTotal>
+		<cbc:TaxExclusiveAmount currencyID="EUR">1000.00</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">1190.00</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="EUR">1190.00</cbc:PayableAmount>
+	</cac:AnticipatedMonetaryTotal>
+	<nl-cac:CommitmentLine>
+		<cac:LineItem>
+			<cbc:ID>001000</cbc:ID>
+			<cbc:Note>mag ook blauw zijn</cbc:Note>
+			<cbc:Quantity unitCode="EA">500</cbc:Quantity>
+			<cbc:LineExtensionAmount currencyID="EUR">1000.00</cbc:LineExtensionAmount>
+			<cbc:TotalTaxAmount currencyID="EUR">190.00</cbc:TotalTaxAmount>
+			<cbc:AccountingCostCode>4544-255589-2577145</cbc:AccountingCostCode>
+			<cac:Delivery>
+				<cac:RequestedDeliveryPeriod>
+					<cbc:EndDate>2011-01-25</cbc:EndDate>
+				</cac:RequestedDeliveryPeriod>
+			</cac:Delivery>
+			<cac:Item>
+				<cbc:CatalogueIndicator>false</cbc:CatalogueIndicator>
+				<cbc:Name>zwarte pen</cbc:Name>
+				<cac:BuyersItemIdentification>
+					<cbc:ID>56811227</cbc:ID>
+				</cac:BuyersItemIdentification>
+				<cac:ClassifiedTaxCategory>
+					<cbc:Percent>19.00</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:Name>BTW</cbc:Name>
+					</cac:TaxScheme>
+				</cac:ClassifiedTaxCategory>
+			</cac:Item>
+		</cac:LineItem>
+		<cac:LineValidityPeriod>
+			<cbc:EndDate>2011-01-20</cbc:EndDate>
+		</cac:LineValidityPeriod>
+	</nl-cac:CommitmentLine>
+</doc:Commitment>

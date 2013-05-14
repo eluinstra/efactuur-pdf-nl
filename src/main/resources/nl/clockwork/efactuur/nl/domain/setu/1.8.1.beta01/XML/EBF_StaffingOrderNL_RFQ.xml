@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaffingOrder xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nl="http://ns.setu.nl/2008-01" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 ../SIDES/StaffingOrder.xsd http://ns.setu.nl/2008-01 ../SIDES/NL/2008-01/StaffingOrderAdditionalNL.xsd">
+	<OrderId validFrom="2010-12-31" idOwner="StaffingCustomer">
+		<IdValue>SO1000311210</IdValue>
+	</OrderId>
+	<ReferenceInformation>
+		<MasterOrderId>
+			<IdValue>C987</IdValue>
+		</MasterOrderId>
+		<StaffingCustomerId idOwner="KvK">
+			<IdValue>395730287</IdValue>
+		</StaffingCustomerId>
+		<IntermediaryId>
+			<IdValue>StaffingagencyX</IdValue>
+		</IntermediaryId>
+	</ReferenceInformation>
+	<CustomerReportingRequirements>
+		<CostCenterCode>H4500123456</CostCenterCode>
+		<AdditionalRequirement requirementTitle="VersionId">1.8</AdditionalRequirement>
+	</CustomerReportingRequirements>
+	<OrderClassification orderType="RFQ" orderStatus="new"/>
+	<OrderContact contactType="placed by">
+		<ContactInfo>
+			<PersonName>
+				<LegalName>I.Nkoper</LegalName>
+			</PersonName>
+			<ContactMethod/>
+		</ContactInfo>
+	</OrderContact>
+	<OrderComments>inhuur LB</OrderComments>
+	<PositionQuantity>1</PositionQuantity>
+	<MultiVendorDistribution>true</MultiVendorDistribution>
+	<StaffingPosition>
+		<PositionHeader>
+			<PositionId>
+				<Id/>
+			</PositionId>
+			<PositionDescription>messenslijpen</PositionDescription>
+		</PositionHeader>	
+		<CustomerReportingRequirements/>
+		<PositionDateRange>
+			<StartDate>2011-02-01</StartDate>
+		</PositionDateRange>
+		<WorkSite>
+			<WorkSiteName></WorkSiteName>
+			<PostalAddress>
+				<CountryCode>BE</CountryCode>
+				<PostalCode>B-1234</PostalCode>
+				<Municipality>Belgieplaats</Municipality>
+				<DeliveryAddress>
+					<StreetName>afleverweg</StreetName>
+					<BuildingNumber>2 naast 9</BuildingNumber>
+				</DeliveryAddress>
+			</PostalAddress>
+		</WorkSite>
+		<StaffingShift>
+			<Id>
+				<IdValue/>
+			</Id>
+			<Hours>50</Hours>
+		</StaffingShift>
+	</StaffingPosition>
+</StaffingOrder>

@@ -63,6 +63,6 @@ sh ../Crane-cva2sch-20120423-1830z/utility/xslt.sh UBL_1_6_2_namespace_constrain
 # step 4, Transform the final schematron file into an XSLT.
 sh ../Crane-cva2sch-20120423-1830z/utility/xslt.sh output/Invoice-Genericode.sch ../Crane-cva2sch-20120423-1830z/utility/Message-Schematron-terminator.xsl output/Invoice-Genericode.xsl
 
-cp output/Invoice-Genericode.xsl ../../../src/main/resources/nl/clockwork/digifact/ubl/1.6.2/.
+cp output/Invoice-Genericode.xsl ../../../src/main/resources/nl/clockwork/efactuur/nl/domain//ubl/1.6.2/.
 
 rm -rf output

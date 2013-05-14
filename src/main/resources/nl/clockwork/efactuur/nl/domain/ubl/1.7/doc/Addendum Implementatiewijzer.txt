@@ -1,0 +1,13 @@
+Addendum bij sectie 5.4 van de Implementatiewijzer DigiInkoop NL UBL v1.7
+=========================================================================
+
+In de Digipoort wordt, vanuit beheer en performance overwegingen, over het algemeen niet gecontroleerd op de toegestane waarden in de door UBL geleverde GeneriCode bestanden.
+De identificerende attributen, zoals @listID, @listAgencyID, etc., worden waar van toepassing over het algemeen wel expliciet gecontroleerd.
+De specifieke Nederlandse lijsten die door DigiInkoop zijn toegevoegd bevatten telkens een beperkte set van toegestane waarden,
+die wel expliciet gecontroleerd worden.
+In de Excel bestanden die ter documentatie zijn toegevoegd (*_configuratie.xls) is terug te vinden welke controles met behulp van Schematron in de Digipoort worden uitgevoerd.
+
+Het is echter toegestaan dat een verwerkende applicatie de controles op toegestane waarden alsnog uitvoert op basis van de meegeleverde GeneriCode lijsten en bijvoorbeeld het CVA bestand.
+Een valide bericht dient daarom altijd uitsluitend gebruik te maken van de toegestane waarden in de corresponderende GeneriCode lijst,
+ook als deze volgens het Excel document niet expliciet met behulp van Schematron worden gecontroleerd door de Digipoort.
+
