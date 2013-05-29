@@ -44,20 +44,51 @@
 
 	<xsl:template name="header">
 		<fo:block>
-			BerichtSoort: <xsl:value-of select="$bericht_soort"/>
+			<fo:table>
+				<fo:table-column column-width="50%"/>
+				<fo:table-column column-width="50%"/>
+				<fo:table-body>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="left">
+								BerichtSoort: <xsl:value-of select="$bericht_soort"/>
+							</fo:block>			
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="right">
+								Berichtnummer: <xsl:value-of select="$message_id"/>
+							</fo:block>
+						</fo:table-cell>
+												
+					</fo:table-row>
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="left">
+								Invoice Formaat : <xsl:value-of select="$message_format"/> <xsl:value-of select="$message_version"/>
+							</fo:block>							
+						</fo:table-cell>
+						<fo:table-cell>
+							<fo:block text-align="right">
+								Ontvangst Digipoort: <xsl:value-of select="format-dateTime($message_date,$date_time_format)"/>
+							</fo:block>
+						</fo:table-cell>																	
+					</fo:table-row>
+
+					<fo:table-row>
+						<fo:table-cell>
+							<fo:block text-align="right" font-weight="bold">
+								<xsl:value-of select="/bericht/factuur/factuurtype"/> Factuur
+							</fo:block>							
+						</fo:table-cell>												
+						<fo:table-cell>
+							<fo:block text-align="right">
+							</fo:block>
+						</fo:table-cell>										
+					</fo:table-row>										
+				</fo:table-body>
+			</fo:table>
 		</fo:block>
-		<fo:block>
-			Berichtnummer: <xsl:value-of select="$message_id"/>
-		</fo:block>
-		<fo:block>
-			Ontvangst Digipoort: <xsl:value-of select="format-dateTime($message_date,$date_time_format)"/>
-		</fo:block>
-		<fo:block>
-			Invoice Formaat : <xsl:value-of select="$message_format"/> <xsl:value-of select="$message_version"/>
-		</fo:block>
-		<fo:block text-align="right" font-weight="bold">
-			<xsl:value-of select="/bericht/factuur/factuurtype"/> Factuur
-		</fo:block>
+
 	</xsl:template>
 
 	<xsl:template name="footer">
@@ -427,9 +458,14 @@
 							<fo:inline font-style="italic">
 								(Zie Bijlage <xsl:value-of select="@bijlage"/>)
 							</fo:inline>
-  					</fo:basic-link>
+  						</fo:basic-link>
 					</xsl:if>
 				</fo:block>
+				<xsl:for-each select="extra_omschrijving/omschrijving_regel">
+					<fo:block>
+						<xsl:value-of select="."/>
+					</fo:block>
+				</xsl:for-each>
 			</fo:table-cell>
 			<fo:table-cell text-align="right" xsl:use-attribute-sets="factuur-table-cell">
 				<fo:block>

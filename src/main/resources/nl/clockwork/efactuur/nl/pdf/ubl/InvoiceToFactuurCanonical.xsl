@@ -47,6 +47,9 @@
 			<indicatie_kopie>
 				<xsl:value-of select="in:Invoice/cbc:CopyIndicator" />
 			</indicatie_kopie>
+			<plaatsingadres>
+				<xsl:apply-templates select="in:Invoice/cac:DeliveryTerms/cac:DeliveryLocation/cac:Address"/>				
+			</plaatsingadres>
 			<omschrijving>
 				<xsl:if test="in:Invoice/cac:OrderReference/cbc:CustomerReference!=''">
 					<item>
@@ -107,10 +110,25 @@
 					<xsl:otherwise>
 						<xsl:value-of select="cac:Item/cbc:Name" />
 					</xsl:otherwise>
-				</xsl:choose>
-				Ref:
-				<xsl:value-of select="cac:OrderLineReference/cac:OrderReference/cbc:ID" />
+				</xsl:choose>				
 			</omschrijving>
+			<extra_omschrijving>	
+				
+				<xsl:if test="cac:OrderLineReference/cac:OrderReference/cbc:ID != ''">
+					Ref: <xsl:value-of select="cac:OrderLineReference/cac:OrderReference/cbc:ID" />
+				</xsl:if>
+								
+				<xsl:if test="cac:Item/cbc:AdditionalInformation != ''">
+					<omschrijving_regel>
+						<xsl:value-of select="cac:Item/cbc:AdditionalInformation"/>
+					</omschrijving_regel>
+				</xsl:if>
+				<xsl:for-each select="cac:Item/cac:AdditionalItemProperty">
+					<omschrijving_regel>
+						<xsl:value-of select="cbc:Name"/>: <xsl:value-of select="cbc:Value"/>
+					</omschrijving_regel>				
+				</xsl:for-each>	
+			</extra_omschrijving>
 			<bedrag>
 				<prijs>
 					<xsl:attribute name="currency">
