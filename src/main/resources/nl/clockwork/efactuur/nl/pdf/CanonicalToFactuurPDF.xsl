@@ -45,8 +45,8 @@
 	<xsl:template name="header">
 		<fo:block>
 			<fo:table>
-				<fo:table-column column-width="50%"/>
-				<fo:table-column column-width="50%"/>
+				<fo:table-column column-width="30%"/>
+				<fo:table-column column-width="70%"/>
 				<fo:table-body>
 					<fo:table-row>
 						<fo:table-cell>
