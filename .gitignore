@@ -1,9 +1,5 @@
-derby.log
-target/*
-#resources/
-.project
+target
 .classpath
-.settings/*
-H:/*
-activemq/*
-/target
+.project
+.settings
+resources/
