@@ -822,7 +822,16 @@
 	 						<fo:block>Referentienummer</fo:block>
 	 					</fo:table-cell>
 	 					<fo:table-cell>
-	 						<fo:block><xsl:value-of select="nl:AdditionalData/nl:StaffingAdditionalData/nl:CustomerReportingRequirements/nl:CustomerReferenceNumber"/></fo:block>
+		 						<fo:block>
+		 							<xsl:choose>		 							
+			 							<xsl:when test="nl:AdditionalData/nl:StaffingAdditionalData/nl:CustomerReportingRequirements/nl:CustomerReferenceNumber!=''">
+			 								<xsl:value-of select="nl:AdditionalData/nl:StaffingAdditionalData/nl:CustomerReportingRequirements/nl:CustomerReferenceNumber"/>
+			 							</xsl:when>
+			 							<xsl:otherwise>
+				 							<xsl:value-of select="/nl:Invoice/nl:Header/nl:UserArea/nl:StaffingAdditionalData/nl:CustomerReportingRequirements/nl:CustomerReferenceNumber"/>
+			 							</xsl:otherwise>
+		 							</xsl:choose>
+		 						</fo:block> 						
 	 					</fo:table-cell>
 	 				</fo:table-row>
 	 			</fo:table-body>
