@@ -1,43 +1,43 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>nl.clockwork</groupId>
-  <artifactId>efactuur-pdf-nl</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0.8-SNAPSHOT</version>
-  <name>efactuur-pdf-nl</name>
-  <url>http://maven.apache.org</url>
-    <distributionManagement>
-        <repository>
-            <id>maven.clockwork.nl</id>
-            <uniqueVersion>false</uniqueVersion>
-            <url>https://maven.clockwork.nl/nexus/content/repositories/releases/</url>
-        </repository>
-        <snapshotRepository>
-            <id>maven.clockwork.nl</id>
-            <uniqueVersion>false</uniqueVersion>
-            <url>https://maven.clockwork.nl/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
-    <developers>
-        <developer>
-            <id>b.vandriel</id>
-            <name>Bas van Driel</name>
-            <email>bas.van.driel@clockwork.nl</email>
-        </developer>
-        <developer>
-            <id>a.vandeursen</id>
-            <name>Aike van Deursen</name>
-            <email>aike.van.deursen@clockwork.nl</email>
-        </developer>
-        <developer>
-            <id>e.luinstra</id>
-            <name>Edwin Luinstra</name>
-            <email>edwin.luinstra@clockwork.nl</email>
-        </developer>
-    </developers>
-    <scm>
-        <connection>scm:git:git://git.clockwork.nl/dso/efactuur-pdf-nl.git</connection>
-    </scm>  
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>nl.clockwork</groupId>
+	<artifactId>efactuur-pdf-nl</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0.8-SNAPSHOT</version>
+	<name>efactuur-pdf-nl</name>
+	<url>http://maven.apache.org</url>
+	<distributionManagement>
+		<repository>
+			<id>maven.clockwork.nl</id>
+			<uniqueVersion>false</uniqueVersion>
+			<url>https://maven.clockwork.nl/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>maven.clockwork.nl</id>
+			<uniqueVersion>false</uniqueVersion>
+			<url>https://maven.clockwork.nl/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<developers>
+		<developer>
+			<id>b.vandriel</id>
+			<name>Bas van Driel</name>
+			<email>bas.van.driel@clockwork.nl</email>
+		</developer>
+		<developer>
+			<id>a.vandeursen</id>
+			<name>Aike van Deursen</name>
+			<email>aike.van.deursen@clockwork.nl</email>
+		</developer>
+		<developer>
+			<id>e.luinstra</id>
+			<name>Edwin Luinstra</name>
+			<email>edwin.luinstra@clockwork.nl</email>
+		</developer>
+	</developers>
+	<scm>
+		<connection>scm:git:git://git.clockwork.nl/dso/efactuur-pdf-nl.git</connection>
+	</scm>
 	<build>
 		<plugins>
 			<plugin>
@@ -53,11 +53,11 @@
 		</plugins>
 	</build>
 	<dependencies>
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.9</version>
-			</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.9</version>
+		</dependency>
 	</dependencies>
-	
+
 </project>
