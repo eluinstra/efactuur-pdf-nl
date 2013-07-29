@@ -36,7 +36,7 @@
 		</developer>
 	</developers>
 	<scm>
-		<connection>scm:git:git://git.clockwork.nl/dso/efactuur-pdf-nl.git</connection>
+		<connection>scm:git:ssh://git@git.clockwork.nl/dso/efactuur-pdf-nl.git</connection>
 	</scm>
 	<build>
 		<plugins>
