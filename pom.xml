@@ -51,7 +51,24 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<resources>
+			<!-- Only include relevant files in the build -->
+			<resource>
+				<directory>nl/clockwork/efactuur/nl</directory>
+				<excludes>
+					<!-- Exclude example xml's and documentation Excel sheets -->
+					<exclude>**/*.xls</exclude>
+					<exclude>**/*.xml</exclude>
+				</excludes>
+				<includes>
+					<!-- Include schema's and stylesheets -->
+					<include>**/*.xsd</include>
+					<include>**/*.xsl</include>					
+				</includes>
+			</resource>
+		</resources>
 	</build>
+
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
