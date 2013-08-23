@@ -58,12 +58,12 @@
 				<excludes>
 					<!-- Exclude example xml's and documentation Excel sheets -->
 					<exclude>**/*.xls</exclude>
-					<exclude>**/*.xml</exclude>
 				</excludes>
 				<includes>
 					<!-- Include schema's and stylesheets -->
 					<include>**/*.xsd</include>
-					<include>**/*.xsl</include>					
+					<include>**/*.xsl</include>
+					<include>**/*.xml</include>					
 				</includes>
 			</resource>
 		</resources>
