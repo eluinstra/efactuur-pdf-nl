@@ -54,9 +54,9 @@
 		<resources>
 			<!-- Only include relevant files in the build -->
 			<resource>
-				<directory />
+				<directory>src/main/resources</directory>
 				<excludes>
-					<!-- Exclude example xml's and documentation Excel sheets -->
+					<!-- Exclude documentation Excel sheets -->
 					<exclude>**/*.xls</exclude>
 				</excludes>
 				<includes>
