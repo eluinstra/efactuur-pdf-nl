@@ -54,7 +54,7 @@
 		<resources>
 			<!-- Only include relevant files in the build -->
 			<resource>
-				<directory>nl/clockwork/efactuur/nl</directory>
+				<directory></directory>
 				<excludes>
 					<!-- Exclude example xml's and documentation Excel sheets -->
 					<exclude>**/*.xls</exclude>
