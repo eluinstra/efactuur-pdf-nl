@@ -3,7 +3,7 @@
 	<groupId>nl.clockwork</groupId>
 	<artifactId>efactuur-pdf-nl</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.11-SNAPSHOT</version>
+	<version>1.0.11</version>
 	<name>efactuur-pdf-nl</name>
 	<url>http://maven.apache.org</url>
 	<distributionManagement>
@@ -54,7 +54,7 @@
 		<resources>
 			<!-- Only include relevant files in the build -->
 			<resource>
-				<directory></directory>
+				<directory />
 				<excludes>
 					<!-- Exclude example xml's and documentation Excel sheets -->
 					<exclude>**/*.xls</exclude>
