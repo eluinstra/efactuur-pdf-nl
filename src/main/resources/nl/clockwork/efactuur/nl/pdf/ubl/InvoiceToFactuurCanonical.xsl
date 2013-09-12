@@ -125,14 +125,15 @@
 					<xsl:otherwise>
 						<xsl:value-of select="cac:Item/cbc:Name" />
 					</xsl:otherwise>
-				</xsl:choose>				
+				</xsl:choose>
+						
 			</omschrijving>
-			<extra_omschrijving>	
-				
+			<extra_omschrijving>
 				<xsl:if test="cac:OrderLineReference/cac:OrderReference/cbc:ID != ''">
-					Ref: <xsl:value-of select="cac:OrderLineReference/cac:OrderReference/cbc:ID" />
-				</xsl:if>
-								
+					<omschrijving_regel>
+						Ref: <xsl:value-of select="cac:OrderLineReference/cac:OrderReference/cbc:ID" />
+					</omschrijving_regel>
+				</xsl:if>					
 				<xsl:if test="cac:Item/cbc:AdditionalInformation != ''">
 					<omschrijving_regel>
 						<xsl:value-of select="cac:Item/cbc:AdditionalInformation"/>
