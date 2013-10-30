@@ -1,0 +1,365 @@
+--------------------------------------
+| Releasenotes 1.8 UBL - DigiInkoop  |
+--------------------------------------
+De uiteindelijke 1.8 Release is gelijk aan 1.8-beta-03.
+
+Algemeen
+========
+o Versienummer is in alle berichten verhoogd naar 1.8 (in CustomizationID)
+
+o Controle op telefoon- en faxnummers (alleen cijfers en afbreekstreepjes) is verwijderd.
+  Het is hiermee mogelijk telefoonnummers op te voeren als '+31 (0)20 - 123 456 7' of zelfs '0900 - HELPDESK'.
+
+o Bugfix op controle dat als Vestigingsnummer is opgegeven Kamer van Koophandel nummer ook opgegeven moet worden.
+  Hier werden onterecht PartyIdentification elementen van verschillende Parties met elkaar vergeleken.
+
+o Twee codes toegevoegd aan DeliveryTermsCode.gc (en versienummer verhoogd naar 1.8):
+  DAT - Delivered At Terminal (Franco terminal)
+  DAP - Delivered At Place (Franco ter plaatse)
+
+o Controles opgenomen voor de attributen van 'CurrencyCode' elementen zodat deze naar de CurrencyCode GeneriCode lijst verwijzen:
+  - cbc:DocumentCurrencyCode in Invoice, Order en OrderResponse
+  - cbc:PricingCurrencyCode in Quotation en RequestForQuotation
+
+  Attributen:
+  - @listID         = ISO 4217 Alpha
+  - @listAgencyID   = 6
+  - @listAgencyName = United Nations Economic Commission for Europe
+  - @listName       = Currency
+  - @listVersionID  = 2001
+  - @listURI        = http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/cefact/CurrencyCode-2.0.gc
+  - @listSchemeURI  = urn:un:unece:uncefact:codelist:specification:54217
+
+Commitment, Order, OrderRespons
+===============================
+o Element doc:Xxx/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Name is ondersteund (cardinaliteit [0-0] waarmee 'niet ondersteund' werd aangegeven is verwijderd).
+  Vulling BTW categorie overeenkomstig gebruik in de invoice. Het element wordt wel in het invoice bericht gebruikt, maar de waarde waarmee het gevuld mag worden, gaven de berichten die tot een invoice leiden tot nu toe niet.
+  Het attribuut @languageID is conform Invoice niet ondersteund (cardinaliteit [0-0]).
+
+Commitment
+==========
+o Element doc:Commitment/nl-cac:CommitmentLine/cac:LineItem/cac:Delivery/cac:RequestedDeliveryPeriod/cbc:StartDate is verplicht gemaakt (cardinaliteit 1-1).
+o Element doc:Commitment/nl-cac:CommitmentLine/cac:LineItem/cac:Delivery/cac:RequestedDeliveryPeriod/cbc:EndDate is niet langer verplicht (terug naar cardinaliteit 0-1 volgens schema).
+
+o Nieuwe test:
+  Indien berichttype (doc:Commitment/cbc:ActionCode) waarde 'V' heeft moet de naam van de leverancier (cac:SellerSupplierParty/cac:Party/cac:PartyName/cbc:Name) worden opgegeven.
+  NB: een bestaande test (zie 1.8-beta-01) controleert al dat de SellerSupplierParty OF op document OF op iedere regel moet voor komen.
+
+o De cardinaliteit van PartyIdentification van SellerSupplierParty is aangepast van 0-2 naar 0-3.
+
+o De uitgevende partij voor de SellerSupplierParty mag ook 'KvK' of 'Vest' zijn.
+
+o SellerSupplierParty is toegevoegd aan de CommitmentLine zodat per regel de leverancier kan worden aangegeven.
+  Dezelfde restricties als op document niveau zijn toegepast op regelniveau.
+  
+  Op document niveau is de SellerSupplierParty niet langer verplicht.
+  Wel wordt gecontroleerd dat de SellerSupplierParty OF alleen op document niveau wordt opgegeven OF op ALLE regels.
+
+o Nieuw element CommitmentLineReference is toegevoegd aan de CommitmentLine zodat vanuit een 'harde' verplichting verwezen kan worden naar de corresponderende 'zachte' reservering.
+  Het type van het element is het bestaande UBL type 'cac:LineReferenceType' waarvan alleen de volgende onderdelen zijn toegestaan (beiden verplicht):
+  - cbc:LineID
+  - cac:DocumentReference/cbc:ID
+
+NB:
+Voor beide voorgaande wijzigingen is o.a. een nieuwe versie van het Nederlandse CommonAggregateComponents schema (UBL-CommonAggregateComponents-2.0-NL-1.8.xml) gemaakt.
+In het Nederlandse CommonBasicComponents schema (UBL-CommonBasicComponents-2.0-NL-1.7.xsd) zijn geen wijzigingen aangebracht. Daarom blijft hiervan de 1.7 versie in gebruik.
+
+DespatchAdvice
+==============
+o Expliciet gemaakt dat de attributen van doc:DespatchAdvice/cac:Shipment/cac:Delivery/cbc:TrackingID niet gebruikt worden, aangezien hier geen GeneriCode lijst voor beschikbaar is.
+  (@schemeID, @schemeName, @schemeAgencyID, @schemeAgencyName, @schemeVersionID, @schemeDataURI, @schemeURI)
+
+o Expliciet gemaakt dat de attributen van doc:DespatchAdvice/cac:DespatchLine/cbc:ID/ niet gebruikt worden, aangezien hier geen GeneriCode lijst voor beschikbaar is.
+  (@schemeID, @schemeName, @schemeAgencyID, @schemeAgencyName, @schemeVersionID, @schemeDataURI, @schemeURI)
+
+Invoice
+=======
+o Element doc:Invoice/cac:BillingReference/cac:InvoiceDocumentReference is niet langer verplicht.
+  Als doc:Invoice/cac:BillingReference is opgenomen moet deze een doc:Invoice/cac:BillingReference/cac:InvoiceDocumentReference of een doc:Invoice/cac:BillingReference/cac:DebitNoteDocumentReference bevatten, of beiden.
+
+o Een (voorstel) credit nota moet naar een debit nota verwijzen middels het doc:Invoice/cac:BillingReference/cac:DebitNoteDocumentReference element.
+  (was een verwijzing middels het doc:Invoice/cac:BillingReference/cac:InvoiceDocumentReference element)
+
+o Gebruik van het element AccountingCustomerParty/cbc:CustomerAssignedAccountID is toegestaan.
+  Conform de overige AccountID elementen zijn de attributen niet toegestaan.
+
+o Gebruik van het element doc:Invoice/cac:BillingReference/cac:DebitNoteDocumentReference is toestaan.
+  Restricties op attributen / sub-elementen zijn conform restricties op InvoiceDocumentReferences
+
+Order
+=====
+o Gebruik van het element AccountingCustomerParty/cbc:CustomerAssignedAccountID is toegestaan.
+  Conform de overige AccountID elementen zijn de attributen niet toegestaan.
+
+OrderResponse
+=============
+o Gebruik van het element AccountingCustomerParty/cbc:CustomerAssignedAccountID is toegestaan.
+  Conform de overige AccountID elementen zijn de attributen niet toegestaan.
+
+--------------------------------------
+| Releasenotes 1.7 UBL - DigiInkoop  |
+--------------------------------------
+De uiteindelijke 1.7 Release is gelijk aan Release Candidate 3.
+
+Versienummer is in alle berichten verhoogd naar 1.7 (in CustomizationID)
+
+Algemeen
+========
+o Het versienummer is verwijderd uit de namen van de XML voorbeeld berichten.
+
+o De XML voorbeeld berichten zijn waar nodig aangepast aan de gewijzigde controles en 'niet-ondersteunde' elementen (cardinaliteit [0-0]) zijn verwijderd.
+
+o In deze versie zijn wijzigingen noodzakelijk in de Nederlandse schema's.
+  Om de verschillende versies van schema's te kunnen onderscheiden wordt daarom het Nederlandse versienummer opgenomen in de bestandsnamen, hetgeen een 'breuk' geeft met de huidige naamgeving.
+  Ook de namespaces worden aangepast (deze bevatten al het Nederlandse versienummer dat wordt opgehoogd).
+   - Wijzigingen bestandsnamen:
+      UBL-NL-CommonAggregateComponents-2.0.xsd   -->  UBL-CommonAggregateComponents-2.0-NL-1.7.xsd
+      UBL-NL-CommonBasicComponents-2.0.xsd       -->  UBL-CommonBasicComponents-2.0-NL-1.7.xsd
+      UBL-NL-QualifiedDataTypes-2.0.xsd          -->  UBL-QualifiedDataTypes-2.0-NL-1.7.xsd
+
+o Versienummers en URIs van Nederlandse 'genericode' lijsten zijn verhoogd naar 1.7.
+  Dit is ook in de schematron controles aangepast
+   - ActionCode.gc
+   - DeliveryTermsCode.gc
+   - InvoiceTypeCode.gc
+   - NegotiationStyleCode.gc
+   - ResponseCode.gc
+
+o Juiste namespace voor 'gc' opgenomen bij ActionCode.gc en ResponseCode.gc
+
+o In deze versie is ter informatie een 'Context-Value Association' (CVA) bestand opgenomen (cva/UBL-DefaultDTQ-2.0-NL-1.7.cva).
+  Een CVA bestand relateert de genericode lijsten aan de elementen in berichten waarvoor de lijst van toepassing is.
+  Mogelijke toepassingen van een CVA bestand zijn:
+  - schematron validaties genereren voor de elementen gebaseerd op de genericode lijsten
+  - vulling genereren voor bijvoorbeeld 'drop-down' lijsten in een GUI.
+  In de UBL 2.0 standaard was geen CVA bestand  beschikbaar, de UBL 2.1 standaard heeft echter wel zo'n bestand waarin ook met terugwerkende kracht de UBL 2.0 lijsten en elementen zijn opgenomen.
+  Het bijgevoegde bestand is een aangepaste versie van het UBL 2.1 CVA bestand:
+   - Alle verwijzingen naar (met name UBL 2.1) codelijsten en/of elementen die niet in de release voor komen zijn verwijderd;
+   - Paden voor genericode bestanden zijn aangepast naar de paden in de release;
+   - De genericode lijsten voor Nederlandse uitbreidingen zijn toegevoegd;
+
+  NB: Het huidige bestand is alleen ter informatie.
+      De opzet in een volgende versie kan anders zijn (bijvoorbeeld een CVA bestand per bericht i.p.v. één voor alle berichten).
+
+o Het @schemeAgencyName attribuut voor partij identificatie heeft de toevoeging van de waarde 'Vest' (van Vestigingsnummer) gekregen.
+  De cardinaliteit voor het invoeren van partij identificerende nummers is van maximaal twee naar maximaal drie gegaan.
+  Er is een controle toegevoegd die controleert dat invoer van een 'Vest' identificatie vergezeld wordt met een 'KvK' identificatie.
+
+Invoice
+=======
+o Nieuwe extensie opgenomen voor 'stempeldatum':
+   - doc:Invoice/ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/cbc:ReceivedDate
+
+o cac:PhysicalLocation en onderliggende elementen / attributen toegestaan (met dezelfde restricties als in bijvoorbeeld Order) onder AccountingSupplierParty, AccountingCustomerParty en SellerSupplierParty.
+
+o De restrictie ([0-0] = niet ondersteund) op doc:Invoice/cac:PaymentMeans/cbc:PaymentDueDate is verwijderd waardoor de standaard cardinaliteit '0-1' gebruikt wordt.
+
+o Contactgegevens toegestaan voor AccountingCustomerParty en AccountingSupplierParty:
+   - doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/...
+   - doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact/...
+  Toegestaan met zelfde restricties als onder de andere Party elementen.
+
+o Verplichte verwijzing naar andere invoice bij (voorstel) creditnota:
+    - als doc:Invoice/cbc:InvoiceTypeCode de waarde 'C' (creditnota) of 'VC' (voorstel creditnota) heeft is doc:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID verplicht.
+  Aanvullend wordt gecontroleerd dat doc:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID niet leeg is als opgegeven.
+
+o Bij korting/toeslag op factuurniveau is het nu ook mogelijk belasting (m.n. BTW) op te geven:
+   - doc:Invoice/cac:AllowanceCharge/cac:TaxTotal
+  Toegevoegd als optioneel met dezelfde restricties op sub-elementen en attributen als TaxTotal op doc:Invoice dniveau.
+
+o Extra identificaties optioneel (cardinaliteit 0-1) toegestaan (waren met [0-0] aangegeven als niet ondersteund):
+   - doc:Order/cac:BuyerCustomerParty/cbc:CustomerAssignedAccountID
+   - doc:Order/cac:BuyerCustomerParty/cbc:AdditionalAccountID
+   - doc:Order/cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:ID
+  Dezelfde restricties op attributen als andere ID's
+
+Uitbreidingen/wijzigingen in Invoice n.a.v. semantisch model:
+o Uitbreiding InvoiceLine met invoice period
+  Omdat de InvoiceLine zelf geen extensiemechanisme kent is de toevoeging op document niveau gedaan:
+   - doc:Invoice/ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/nl-cac:InvoiceLine
+  De nl-cac:InvoiceLine kent twee elementen:
+   - cbc:ID
+     Deze identifier MOET verwijzen naar een ID van een cac:InvoiceLine
+   - cac:InvoicePeriod
+     Hierin wordt de periode opgegeven.
+     Het soort periode wordt met een DescriptionCode opgegeven.
+     Mogelijke waarden hiervoor staan in de nieuwe genericode lijst InvoicePeriodDescriptionCode.gc met op dit moment alleen de toegestane waarde 'D' voor 'delivery period'.
+  Dezelfde genericode lijst wordt ook gebruikt voor de DescriptionCode van de InvoicePeriod op document niveau.
+
+o Statutair adres optioneel toegevoegd bij de verschillende parties (NB: is in semantisch model verplicht):
+   - doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/RegistrationAddress toestaan
+   - doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/RegistrationAddress
+   - doc:Invoice/cac:BuyerCustomerParty/cac:Party/cac:PartyLegalEntity/RegistrationAddress
+   - doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/RegistrationAddress
+  De onderliggende elementen / attributen zijn gelijk gehouden aan de PostalAddress structuur
+
+o Vestigingsadres (optioneel) toevoegen bij de verschillende parties waar het nog niet was opgenomen:
+   - doc:Invoice/cac:BuyerCustomerParty/cac:Party/cac:PhysicalLocation
+  De onderliggende elementen / attributen zijn gelijk gehouden aan de structuur bij de parties waarbij het al was opgenomen
+
+o Afleveradres op regelniveau toevoegen (optioneel 1x):
+   - doc:Invoice/cac:InvoiceLine/cac:Delivery/cac:DeliveryAddress
+  De onderliggende elementen / attributen zijn gelijk gehouden aan de structuur van DeliveryAddress op document niveau.
+  Overige ondersteunde elementen onder Delivery op document niveau zijn als niet-ondersteund opgenomen.
+
+o Belasting gerelateerde elementen:
+   - Optioneel toestaan (stonden als 'niet-ondersteund' aangemerkt met [0-0])
+      - doc:Invoice/cac:AllowanceCharge/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Name
+      - doc:Invoice/cac:AllowanceCharge/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:BaseUnitMeasure
+      - doc:Invoice/cac:AllowanceCharge/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:PerUnitAmount
+      - doc:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Name
+      - doc:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:BaseUnitMeasure
+      - doc:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:PerUnitAmount
+      - doc:Invoice/cac:InvoiceLine/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:Name
+      - doc:Invoice/cac:InvoiceLine/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:BaseUnitMeasure
+      - doc:Invoice/cac:InvoiceLine/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cbc:PerUnitAmount
+  Attribuut @languageID onder cbc:Name is als niet-ondersteund aangemerkt conform vergelijkbare elementen.
+
+o Inconsistentie in AllowanceCharge op documentniveau versus regel niveau gelijk getrokken.
+  - doc:Invoice/cac:AllowanceCharge/cbc:ID wordt nu ook ondersteund.
+
+o In de genericode lijst InvoicePeriodDescriptionCode.gc is code 'I' toegevoegd voor 'InvoicePeriod'.
+
+ApplicationResponse
+===================
+o Twee mogelijke document types waarnaar gerefereerd kan worden: 'inkooporder' (Order) en 'bestellingsaanvraag' (Requisition):
+   - doc:ApplicationResponse/cac:DocumentResponse/cac:DocumentReference/cbc:DocumentType
+  Dit zijn de enige twee toegestane waarden.
+  Herhaal cac:DocumentResponse om beiden op te kunnen geven.
+
+Order
+=====
+o Extra identificaties optioneel (cardinaliteit 0-1) toegestaan (waren met [0-0] aangegeven als niet ondersteund):
+   - doc:Order/cac:BuyerCustomerParty/cbc:CustomerAssignedAccountID
+   - doc:Order/cac:BuyerCustomerParty/cbc:AdditionalAccountID
+   - doc:Order/cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:ID
+  Dezelfde restricties op attributen als andere ID's
+
+OrderResponse
+=============
+o Extra identificaties optioneel (cardinaliteit 0-1) toegestaan (waren met [0-0] aangegeven als niet ondersteund):
+   - doc:OrderResponse/cac:BuyerCustomerParty/cbc:CustomerAssignedAccountID
+   - doc:OrderResponse/cac:BuyerCustomerParty/cbc:AdditionalAccountID
+   - doc:OrderResponse/cac:BuyerCustomerParty/cac:Party/cac:Contact/cbc:ID
+  Dezelfde restricties op attributen als andere ID's
+
+Commitment
+==========
+o Aanpassing van een element, waardoor er een nieuwe versie is ontstaan:
+   - nieuwe bestandsnaam is "Commitment-NL-1.7.xsd"
+   - Namespace aangepast van "urn:digi-inkoop:ubl:2.0:NL:1.6:UBL-NL-Commitment-2" naar "urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-Commitment-2"
+   - OrderDocumentReference 'hernoemd' naar DocumentReference.
+   - Cardinaliteit DocumentReference aangepast naar 0-2
+o Wijziging in waarden voor ActionCode en validatie daarop in schematron
+   - ActionCode.gc aangepast: code 'C' (BudgetCheck) vervangen voor 'R' (Reservering)
+   - Controle op waarden ('R' of 'V') opgenomen voor ActionCode element.
+
+Meerdere berichten
+==================
+o Controle op OF Description OF (party)Identification/ID aangepast zodat beide ook mogelijk is:
+   - Commitment
+   - DespatchAdvice
+   - Invoice
+   - Order
+   - OrderResponse
+   - Quotation
+   - RequestForQuotation
+
+----------------------------------------
+| Releasenotes 1.6.3 UBL - DigiInkoop  |
+----------------------------------------
+
+Bugfixes
+========
+- Een Item element wordt geidentificeerd met OF een Identification OF een Description, maar NIET beiden.
+  Op een drietal plaatsen was de Description echter verplicht waardoor de Identification impliciet niet was toegestaan.
+  Deze verplichting is verwijderd:
+    - doc:OrderResponse/cac:OrderLine/cac:LineItem/cac:Item/cbc:Description
+    - doc:OrderResponse/cac:OrderLine/cac:SellerProposedSubstituteLineItem/cac:Item/cbc:Description
+    - doc:Quotation/cac:QuotationLine/cac:SellerProposedSubstituteLineItem/cac:Item/cbc:Description
+
+- De controle op Description vs Identifications was op twee plaatsen niet opgenomen,
+  deze is alsnog toegevoegd:
+    - doc:OrderResponse/cac:OrderLine/cac:SellerProposedSubstituteLineItem/cac:Item
+    -  doc:Commitment/nl-cac:CommitmentLine/cac:LineItem/cac:Item
+
+- Er zijn regels voor de inhoud van de @schemeAgencyID en @schemeAgencyName attributen van PartyIdentification/ID.
+  Deze mistten op twee plaatsen en zijn daar toegevoegd:
+    - doc:Order/cac:AccountingCustomerParty/cac:Party/cac:AgentParty/cac:PartyIdentification/cbc:ID
+    - doc:OrderResponse/cac:AccountingCustomerParty/cac:Party/cac:AgentParty/cac:PartyIdentification/cbc:ID
+
+Wijzigingen
+===========
+Er is een wijziging doorgevoerd op DespatchAdvice.
+De mogelijkheid een partij te identificeren middels een PartyIdentification/ID is toegevoegd voor:
+    - DespatchSupplierParty
+    - DeliveryCustomerParty
+
+Documentatie
+============
+Zoals in de Implementatiewijzer beschreven worden business rules van DigiInkoop gecontroleerd door middel van de regels in de schematron bestanden.
+Een groot deel van deze controles stond al beschreven in de Implementatiewijzer.
+De regels die nog niet (volledig) beschreven waren zijn in deze versie toegevoegd of aangevuld:
+- Verplichte elementen
+- Adresgegevens
+- Onderhandelingsstijl
+- Factuursoort
+- Product omschrijvingen
+- Telefoon- en faxnummers
+- Datumformaten
+- Maximale lengte cbc:ID
+- Overige controles factuur
+
+Toelichting op de opbouw van Excel's en Schematron bestanden
+============================================================
+De Excel en schematron bestanden van 1.6.3 zijn met behulp van nieuwe tooling gegenereerd.
+Dat geeft een aantal verschillen die hieronder kort worden toegelicht.
+
+Nieuwe kolommen in Excel
+------------------------
+De Excel bestanden bevatten een aantal nieuwe kolommen:
+- Nr                     : Een volgnummer volgens de structuur van het XSD Schema.
+                           Dit kan gebruikt worden om deze volgorde te herstellen nadat op een andere kolom gesorteerd was.
+- XSD node               : Indicatie van het type node op de regel:
+                           - root
+						     Hiermee wordt het ‘root’ element van een bericht aangegeven.
+							 Dat zal impliciet ook een ‘complexType’ zijn.
+                           - complexType
+						     Een complex type is een element dat zelf weer andere elementen bevat.
+							 Over het algemeen zal hierin geen waarde worden opgegeven.
+                           - element
+						     Dit geeft een element aan dat geen andere elementen meer bevat (dus geen ‘complexType’).
+							 Over het algemene zal hierin een waarde worden opgegeven.
+                           - in choice
+						     Een choice geeft aan dat er volgens het XML Schema gekozen kan worden tussen elementen.
+							 Voornaamste gevolg hiervan is dat de minOccurs van de cardinaliteit van ieder element in de choice effectief op 0 wordt gezet.
+							 Mogelijk moet er wel verplicht één van de elementen in een choice gekozen worden, dat kan echter niet in de Excel worden weergegeven.
+                           - circulair
+						     Een element dat circulair is bevat zichzelf weer als kind (eventueel met een aantal tussenliggende voorkomens).
+							 Dit kan niet in Excel worden weergegeven aangezien de structuur in theorie oneindig diep kan worden.
+							 Vanaf het derde voorkomen wordt zo’n element daarom ‘afgekapt’.
+                           - trimmed
+						     Het is mogelijk in de applicatie elementen op te geven die ook moeten worden 'afgekapt'.
+							 Voor UBL is dat gedaan voor niet ondersteunde elementen.
+							 Deze elementen hebben ook de cardinaliteit [0-0] gekregen in de DigiInkoop cardinaliteit kolom.
+                           - attribute
+						     Met dit type wordt een attribuut van een element aangegeven.
+							 Hierin kan/moet veelal een waarde worden opgegeven.
+- Element                : De naam van het element, het laatste deel van het XPath, ingesprongen volgens de structuur van het bericht.
+- Type UBL               : Het type van een element / attribuut volgens de UBL XSD schemas.
+- Definitie UBL          : De definitie van een element / attribuut zoals beschreven in de UBL XSD schemas.
+- Test DigiInkoop        : Controles ivm 'business rules' worden in deze kolom beschreven.
+                           Het formaat van deze kolom is over het algemeen een 'technische' beschrijving van de controle.
+						   De uitleg is terug te vinden in de Implementatiewijzer.
+- Definitie DigiInkoop   : In deze kolom kan een aanvullende definitie van DigiInkoop worden opgenomen.
+                           In de huidige versie wordt deze kolom slechts zeer beperkt gebruikt
+- Verwijzing DigiInkoop  : Een kolom waarin een verwijzing naar aanvullende documentatie kan worden opgenomen.
+                           Wordt in de huidige versie niet gebruikt.
+- Opmerking(en)          : Een kolom voor algemene opmerkingen bij een regel.
+                           Wordt in de huidige versie niet gebruikt.
+
+
+Afwijkingen in gegenereerde schematron
+--------------------------------------
+De schematron die gegenereerd wordt wijkt af van de vorige versie.
+Het gaat in alle gevallen om een afwijking in de (technische) opbouw van de schematron die functioneel geen invloed heeft.

@@ -1,0 +1,357 @@
+---------------------------------------
+| ReleaseNotes HR-XML/SETU/EBF 1.8.1  |
+---------------------------------------
+De uiteindelijke 1.8.1 Release is gelijk aan 1.8.1-beta-01.
+
+Wijzigingen in documentatie:
+o In Invoice_configuratie.xls zijn kolommen toegevoegd voor Cardinaliteit en Naam in het Semantisch Model
+
+o Leeswijzer
+  - Het gebruik van het identificatienummer van leverancier en klantnummer is verduidelijkt. (Paragraaf5.2)
+  - Verduidelijking van hoe de PurchaseorderLineItem in te vullen. (Paragrafen 5.8 en 5.9)
+
+-------------------------------------
+| ReleaseNotes HR-XML/SETU/EBF 1.8  |
+-------------------------------------
+De uiteindelijke 1.8 Release is gelijk aan Release Candidate 3.
+
+Versienummer in alle berichten verhoogd naar 1.8
+
+De XML voorbeeld berichten zijn waar nodig aangepast aan de gewijzigde controles en 'niet-ondersteunde' elementen (cardinaliteit [0-0]) zijn verwijderd.
+
+StaffingOrder:
+o hrxml:StaffingOrder/hrxml:StaffingPosition/hrxml:Rates beperking (maxOccurs=2) is verwijderd (waardoor de standaard maxOccurs=N weer van toepassing is)
+ (zal in SETU 1.2 ook worden aangepast)
+o hrxml:StaffingOrder/hrxml:StaffingPosition/hrxml:Rates/@rateStatus naast 'proposed' is nu ook 'agreed' als waarde toegestaan.
+o hrxml:StaffingOrder/hrxml:StaffingPosition/hrxml:CustomerReportingRequirements/hrxml:PurchaseOrderLineItem van [0-0] terug naar de HR-XML 0-1 cardinaliteit
+
+Invoice:
+o Indicatie niet gebruikt ([0-0] cardinaliteit) verwijderd voor:
+   - oagis:Invoice/oagis:Line/oagis:UserArea/hrxml:StaffingAdditionalData/hrxml:CustomerReportingRequirements/hrxml:PurchaseOrderLineItem
+   - oagis:Invoice/oagis:Line/oagis:Line/oagis:UserArea/hrxml:StaffingAdditionalData/hrxml:CustomerReportingRequirements/hrxml:PurchaseOrderLineItem
+Wijzigingen n.a.v. Semantisch Factuurmodel:
+Elementen toestaan / ondersteunen die eerder niet ondersteund werden.
+Dwz: cardinaliteit van [0-0] terug naar de HR-XML cardinaliteit:
+o CustomerReportingRequirements op Line(/Line) niveau met onderliggende elementen:
+   - oagis:Invoice/oagis:Line[/oagis:Line]/oagis:UserArea/hrxml:StaffingAdditionalData/hrxml:CustomerReportingRequirements
+  De onderliggende elementen die op Header niveau niet ondersteund worden zijn ook op Line(/Line) niveau niet ondersteund,
+  met uitzondering van PurchaseOrderLineItem die op Line(/Line) niveau wel is ondersteund.
+o Omschrijving en codelijst TransportationTerms op Line(/Line) niveau toegestaan (van [0-0] naar de HR-XML cardinaliteiten):
+   - oagis:Invoice/oagis:Line[/oagis:Line]/oagis:TransportationTerm/oagis:TermCode
+   - oagis:Invoice/oagis:Line[/oagis:Line]/oagis:TransportationTerm/oagis:FreightTerms
+o PaymentMethod van BillToParty:
+   - oagis:Invoice/oagis:Header/oagis:Parties/oagis:BillToParty/oagis:PaymentMethod nu [0-0], moet toegestaan worden (eigenlijk 0-N maar HR staat maar 0-1 toe).
+o Description op Charge en TotalCharge op header niveau (inclusief bovenliggende elementen waar deze niet waren ondersteund):
+   - oagis:Invoice/oagis:Header/oagis:Charges/oagis:Charge/oagis:Description
+   - oagis:Invoice/oagis:Header/oagis:Charges/oagis:TotalCharge/oagis:Description
+o Description op TotalCharge op Line(/Line) niveau:
+   - oagis:Invoice/[oagis:Line]/oagis:Line/oagis:Charges/oagis:TotalCharge/oagis:Description optioneel toestaan
+o Total en Description bij Allowance op Header en Line(/Line) niveau:
+   - oagis:Invoice/oagis:Header/oagis:Allowance/oagis:Total
+   - oagis:Invoice/oagis:Header/oagis:Allowance/oagis:Description
+   - oagis:Invoice/oagis:Line/oagis:Allowance/oagis:Total
+   - oagis:Invoice/oagis:Line/oagis:Allowance/oagis:Description
+
+TimeCard:
+o Beperking op Allowance maximaal twee maal (cardinaliteit 0-2) verwijderd zodat de HR-XML cardinaliteit (0-N = onbeperkt) weer geldt.
+  (Dit wijkt af van SETU 1.1 maar komt wel overeen met een wijziging in SETU 1.2)
+   - hrxml:TimeCard/hrxml:ReportedTime/hrxml:TimeInterval/hrxml:Allowance
+   - hrxml:TimeCard/hrxml:ReportedTime/hrxml:Allowance
+
+Algemeen:
+o Het @idOwner attribuut voor partij identificatie heeft de toevoeging van de waarde 'Vest' (van Vestigingsnummer) gekregen.
+  Er is een controle toegevoegd die controleert dat invoer van een 'Vest' identificatie vergezeld wordt van een 'KvK' identificatie.
+
+
+--------------------------------------
+| ReleaseNotes HR-XML/SETU/EBF 1.7   |
+--------------------------------------
+Versienummer in alle berichten naar 1.7
+
+HumanResource/UserArea/HumanResourceAdditionalNL/OfferId is verplicht, maar wordt (als voorschot op SETU 1.2) optioneel indien HumanResource/HumanResourceStatus/@status = 'x:Confirmed' of 'x:Assigned'
+HumanResource/ReferenceInformation/StaffingCustomerId geen directe controle op cardinaliteit, alleen via unieke voorkomens van @idOwner 
+HumanResource/ReferenceInformation/StaffingCustomerOrgUnitId geen directe controle op cardinaliteit, alleen via unieke voorkomens van @idOwner
+HumanResource/ReferenceInformation/StaffingSupplierId geen directe controle op cardinaliteit, alleen via unieke voorkomens van @idOwner
+HumanResource/Profile/Resume/NonXMLResume vervalt, wordt: HumanResource/Profile/Resume/StructuredXMLResume
+HumanResource/Profile/Resume/NonXMLResume/SupportingMaterials vervalt, wordt: HumanResource/Profile/Resume/StructuredXMLResume/SupportingMaterials
+HumanResource/Profile/Resume/NonXMLResume/SupportingMaterials/AttachmentReference vervalt, wordt: HumanResource/Profile/Resume/StructuredXMLResume/SupportingMaterials/AttachmentReference
+HumanResource/Profile/Resume/NonXMLResume/SupportingMaterials/AttachmentReference/@mimeType vervalt, wordt: HumanResource/Profile/Resume/StructuredXMLResume/SupportingMaterials/AttachmentReference/@mimeType
+HumanResource/Profile/Resume/NonXMLResume/SupportingMaterials/Description vervalt, wordt: HumanResource/Profile/Resume/StructuredXMLResume/SupportingMaterials/Description
+HumanResource/UserArea/HumanResourceAdditionalNL/CustomerReportingRequirements/CostCenterCode van verplicht naar optioneel
+
+StaffingOrder/ReferenceInformation/StaffingCustomerId geen directe controle op cardinaliteit, alleen via unieke voorkomens van @idOwner
+StaffingOrder/ReferenceInformation/StaffingCustomerOrgUnitId geen directe controle op cardinaliteit, alleen via unieke voorkomens van @idOwner
+StaffingOrder/ReferenceInformation/StaffingSupplierId geen directe controle op cardinaliteit, alleen via unieke voorkomens van @idOwner
+StaffingOrder/StaffingPosition van 1-N naar 1-1
+StaffingOrder/StaffingPosition/CustomerReportingRequirements/CostCenterCode van verplicht naar optioneel
+
+TimeCard/AdditionalData/StaffingAdditionalData/ReferenceInformation/StaffingCustomerId geen directe controle op cardinaliteit, alleen via unieke voorkomens van @idOwner
+TimeCard/AdditionalData/StaffingAdditionalData/ReferenceInformation/StaffingCustomerOrgUnitId geen directe controle op cardinaliteit, alleen via unieke voorkomens van @idOwner
+TimeCard/AdditionalData/StaffingAdditionalData/ReferenceInformation/StaffingSupplierId geen directe controle op cardinaliteit, alleen via unieke voorkomens van @idOwner
+
+Nieuwe controle:
+TimeCard/AdditionalData/StaffingAdditionalData/CustomerReportingRequirements/PurchaseOrderNumber OF TimeCard/AdditionalData/StaffingAdditionalData/ReferenceInformation/AssignmentId MOET ingevuld worden
+TimeCard/ReportedTime/TimeEvent (en al zijn kinderen) zijn NIET toegestaan.
+TimeCard als onderdeel van van Invoice MOET aan dezelfde controles voldoen als TimeCard solo bericht; uitzondering: VersionId als AdditionalRequirement
+
+Invoice/.../Price moet OF op Line OF op Line/Line niveau worden opgegeven
+Invoice/Header/UserArea/StaffingAdditionalData/CustomerReportingRequirements/PurchaseOrderLineItem is NIET toegestaan
+
+Vervallen controle:
+Invoice/.../TotalCharge maximaal op twee van de niveaus (Header, Line, Line/Line)
+Invoice/.../Tax maximaal op twee van de niveaus (Header, Line, Line/Line)
+
+TimeCard/ReportedTime/TimeInterval is niet langer verplicht.
+NB: vanuit XML Schema is het wel verplicht OF een TimeInterval OF een Allowance op te nemen.
+
+Nieuwe controle:
+Invoice/Header/Tax is verplicht indien .../Tax op Line en/of Line/Line voorkomt.
+
+Aangepaste controle:
+.../AdditionalRequirement/@requirementTitle MOET ALLEEN 'VersionId' bevatten. Gewijzigd in: MOET MINSTENS 'VersionId'  bevatten.
+
+De Excel en schematron bestanden van 1.7 zijn met nieuwe tooling gegenereerd.
+Dat geeft een aantal verschillen die hieronder worden toegelicht.
+
+-----------------------------------------
+cardinaliteit van elementen in een choice
+-----------------------------------------
+In de vorige versies werd voor elementen in een choice de cardinaliteit getoond (in HR-XML kolom) van het element zonder de choice daarin te betrekken.
+Zo'n element was in de oude Excel ook niet als zodanig herkenbaar.
+
+In de nieuwe versie wordt de cardinaliteit van de choice meegenomen in die van het element:
+ - de minOccurs wordt '0'
+ - de maxOccurs wordt 'N' als één van beiden 'N' was
+ - de maxOccurs wordt vermenigvuldigd als beiden niet 'N' waren
+ Voorbeelden:
+  - een choice met cardinaliteit 1-N met daarin twee elementen met cardinaliteit '1-1' zal in de nieuwe versie '0-N' geven.
+  - een choice met cardinaliteit 1-1 met daarin twee elementen met cardinaliteit '1-1' zal in de nieuwe versie '0-1' geven.
+  - een choice met cardinaliteit 1-2 met daarin twee elementen met cardinaliteit '1-1' zal in de nieuwe versie '0-2' geven.
+
+Ook is zo'n element nu herkenbaar aan de tekst 'in choice' in de tweede kolom.
+
+Deze wijziging heeft alleen invloed op de representatie van het (HR-XML) schema in Excel. Het leidt niet tot wijzigingen in de schematron.
+
+--------------------------------------
+Afwijkingen in gegenereerde schematron
+--------------------------------------
+De schematron die gegenereerd wordt kan hier en daar afwijken van de vorige versie.
+Het gaat in alle gevallen om een afwijking in de (technische) opbouw van de schematron die functioneel geen invloed heeft.
+Voorbeelden:
+  - Een combinatie van Code: [X, Y, Z] | Empty bevat in de nieuwe versie twee maal een empty() test (de eerste vanuit de Code en de tweede vanuit de Empty)
+  - Een pattern dat geen rules bevat wordt in de nieuwe versie niet meer opgenomen in de schematron
+  - De volgorde van rules / asserts kan mogelijk afwijken
+  - Teksten van meldingen in de assertions wijken af
+
+----
+SETU
+----
+De nieuwe tooling maakt in de Excels onderscheid tussen aanpassingen / beperkingen o.b.v. SETU en Digi-Inkoop regels.
+In de vorige versie werden alle aanpassingen / beperkingen in dezelfde kolommen getoond.
+
+Bij het 'splitsen' van de gegevens over SETU en Digi-Inkoop kolommen zijn de gegevens opnieuw vergeleken met de SETU handleidingen.
+Daarbij is een aantal omissies en een aantal onterechte beperkingen aan het licht gekomen.
+Deze zijn in de 1.7 versie gecorrigeerd wat (functionele) afwijkingen in de gegenereerde schematron tot gevolg heeft.
+
+Concreet betreft het de volgende wijzigingen:
+HumanResource:
+- Verwijderde controles
+  - Profile/Resume/StructuredXMLResume/EducationHistory/SchoolOrInstitution was maximaal 1 keer
+  - ReferenceInformation/StaffingCustomerOrgUnitId/IdValue/@name moest leeg zijn
+  - UserArea/HumanResourceAdditionalNL/StaffingShift/Id/IdValue was maximaal 2 keer
+  - Profile/Resume/StructuredXMLResume/EducationHistory/SchoolOrInstitution/Degree was maximaal 1 keer
+  - ReferenceInformation/StaffingCustomerOrgUnitId/IdValue was maximaal 1 keer
+- Aangepaste controles:
+  - Profile/Resume/StructuredXMLResume/EducationHistory/SchoolOrInstitution/LocalInstitutionClassification/Id/@idOwner andere waarden dan opgegeven lijst zijn ook toegestaan, dus effectief geen controle meer
+  - Rates/Class Empty optie is aangevuld met code lijst [TimeInterval, timeInterval, Allowance, allowance, Expense, expense]
+- Toegevoegde controles:
+  - Profile/Resume/StructuredXMLResume/EmploymentHistory/EmployerOrg/EmployerContactInfo/PersonName/FamilyName/@primary toegevoegde Code lijst [true, false]
+  - ResourceInformation/EntityContactInfo/PersonName/FamilyName/@primary toegevoegde Code lijst [true, false]
+  - UserArea/HumanResourceAdditionalNL/SupplierContactInfo/PersonName/FamilyName/@primary toegevoegde Code lijst [true, false]
+  - UserArea/HumanResourceAdditionalNL/StaffingShift/Id moet leeg zijn
+
+Invoice:
+- Toegevoegde controles:
+  - Header/Parties verplicht ivm verplichting onderliggende elementen
+
+StaffingOrder:
+- Verwijderde controles
+  - UserArea/StaffingOrderAdditionalNL/StructuredXMLResume/Qualifications/Competency was maximaal 2 keer
+- Aangepaste controles:
+  - OrderClassification/@orderType Order met hoofdletter toegevoegd aan Code lijst
+  - StaffingPosition/PositionHeader/ShiftWork/Description Code lijst was suggestie en niet compleet, dus ook andere waarden toegestaan en effectief geen controle meer
+- Toegevoegde controles:
+  - UserArea/StaffingOrderAdditionalNL/StructuredXMLResume/EducationHistory/SchoolOrInstitution/Degree maximaal 1 keer
+
+TimeCard:
+- Verwijderde controles
+  - ApprovalInfo/Person/Id/IdValue was maximaal 1 keer
+  - ReportedTime/TimeEvent/Id/IdValue was maximaal 1 keer
+  - ReportedTime/TimeEvent/RateOrAmount/@type had een code lijst
+  - ReportedTime/TimeInterval/AdditionalData was maximaal en minimaal 1 keer
+  - SubmitterInfo/Person/Id/IdValue was maximaal 1 keer
+- Aangepaste controles:
+  - ReportedResource/Person/Id/@idOwner behalve de lijst van codes ook toegestaan leeg te laten
+  - ReportedTime/TimeInterval/Id/IdValue/@name code lijst ipv Empty
+- Toegevoegde controles:
+  - ReportedTime/Allowance maximaal 2 keer
+  - ReportedTime/TimeInterval/Allowance maximaal 2 keer
+  - ReportedTime/Expense is niet toegestaan
+  - TimeCard/ReportedTime/Allowance/Id/IdValue maximaal 1 keer
+  - ReportedTime/TimeInterval/Allowance/Id verplicht want onderliggend element verplicht
+
+------
+Overig
+------
+De code lijst voor StaffingOrder/CustomerReportingRequirements/AdditionalRequirement/@requirementTitle is geen strikte lijst meer, overige waarden zijn ook toegestaan dus effectief geen controle meer.
+
+Met behulp van een cardinaliteit met vierkante haken [0-0] wordt in de Excels aangegeven welke elementen / attributen door DigiInkoop niet verwerkt worden.
+
+Verwijzingen naar het xml.xsd bestand van W3C zijn in de .xsd bestanden van HR-XML gewijzigd:
+- van een URL (http://www.w3.org/2004/10/xml.xsd) naar een locale versie (../W3C/xml.xsd).
+Doel is het voorkomen van 'externe' verwijzingen in de .xsd bestanden.
+
+--------------------------------------
+| ReleaseNotes HR-XML/SETU/EBF 1.6.4 |
+--------------------------------------
+TimeCard/ReportedTime/TimeEvent/@type controle vervalt, alle waarden zijn toegestaan.
+HumanResource/Rates/Amount/@rateAmountPeriod enumeratie waarde x:hourlySplit gecorrigeerd naar x:hourlysplit.
+HumanResource/HumanResourceStatus/@status enumeratie waarden New, Revised, Pending, Accepted, Withdrawn, Rejected geschrapt.
+HumanResource/ResourceInformation/PersonName/Affix/@type enumeratie waarden AristocraticTitle, FormOfAddress, Generation, Qualification geschrapt.
+HumanResource/ResourceInformation/EntityContactInfo/PersonName/Affix/@type enumeratie waarden AristocraticTitle, FormOfAddress, Generation, Qualification geschrapt.
+HumanResource/Rates/@rateType enumeratie waarden Bill, Pay, MinPayRate, MaxPayRate, MinBillRate, MaxBillRate geschrapt.
+HumanResource/Rates/@rateStatus	enumeratie waarde Proposed geschrapt.
+HumanResource/Rates/Amount/@rateAmountPeriod enumeratie waarden	Hourly, Daily, Weekly, Monthly, Yearly geschrapt.
+HumanResource/Profile/Resume/StructuredXMLResume/EmploymentHistory/EmployerOrg/EmployerContactInfo/PersonName/Affix/@type enumeratie waarden AristocraticTitle, FormOfAddress, Generation, Qualification geschrapt.
+HumanResource/UserArea/HumanResourceAdditionalNL/StaffingShift/@shiftPeriod enumeratie waarde Weekly geschrapt.
+HumanResource/UserArea/HumanResourceAdditionalNL/SupplierContactInfo/PersonName/Affix/@type enumeratie waarden AristocraticTitle, FormOfAddress, Generation, Qualification geschrapt.
+Invoice/Header/Type enumeratie waarden debit, credit, both geschrapt.
+StaffingOrder/OrderClassification/@orderStatus enumeratie waarden New, Revised, Closed, Reopened, Cancelled geschrapt.
+StaffingOrder/OrderClassification/@orderType enumeratie waarden rfq, Order geschrapt.
+StaffingOrder/StaffingPosition/Rates/@rateType enumeratie waarden Bill, Pay, MinPayRate, MaxPayRate, MinBillRate, MaxBillRate geschrapt.
+StaffingOrder/StaffingPosition/Rates/@rateStatus enumeratie waarde Proposed geschrapt.
+StaffingOrder/StaffingPosition/Rates/Amount/@rateAmountPeriod enumeratie waarden Hourly, Daily, Weekly, Monthly, Yearly geschrapt.
+StaffingOrder/StaffingPosition/StaffingShift/@shiftPeriod enumeratie waarde Weekly geschrapt.
+
+Timecard als onderdeel van een invoice: geen controles buiten de HR-XML 2.5 schema controles.
+
+--------------------------------------
+| ReleaseNotes HR-XML/SETU/EBF 1.6.3 |
+--------------------------------------
+Alle berichten: het principe "wat SETU niet documenteert, mag niet" is losgelaten. Alles wat HR-XML biedt en waar
+SETU niets over zegt is nu toegestaan. EBF/DigiInkoop doet hier echter niets mee en kan het niet terug geven.
+
+Invoice/Line/ReasonCode staat nu ook 'elke' string toe i.p.v. alleen de genoemde waarden uit de SETU documentatie.
+Invoice/Line/Line/Line wordt nu afgevangen (niet toegestaan).
+Invoice/Line/*.* controles zijn gelijk gesteld aan Invoice/Line/Line/*.* controles: 1 van beide moet voldoen.
+
+HumanResource en StaffingOrder
+Foutieve codewaarde bij ../ReferenceInformation/Staffing*/@idOwner: staffingsupplier vervangen door staffingcompany
+
+Verplichte VersionId met waarde 1.6 opgenomen:
+HumanResource/UserArea/HumanResourceAdditionalNL/CustomerReportingRequirements/AdditionalRequirement = '1.6'
+HumanResource/UserArea/HumanResourceAdditionalNL/CustomerReportingRequirements/AdditionalRequirement/@requirementTitle = 'VersionId'
+StaffingOrder/CustomerReportingRequirements/AdditionalRequirement = '1.6'
+StaffingOrder/CustomerReportingRequirements/AdditionalRequirement/@requirementTitle = 'VersionId'
+Invoice/Header/UserArea/StaffingAdditionalData/CustomerReportingRequirements/AdditionalRequirement = '1.6'
+Invoice/Header/UserArea/StaffingAdditionalData/CustomerReportingRequirements/AdditionalRequirement/@requirementTitle = 'VersionId'
+TimeCard/AdditionalData/StaffingAdditionalData/CustomerReportingRequirements/AdditionalRequirement = '1.6'
+TimeCard/AdditionalData/StaffingAdditionalData/CustomerReportingRequirements/AdditionalRequirement/@requirementTitle = 'VersionId'
+Assignment/CustomerReportingRequirements/AdditionalRequirement = '1.6'
+Assignment/CustomerReportingRequirements/AdditionalRequirement/@requirementTitle = 'VersionId'
+
+De waarde BSN is niet langer toegestaan voor @idOwner van HumanResource/HumanResourceId en TimeCard/ReportedResource/Person/Id.
+
+De prijs moet OF op Line niveau OF op alle Line/Lines gespecificeerd worden, niet op beiden.
+
+Belastingpercentages die in Invoice/Line/Tax/PercentQuantity worden opgegeven moeten ook als Invoice/Header/Tax/PercentQuantity bestaan.
+Belastingpercentages die in Invoice/Line/Line/Tax/PercentQuantity worden opgegeven moeten ook als Invoice/Line/Tax/PercentQuantity bestaan.
+
+--------------------------------------
+| ReleaseNotes HR-XML/SETU/EBF 1.6.2 |
+--------------------------------------
+OrderId heeft geen identificatie middels OIN nummers, foutieve aanvraag bij SETU.
+Herhaling van ID's op customers en suppliers is niet 'N' maal, maar tweemaal maximaal toegestaan door SETU.
+De veilinggegevens zijn middels een gestructureerd element StaffingOrder/CustomerReportingRequirements/AdditionalRequirement 
+toegewezen door SETU. Zie de leeswijzer voor de exacte veldnamen.
+Bij de bijlage(n) van een aangeboden persoon ontbrak het @mimeType. Opgenomen.
+De toelichting van de bijlage middels @context is vervangen door een element Description.
+
+--------------------------------------
+| ReleaseNotes HR-XML/SETU/EBF 1.6.1 |
+--------------------------------------
+Deze versie is NIET uitgebracht.
+
+--------------------------------------
+| ReleaseNotes HR-XML/SETU/EBF 1.6   |
+--------------------------------------
+Aanpassingen op de SETU standaard door Logius (aanvraag tot wijziging is ingediend)
+
+=== Wijzigingen die door SETU bekrachtigd zijn en t.z.t. formeel in de standaard opgenomen worden: ===
+1) Identificatie van communicerende partijen
+SETU gaat er van uit dat de idOwner alleen 'StaffingCustomer' of 'StaffingSupplier' zal zijn. Daarmee zijn alleen door de
+communicerende partijen zelf uitgedeelde nummers toegestaan (klantnummer en crediteurennummer).
+Project EBF heeft besloten dat partijen ook met onafhankelijke nummers geidentificeerd moeten kunnen worden. De volgende 
+nummers worden nu eveneens ondersteund:
+- KvK = Kamer van Koophandelnummer
+- OIN = Overheidsidentficatienummer
+- BTW = BTW identificatienummer
+- Fi = Fiscaal identificatienummer niet zijnde het BTW nummer
+- BSN = BurgerServiceNummer voor particulieren
+
+Het betreft de volgende elementen:
+- tevens waarde "OIN" toegestaan (de overheid, de klant)
+HumanResource/ReferenceInformation/StaffingCustomerId/@idOwner
+HumanResource/ReferenceInformation/StaffingCustomerOrgUnitId/@idOwner
+StaffingOrder/ReferenceInformation/StaffingCustomerId/@idOwner
+StaffingOrder/ReferenceInformation/StaffingCustomerOrgUnitId/@idOwner
+TimeCard/AdditionalData/StaffingAdditionalData/ReferenceInformation/StaffingCustomerId/@idOwner
+TimeCard/AdditionalData/StaffingAdditionalData/ReferenceInformation/StaffingCustomerOrgUnitId/@idOwner
+
+- tevens waarde "KvK" of "BTW" of "Fi" toegestaan (het uitzendbureau, de leverancier)
+HumanResource/ReferenceInformation/StaffingSupplierId/@idOwner
+StaffingOrder/ReferenceInformation/StaffingSupplierId/@idOwner
+TimeCard/AdditionalData/StaffingAdditionalData/ReferenceInformation/StaffingSupplierId/@idOwner
+
+- tevens de waarde "BSN" toegestaan (de te werk gestelde)
+HumanResource/HumanResourceId/@idOwner
+StaffingOrder/StaffingPosition/PositionHeader/RequestedPerson/PersonId/@idOwner
+TimeCard/ReportedResource/Person/Id/@idOwner
+
+Bij SETU facturen worden andere elementen gebruikt om partijen te identificeren. Hierbij wordt niet aangegeven waar
+deze nummers vandaan zijn gekomen. De SETU documentatie geeft hierbij de interpretatie dat het om nummers gaat die door
+de communicerende partijen zelf zijn uitgegeven. Omdat hier geen plaats is gereserveerd voor 'de uitgevende instantie'
+is er voor gekozen deze instantie voor het nummer te plaatsen en een @ (at-sign) als scheidingsteken te gebruiken 
+(zonder begeleidende spaties). Dit geldt dus alleen voor extern uitgegeven nummers.
+
+De elementen die hiervoor in aanmerking komen zijn:
+Invoice/Header/Parties/BillToParty/PartyId/Id ('OIN@')
+Invoice/Header/Parties/CustomerParty/PartyId/Id ('OIN@')
+Invoice/Header/Parties/RemitToParty/PartyId/Id ('KvK@', 'BTW@', 'Fi@')
+Invoice/Header/Parties/SupplierParty/PartyId/Id ('KvK@', 'BTW@', 'Fi@')
+
+De herhaling op al deze identificatie elementen is door SETU beperkt tot 1x herhalen. Dit is dus naar 2 maal overgezet.
+
+2) Veilinggegevens offerte in de aanvraag offerte
+Het inkoopsysteem van de overheid wenst bij een aanvraag tot offerte de partijen te informeren over de periode waarin
+de offerte ingediend kan worden: de indieningstermijn. Daarnaast wordt ook bekend gemaakt voor welke periode de offerte
+geldig moet zijn: de geldigheidstermijn. En als laatste wordt ook de gunningsdatum (de datum waarop de overheid bekend
+maakt wanneer de offerte gegund wordt) bekend gemaakt. Deze datums zijn onbekend in het SETU en HRXML model. Om ze toch
+te ondersteunen wordt gebruik gemaakt van het element StaffingOrder/CustomerReportingRequirements/AdditionalRequirement 
+waarbij de identificatie van de velden in het @requirementTitle opgenomen is met de volgende waarden:
+MinimalRequiredEndDateValidityOffer (EindDatumGeldigheidOfferte)
+StartDateSubmittancePeriodOffer (StartDatumOfferteAanbiedingsPeriode)
+EndDateSubmittancePeriodOffer (EindDatumOfferteAanbiedingsPeriode)
+AwardDate (Gunningsdatum)
+
+3) Bewijsmateriaal kandidaat
+Bij het aanbieden van een kandidaat wil de overheid toestaan CV's, VAR, VOG of andere documentatie mee te sturen in 
+het bericht (als gescand plaatje dus). Hiervoor biedt SETU geen ruimte maar HRXML wel. De HRXML velden worden expliciet
+'open' gezet om deze bitmaps in te communiceren. Het betreft:
+HumanResource/Profile/Resume/NonXMLResume (0-1)
+HumanResource/Profile/Resume/NonXMLResume/SupportingMaterials (0-N)
+HumanResource/Profile/Resume/NonXMLResume/SupportingMaterials/AttachmentReference = bijlage zelf (0-1)
+HumanResource/Profile/Resume/NonXMLResume/SupportingMaterials/AttachmentReference/@context = beschrijving van de bijlage (1-1)
+
+De waarden in het @context attribuut zijn niet in een codelijst gevat maar SETU stelt dat de waarde CV, VAR en VOG in elk geval
+gebruikt moeten worden indien deze bijlagen meegezonden worden.

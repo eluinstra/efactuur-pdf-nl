@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StaffingOrder xmlns="http://ns.hr-xml.org/2007-04-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:nl="http://ns.setu.nl/2008-01" xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 ../SIDES/StaffingOrder.xsd http://ns.setu.nl/2008-01 ../SIDES/NL/2008-01/StaffingOrderAdditionalNL.xsd">
+	<OrderId validFrom="2011-01-20" idOwner="StaffingCustomer">
+		<IdValue>PO450012345</IdValue>
+	</OrderId>
+	<ReferenceInformation>
+		<MasterOrderId>
+			<IdValue>C987</IdValue>
+		</MasterOrderId>
+		<StaffingCustomerId idOwner="KvK">
+			<IdValue>39576093</IdValue>
+		</StaffingCustomerId>
+		<IntermediaryId>
+			<IdValue>StaffingagencyX</IdValue>
+		</IntermediaryId>
+		<StaffingSupplierId idOwner="KvK">
+			<IdValue>85214796</IdValue>
+		</StaffingSupplierId>
+	</ReferenceInformation>
+	<CustomerReportingRequirements>
+		<CostCenterCode>H4500123456</CostCenterCode>
+		<AdditionalRequirement requirementTitle="VersionId">1.8</AdditionalRequirement>
+	</CustomerReportingRequirements>
+	<OrderClassification orderType="order" orderStatus="new"/>
+	<OrderContact contactType="placed by">
+		<ContactInfo>
+			<PersonName>
+				<LegalName>I.Nkoper</LegalName>
+			</PersonName>
+			<ContactMethod/>
+		</ContactInfo>
+	</OrderContact>
+	<OrderComments>inhuur LB</OrderComments>
+	<PositionQuantity>1</PositionQuantity>
+	<MultiVendorDistribution>true</MultiVendorDistribution>
+	<StaffingPosition>
+		<PositionHeader>
+			<PositionId>
+				<Id/>
+			</PositionId>
+			<PositionDescription>schoonmaak</PositionDescription>
+		</PositionHeader>	
+		<CustomerReportingRequirements/>
+		<PositionDateRange>
+			<StartDate>2011-03-15</StartDate>
+		</PositionDateRange>
+		<Rates rateType="pay" rateStatus="proposed">
+			<Amount rateAmountPeriod="hourly" currency="EUR">200</Amount>
+			<Class></Class>
+			<StartDate>2011-03-15</StartDate>
+		</Rates>
+		<WorkSite>
+			<WorkSiteName></WorkSiteName>
+			<PostalAddress>
+				<CountryCode>BE</CountryCode>
+				<PostalCode>B-1234</PostalCode>
+				<Municipality>Belgieplaats</Municipality>
+				<DeliveryAddress>
+					<StreetName>afleverweg</StreetName>
+					<BuildingNumber>2 naast 9</BuildingNumber>
+				</DeliveryAddress>
+			</PostalAddress>
+		</WorkSite>
+		<StaffingShift>
+			<Id>
+				<IdValue/>
+			</Id>
+			<Hours>50</Hours>
+		</StaffingShift>
+	</StaffingPosition>
+	<UserArea>
+		<nl:StaffingOrderAdditionalNL>
+			<nl:OfferId>
+				<IdValue>55889</IdValue>
+			</nl:OfferId>
+		</nl:StaffingOrderAdditionalNL>
+	</UserArea>
+</StaffingOrder>

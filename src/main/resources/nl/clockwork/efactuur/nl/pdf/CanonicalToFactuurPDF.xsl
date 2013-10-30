@@ -30,7 +30,6 @@
 	<xsl:param name="message_date" required="yes" as="xs:dateTime" />
 	<xsl:param name="original_message_type" required="yes"/>
 																   
-
 	<xsl:template match="/">
 		<fo:root>
 			<fo:layout-master-set>
@@ -43,20 +42,24 @@
 					<fo:repeatable-page-master-reference master-reference="page"/>
 				</fo:page-sequence-master>
 			</fo:layout-master-set>
-			<fo:page-sequence id="page-sequence" master-reference="content" font-family="Times" font-size="11pt" line-height="1.1">
-				<fo:static-content flow-name="header">
-					<xsl:call-template name="header"/>
-				</fo:static-content>
-				<fo:static-content flow-name="footer">
-					<xsl:call-template name="footer"/>
-				</fo:static-content>
-				<fo:flow flow-name="body">
-					<xsl:call-template name="body"/>
-				</fo:flow>
-			</fo:page-sequence>
+			<xsl:call-template name="Content"/>
 		</fo:root>
 	</xsl:template>
-
+	
+	<xsl:template name="Content">
+		<fo:page-sequence id="page-sequence" master-reference="content" font-family="Times" font-size="11pt" line-height="1.1">
+			<fo:static-content flow-name="header">
+				<xsl:call-template name="header"/>
+			</fo:static-content>
+			<fo:static-content flow-name="footer">
+				<xsl:call-template name="footer"/>
+			</fo:static-content>
+			<fo:flow flow-name="body">
+				<xsl:call-template name="body"/>
+			</fo:flow>
+		</fo:page-sequence>	
+	</xsl:template>
+	
 	<xsl:template name="header">
 		<fo:block>
 			<fo:table>
@@ -91,12 +94,12 @@
 
 					<fo:table-row>
 						<fo:table-cell>
-							<fo:block text-align="right" font-weight="bold">
-								<xsl:value-of select="/bericht/factuur/factuurtype"/> Factuur
+							<fo:block text-align="left" font-weight="bold">
+								<xsl:value-of select="/bericht/factuur/factuurtype"/> Factuurs
 							</fo:block>							
 						</fo:table-cell>												
 						<fo:table-cell>
-							<fo:block text-align="right">
+							<fo:block text-align="left">
 							</fo:block>
 						</fo:table-cell>										
 					</fo:table-row>										
@@ -189,7 +192,7 @@
 		</fo:block>
 		<xsl:if test="/bericht/leverancier/niet_natuurlijk_persoon/contactpersoon/naam!=''">
 			<fo:block>
-				<xsl:value-of select="/bericht/leverancier/niet_natuurlijk_persoon/contactpersoon/naam"/>
+				t.a.v. <xsl:value-of select="/bericht/leverancier/niet_natuurlijk_persoon/contactpersoon/naam"/>
 			</fo:block>		
 		</xsl:if>
 		<xsl:apply-templates select="/bericht/leverancier/adres"/>				
@@ -235,7 +238,7 @@
 		</fo:block>
 		<xsl:if test="/bericht/crediteur/niet_natuurlijk_persoon/contactpersoon/naam!=''">		
 			<fo:block>
-				<xsl:value-of select="/bericht/crediteur/niet_natuurlijk_persoon/contactpersoon/naam"/>
+				t.a.v. <xsl:value-of select="/bericht/crediteur/niet_natuurlijk_persoon/contactpersoon/naam"/>
 			</fo:block>
 		</xsl:if>		
 		<xsl:apply-templates select="/bericht/crediteur/niet_natuurlijk_persoon/contactpersoon"/>	
@@ -272,7 +275,7 @@
 		</fo:block>
 		<xsl:if test="/bericht/afnemer/niet_natuurlijk_persoon/contactpersoon/naam!=''">		
 			<fo:block>
-				<xsl:value-of select="/bericht/afnemer/niet_natuurlijk_persoon/contactpersoon/naam"/>
+				t.a.v. <xsl:value-of select="/bericht/afnemer/niet_natuurlijk_persoon/contactpersoon/naam"/>
 			</fo:block>
 		</xsl:if>				
 		<xsl:apply-templates select="/bericht/afnemer/adres"/>
@@ -290,7 +293,7 @@
 		</fo:block>		
 		<xsl:if test="/bericht/debiteur/niet_natuurlijk_persoon/contactpersoon/naam!=''">		
 			<fo:block>
-				<xsl:value-of select="/bericht/debiteur/niet_natuurlijk_persoon/contactpersoon/naam"/>
+				t.a.v. <xsl:value-of select="/bericht/debiteur/niet_natuurlijk_persoon/contactpersoon/naam"/>
 			</fo:block>
 		</xsl:if>		
 		<xsl:apply-templates select="/bericht/debiteur/adres"/>
