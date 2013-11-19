@@ -111,7 +111,7 @@
 
 	<xsl:template name="footer">
 		<fo:block text-align="center">
-			Pagina <fo:page-number/> van <fo:page-number-citation-last ref-id="page-sequence"/>
+			Pagina <fo:page-number/>
 		</fo:block>
 	</xsl:template>
 
