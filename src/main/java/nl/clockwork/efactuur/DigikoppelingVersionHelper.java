@@ -338,7 +338,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 		}
 	};
 
-	public String findPathFor(ValidationType validationType, MessageType messageType, MessageFormat format, String version)
+	public String findPathFor(ValidationType validationType, MessageType messageType, MessageFormat format, String version) throws VersionNotFoundException
 	{
 		Version v = new Version(validationType,format,messageType,version);
 		if (pathResolver.containsKey(v))
@@ -349,37 +349,37 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 		throw new VersionNotFoundException("Could not find " + validationType + " for " + format + " " + version);
 	}
 
-	public String getCanonicalToPDFPath(MessageType type, MessageFormat format, String version)
+	public String getCanonicalToPDFPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
 		version = versionToPath(version);
 		return findPathFor(ValidationType.CANONICAL_TO_PDF,type,format,version);
 	}
 
-	public String getInvoiceToCanonicalPath(MessageType type, MessageFormat format, String version)
+	public String getInvoiceToCanonicalPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
 		version = versionToPath(version);
 		return findPathFor(ValidationType.INVOICE_TO_CANONICAL,type,format,version);
 	}
 
-	public String getXsdPath(MessageType type, MessageFormat format, String version)
+	public String getXsdPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
 		version = versionToPath(version);
 		return findPathFor(ValidationType.SCHEMA,type,format,version);
 	}
 
-	public String getGenericodeXslPath(MessageType type, MessageFormat format, String version)
+	public String getGenericodeXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
 		version = versionToPath(version);
 		return findPathFor(ValidationType.GENERICODE,type,format,version);
 	}
 
-	public String getSchematronXslPath(MessageType type, MessageFormat format, String version)
+	public String getSchematronXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
 		version = versionToPath(version);
 		return findPathFor(ValidationType.SCHEMATRON,type,format,version);
 	}
 
-	public String getTestXmlPath(MessageType type, MessageFormat format, String version)
+	public String getTestXmlPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
 		version = versionToPath(version);
 		return findPathFor(ValidationType.TESTCASE,type,format,version);

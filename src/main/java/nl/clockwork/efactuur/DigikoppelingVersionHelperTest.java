@@ -18,48 +18,69 @@ public class DigikoppelingVersionHelperTest {
 	
 	@Test
 	public void testXsdVersions() {
-		assertFalse("UBL 1.1 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_1)
-				.equals(""));
-		assertFalse("UBL 1.6 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3)
-				.equals(""));
-		assertFalse("UBL 1.7 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7)
-				.equals(""));
 
-		assertFalse("SETU 1.6.x should return some path...", helper
-				.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_6_4).equals(""));
-		assertFalse("SETU 1.7 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7)
-				.equals(""));
-		assertFalse("SETU 1.8 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8)
-				.equals(""));
+		try
+		{		
+			assertFalse("UBL 1.1 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_1)
+					.equals(""));
+			assertFalse("UBL 1.6 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3)
+					.equals(""));
+			assertFalse("UBL 1.7 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7)
+					.equals(""));
 
+			assertFalse("SETU 1.6.x should return some path...", helper
+					.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_6_4).equals(""));
+			assertFalse("SETU 1.7 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7)
+					.equals(""));
+			assertFalse("SETU 1.8 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8)
+					.equals(""));
+			
+		} catch (VersionNotFoundException e)
+		{
+			e.printStackTrace();
+			assertFalse("TEST SHOULD NOT THROW EXCEPTIONS ! ", true);
+		}
 	}
 
 	@Test
 	public void testGenericodeVersions() {
-		assertFalse("UBL 1.1 should return some path...",
-				helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_1).equals(""));
-		assertFalse("UBL 1.6 should return some path...",
-				helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3).equals(""));
-		assertFalse("UBL 1.7 should return some path...",
-				helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7).equals(""));
+		try {
+			assertFalse("UBL 1.1 should return some path...",
+					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_1).equals(""));
+			assertFalse("UBL 1.6 should return some path...",
+					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3).equals(""));
+			assertFalse("UBL 1.7 should return some path...",
+					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7).equals(""));
+		}
+		catch (VersionNotFoundException e)
+		{
+			e.printStackTrace();
+			assertFalse("TEST SHOULD NOT THROW EXCEPTIONS ! ", true);
+		}		
 	}
 
 	@Test
 	public void testSchematronVersions() {
-		assertFalse("UBL 1.1 should return some path...",
-				helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_1).equals(""));
-		assertFalse("UBL 1.6 should return some path...",
-				helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3).equals(""));
-		assertFalse("UBL 1.7 should return some path...",
-				helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7).equals(""));
-
-		assertFalse("SETU 1.6.x should return some path...",
-				helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_6_4).equals(""));
-		assertFalse("SETU 1.7 should return some path...",
-				helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7).equals(""));
-		assertFalse("SETU 1.8 should return some path...",
-				helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8).equals(""));
-
+		try {
+			assertFalse("UBL 1.1 should return some path...",
+					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_1).equals(""));
+			assertFalse("UBL 1.6 should return some path...",
+					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3).equals(""));
+			assertFalse("UBL 1.7 should return some path...",
+					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7).equals(""));
+	
+			assertFalse("SETU 1.6.x should return some path...",
+					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_6_4).equals(""));
+			assertFalse("SETU 1.7 should return some path...",
+					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7).equals(""));
+			assertFalse("SETU 1.8 should return some path...",			
+					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8).equals(""));
+		}
+		catch (VersionNotFoundException e)
+		{
+			e.printStackTrace();
+			assertFalse("TEST SHOULD NOT THROW EXCEPTIONS ! ", true);
+		}
 	}
 
 	@Test
