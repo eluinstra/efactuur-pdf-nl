@@ -3582,7 +3582,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
+<!--       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/> -->
    </xsl:template>
 
 	  <!--RULE -->
@@ -3649,7 +3649,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
+<!--       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/> -->
    </xsl:template>
 
 	  <!--RULE -->
@@ -3927,7 +3927,7 @@
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
+<!--       <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/> -->
    </xsl:template>
 
 	  <!--RULE -->
