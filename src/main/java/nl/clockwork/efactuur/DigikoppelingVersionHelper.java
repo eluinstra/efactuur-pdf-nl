@@ -36,20 +36,20 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xsd/maindoc/Invoice.xsd");
 			
 
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Genericode.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 			
 
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Schematron-Validation.xsl");
 			
 
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical_1_1_namespace_patch.xsl");
@@ -85,11 +85,11 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/Invoice.xsd");
 			
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_1),"");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/Invoice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/Invoice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/Invoice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/Invoice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/Invoice-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/Invoice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/Invoice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/Invoice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/Invoice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/Invoice-Schematron-Validation.xsl");
 
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_1),setuPdfTransformationValidationRootPath + "/InvoiceToFactuurCanonical.xsl");
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuPdfTransformationValidationRootPath + "/InvoiceToFactuurCanonical.xsl");
@@ -120,19 +120,19 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xsd/maindoc/Commitment-NL-1.8.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xsd/maindoc/Commitment-NL-1.8.xsd");
 
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Genericode.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Commitment-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Commitment-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Commitment-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Commitment-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Commitment-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Commitment-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Commitment-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Commitment-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Commitment-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Commitment-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Commitment-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Commitment-Schematron-Validation.xsl");
 
 			
 			// UBL: Quotation
@@ -143,19 +143,19 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xsd/maindoc/Quotation.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xsd/maindoc/Quotation.xsd");
 
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Genericode.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Quotation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Quotation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Quotation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Quotation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Quotation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Quotation-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Quotation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Quotation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Quotation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Quotation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Quotation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Quotation-Schematron-Validation.xsl");
 
 			
 			// UBL: Order Response
@@ -166,19 +166,19 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xsd/maindoc/OrderResponse.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xsd/maindoc/OrderResponse.xsd");
 
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Genericode.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/OrderResponse-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/OrderResponse-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/OrderResponse-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/OrderResponse-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/OrderResponse-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/OrderResponse-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/OrderResponse-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/OrderResponse-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/OrderResponse-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/OrderResponse-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/OrderResponse-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/OrderResponse-Schematron-Validation.xsl");
 			
 			
 			// UBL: Despatch Advice
@@ -188,19 +188,19 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xsd/maindoc/DespatchAdvice.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xsd/maindoc/DespatchAdvice.xsd");
 
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Genericode.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/DespatchAdvice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/DespatchAdvice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/DespatchAdvice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/DespatchAdvice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/DespatchAdvice-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/DespatchAdvice-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/DespatchAdvice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/DespatchAdvice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/DespatchAdvice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/DespatchAdvice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/DespatchAdvice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/DespatchAdvice-Schematron-Validation.xsl");
 
 			// UBL: Application Response 
 			
@@ -210,19 +210,19 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xsd/maindoc/ApplicationResponse.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xsd/maindoc/ApplicationResponse.xsd");
 
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8Invoice-Genericode.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8Genericode-Validation.xsl");
 
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/ApplicationResponse-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/ApplicationResponse-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/ApplicationResponse-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/ApplicationResponse-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/ApplicationResponse-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/ApplicationResponse-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/ApplicationResponse-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/ApplicationResponse-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/ApplicationResponse-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/ApplicationResponse-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/ApplicationResponse-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/ApplicationResponse-Schematron-Validation.xsl");
 
 			// UBL: Request For Quotation
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/RequestForQuotation.xsd");
@@ -231,19 +231,19 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xsd/maindoc/RequestForQuotation.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xsd/maindoc/RequestForQuotation.xsd");
 
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Genericode.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/RequestForQuotation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/RequestForQuotation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/RequestForQuotation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/RequestForQuotation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/RequestForQuotation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/RequestForQuotation-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/RequestForQuotation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/RequestForQuotation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/RequestForQuotation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/RequestForQuotation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/RequestForQuotation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/RequestForQuotation-Schematron-Validation.xsl");
 			
 			
 			// UBL: Request for Quotation Cancellation
@@ -254,19 +254,19 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xsd/maindoc/RequestForQuotationCancellation.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xsd/maindoc/RequestForQuotationCancellation.xsd");
 
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Genericode.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/RequestForQuotationCancellation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/RequestForQuotationCancellation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/RequestForQuotationCancellation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/RequestForQuotationCancellation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/RequestForQuotationCancellation-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/RequestForQuotationCancellation-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/RequestForQuotationCancellation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/RequestForQuotationCancellation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/RequestForQuotationCancellation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/RequestForQuotationCancellation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/RequestForQuotationCancellation-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/RequestForQuotationCancellation-Schematron-Validation.xsl");
 	
 			
 			// UBL : Order
@@ -276,19 +276,19 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xsd/maindoc/Order.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xsd/maindoc/Order.xsd");
 
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Genericode.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Genericode.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Order-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Order-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Order-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Order-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Order-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Order-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Order-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Order-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Order-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Order-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Order-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Order-Schematron-Validation.xsl");
 			
 			
 			// SETU Messages 
@@ -301,11 +301,11 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/HumanResource.xsd");
 
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_1),"");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/HumanResource-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/HumanResource-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/HumanResource-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/HumanResource-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/HumanResource-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/HumanResource-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/HumanResource-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/HumanResource-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/HumanResource-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/HumanResource-Schematron-Validation.xsl");
 
 			// SETU: Time Card
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/TimeCardAdditionalData.xsd");
@@ -315,11 +315,11 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/TimeCardAdditionalData.xsd");
 
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_1),"");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/TimeCard-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/TimeCard-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/TimeCard-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/TimeCard-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/TimeCard-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/TimeCard-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/TimeCard-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/TimeCard-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/TimeCard-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/TimeCard-Schematron-Validation.xsl");
 
 			// SETU: Staffing Order 
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/StaffingOrder.xsd");
@@ -329,11 +329,11 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/StaffingOrder.xsd");
 
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_1),"");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/StaffingOrder-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/StaffingOrder-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/StaffingOrder-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/StaffingOrder-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/StaffingOrder-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/StaffingOrder-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/StaffingOrder-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/StaffingOrder-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/StaffingOrder-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/StaffingOrder-Schematron-Validation.xsl");
 
 		}
 	};

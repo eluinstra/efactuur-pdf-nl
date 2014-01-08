@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<axsl:stylesheet xmlns:axsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:nl-cbc="urn:digi-inkoop:ubl:2.0:NL:1.6:UBL-NL-CommonBasicComponents-2" version="2.0"><!--Importing stylesheet additions-->
+<axsl:stylesheet xmlns:axsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:nl-cbc="urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonBasicComponents-2" version="1.0"><!--Importing stylesheet additions-->
    <axsl:output method="text"/><!--Implementers: please note that overriding process-prolog or process-root is 
     the preferred method for meta-stylesheets to use where possible. -->
 
@@ -175,7 +175,7 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-<!--       <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/> -->
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
@@ -239,7 +239,7 @@
 		<!--ASSERT -->
 
       <axsl:choose>
-         <axsl:when test="( false() or ( contains('AFALDZASADAOAIAQAGARAMAWAUATAZBSBHBDBBBYBEBZBJBMBTBOBABWBVBRIOBNBGBFBIKHCMCACVKYCFTDCLCNCXCCCOKMCGCKCRCIHRCUCYCZDKDJDMDOTPECEGSVGQEREEETFKFOFJFIFRFXGFPFTFGAGMGEDEGHGIGRGLGDGPGUGTGNGWGYHTHMHNHKHUISINIDIRIQIEILITJMJPJOKZKEKIKPKRKWKGLALVLBLSLRLYLILTLUMOMGMWMYMVMLMTMHMQMRMUYTMXFMMDMCMNMSMAMZMMNANRNPANNLNCNZNINENGNUNFMPNOOMPKPWPAPGPYPEPHPNPLPTPRQARERORURWSHKNLCPMVCWSSMSASNSCSLSGSKSISBSOZAGSESLKSDSRSJSZSECHSYSTTWTJTZTHMKTGTKTOTTTNTRTMTCTVUGUAAEGBUMUSUYUZVUVAVEVNVGVIWFEHYEYUZRZMZW',concat('',.,'')) ) ) "/>
+         <axsl:when test="( false() or ( ( not(@listName!='Country') ) and ( not(@listID!='ISO3166-1') ) and ( not(@listVersionID!='0.3') ) and ( not(@listSchemeURI!='urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode') ) and ( not(@listURI!='http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc') ) and ( not(@listAgencyName!='United Nations Economic Commission for Europe') ) and ( not(@listAgencyID!='6') ) and contains('AFALDZASADAOAIAQAGARAMAWAUATAZBSBHBDBBBYBEBZBJBMBTBOBABWBVBRIOBNBGBFBIKHCMCACVKYCFTDCLCNCXCCCOKMCGCKCRCIHRCUCYCZDKDJDMDOTPECEGSVGQEREEETFKFOFJFIFRFXGFPFTFGAGMGEDEGHGIGRGLGDGPGUGTGNGWGYHTHMHNHKHUISINIDIRIQIEILITJMJPJOKZKEKIKPKRKWKGLALVLBLSLRLYLILTLUMOMGMWMYMVMLMTMHMQMRMUYTMXFMMDMCMNMSMAMZMMNANRNPANNLNCNZNINENGNUNFMPNOOMPKPWPAPGPYPEPHPNPLPTPRQARERORURWSHKNLCPMVCWSSMSASNSCSLSGSKSISBSOZAGSESLKSDSRSJSZSECHSYSTTWTJTZTHMKTGTKTOTTTNTRTMTCTVUGUAAEGBUMUSUYUZVUVAVEVNVGVIWFEHYEYUZRZMZW',concat('',.,'')) ) ) "/>
          <axsl:otherwise>Value supplied '<axsl:text/>
             <axsl:value-of select="."/>
             <axsl:text/>' is unacceptable for constraints identified by 'CountryIdentification' in the context 'cbc:IdentificationCode'<axsl:text>: </axsl:text>
@@ -414,25 +414,7 @@
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:TransportationStatusCode" priority="1007" mode="M4">
-
-		<!--ASSERT -->
-
-      <axsl:choose>
-         <axsl:when test="( false() or ( ( not(@listName!='Transportation Status') ) and ( not(@listID!='UN/ECE rec 24') ) and ( not(@listVersionID!='Third Revision') ) and ( not(@listSchemeURI!='urn:oasis:names:specification:ubl:codelist:gc:TransportationStatusCode') ) and ( not(@listURI!='http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/TransportationStatusCode-2.0.gc') ) and ( not(@listAgencyName!='United Nations Economic Commission for Europe') ) and ( not(@listAgencyID!='6') ) and contains('12345678910111213141516171819202122232425262728293031323334353637383940414445464748495051535457585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101102103104105106107108109110111112113114115116117118119120121123124125126127128129130131132133134135136137138139140141142143144145146147148149150151152153154155156157158159161162163164165166167168169170171172174175176177178179180181182183184185186187188189190191192193194195196197198199200201202203204205206207208209210211212213214215216218219220222224225227228229231232233234235236238239240241242243247248250251253254255256258260265266267269270271272273274275276277278279280281282283284285286287288291292295297298299300301302306307308309310311312313314315316317318319320321322323324325326327328329330331332333334335336337338339340341342343344345346347348349350351352353354355356357358+359+360+361+362+363',concat('',.,'')) ) ) "/>
-         <axsl:otherwise>Value supplied '<axsl:text/>
-            <axsl:value-of select="."/>
-            <axsl:text/>' is unacceptable for constraints identified by 'TransportationStatus' in the context 'cbc:TransportationStatusCode'<axsl:text>: </axsl:text>
-            <axsl:apply-templates select="." mode="schematron-get-full-path-3"/>
-            <axsl:text xml:space="preserve">
-</axsl:text></axsl:otherwise>
-      </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
-   </axsl:template>
-
-	<!--RULE -->
-
-   <axsl:template match="cbc:TransportEquipmentTypeCode" priority="1006" mode="M4">
+   <axsl:template match="cbc:TransportEquipmentTypeCode" priority="1007" mode="M4">
 
 		<!--ASSERT -->
 
@@ -450,7 +432,7 @@
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:TransportModeCode" priority="1005" mode="M4">
+   <axsl:template match="cbc:TransportModeCode" priority="1006" mode="M4">
 
 		<!--ASSERT -->
 
@@ -468,12 +450,12 @@
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:InvoiceTypeCode" priority="1004" mode="M4">
+   <axsl:template match="cbc:InvoiceTypeCode" priority="1005" mode="M4">
 
 		<!--ASSERT -->
 
       <axsl:choose>
-         <axsl:when test="( false() or ( contains('DCVDVCP',concat('',.,'')) ) ) "/>
+         <axsl:when test="( false() or ( ( not(@listName!='FactuurSoort') ) and ( not(@listID!='NL-1001') ) and ( not(@listVersionID!='1.7') ) and ( not(@listSchemeURI!='urn:digi-inkoop:ubl:2.0:NL:1.7:gc:InvoiceTypeCode') ) and ( not(@listURI!='http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/InvoiceTypeCode.gc') ) and ( not(@listAgencyName!='Logius Gegevensbeheer NL-Overheid') ) and ( not(@listAgencyID!='88') ) and contains('DCVDVCP',concat('',.,'')) ) ) "/>
          <axsl:otherwise>Value supplied '<axsl:text/>
             <axsl:value-of select="."/>
             <axsl:text/>' is unacceptable for constraints identified by 'InvoiceTypeCode' in the context 'cbc:InvoiceTypeCode'<axsl:text>: </axsl:text>
@@ -486,12 +468,12 @@
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:ActionCode" priority="1003" mode="M4">
+   <axsl:template match="cbc:ActionCode" priority="1004" mode="M4">
 
 		<!--ASSERT -->
 
       <axsl:choose>
-         <axsl:when test="( false() or ( ( not(@listName!='ActieCode') ) and ( not(@listID!='') ) and ( not(@listVersionID!='1.4') ) and ( not(@listSchemeURI!='') ) and ( not(@listURI!='http://www.nltaxonomie.nl/ubl/2.0/NL/1.4/cl/gc/NL-ActionCode-1.4.gc') ) and ( not(@listAgencyName!='Logius Gegevensbeheer NL-Overheid') ) and ( not(@listAgencyID!='88') ) and contains('CV',concat('',.,'')) ) ) "/>
+         <axsl:when test="( false() or ( ( not(@listName!='ActieCode') ) and ( not(@listID!='') ) and ( not(@listVersionID!='1.7') ) and ( not(@listSchemeURI!='') ) and ( not(@listURI!='http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/NL-ActionCode-1.7.gc') ) and ( not(@listAgencyName!='Logius Gegevensbeheer NL-Overheid') ) and ( not(@listAgencyID!='88') ) and contains('RV',concat('',.,'')) ) ) "/>
          <axsl:otherwise>Value supplied '<axsl:text/>
             <axsl:value-of select="."/>
             <axsl:text/>' is unacceptable for constraints identified by 'ActionCode' in the context 'cbc:ActionCode'<axsl:text>: </axsl:text>
@@ -504,15 +486,33 @@
 
 	<!--RULE -->
 
-   <axsl:template match="cac:DeliveryTerms/cbc:ID" priority="1002" mode="M4">
+   <axsl:template match="cac:DeliveryTerms/cbc:ID" priority="1003" mode="M4">
 
 		<!--ASSERT -->
 
       <axsl:choose>
-         <axsl:when test="( false() or ( ( not(@listName!='Leveringsvoorwaarden') ) and ( not(@schemeID!='NL-1002') ) and ( not(@listVersionID!='1.6') ) and ( not(@listSchemeURI!='urn:digi-inkoop:ubl:2.0:NL:1.6:gc:DeliveryTermsCode') ) and ( not(@listURI!='http://www.nltaxonomie.nl/ubl/2.0/NL/1.6/cl/gc/DeliveryTermsCode.gc') ) and ( not(@listAgencyName!='Logius Gegevensbeheer NL-Overheid') ) and ( not(@listAgencyID!='88') ) and contains('EXWFCAFASFOBFOTFOPFORCFRCIFCPTCIPDAFDESDEQDDUDDP',concat('',.,'')) ) ) "/>
+         <axsl:when test="( false() or ( ( not(@listName!='Leveringsvoorwaarden') ) and ( not(@schemeID!='NL-1002') ) and ( not(@listVersionID!='1.7') ) and ( not(@listSchemeURI!='urn:digi-inkoop:ubl:2.0:NL:1.7:gc:DeliveryTermsCode') ) and ( not(@listURI!='http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/DeliveryTermsCode.gc') ) and ( not(@listAgencyName!='Logius Gegevensbeheer NL-Overheid') ) and ( not(@listAgencyID!='88') ) and contains('EXWFCAFASFOBFOTFOPFORCFRCIFCPTCIPDAFDESDEQDDUDDP',concat('',.,'')) ) ) "/>
          <axsl:otherwise>Value supplied '<axsl:text/>
             <axsl:value-of select="."/>
             <axsl:text/>' is unacceptable for constraints identified by 'DeliveryTermsCode' in the context 'cac:DeliveryTerms/cbc:ID'<axsl:text>: </axsl:text>
+            <axsl:apply-templates select="." mode="schematron-get-full-path-3"/>
+            <axsl:text xml:space="preserve">
+</axsl:text></axsl:otherwise>
+      </axsl:choose>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
+   </axsl:template>
+
+	<!--RULE -->
+
+   <axsl:template match="cac:InvoicePeriod/cbc:DescriptionCode" priority="1002" mode="M4">
+
+		<!--ASSERT -->
+
+      <axsl:choose>
+         <axsl:when test="( false() or ( ( not(@listName!='FactuurPeriodDescriptionCode') ) and ( not(@listID!='NL-1004') ) and ( not(@listVersionID!='1.7') ) and ( not(@listSchemeURI!='urn:digi-inkoop:ubl:2.0:NL:1.7:gc:InvoicePeriodDescriptionCode') ) and ( not(@listURI!='http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/InvoicePeriodDescriptionCode.gc') ) and ( not(@listAgencyName!='Logius Gegevensbeheer NL-Overheid') ) and ( not(@listAgencyID!='88') ) and contains('ID',concat('',.,'')) ) ) "/>
+         <axsl:otherwise>Value supplied '<axsl:text/>
+            <axsl:value-of select="."/>
+            <axsl:text/>' is unacceptable for constraints identified by 'InvoicePeriodDescriptionCode' in the context 'cac:InvoicePeriod/cbc:DescriptionCode'<axsl:text>: </axsl:text>
             <axsl:apply-templates select="." mode="schematron-get-full-path-3"/>
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
@@ -527,7 +527,7 @@
 		<!--ASSERT -->
 
       <axsl:choose>
-         <axsl:when test="( false() or ( ( not(@listName!='Onderhandelinsstijl') ) and ( not(@listID!='NL-1003') ) and ( not(@listVersionID!='1.6') ) and ( not(@listSchemeURI!='urn:digi-inkoop:ubl:2.0:NL:1.6:gc:NegotiationStyleCode') ) and ( not(@listURI!='http://www.nltaxonomie.nl/ubl/2.0/NL/1.6/cl/gc/NegotiationStyleCode.gc') ) and ( not(@listAgencyName!='Logius Gegevensbeheer NL-Overheid') ) and ( not(@listAgencyID!='88') ) and contains('ES',concat('',.,'')) ) ) "/>
+         <axsl:when test="( false() or ( ( not(@listName!='Onderhandelingsstijl') ) and ( not(@listID!='NL-1003') ) and ( not(@listVersionID!='1.7') ) and ( not(@listSchemeURI!='urn:digi-inkoop:ubl:2.0:NL:1.7:gc:NegotiationStyleCode') ) and ( not(@listURI!='http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/NegotiationStyleCode.gc') ) and ( not(@listAgencyName!='Logius Gegevensbeheer NL-Overheid') ) and ( not(@listAgencyID!='88') ) and contains('ES',concat('',.,'')) ) ) "/>
          <axsl:otherwise>Value supplied '<axsl:text/>
             <axsl:value-of select="."/>
             <axsl:text/>' is unacceptable for constraints identified by 'NegotiationStyleCode' in the context 'nl-cbc:NegotiationStyle'<axsl:text>: </axsl:text>
@@ -545,7 +545,7 @@
 		<!--ASSERT -->
 
       <axsl:choose>
-         <axsl:when test="( false() or ( ( not(@listName!='ResponseCode') ) and ( not(@listID!='') ) and ( not(@listVersionID!='1.4') ) and ( not(@listSchemeURI!='') ) and ( not(@listURI!='http://www.nltaxonomie.nl/ubl/2.0/NL/1.4/cl/gc/NL-ResponseCode-1.4.gc') ) and ( not(@listAgencyName!='Logius Gegevensbeheer NL-Overheid') ) and ( not(@listAgencyID!='88') ) and contains('OKNOK',concat('',.,'')) ) ) "/>
+         <axsl:when test="( false() or ( ( not(@listName!='ResponseCode') ) and ( not(@listID!='') ) and ( not(@listVersionID!='1.7') ) and ( not(@listSchemeURI!='') ) and ( not(@listURI!='http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/NL-ResponseCode-1.7.gc') ) and ( not(@listAgencyName!='Logius Gegevensbeheer NL-Overheid') ) and ( not(@listAgencyID!='88') ) and contains('OKNOK',concat('',.,'')) ) ) "/>
          <axsl:otherwise>Value supplied '<axsl:text/>
             <axsl:value-of select="."/>
             <axsl:text/>' is unacceptable for constraints identified by 'ResponseCode' in the context 'cac:Response/cbc:ResponseCode'<axsl:text>: </axsl:text>

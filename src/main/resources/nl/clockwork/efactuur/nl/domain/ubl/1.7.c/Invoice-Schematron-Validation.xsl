@@ -6,10 +6,10 @@
                 xmlns:schold="http://www.ascc.net/xml/schematron"
                 xmlns:iso="http://purl.oclc.org/dsdl/schematron"
                 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                xmlns:nl-cac="urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonAggregateComponents-2"
                 xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
                 xmlns:nl-cbc="urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonBasicComponents-2"
                 xmlns:doc="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2"
-                xmlns:nl-cac="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-CommonAggregateComponents-2"
                 xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                 xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
                 version="2.0"><!--Implementers: please note that overriding process-prolog or process-root is 
@@ -176,13 +176,13 @@
 		 <xsl:value-of select="$fileNameParameter"/>  
 		 <xsl:value-of select="$fileDirParameter"/>
          </xsl:comment>
+         <svrl:ns-prefix-in-attribute-values uri="urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonAggregateComponents-2"
+                                             prefix="nl-cac"/>
          <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
                                              prefix="cbc"/>
          <svrl:ns-prefix-in-attribute-values uri="urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonBasicComponents-2"
                                              prefix="nl-cbc"/>
          <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" prefix="doc"/>
-         <svrl:ns-prefix-in-attribute-values uri="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-CommonAggregateComponents-2"
-                                             prefix="nl-cac"/>
          <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
                                              prefix="cac"/>
          <svrl:ns-prefix-in-attribute-values uri="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2"
@@ -215,7 +215,7 @@
 
 
 	<!--RULE -->
-<xsl:template match="doc:Invoice" priority="1076" mode="M7">
+<xsl:template match="doc:Invoice" priority="1077" mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="doc:Invoice"/>
 
 		    <!--ASSERT -->
@@ -354,7 +354,7 @@
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="doc:Invoice/cac:AccountingCustomerParty" priority="1075" mode="M7">
+<xsl:template match="doc:Invoice/cac:AccountingCustomerParty" priority="1076" mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty"/>
 
@@ -374,7 +374,7 @@
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party" priority="1074"
+<xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party" priority="1075"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party"/>
@@ -425,7 +425,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact"
-                 priority="1073"
+                 priority="1074"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact"/>
@@ -447,7 +447,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID"
-                 priority="1072"
+                 priority="1073"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID"/>
@@ -469,7 +469,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress"
-                 priority="1071"
+                 priority="1072"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress"/>
@@ -491,7 +491,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"
-                 priority="1070"
+                 priority="1071"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"/>
@@ -514,7 +514,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PhysicalLocation"
-                 priority="1069"
+                 priority="1070"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PhysicalLocation"/>
@@ -536,7 +536,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PhysicalLocation/cac:Address"
-                 priority="1068"
+                 priority="1069"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PhysicalLocation/cac:Address"/>
@@ -558,7 +558,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PhysicalLocation/cac:Address/cac:Country"
-                 priority="1067"
+                 priority="1068"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PhysicalLocation/cac:Address/cac:Country"/>
@@ -581,7 +581,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress"
-                 priority="1066"
+                 priority="1067"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress"/>
@@ -603,7 +603,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country"
-                 priority="1065"
+                 priority="1066"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country"/>
@@ -625,7 +625,7 @@
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="doc:Invoice/cac:AccountingSupplierParty" priority="1064" mode="M7">
+<xsl:template match="doc:Invoice/cac:AccountingSupplierParty" priority="1065" mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty"/>
 
@@ -645,7 +645,7 @@
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party" priority="1063"
+<xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party" priority="1064"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty/cac:Party"/>
@@ -696,7 +696,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact"
-                 priority="1062"
+                 priority="1063"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact"/>
@@ -718,7 +718,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID"
-                 priority="1061"
+                 priority="1062"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID"/>
@@ -740,7 +740,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress"
-                 priority="1060"
+                 priority="1061"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress"/>
@@ -762,7 +762,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"
-                 priority="1059"
+                 priority="1060"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country"/>
@@ -785,7 +785,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PhysicalLocation"
-                 priority="1058"
+                 priority="1059"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PhysicalLocation"/>
@@ -807,7 +807,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PhysicalLocation/cac:Address"
-                 priority="1057"
+                 priority="1058"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PhysicalLocation/cac:Address"/>
@@ -829,7 +829,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PhysicalLocation/cac:Address/cac:Country"
-                 priority="1056"
+                 priority="1057"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PhysicalLocation/cac:Address/cac:Country"/>
@@ -852,7 +852,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress"
-                 priority="1055"
+                 priority="1056"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress"/>
@@ -874,7 +874,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country"
-                 priority="1054"
+                 priority="1055"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:PostalAddress/cac:Country"/>
@@ -896,7 +896,7 @@
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="doc:Invoice/cac:AllowanceCharge/cac:TaxTotal" priority="1053" mode="M7">
+<xsl:template match="doc:Invoice/cac:AllowanceCharge/cac:TaxTotal" priority="1054" mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AllowanceCharge/cac:TaxTotal"/>
 
@@ -917,7 +917,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AllowanceCharge/cac:TaxTotal/cac:TaxSubtotal"
-                 priority="1052"
+                 priority="1053"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AllowanceCharge/cac:TaxTotal/cac:TaxSubtotal"/>
@@ -939,7 +939,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AllowanceCharge/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme"
-                 priority="1051"
+                 priority="1052"
                  mode="M7">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AllowanceCharge/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme"/>
@@ -953,6 +953,27 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>doc:Invoice/cac:AllowanceCharge/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme must contain cbc:Name at least 1 time(s)</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M7"/>
+   </xsl:template>
+
+	  <!--RULE -->
+<xsl:template match="doc:Invoice/cac:BillingReference" priority="1051" mode="M7">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="doc:Invoice/cac:BillingReference"/>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="count(cac:InvoiceDocumentReference) &gt;= 1"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="count(cac:InvoiceDocumentReference) &gt;= 1">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>doc:Invoice/cac:BillingReference must contain cac:InvoiceDocumentReference at least 1 time(s)</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2634,7 +2655,27 @@
 
 
 	<!--RULE -->
-<xsl:template match="doc:Invoice" priority="1052" mode="M8">
+<xsl:template match="/" priority="1055" mode="M8">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="/"/>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="if(count(//cac:PartyIdentification/cbc:ID[@schemeAgencyName = 'Vest']) = 1) then (count(//cac:PartyIdentification/cbc:ID[@schemeAgencyName = 'KvK']) = 1) else ('true')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="if(count(//cac:PartyIdentification/cbc:ID[@schemeAgencyName = 'Vest']) = 1) then (count(//cac:PartyIdentification/cbc:ID[@schemeAgencyName = 'KvK']) = 1) else ('true')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Als Vestigingsnummer is opgegeven MOET Kamer van Koophandel nummer ook opgegeven worden.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
+   </xsl:template>
+
+	  <!--RULE -->
+<xsl:template match="doc:Invoice" priority="1054" mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl" context="doc:Invoice"/>
 
 		    <!--ASSERT -->
@@ -2709,42 +2750,28 @@
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="(count(cbc:InvoiceTypeCode[text() = 'C']) + count(cbc:InvoiceTypeCode[text() = 'VC'])) = 0 or count(cac:BillingReference/cac:DebitNoteDocumentReference/cbc:ID) &gt; 0"/>
+         <xsl:when test="(count(cbc:InvoiceTypeCode[text() = 'C']) + count(cbc:InvoiceTypeCode[text() = 'VC'])) = 0 or count(cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID) &gt; 0"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(cbc:InvoiceTypeCode[text() = 'C']) + count(cbc:InvoiceTypeCode[text() = 'VC'])) = 0 or count(cac:BillingReference/cac:DebitNoteDocumentReference/cbc:ID) &gt; 0">
+                                test="(count(cbc:InvoiceTypeCode[text() = 'C']) + count(cbc:InvoiceTypeCode[text() = 'VC'])) = 0 or count(cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID) &gt; 0">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Referentie naar debitnota is verplicht bij (voorstel) creditnota.</svrl:text>
+               <svrl:text>Referentie naar andere invoice is verplicht bij (voorstel) creditnota.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="every $pi in //cac:PartyIdentification satisfies (if(count($pi/cbc:ID[@schemeAgencyName = 'Vest']) = 1) then (count($pi/../cac:PartyIdentification/cbc:ID[@schemeAgencyName = 'KvK']) = 1) else ('true'))"/>
+         <xsl:when test="empty(cbc:CustomizationID) or (cbc:CustomizationID='1.7')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="every $pi in //cac:PartyIdentification satisfies (if(count($pi/cbc:ID[@schemeAgencyName = 'Vest']) = 1) then (count($pi/../cac:PartyIdentification/cbc:ID[@schemeAgencyName = 'KvK']) = 1) else ('true'))">
+                                test="empty(cbc:CustomizationID) or (cbc:CustomizationID='1.7')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>Als Vestigingsnummer is opgegeven MOET Kamer van Koophandel nummer ook opgegeven worden.</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-<xsl:choose>
-         <xsl:when test="empty(cbc:CustomizationID) or (cbc:CustomizationID='1.8')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(cbc:CustomizationID) or (cbc:CustomizationID='1.8')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>Bericht MOET gebaseerd zijn op versie 1.8 van de Nederlandse specificatie.</svrl:text>
+               <svrl:text>Bericht MOET gebaseerd zijn op versie 1.7 van de Nederlandse specificatie.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -2780,8 +2807,45 @@
    </xsl:template>
 
 	  <!--RULE -->
+<xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact"
+                 priority="1053"
+                 mode="M8">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact"/>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="matches(cbc:Telefax, '^[-0-9]*$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="matches(cbc:Telefax, '^[-0-9]*$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Telefoon en Faxnummers mogen alleen uit nummers en afbreekstreepjes bestaan.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="matches(cbc:Telephone, '^[-0-9]*$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="matches(cbc:Telephone, '^[-0-9]*$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Telefoon en Faxnummers mogen alleen uit nummers en afbreekstreepjes bestaan.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
+   </xsl:template>
+
+	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name"
-                 priority="1051"
+                 priority="1052"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:Contact/cbc:Name"/>
@@ -2803,7 +2867,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID"
-                 priority="1050"
+                 priority="1051"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID"/>
@@ -2840,7 +2904,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode"
-                 priority="1049"
+                 priority="1050"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode"/>
@@ -2862,7 +2926,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PhysicalLocation/cac:Address/cac:Country/cbc:IdentificationCode"
-                 priority="1048"
+                 priority="1049"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PhysicalLocation/cac:Address/cac:Country/cbc:IdentificationCode"/>
@@ -2884,7 +2948,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode"
-                 priority="1047"
+                 priority="1048"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode"/>
@@ -2898,6 +2962,43 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>doc:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode must be filled</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
+   </xsl:template>
+
+	  <!--RULE -->
+<xsl:template match="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact"
+                 priority="1047"
+                 mode="M8">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="doc:Invoice/cac:AccountingSupplierParty/cac:Party/cac:Contact"/>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="matches(cbc:Telefax, '^[-0-9]*$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="matches(cbc:Telefax, '^[-0-9]*$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Telefoon en Faxnummers mogen alleen uit nummers en afbreekstreepjes bestaan.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="matches(cbc:Telephone, '^[-0-9]*$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="matches(cbc:Telephone, '^[-0-9]*$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Telefoon en Faxnummers mogen alleen uit nummers en afbreekstreepjes bestaan.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3053,29 +3154,8 @@
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="doc:Invoice/cac:BillingReference" priority="1040" mode="M8">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="doc:Invoice/cac:BillingReference"/>
-
-		    <!--ASSERT -->
-<xsl:choose>
-         <xsl:when test="(count(cac:InvoiceDocumentReference) + count(cac:DebitNoteDocumentReference)) &gt; 0"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="(count(cac:InvoiceDocumentReference) + count(cac:DebitNoteDocumentReference)) &gt; 0">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>De BillingReference moet een InvoiceDocumentReference of een DebitNoteDocumentReference (of beiden) bevatten.</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
-   </xsl:template>
-
-	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID"
-                 priority="1039"
+                 priority="1040"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID"/>
@@ -3089,6 +3169,43 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text>doc:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID must be filled</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
+   </xsl:template>
+
+	  <!--RULE -->
+<xsl:template match="doc:Invoice/cac:BuyerCustomerParty/cac:Party/cac:Contact"
+                 priority="1039"
+                 mode="M8">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="doc:Invoice/cac:BuyerCustomerParty/cac:Party/cac:Contact"/>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="matches(cbc:Telefax, '^[-0-9]*$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="matches(cbc:Telefax, '^[-0-9]*$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Telefoon en Faxnummers mogen alleen uit nummers en afbreekstreepjes bestaan.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="matches(cbc:Telephone, '^[-0-9]*$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="matches(cbc:Telephone, '^[-0-9]*$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Telefoon en Faxnummers mogen alleen uit nummers en afbreekstreepjes bestaan.</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3268,14 +3385,14 @@
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="empty(@schemeDataURI) or (@schemeDataURI='urn:digi-inkoop:ubl:2.0:NL:1.8:gc:DeliveryTermsCode')"/>
+         <xsl:when test="empty(@schemeDataURI) or (@schemeDataURI='urn:digi-inkoop:ubl:2.0:NL:1.7:gc:DeliveryTermsCode')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@schemeDataURI) or (@schemeDataURI='urn:digi-inkoop:ubl:2.0:NL:1.8:gc:DeliveryTermsCode')">
+                                test="empty(@schemeDataURI) or (@schemeDataURI='urn:digi-inkoop:ubl:2.0:NL:1.7:gc:DeliveryTermsCode')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>doc:Invoice/cac:DeliveryTerms/cbc:ID/@schemeDataURI must have one of the following values: [urn:digi-inkoop:ubl:2.0:NL:1.8:gc:DeliveryTermsCode]</svrl:text>
+               <svrl:text>doc:Invoice/cac:DeliveryTerms/cbc:ID/@schemeDataURI must have one of the following values: [urn:digi-inkoop:ubl:2.0:NL:1.7:gc:DeliveryTermsCode]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3310,28 +3427,28 @@
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="empty(@schemeURI) or (@schemeURI='http://www.nltaxonomie.nl/ubl/2.0/NL/1.8/cl/gc/DeliveryTermsCode.gc')"/>
+         <xsl:when test="empty(@schemeURI) or (@schemeURI='http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/DeliveryTermsCode.gc')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@schemeURI) or (@schemeURI='http://www.nltaxonomie.nl/ubl/2.0/NL/1.8/cl/gc/DeliveryTermsCode.gc')">
+                                test="empty(@schemeURI) or (@schemeURI='http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/DeliveryTermsCode.gc')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>doc:Invoice/cac:DeliveryTerms/cbc:ID/@schemeURI must have one of the following values: [http://www.nltaxonomie.nl/ubl/2.0/NL/1.8/cl/gc/DeliveryTermsCode.gc]</svrl:text>
+               <svrl:text>doc:Invoice/cac:DeliveryTerms/cbc:ID/@schemeURI must have one of the following values: [http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/DeliveryTermsCode.gc]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
 
 		    <!--ASSERT -->
 <xsl:choose>
-         <xsl:when test="empty(@schemeVersionID) or (@schemeVersionID='1.8')"/>
+         <xsl:when test="empty(@schemeVersionID) or (@schemeVersionID='1.7')"/>
          <xsl:otherwise>
             <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@schemeVersionID) or (@schemeVersionID='1.8')">
+                                test="empty(@schemeVersionID) or (@schemeVersionID='1.7')">
                <xsl:attribute name="location">
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
-               <svrl:text>doc:Invoice/cac:DeliveryTerms/cbc:ID/@schemeVersionID must have one of the following values: [1.8]</svrl:text>
+               <svrl:text>doc:Invoice/cac:DeliveryTerms/cbc:ID/@schemeVersionID must have one of the following values: [1.7]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>
@@ -3814,8 +3931,45 @@
    </xsl:template>
 
 	  <!--RULE -->
-<xsl:template match="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Name"
+<xsl:template match="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:Contact"
                  priority="1014"
+                 mode="M8">
+      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                       context="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:Contact"/>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="matches(cbc:Telefax, '^[-0-9]*$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="matches(cbc:Telefax, '^[-0-9]*$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Telefoon en Faxnummers mogen alleen uit nummers en afbreekstreepjes bestaan.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+
+		    <!--ASSERT -->
+<xsl:choose>
+         <xsl:when test="matches(cbc:Telephone, '^[-0-9]*$')"/>
+         <xsl:otherwise>
+            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
+                                test="matches(cbc:Telephone, '^[-0-9]*$')">
+               <xsl:attribute name="location">
+                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
+               </xsl:attribute>
+               <svrl:text>Telefoon en Faxnummers mogen alleen uit nummers en afbreekstreepjes bestaan.</svrl:text>
+            </svrl:failed-assert>
+         </xsl:otherwise>
+      </xsl:choose>
+      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
+   </xsl:template>
+
+	  <!--RULE -->
+<xsl:template match="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Name"
+                 priority="1013"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:Contact/cbc:Name"/>
@@ -3837,7 +3991,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID"
-                 priority="1013"
+                 priority="1012"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PartyIdentification/cbc:ID"/>
@@ -3874,7 +4028,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode"
-                 priority="1012"
+                 priority="1011"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PartyLegalEntity/cac:RegistrationAddress/cac:Country/cbc:IdentificationCode"/>
@@ -3896,7 +4050,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PhysicalLocation/cac:Address/cac:Country/cbc:IdentificationCode"
-                 priority="1011"
+                 priority="1010"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PhysicalLocation/cac:Address/cac:Country/cbc:IdentificationCode"/>
@@ -3918,7 +4072,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode"
-                 priority="1010"
+                 priority="1009"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cac:Country/cbc:IdentificationCode"/>
@@ -3940,7 +4094,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName"
-                 priority="1009"
+                 priority="1008"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:CityName"/>
@@ -3962,7 +4116,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone"
-                 priority="1008"
+                 priority="1007"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:SellerSupplierParty/cac:Party/cac:PostalAddress/cbc:PostalZone"/>
@@ -3984,7 +4138,7 @@
 
 	  <!--RULE -->
 <xsl:template match="doc:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme"
-                 priority="1007"
+                 priority="1006"
                  mode="M8">
       <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
                        context="doc:Invoice/cac:TaxTotal/cac:TaxSubtotal/cac:TaxCategory/cac:TaxScheme"/>
@@ -3999,111 +4153,6 @@
                   <xsl:apply-templates select="." mode="schematron-select-full-path"/>
                </xsl:attribute>
                <svrl:text> De soort belasting/heffing MOET geïdentificeerd worden met een code uit de lijst: BTW, Accijns, Toeslag, Overige.</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-      <xsl:apply-templates select="*|comment()|processing-instruction()" mode="M8"/>
-   </xsl:template>
-
-	  <!--RULE -->
-<xsl:template match="doc:Invoice/cbc:DocumentCurrencyCode" priority="1006" mode="M8">
-      <svrl:fired-rule xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                       context="doc:Invoice/cbc:DocumentCurrencyCode"/>
-
-		    <!--ASSERT -->
-<xsl:choose>
-         <xsl:when test="empty(@listAgencyID) or (@listAgencyID='6')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@listAgencyID) or (@listAgencyID='6')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>doc:Invoice/cbc:DocumentCurrencyCode/@listAgencyID must have one of the following values: [6]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-<xsl:choose>
-         <xsl:when test="empty(@listAgencyName) or (@listAgencyName='United Nations Economic Commission for Europe')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@listAgencyName) or (@listAgencyName='United Nations Economic Commission for Europe')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>doc:Invoice/cbc:DocumentCurrencyCode/@listAgencyName must have one of the following values: [United Nations Economic Commission for Europe]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-<xsl:choose>
-         <xsl:when test="empty(@listID) or (@listID='ISO 4217 Alpha')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@listID) or (@listID='ISO 4217 Alpha')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>doc:Invoice/cbc:DocumentCurrencyCode/@listID must have one of the following values: [ISO 4217 Alpha]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-<xsl:choose>
-         <xsl:when test="empty(@listName) or (@listName='Currency')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@listName) or (@listName='Currency')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>doc:Invoice/cbc:DocumentCurrencyCode/@listName must have one of the following values: [Currency]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-<xsl:choose>
-         <xsl:when test="empty(@listSchemeURI) or (@listSchemeURI='urn:un:unece:uncefact:codelist:specification:54217')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@listSchemeURI) or (@listSchemeURI='urn:un:unece:uncefact:codelist:specification:54217')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>doc:Invoice/cbc:DocumentCurrencyCode/@listSchemeURI must have one of the following values: [urn:un:unece:uncefact:codelist:specification:54217]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-<xsl:choose>
-         <xsl:when test="empty(@listURI) or (@listURI='http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/cefact/CurrencyCode-2.0.gc')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@listURI) or (@listURI='http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/cefact/CurrencyCode-2.0.gc')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>doc:Invoice/cbc:DocumentCurrencyCode/@listURI must have one of the following values: [http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/cefact/CurrencyCode-2.0.gc]</svrl:text>
-            </svrl:failed-assert>
-         </xsl:otherwise>
-      </xsl:choose>
-
-		    <!--ASSERT -->
-<xsl:choose>
-         <xsl:when test="empty(@listVersionID) or (@listVersionID='2001')"/>
-         <xsl:otherwise>
-            <svrl:failed-assert xmlns:svrl="http://purl.oclc.org/dsdl/svrl"
-                                test="empty(@listVersionID) or (@listVersionID='2001')">
-               <xsl:attribute name="location">
-                  <xsl:apply-templates select="." mode="schematron-select-full-path"/>
-               </xsl:attribute>
-               <svrl:text>doc:Invoice/cbc:DocumentCurrencyCode/@listVersionID must have one of the following values: [2001]</svrl:text>
             </svrl:failed-assert>
          </xsl:otherwise>
       </xsl:choose>

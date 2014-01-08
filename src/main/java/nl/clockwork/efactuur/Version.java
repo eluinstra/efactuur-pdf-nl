@@ -38,30 +38,43 @@ public class Version
 	{
 		return version;
 	}
-	
-	@Override
-	public boolean equals(Object object)
-	{
-		if (this == object)
-			return true;
-		if (!(object instanceof Version))
-			return false;
-		Version o = (Version)object;
-		return validationType == null ? o.getValidationType() == null : validationType.equals(o.getValidationType())
-			&& messageFormat == null ? o.getMessageFormat() == null : messageFormat.equals(o.getMessageFormat())
-			&& messageType == null ? o.getMessageType() == null : messageType.equals(o.getMessageType())
-			&& version == null ? o.getVersion() == null : version.equals(o.getVersion())
-		;
-	}
-	
+
 	@Override
 	public int hashCode()
 	{
-		int hash = 1;
-		hash = hash * 13 + (validationType == null ? 0 : validationType.hashCode());
-		hash = hash * 17 + (messageFormat == null ? 0 : messageFormat.hashCode());
-		hash = hash * 19 + (messageType == null ? 0 : messageType.hashCode());
-		hash = hash * 23 + (version == null ? 0 : version.hashCode());
-		return hash;
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((messageFormat == null) ? 0 : messageFormat.hashCode());
+		result = prime * result + ((messageType == null) ? 0 : messageType.hashCode());
+		result = prime * result + ((validationType == null) ? 0 : validationType.hashCode());
+		result = prime * result + ((version == null) ? 0 : version.hashCode());
+		return result;
 	}
+
+	@Override
+	public boolean equals(Object obj)
+	{
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Version other = (Version) obj;
+		if (messageFormat != other.messageFormat)
+			return false;
+		if (messageType != other.messageType)
+			return false;
+		if (validationType != other.validationType)
+			return false;
+		if (version == null)
+		{
+			if (other.version != null)
+				return false;
+		} else if (!version.equals(other.version))
+			return false;
+		return true;
+	}
+	
+
 }
