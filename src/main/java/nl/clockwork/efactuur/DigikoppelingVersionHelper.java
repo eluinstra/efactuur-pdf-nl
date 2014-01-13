@@ -215,7 +215,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/Genericode-Validation.xsl");
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Genericode-Validation.xsl");
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/ApplicationResponse-Schematron-Validation.xsl");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/ApplicationResponse-Schematron-Validation.xsl");
