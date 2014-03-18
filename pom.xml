@@ -20,7 +20,7 @@
 	<groupId>nl.clockwork</groupId>
 	<artifactId>efactuur-pdf-nl</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1.8</version>
+	<version>1.1.9-SNAPSHOT</version>
 	<name>efactuur-pdf-nl</name>
 	<url>http://maven.apache.org</url>
 	<distributionManagement>
