@@ -186,18 +186,30 @@
 		<fo:block font-weight="bold">
 			Leverancier
 		</fo:block>
-		<fo:block font-weight="bold">
-			<xsl:value-of select="/bericht/leverancier/niet_natuurlijk_persoon/naam"/>
-		</fo:block>
-		<fo:block>
-			<xsl:value-of select="/bericht/leverancier/niet_natuurlijk_persoon/telefoonnummer"/>
-		</fo:block>
-		<xsl:if test="/bericht/leverancier/niet_natuurlijk_persoon/contactpersoon/naam!=''">
-			<fo:block>
-				t.a.v. <xsl:value-of select="/bericht/leverancier/niet_natuurlijk_persoon/contactpersoon/naam"/>
-			</fo:block>		
-		</xsl:if>
+		
+		<xsl:apply-templates select="/bericht/leverancier/niet_natuurlijk_persoon"/>	
 		<xsl:apply-templates select="/bericht/leverancier/adres"/>				
+	</xsl:template>
+	
+	<xsl:template match="niet_natuurlijk_persoon">
+		<fo:block font-weight="bold">
+			<xsl:value-of select="naam"/>
+		</fo:block>
+		<xsl:if test="contactpersoon/naam!=''">
+			<fo:block>
+				t.a.v. <xsl:value-of select="contactpersoon/naam"/>
+			</fo:block>		
+		</xsl:if>		
+		<xsl:if test="contactpersoon/telefoonnummer!=''">
+			<fo:block>
+				tel.: <xsl:value-of select="contactpersoon/telefoonnummer"/>
+			</fo:block>
+		</xsl:if>
+		<xsl:if test="contactpersoon/email!=''">
+			<fo:block>
+				email: <xsl:value-of select="contactpersoon/email"/>
+			</fo:block>
+		</xsl:if>				
 	</xsl:template>
 	
 	<xsl:template name="factuur_info">
@@ -235,19 +247,15 @@
 		<fo:block font-weight="bold">
 			Crediteur
 		</fo:block>
-		<fo:block font-weight="bold">
-			<xsl:value-of select="/bericht/crediteur/niet_natuurlijk_persoon/naam"/>
-		</fo:block>
-		<xsl:if test="/bericht/crediteur/niet_natuurlijk_persoon/contactpersoon/naam!=''">		
-			<fo:block>
-				t.a.v. <xsl:value-of select="/bericht/crediteur/niet_natuurlijk_persoon/contactpersoon/naam"/>
-			</fo:block>
-		</xsl:if>		
-		<xsl:apply-templates select="/bericht/crediteur/niet_natuurlijk_persoon/contactpersoon"/>	
+				
 		<xsl:apply-templates select="/bericht/crediteur/adres"/>
+		<xsl:apply-templates select="/bericht/crediteur/niet_natuurlijk_persoon"/>
 	</xsl:template>
 
 	<xsl:template name="crediteur_info">
+		<fo:block>
+			<fo:leader />
+		</fo:block>
 		<fo:block>
 			BTW Nummer: <xsl:value-of select="/bericht/crediteur/btw_nummer"/>
 		</fo:block>
@@ -269,17 +277,7 @@
 		<fo:block font-weight="bold">
 			Afnemer
 		</fo:block>
-		<fo:block font-weight="bold">
-			<xsl:value-of select="/bericht/afnemer/niet_natuurlijk_persoon/naam"/>					
-		</fo:block>
-		<fo:block font-weight="bold">
-			<xsl:value-of select="/bericht/afnemer/niet_natuurlijk_persoon/departement"/>		
-		</fo:block>
-		<xsl:if test="/bericht/afnemer/niet_natuurlijk_persoon/contactpersoon/naam!=''">		
-			<fo:block>
-				t.a.v. <xsl:value-of select="/bericht/afnemer/niet_natuurlijk_persoon/contactpersoon/naam"/>
-			</fo:block>
-		</xsl:if>				
+		<xsl:apply-templates select="/bericht/afnemer/niet_natuurlijk_persoon"/>					
 		<xsl:apply-templates select="/bericht/afnemer/adres"/>
 	</xsl:template>
 
@@ -287,17 +285,7 @@
 		<fo:block font-weight="bold">
 			Debiteur
 		</fo:block>
-		<fo:block font-weight="bold">
-			<xsl:value-of select="/bericht/debiteur/niet_natuurlijk_persoon/naam"/>
-		</fo:block>
-		<fo:block font-weight="bold">
-			<xsl:value-of select="/bericht/debiteur/niet_natuurlijk_persoon/departement"/>		
-		</fo:block>		
-		<xsl:if test="/bericht/debiteur/niet_natuurlijk_persoon/contactpersoon/naam!=''">		
-			<fo:block>
-				t.a.v. <xsl:value-of select="/bericht/debiteur/niet_natuurlijk_persoon/contactpersoon/naam"/>
-			</fo:block>
-		</xsl:if>		
+		<xsl:apply-templates select="/bericht/debiteur/niet_natuurlijk_persoon"/>	
 		<xsl:apply-templates select="/bericht/debiteur/adres"/>
 	</xsl:template>
 
