@@ -38,17 +38,17 @@ public class Version
 	{
 		return validationType;
 	}
-	
+
 	public MessageFormat getMessageFormat()
 	{
 		return messageFormat;
 	}
-	
+
 	public MessageType getMessageType()
 	{
 		return messageType;
 	}
-	
+
 	public String getVersion()
 	{
 		return version;
@@ -75,7 +75,7 @@ public class Version
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Version other = (Version) obj;
+		Version other = (Version)obj;
 		if (messageFormat != other.messageFormat)
 			return false;
 		if (messageType != other.messageType)
@@ -86,10 +86,10 @@ public class Version
 		{
 			if (other.version != null)
 				return false;
-		} else if (!version.equals(other.version))
+		}
+		else if (!version.equals(other.version))
 			return false;
 		return true;
 	}
-	
 
 }

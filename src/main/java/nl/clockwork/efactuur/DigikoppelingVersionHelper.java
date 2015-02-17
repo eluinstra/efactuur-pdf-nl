@@ -21,10 +21,8 @@ import nl.clockwork.efactuur.Constants.MessageFormat;
 import nl.clockwork.efactuur.Constants.MessageType;
 import nl.clockwork.efactuur.Constants.ValidationType;
 
-
 public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.VersionHelper
 {
-
 	// regular expression that a version should match
 	// 1 . 8 . 1 . beta 02
 	static String versionRegExp = "[0-9a-zA-Z]{1}[\\.|_]{1}[0-9a-zA-Z]+[\\.|_]?[0-9a-zA-Z]*[\\.|_]?(beta)?[0-9]*";
@@ -208,6 +206,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/OrderResponse-Schematron-Validation.xsl");
 			
 			// UBL: Despatch Advice
+			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/DespatchAdvice.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xsd/maindoc/DespatchAdvice.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/xsd/maindoc/DespatchAdvice.xsd");
