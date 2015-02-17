@@ -23,6 +23,8 @@ public class Constants
 	// HashMap containing the root-tag of a message mapped that message's messageType
 	public final static HashMap<String, nl.clockwork.efactuur.Constants.MessageType> rootTagToMessageType = new HashMap<String, nl.clockwork.efactuur.Constants.MessageType>()
 	{
+		private static final long serialVersionUID = 1L;
+		
 		{
 			put("ApplicationResponse", nl.clockwork.efactuur.Constants.MessageType.APPLICATION_RESPONSE);
 			put("Commitment", nl.clockwork.efactuur.Constants.MessageType.COMMITMENT);
@@ -42,6 +44,8 @@ public class Constants
 	// HashMap containing the root-tag of a message mapped that message's messageType
 	public final static HashMap<BerichtSoort, MessageType> berichtSoortToMessageType = new HashMap<BerichtSoort, MessageType>()
 	{
+		private static final long serialVersionUID = 1L;
+
 		{
 			put(BerichtSoort.BUDGETCHECK_ANTWOORD_UBL, nl.clockwork.efactuur.Constants.MessageType.APPLICATION_RESPONSE);
 			
@@ -50,7 +54,6 @@ public class Constants
 			put(BerichtSoort.OFFERTE_HRXML, nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
 			put(BerichtSoort.BESTELLING_BEVESTIGING_HRXML, nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
 			put(BerichtSoort.AFWIJZING_HRXML, nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
-		
 			
 			put(BerichtSoort.OFFERTE_AANVRAAG_HRXML, nl.clockwork.efactuur.Constants.MessageType.STAFFING_ORDER);
 			put(BerichtSoort.BESTELLING_HRXML, nl.clockwork.efactuur.Constants.MessageType.STAFFING_ORDER);
@@ -76,19 +79,18 @@ public class Constants
 			put(BerichtSoort.TIMECARD_HRXML, nl.clockwork.efactuur.Constants.MessageType.TIME_CARD);
 		}
 	};	
-		
-	
 	
 	// HashMap containing the major ubl versions mapped to their specific versions in the efactuur project.
 	public final static HashMap<String, String> ublMajorVersionToSpecificVersion = new HashMap<String, String>()
 	{
+		private static final long serialVersionUID = 1L;
+
 		{
 			put("1.0", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_1);
 			put("1.1", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_1);
 			put("1.6", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_6_3);
 			put("1.7", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_7);
 			put("1.8", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_8);
-			
 			put("1.9", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_9);
 		}		
 	};
@@ -96,11 +98,13 @@ public class Constants
 	// HashMap containing the major setu versions mapped to their specific versions in the efactuur project.
 	public final static HashMap<String, String> setuMajorVersionToSpecificVersion = new HashMap<String, String>()
 	{
+		private static final long serialVersionUID = 1L;
+
 		{
 			put("1.1", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_1);
 			put("1.6", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_6_4);
 			put("1.7", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_7);
-			put("1.8", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_8_1);	
+			put("1.8", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_8_1);
 			put("2.0", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_2_0);
 		}		
 	};	
@@ -218,6 +222,7 @@ public class Constants
 			}
 		}		
 	};	
+	
 	public enum MessageType
 	{
 		UNKNOWN(0), INVOICE(1), COMMITMENT(2), QUOTATION(3), ORDER_RESPONSE(4), DESPATCH_ADVICE(5), APPLICATION_RESPONSE(6), REQUEST_FOR_QUOTATION(7), REQUEST_FOR_QUOTATION_CANCELLATION(8), ORDER(9), HUMAN_RESOURCE(10), TIME_CARD(11), STAFFING_ORDER(12);
@@ -315,6 +320,4 @@ public class Constants
 			return null;
 		}
 	};
-	
-	
 }

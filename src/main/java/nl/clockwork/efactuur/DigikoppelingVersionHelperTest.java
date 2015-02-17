@@ -28,7 +28,6 @@ import org.junit.Test;
 
 public class DigikoppelingVersionHelperTest {
 
-//	public static final Log log = LogFactory.getLog(DigikoppelingVersionHelperTest.class);
 	DigikoppelingVersionHelper helper = new DigikoppelingVersionHelper();
 	
 	@Test
@@ -36,81 +35,81 @@ public class DigikoppelingVersionHelperTest {
 
 		try
 		{		
-			assertFalse("UBL 1.1 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_1)
+			assertFalse("UBL 1.1 should return some path", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_1)
 					.equals(""));
-			assertFalse("UBL 1.6 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3)
+			assertFalse("UBL 1.6 should return some path", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3)
 					.equals(""));
-			assertFalse("UBL 1.7 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7)
+			assertFalse("UBL 1.7 should return some path", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7)
 					.equals(""));
-			assertFalse("UBL 1.8 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_8)
+			assertFalse("UBL 1.8 should return some path", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_8)
 					.equals(""));
-			assertFalse("UBL 1.9 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_9)
+			assertFalse("UBL 1.9 should return some path", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_9)
 					.equals(""));
 
-			assertFalse("SETU 1.6.x should return some path...", helper
+			assertFalse("SETU 1.6.x should return some path", helper
 					.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_6_4).equals(""));
-			assertFalse("SETU 1.7 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7)
+			assertFalse("SETU 1.7 should return some path", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7)
 					.equals(""));
-			assertFalse("SETU 1.8 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8)
+			assertFalse("SETU 1.8 should return some path", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8)
 					.equals(""));
-			assertFalse("SETU 2.0 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_2_0)
+			assertFalse("SETU 2.0 should return some path", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_2_0)
 					.equals(""));
 			
 		} catch (VersionNotFoundException e)
 		{
 			e.printStackTrace();
-			assertFalse("TEST SHOULD NOT THROW EXCEPTIONS ! ", true);
+			assertFalse("Test should not throw exceptions", true);
 		}
 	}
 
 	@Test
 	public void testGenericodeVersions() {
 		try {
-			assertFalse("UBL 1.1 should return some path...",
+			assertFalse("UBL 1.1 should return some path",
 					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_1).equals(""));
-			assertFalse("UBL 1.6 should return some path...",
+			assertFalse("UBL 1.6 should return some path",
 					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3).equals(""));
-			assertFalse("UBL 1.7 should return some path...",
+			assertFalse("UBL 1.7 should return some path",
 					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7).equals(""));
-			assertFalse("UBL 1.8 should return some path...",
+			assertFalse("UBL 1.8 should return some path",
 					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_8).equals(""));
-			assertFalse("UBL 1.9 should return some path...",
+			assertFalse("UBL 1.9 should return some path",
 					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_9).equals(""));
 		}
 		catch (VersionNotFoundException e)
 		{
 			e.printStackTrace();
-			assertFalse("TEST SHOULD NOT THROW EXCEPTIONS ! ", true);
+			assertFalse("Test should not throw exceptions", true);
 		}		
 	}
 
 	@Test
 	public void testSchematronVersions() {
 		try {
-			assertFalse("UBL 1.1 should return some path...",
+			assertFalse("UBL 1.1 should return some path",
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_1).equals(""));
-			assertFalse("UBL 1.6 should return some path...",
+			assertFalse("UBL 1.6 should return some path",
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3).equals(""));
-			assertFalse("UBL 1.7 should return some path...",
+			assertFalse("UBL 1.7 should return some path",
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7).equals(""));
-			assertFalse("UBL 1.8 should return some path...",
+			assertFalse("UBL 1.8 should return some path",
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_8).equals(""));
-			assertFalse("UBL 1.9 should return some path...",
+			assertFalse("UBL 1.9 should return some path",
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_9).equals(""));
 	
-			assertFalse("SETU 1.6.x should return some path...",
+			assertFalse("SETU 1.6.x should return some path",
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_6_4).equals(""));
-			assertFalse("SETU 1.7 should return some path...",
+			assertFalse("SETU 1.7 should return some path",
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7).equals(""));
-			assertFalse("SETU 1.8 should return some path...",			
+			assertFalse("SETU 1.8 should return some path",			
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8).equals(""));
-			assertFalse("SETU 2.0 should return some path...",			
+			assertFalse("SETU 2.0 should return some path",			
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_2_0).equals(""));
 		}
 		catch (VersionNotFoundException e)
 		{
 			e.printStackTrace();
-			assertFalse("TEST SHOULD NOT THROW EXCEPTIONS ! ", true);
+			assertFalse("Test should not throw exceptions", true);
 		}
 	}
 
@@ -121,7 +120,6 @@ public class DigikoppelingVersionHelperTest {
 			fail("Expecting VersionNotFoundException when message format is unknown");
 		} catch (Exception e) {
 			assertTrue("Expecting VersionNotFoundException when message format is unknown", e instanceof VersionNotFoundException);
-//			log.info("Expected: " + e.getMessage());
 		}
 
 		try {
@@ -129,16 +127,7 @@ public class DigikoppelingVersionHelperTest {
 			fail("Expecting VersionNotFoundException when message version is unknown");
 		} catch (Exception e) {
 			assertTrue("Expecting VersionNotFoundException when message version is unknown", e instanceof VersionNotFoundException);
-//			log.info("Expected: " + e.getMessage());
 		}
-
-		// try {
-		// helper.getXsdPath(MessageFormat.UBL, "%%%%%");
-		// fail("Expecting VersionNotFoundException when message version is invalid format");
-		// } catch (Exception e) {
-		// assertEquals("Expecting VersionNotFoundException when message version is invalid format", VersionNotFoundException.class, e.getClass());
-		// log.info("Expected: " + e.getMessage());
-		// }
 	}
 
 	@Test
@@ -148,58 +137,39 @@ public class DigikoppelingVersionHelperTest {
 			helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_6_4);
 			fail("Expecting VersionNotFoundException when message format is SETU, since SETU does not have schematron validations");
 		} catch (Exception e) {
-//			log.info("Exception class is : " + e.getClass());
 			assertTrue("Expecting VersionNotFoundException when message format is SETU, since SETU does not have schematron validations",
 					e instanceof VersionNotFoundException);
-//			log.info("Expected : " + e.getMessage());
 		}
 
 		try {
 			helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7);
 			fail("Expecting VersionNotFoundException when message format is SETU, since SETU does not have schematron validations");
 		} catch (Exception e) {
-//			log.info("Exception class is : " + e.getClass());
 			assertTrue("Expecting VersionNotFoundException when message format is SETU, since SETU does not have schematron validations",
 					e instanceof VersionNotFoundException);
-//			log.info("Expected : " + e.getMessage());
 		}
 
 		try {
 			helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8);
 			fail("Expecting VersionNotFoundException when message format is SETU, since SETU does not have schematron validations");
 		} catch (Exception e) {
-//			log.info("Exception class is : " + e.getClass());
 			assertTrue("Expecting VersionNotFoundException when message format is SETU, since SETU does not have schematron validations",
 					e instanceof VersionNotFoundException);
-//			log.info("Expected : " + e.getMessage());
 		}
 
 		try {
 			helper.getGenericodeXslPath(MessageType.UNKNOWN,MessageFormat.UNKNOWN, Constants.MESSAGE_VERSION_SETU_1_8);
 			fail("Expecting VersionNotFoundException when message format is unknown");
 		} catch (Exception e) {
-//			log.info("Exception class is : " + e.getClass());
 			assertTrue("Expecting VersionNotFoundException when message format is unknown", e instanceof VersionNotFoundException);
-//			log.info("Expected : " + e.getMessage());
 		}
 
 		try {
 			helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, "0.0.0");
 			fail("Expecting VersionNotFoundException when message version is unknown");
 		} catch (Exception e) {
-//			log.info("Exception class is : " + e.getClass());
 			assertTrue("Expecting VersionNotFoundException when message version is unknown", e instanceof VersionNotFoundException);
-//			log.info("Expected : " + e.getMessage());
 		}
-
-		// try {
-		// helper.getGenericodeXslPath(MessageFormat.UBL, "%%%%%");
-		// fail("Expecting VersionNotFoundException when message version is invalidad format");
-		// } catch (Exception e) {
-		// log.info("Exception class is : " + e.getClass());
-		// assertTrue("Expecting VersionNotFoundException when message version is invalid format", e instanceof VersionNotFoundException);
-		// log.info("Expected : " + e.getMessage());
-		// }
 	}
 
 	@Test
@@ -208,28 +178,15 @@ public class DigikoppelingVersionHelperTest {
 			helper.getSchematronXslPath(MessageType.UNKNOWN,MessageFormat.UNKNOWN, Constants.MESSAGE_VERSION_SETU_1_8);
 			fail("Expecting VersionNotFoundException when message format is unknown");
 		} catch (Exception e) {
-//			log.info("Exception class is : " + e.getClass());
 			assertTrue("Expecting VersionNotFoundException when message format is unknown", e instanceof VersionNotFoundException);
-//			log.info("Expected: " + e.getMessage());
 		}
 
 		try {
 			helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, "0.0.0");
 			fail("Expecting VersionNotFoundException when message version is unknown");
 		} catch (Exception e) {
-//			log.info("Exception class is : " + e.getClass());
 			assertTrue("Expecting VersionNotFoundException when message version is unknown", e instanceof VersionNotFoundException);
-//			log.info("Expected : " + e.getMessage());
 		}
-
-		// try {
-		// helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, "%%%%%");
-		// fail("Expecting VersionNotFoundException when message version is invalid format");
-		// } catch (Exception e) {
-		// log.info("Exception class is : " + e.getClass());
-		// assertTrue("Expecting VersionNotFoundException when message version is invalid format", e instanceof VersionNotFoundException);
-		// log.info("Expected : " + e.getMessage());
-		// }
 	}
 	
 	@Test
@@ -250,7 +207,7 @@ public class DigikoppelingVersionHelperTest {
 			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_2_0);
 		} catch (Exception e) {
 			e.printStackTrace();
-			assertFalse("Test should not throw Exception !", true);
+			assertFalse("Test should not throw exception", true);
 		}
 	}
 }
