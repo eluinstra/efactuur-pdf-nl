@@ -89,6 +89,7 @@ public class Constants
 			put("1.7", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_7);
 			put("1.8", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_8);
 			
+			put("1.9", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_9);
 		}		
 	};
 
@@ -100,6 +101,7 @@ public class Constants
 			put("1.6", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_6_4);
 			put("1.7", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_7);
 			put("1.8", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_8_1);	
+			put("2.0", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_2_0);
 		}		
 	};	
 	
@@ -114,6 +116,7 @@ public class Constants
 	public static final String MESSAGE_VERSION_UBL_1_7 = "1.7";
 	public static final String MESSAGE_VERSION_UBL_1_8_beta2 = "1.8.beta2";
 	public static final String MESSAGE_VERSION_UBL_1_8 = "1.8";
+	public static final String MESSAGE_VERSION_UBL_1_9 = "1.9";
 	public static final String MESSAGE_VERSION_UBL_DEFAULT = MESSAGE_VERSION_UBL_1_8;
 
 	public static final String MESSAGE_VERSION_SETU_1_1 = "1.1";
@@ -122,6 +125,7 @@ public class Constants
 	public static final String MESSAGE_VERSION_SETU_1_8 = "1.8";
 	public static final String MESSAGE_VERSION_SETU_1_8_1_beta01 = "1.8.1.beta01";
 	public static final String MESSAGE_VERSION_SETU_1_8_1 = "1.8.1";
+	public static final String MESSAGE_VERSION_SETU_2_0 = "2.0";
 	public static final String MESSAGE_VERSION_SETU_DEFAULT = MESSAGE_VERSION_SETU_1_8_1;
 
 	public static final String MESSAGE_TYPE_UNKNOWN = MessageType.UNKNOWN.name();

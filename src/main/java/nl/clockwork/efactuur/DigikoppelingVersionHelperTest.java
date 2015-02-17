@@ -42,12 +42,18 @@ public class DigikoppelingVersionHelperTest {
 					.equals(""));
 			assertFalse("UBL 1.7 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7)
 					.equals(""));
+			assertFalse("UBL 1.8 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_8)
+					.equals(""));
+			assertFalse("UBL 1.9 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_9)
+					.equals(""));
 
 			assertFalse("SETU 1.6.x should return some path...", helper
 					.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_6_4).equals(""));
 			assertFalse("SETU 1.7 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7)
 					.equals(""));
 			assertFalse("SETU 1.8 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8)
+					.equals(""));
+			assertFalse("SETU 2.0 should return some path...", helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_2_0)
 					.equals(""));
 			
 		} catch (VersionNotFoundException e)
@@ -66,6 +72,10 @@ public class DigikoppelingVersionHelperTest {
 					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3).equals(""));
 			assertFalse("UBL 1.7 should return some path...",
 					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7).equals(""));
+			assertFalse("UBL 1.8 should return some path...",
+					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_8).equals(""));
+			assertFalse("UBL 1.9 should return some path...",
+					helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_9).equals(""));
 		}
 		catch (VersionNotFoundException e)
 		{
@@ -83,6 +93,10 @@ public class DigikoppelingVersionHelperTest {
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_6_3).equals(""));
 			assertFalse("UBL 1.7 should return some path...",
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_7).equals(""));
+			assertFalse("UBL 1.8 should return some path...",
+					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_8).equals(""));
+			assertFalse("UBL 1.9 should return some path...",
+					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL, Constants.MESSAGE_VERSION_UBL_1_9).equals(""));
 	
 			assertFalse("SETU 1.6.x should return some path...",
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_6_4).equals(""));
@@ -90,6 +104,8 @@ public class DigikoppelingVersionHelperTest {
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7).equals(""));
 			assertFalse("SETU 1.8 should return some path...",			
 					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8).equals(""));
+			assertFalse("SETU 2.0 should return some path...",			
+					helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_2_0).equals(""));
 		}
 		catch (VersionNotFoundException e)
 		{
@@ -223,12 +239,15 @@ public class DigikoppelingVersionHelperTest {
 			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_6_2);
 			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_6_3);
 			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_7);
+			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_8);
 			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_8_beta2);
+			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_9);
 			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_1_1);
 			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_1_6_4);
 			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_1_7);
 			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_1_8);
 			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_1_8_1_beta01);
+			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_2_0);
 		} catch (Exception e) {
 			e.printStackTrace();
 			assertFalse("Test should not throw Exception !", true);
