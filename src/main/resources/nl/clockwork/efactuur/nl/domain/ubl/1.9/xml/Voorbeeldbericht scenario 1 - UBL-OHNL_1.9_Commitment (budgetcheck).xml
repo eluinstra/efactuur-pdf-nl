@@ -1,0 +1,123 @@
+<Commitment xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:nl-cac="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-CommonAggregateComponents-2" xmlns="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-Commitment-2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-Commitment-2 ../xsdrt/maindoc/Commitment-NL-1.8.xsd">
+	<cbc:UBLVersionID>2.0</cbc:UBLVersionID><!--De versie van de UBL standaard die van toepassing is op dit bericht-->
+	<cbc:CustomizationID>1.9</cbc:CustomizationID><!--De versie van de OHNL standaard die van toepassing is op dit bericht-->
+	<cbc:ProfileID>NL</cbc:ProfileID>
+	<cbc:ID>120938-875234</cbc:ID><!--De ID van de budgetcheck, deze dient teruggegeven te worden in het budgetcheck antwoordbericht-->
+	<cbc:IssueDate>2014-10-07</cbc:IssueDate>
+	<cbc:IssueTime>14:02:07</cbc:IssueTime>
+	<cbc:Note>Omschrijving bestelaanvraag</cbc:Note><!--Hier staat de omschrijving van de bestelaanvraag op kopniveau-->
+	<cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Currency" listVersionID="2001" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/cefact/CurrencyCode-2.0.gc" listSchemeURI="urn:un:unece:uncefact:codelist:specification:54217">EUR</cbc:DocumentCurrencyCode>
+	<cbc:ActionCode listID="NL-1006" listAgencyID="88" listAgencyName="Logius Gegevensbeheer NL-Overheid" listName="ActieCode" listVersionID="1.9" listURI="http://www.nltaxonomie.nl/ubl/2.0/NL/1.9/cl/gc/NL-ActionCode-1.9.gc" listSchemeURI="urn:digi-inkoop:ubl:2.0:NL:1.9:gc:ActionCode">R</cbc:ActionCode><!--Dit geeft aan of het om een reservering/budgetcheck gaat (R) of om een verplichting (V)-->
+	<cac:DocumentReference>
+		<cbc:ID>10000818</cbc:ID><!--Het bestelaanvraagnummer-->
+		<cbc:DocumentType>Bestelaanvraag</cbc:DocumentType><!--Het type van het inkoopdocumentnummer zoals hierboven weergegeven-->
+	</cac:DocumentReference>
+	<cac:SellerSupplierParty>
+		<cbc:CustomerAssignedAccountID>13023</cbc:CustomerAssignedAccountID><!--Het leveranciersnummer zoals de leverancier bij de deelnemer bekend is-->
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="KvK">12345678</cbc:ID><!--Het KvKnummer van de leverancier-->
+			</cac:PartyIdentification>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="Vest">000012345678</cbc:ID><!--Het vestigingsnummer van de leverancier-->
+			</cac:PartyIdentification>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="BTW">NL0012345678B01</cbc:ID><!--Het BTW-nummer van de leverancier-->
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Naam Leverancier BV</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cbc:SupplierAssignedAccountID>3021270</cbc:SupplierAssignedAccountID><!--Het klantnummer zoals de overheidsorganisatie bij de leverancier bekend is-->
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="OIN">00000001003227522000</cbc:ID><!--Het OIN-nummer van de Overheidsorganisatie-->
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Naam Overheidsorganisatie</cbc:Name>
+			</cac:PartyName>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">6482.70</cbc:TaxAmount><!--Totale BTW bedrag van de gehele order-->
+		<cac:TaxSubtotal><!--Container en onderliggende velden geven belastingdetails per BTW type-->
+			<cbc:TaxableAmount currencyID="EUR">37352.70</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">6482.70</cbc:TaxAmount>
+			<cbc:Percent>21</cbc:Percent>
+			<cac:TaxCategory>
+				<cbc:Name>BTW HOOG</cbc:Name><!--Het BTW type dat van toepassing is-->
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:Name>BTW</cbc:Name>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:AnticipatedMonetaryTotal>
+		<cbc:TaxExclusiveAmount currencyID="EUR">30870.00</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">37352.70</cbc:TaxInclusiveAmount>
+		<cbc:PayableAmount currencyID="EUR">37352.70</cbc:PayableAmount>
+	</cac:AnticipatedMonetaryTotal>
+	<nl-cac:CommitmentLine>
+		<cac:LineItem>
+			<cbc:ID>1.1</cbc:ID><!--Verwijzing naar het regelnummer van de bestelaanvraag -->
+			<cbc:Note>Pak pennen 12 stuks</cbc:Note><!--Omschrijving van de bestelaanvraagregel-->
+			<cbc:Quantity unitCode="EA">10000.00</cbc:Quantity><!--Aantal besteld-->
+			<cbc:LineExtensionAmount currencyID="EUR">27600.00</cbc:LineExtensionAmount><!--Bedrag exclusief BTW van de bestelaanvraagregel-->
+			<cbc:TotalTaxAmount currencyID="EUR">5796.00</cbc:TotalTaxAmount><!--BTW bedrag van de bestelaanvraagregel-->
+			<cbc:AccountingCostCode>0010.420430.3900.15276.00000000.00000000.00000000.0000.00000000</cbc:AccountingCostCode><!--Rubricering die van toepassing is op de bestelaanvraagregel-->
+			<cac:Delivery>
+				<cac:RequestedDeliveryPeriod>
+					<cbc:StartDate>2014-10-14</cbc:StartDate><!--Gewenste leverdatum-->
+				</cac:RequestedDeliveryPeriod>
+			</cac:Delivery>
+			<cac:Item>
+				<cbc:Description>Pak pennen 12 stuks</cbc:Description><!--Omschrijving van het product op de bestelaanvraagregel-->
+				<cbc:CatalogueIndicator>false</cbc:CatalogueIndicator>
+				<cbc:Name>Pak pennen 12 stuks</cbc:Name><!--Naam van het product op de bestelaanvraagregel-->
+				<cac:ClassifiedTaxCategory>
+					<cbc:Percent>21.00</cbc:Percent><!--Hier staat het BTW percentage zoals van toepassing op de bestelaanvraagregel-->
+					<cac:TaxScheme>
+						<cbc:Name>BTW</cbc:Name><!--Hier staat het belastingschema zoals van toepassing op de bestelaanvraagregel-->
+					</cac:TaxScheme>
+				</cac:ClassifiedTaxCategory>
+			</cac:Item>
+		</cac:LineItem>
+		<cac:LineValidityPeriod>
+			<cbc:EndDate>2014-10-07</cbc:EndDate>
+		</cac:LineValidityPeriod>
+	</nl-cac:CommitmentLine>
+	<nl-cac:CommitmentLine>
+		<cac:LineItem>
+			<cbc:ID>2.1</cbc:ID>
+			<cbc:Note>Pak potloden12 stuks</cbc:Note>
+			<cbc:Quantity unitCode="EA">1000.00</cbc:Quantity>
+			<cbc:LineExtensionAmount currencyID="EUR">3270.00</cbc:LineExtensionAmount>
+			<cbc:TotalTaxAmount currencyID="EUR">686.70</cbc:TotalTaxAmount>
+			<cbc:AccountingCostCode>0010.420430.3900.15276.00000000.00000000.00000000.0000.00000000</cbc:AccountingCostCode>
+			<cac:Delivery>
+				<cac:RequestedDeliveryPeriod>
+					<cbc:StartDate>2014-10-14</cbc:StartDate>
+				</cac:RequestedDeliveryPeriod>
+			</cac:Delivery>
+			<cac:Item>
+				<cbc:Description>Pak potloden12 stuks</cbc:Description>
+				<cbc:CatalogueIndicator>false</cbc:CatalogueIndicator>
+				<cbc:Name>Pak potloden12 stuks</cbc:Name>
+				<cac:ClassifiedTaxCategory>
+					<cbc:Percent>21.00</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:Name>BTW</cbc:Name>
+					</cac:TaxScheme>
+				</cac:ClassifiedTaxCategory>
+			</cac:Item>
+		</cac:LineItem>
+		<cac:LineValidityPeriod>
+			<cbc:EndDate>2014-10-07</cbc:EndDate>
+		</cac:LineValidityPeriod>
+	</nl-cac:CommitmentLine>
+</Commitment>

@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/">
+    <Identification>
+        <ShortName>DeliveryTermsCode</ShortName>
+        <LongName xml:lang="nl">Leveringsvoorwaarden</LongName>
+        <LongName Identifier="schemeID">NL-1002</LongName>
+        <Version>1.8</Version>
+        <CanonicalUri>urn:digi-inkoop:ubl:2.0:NL:1.8:gc:DeliveryTermsCode</CanonicalUri>
+        <CanonicalVersionUri>urn:digi-inkoop:ubl:2.0:NL:1.8:gc:/DeliveryTermsCode-1.8</CanonicalVersionUri>
+        <LocationUri>http://www.nltaxonomie.nl/ubl/2.0/NL/1.8/cl/gc/DeliveryTermsCode.gc</LocationUri>
+        <Agency>
+            <LongName xml:lang="nl">Logius Gegevensbeheer NL-Overheid</LongName>
+            <Identifier>88</Identifier>
+        </Agency>
+    </Identification>
+    <ColumnSet>
+        <Column Id="code" Use="required">
+            <ShortName>Code</ShortName>
+            <Data Type="normalizedString"/>
+        </Column>
+        <Column Id="name" Use="optional">
+            <ShortName>Name</ShortName>
+            <Data Type="string"/>
+        </Column>
+        <Key Id="codeKey">
+            <ShortName>CodeKey</ShortName>
+            <ColumnRef Ref="code"/>
+        </Key>
+    </ColumnSet>
+    <SimpleCodeList>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>EXW</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Ex Works</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>FCA</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Free Carrier</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>FAS</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Free Alongside Ship</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>FOB</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Free On Board</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>FOT</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Free On Truck</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>FOP</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Free On Plane</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>FOR</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Free On Rail</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>CFR</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Cost and Freight</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>CIF</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Cost, Insurance and Freight</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>CPT</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Carriage Paid To</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>CIP</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Carriage and Insurance Paid to</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>DAF</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Delivered At Frontier</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>DES</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Delivered Ex Ship</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>DEQ</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Delivered Ex Quay</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>DDU</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Delivered Duty Unpaid</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>DDP</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Delivered Duty Paid</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>DAT</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Delivered At Terminal (Franco terminal)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="code">
+                <SimpleValue>DAP</SimpleValue>
+            </Value>
+            <Value ColumnRef="name">
+                <SimpleValue>Delivered At Place (Franco ter plaatse)</SimpleValue>
+            </Value>
+        </Row>
+    </SimpleCodeList>
+</gc:CodeList>

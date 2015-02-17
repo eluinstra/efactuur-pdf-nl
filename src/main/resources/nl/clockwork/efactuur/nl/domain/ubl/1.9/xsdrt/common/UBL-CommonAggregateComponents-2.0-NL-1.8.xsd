@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ===== xsd:schema Element With Namespaces Declarations ===== -->
+<xsd:schema attributeFormDefault="unqualified"
+    elementFormDefault="qualified"
+    targetNamespace="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-CommonAggregateComponents-2"
+    version="2.0"
+    xmlns="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-CommonAggregateComponents-2"
+    xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+    xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+    xmlns:nl-cbc="urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonBasicComponents-2"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <!-- ===== Imports ===== -->
+    <xsd:import namespace="urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonBasicComponents-2" schemaLocation="UBL-CommonBasicComponents-2.0-NL-1.7.xsd"/>
+    <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" schemaLocation="UBL-CommonBasicComponents-2.0.xsd"/>
+    <xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" schemaLocation="UBL-CommonAggregateComponents-2.0.xsd"/>
+    <!-- ===== Element Declarations ===== -->
+    <xsd:element name="CommitmentLine" type="CommitmentLineType"/>
+    <xsd:element name="CommitmentLineReference" type="cac:LineReferenceType"/>
+    <xsd:element name="GrantedValidityPeriod" type="cac:PeriodType"/>
+    <xsd:element name="RequestedValidityPeriod" type="cac:PeriodType"/>
+    <xsd:element name="InvoiceLine" type="InvoiceLineType"/>
+    <xsd:complexType name="CommitmentLineType">
+        <xsd:sequence>
+		    <xsd:element minOccurs="0" maxOccurs="1" ref="cac:SellerSupplierParty" />
+            <xsd:element maxOccurs="1" minOccurs="0" ref="CommitmentLineReference" />
+            <xsd:element maxOccurs="1" minOccurs="1" ref="cac:LineItem"/>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="cac:LineValidityPeriod"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="InvoiceLineType">
+        <xsd:sequence>
+            <xsd:element maxOccurs="1" minOccurs="1" ref="cbc:ID"/>
+            <xsd:element maxOccurs="unbounded" minOccurs="1" ref="cac:InvoicePeriod"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

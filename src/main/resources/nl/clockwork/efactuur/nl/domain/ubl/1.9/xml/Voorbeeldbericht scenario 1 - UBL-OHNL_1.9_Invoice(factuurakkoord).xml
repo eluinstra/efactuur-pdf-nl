@@ -1,0 +1,291 @@
+<Invoice xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:nl-cac="urn:digi-inkoop:ubl:2.0:NL:1.8:UBL-NL-CommonAggregateComponents-2" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2" xmlns:nl-cbc="urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonBasicComponents-2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  	xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:Invoice-2 ../xsdrt/maindoc/Invoice.xsd urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonBasicComponents-2 ../xsdrt/common/UBL-CommonBasicComponents-2.0-NL-1.7.xsd">
+	<cbc:UBLVersionID>2.0</cbc:UBLVersionID><!--De versie van de UBL standaard die van toepassing is op dit bericht-->
+	<cbc:CustomizationID>1.9</cbc:CustomizationID><!--De versie van de OHNL standaard die van toepassing is op dit bericht-->
+	<cbc:ProfileID>NL</cbc:ProfileID>
+	<cbc:ID>factuurnummer1</cbc:ID><!--Het factuurnummer van de leverancier-->
+	<cbc:IssueDate>2014-06-06</cbc:IssueDate><!--De factuurdatum van de leverancier-->
+	<cbc:InvoiceTypeCode listID="NL-1001" listAgencyID="88" listAgencyName="Logius Gegevensbeheer NL-Overheid" listName="FactuurSoort" listVersionID="1.7" listURI="http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/InvoiceTypeCode.gc" listSchemeURI="urn:digi-inkoop:ubl:2.0:NL:1.7:gc:InvoiceTypeCode">D</cbc:InvoiceTypeCode>
+	<cbc:Note>Omschrijving die op de kop van de factuur terecht komt</cbc:Note>
+	<cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Currency" listVersionID="2001" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/cefact/CurrencyCode-2.0.gc" listSchemeURI="urn:un:unece:uncefact:codelist:specification:54217">EUR</cbc:DocumentCurrencyCode>
+	<cbc:AccountingCostCode/>
+	<cac:InvoicePeriod>
+		<cbc:StartDate>2014-06-06</cbc:StartDate>
+		<cbc:EndDate>2014-07-06</cbc:EndDate>
+		<cbc:DescriptionCode listID="NL-1004" listAgencyID="88" listAgencyName="Logius Gegevensbeheer NL-Overheid" listName="FactuurPeriodDescriptionCode" listVersionID="1.7" listURI="http://www.nltaxonomie.nl/ubl/2.0/NL/1.7/cl/gc/InvoicePeriodDescriptionCode.gc" listSchemeURI="urn:digi-inkoop:ubl:2.0:NL:1.7:gc:InvoicePeriodDescriptionCode">I</cbc:DescriptionCode>
+	</cac:InvoicePeriod>
+	<cac:OrderReference>
+		<cbc:ID>40000695</cbc:ID><!--Hier staat de referentie naar de inkooporder waar het factuurakkoordbericht betrekking op heeft-->
+		<cbc:SalesOrderID/>
+	</cac:OrderReference>
+	<cac:AccountingSupplierParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="KvK">12345678</cbc:ID><!--Het KvKnummer van de leverancier-->
+			</cac:PartyIdentification>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="Vest">000012345678</cbc:ID><!--Het vestigingsnummer van de leverancier-->
+			</cac:PartyIdentification>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="BTW">NL001234567B01</cbc:ID><!--Het BTW-nummer van de leverancier-->
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Naam Leverancier BV</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>PietjePukstraat</cbc:StreetName>
+				<cbc:BuildingNumber>7</cbc:BuildingNumber>
+				<cbc:CityName>Den Haag</cbc:CityName>
+				<cbc:PostalZone>1234 AA</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cac:RegistrationAddress>
+					<cbc:StreetName>PietjePukstraat</cbc:StreetName>
+					<cbc:BuildingNumber>7</cbc:BuildingNumber>
+					<cbc:CityName>Den Haag</cbc:CityName>
+					<cbc:PostalZone>1234 AA</cbc:PostalZone>
+					<cac:Country>
+						<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingSupplierParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="OIN">00000001003227522000</cbc:ID><!--Het OIN-nummer van de Overheidsorganisatie-->
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Naam Overheidsorganisatie</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Anna van Hannoverstraat</cbc:StreetName>
+				<cbc:BuildingNumber>4</cbc:BuildingNumber>
+				<cbc:CityName>Den Haag</cbc:CityName>
+				<cbc:PostalZone>2595 BJ</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:PartyLegalEntity>
+				<cac:RegistrationAddress>
+					<cbc:StreetName>Anna van Hannoverstraat</cbc:StreetName>
+					<cbc:BuildingNumber>4</cbc:BuildingNumber>
+					<cbc:CityName>Den Haag</cbc:CityName>
+					<cbc:PostalZone>2595 BJ</cbc:PostalZone>
+					<cac:Country>
+						<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:BuyerCustomerParty>
+		<cbc:CustomerAssignedAccountID>987654321</cbc:CustomerAssignedAccountID><!--Het klantnummer zoals de overheidsorganisatie bij de leverancier bekend is-->
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="OIN">00000001003227522000</cbc:ID><!--Het OIN-nummer van de Overheidsorganisatie-->
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>naam Overheidsorganisatie</cbc:Name>
+			</cac:PartyName>
+			<cac:PartyLegalEntity>
+				<cac:RegistrationAddress>
+					<cbc:StreetName>PietjePreciesstraat</cbc:StreetName>
+					<cbc:BuildingNumber>9</cbc:BuildingNumber>
+					<cbc:CityName>Den Haag</cbc:CityName>
+					<cbc:PostalZone>9876 BB</cbc:PostalZone>
+					<cac:Country>
+						<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:ID>55</cbc:ID>
+				<cbc:Name>Pieter Post</cbc:Name><!--Naam van de contactpersoon van de Overheidsorganisatie-->
+				<cbc:Telephone/>
+				<cbc:Telefax/>
+				<cbc:ElectronicMail>Pieter@post.nl</cbc:ElectronicMail><!--emailadres van de contactpersoon van de Overheidsorganisatie-->
+			</cac:Contact>
+		</cac:Party>
+	</cac:BuyerCustomerParty>
+	<cac:SellerSupplierParty>
+		<cbc:CustomerAssignedAccountID>13023</cbc:CustomerAssignedAccountID><!--Het leveranciersnummer zoals de leverancier bij de deelnemer bekend is-->
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="KvK">12345678</cbc:ID><!--Het KvKnummer van de leverancier-->
+			</cac:PartyIdentification>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="Vest">000012345678</cbc:ID><!--Het vestigingsnummer van de leverancier-->
+			</cac:PartyIdentification>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="BTW">NL001234567B01</cbc:ID><!--Het BTW-nummer van de leverancier-->
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Naam Leverancier BV</cbc:Name>
+			</cac:PartyName>
+			<cac:PartyLegalEntity>
+				<cac:RegistrationAddress>
+					<cbc:StreetName>PietjePukstraat</cbc:StreetName>
+					<cbc:BuildingNumber>7</cbc:BuildingNumber>
+					<cbc:CityName>Den Haag</cbc:CityName>
+					<cbc:PostalZone>1234 AA</cbc:PostalZone>
+					<cac:Country>
+						<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:RegistrationAddress>
+			</cac:PartyLegalEntity>
+			<cac:Contact>
+				<cbc:Name>Jan Klaassen</cbc:Name><!--Naam van de contactpersoon van de leverancier -->
+				<cbc:Telephone/>
+				<cbc:Telefax/>
+				<cbc:ElectronicMail>jan@klaassen.nl</cbc:ElectronicMail><!--emailadres van de contactpersoon van de leverancier -->
+			</cac:Contact>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	<cac:Delivery>
+		<cbc:ActualDeliveryDate>2014-06-06</cbc:ActualDeliveryDate>
+	</cac:Delivery>
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode listID="UN/ECE 4461" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Payment Means" listVersionID="D03A" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/PaymentMeansCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:PaymentMeansCode">42</cbc:PaymentMeansCode>
+		<cac:PayeeFinancialAccount>
+			<cbc:ID>NL87ABNA0123456789</cbc:ID><!--Het IBAN nummer van de leverancier-->
+			<cac:FinancialInstitutionBranch>
+				<cbc:Name>Den Haag</cbc:Name><!--De plaats van de bank van de leverancier-->
+				<cac:FinancialInstitution>
+					<cbc:ID>ABNANL2A</cbc:ID><!--De BIC Code van de leverancier-->
+				</cac:FinancialInstitution>
+			</cac:FinancialInstitutionBranch>
+		</cac:PayeeFinancialAccount>
+	</cac:PaymentMeans>
+	<cac:PaymentTerms>
+		<cbc:Note>30 dagen</cbc:Note>
+		<cac:SettlementPeriod>
+			<cbc:Description>30 dagen</cbc:Description>
+		</cac:SettlementPeriod>
+		<cac:PenaltyPeriod>
+			<cbc:EndDate>2014-07-06</cbc:EndDate>
+		</cac:PenaltyPeriod>
+	</cac:PaymentTerms>
+	<cac:TaxTotal>
+		<cbc:TaxAmount currencyID="EUR">6482.70</cbc:TaxAmount>
+		<cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="EUR">30870.00</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="EUR">6482.70</cbc:TaxAmount>
+			<cbc:Percent>21</cbc:Percent>
+			<cac:TaxCategory>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxScheme>
+					<cbc:Name>BTW</cbc:Name>
+				</cac:TaxScheme>
+			</cac:TaxCategory>
+		</cac:TaxSubtotal>
+	</cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">30870.00</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">30870.00</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">37352.70</cbc:TaxInclusiveAmount>
+		<cbc:AllowanceTotalAmount currencyID="EUR">0.00</cbc:AllowanceTotalAmount>
+		<cbc:ChargeTotalAmount currencyID="EUR">0.00</cbc:ChargeTotalAmount>
+		<cbc:PayableAmount currencyID="EUR">37352.70</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:InvoiceLine>
+		<cbc:ID>001</cbc:ID><!--Regelnummer van de factuur -->
+		<cbc:InvoicedQuantity unitCode="EA">1000.00</cbc:InvoicedQuantity><!--Gefactureeerde hoeveelheid-->
+		<cbc:LineExtensionAmount currencyID="EUR">3270.00</cbc:LineExtensionAmount><!--Hier staat de -->
+		<cbc:AccountingCostCode>0010.420430.3900.15276.00000000.00000000.00000000.0000.00000000</cbc:AccountingCostCode><!--Hier staat de -->
+		<cbc:FreeOfChargeIndicator>false</cbc:FreeOfChargeIndicator>
+		<cac:OrderLineReference>
+			<cbc:LineID>1.1.1</cbc:LineID><!--Verwijzing naar het orderregelnummer, deze moet mogelijk in de factuur worden teruggegeven. -->
+			<cac:OrderReference>
+				<cbc:ID>40000695</cbc:ID><!--Verwijzing naar het inkoopordernummer-->
+			</cac:OrderReference>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cac:DeliveryAddress><!--Gewenste afleveradres van de orderregel-->
+				<cbc:StreetName>Anna van Hannoverstraat</cbc:StreetName>
+				<cbc:BuildingNumber>4</cbc:BuildingNumber>
+				<cbc:CityName>Den Haag</cbc:CityName>
+				<cbc:PostalZone>2595 BJ</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:DeliveryAddress>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">686.70</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">3270.00</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">686.70</cbc:TaxAmount>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxCategory>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:Name>BTW</cbc:Name>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>Pak potloden12 stuks</cbc:Description><!--Omschrijving van het product/factuurregel-->
+			<cbc:CatalogueIndicator>false</cbc:CatalogueIndicator>
+			<cbc:Name>Pak potloden12 stuks</cbc:Name><!--naam van het product-->
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">3.27</cbc:PriceAmount><!--stuksprijs van het product-->
+			<cbc:BaseQuantity unitCode="EA">1.00</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+	<cac:InvoiceLine>
+		<cbc:ID>002</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="EA">10000.00</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="EUR">27600.00</cbc:LineExtensionAmount>
+		<cbc:AccountingCostCode>0010.420430.3900.15276.00000000.00000000.00000000.0000.00000000</cbc:AccountingCostCode>
+		<cbc:FreeOfChargeIndicator>false</cbc:FreeOfChargeIndicator>
+		<cac:OrderLineReference>
+			<cbc:LineID>2.1.1</cbc:LineID>
+			<cac:OrderReference>
+				<cbc:ID>40000695</cbc:ID>
+			</cac:OrderReference>
+		</cac:OrderLineReference>
+		<cac:Delivery>
+			<cac:DeliveryAddress>
+				<cbc:StreetName>Anna van Hannoverstraat</cbc:StreetName>
+				<cbc:BuildingNumber>4</cbc:BuildingNumber>
+				<cbc:CityName>Den Haag</cbc:CityName>
+				<cbc:PostalZone>2595 BJ</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listID="ISO3166-1" listAgencyID="6" listAgencyName="United Nations Economic Commission for Europe" listName="Country" listVersionID="0.3" listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc" listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode">NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:DeliveryAddress>
+		</cac:Delivery>
+		<cac:TaxTotal>
+			<cbc:TaxAmount currencyID="EUR">5796.00</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="EUR">27600.00</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="EUR">5796.00</cbc:TaxAmount>
+				<cbc:Percent>21</cbc:Percent>
+				<cac:TaxCategory>
+					<cbc:Percent>21</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:Name>BTW</cbc:Name>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal>
+		<cac:Item>
+			<cbc:Description>Omschrijving van de factuurregel</cbc:Description>
+			<cbc:CatalogueIndicator>false</cbc:CatalogueIndicator>
+			<cbc:Name>Pak pennen 12 stuks</cbc:Name>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="EUR">2.76</cbc:PriceAmount>
+			<cbc:BaseQuantity unitCode="EA">1.00</cbc:BaseQuantity>
+		</cac:Price>
+	</cac:InvoiceLine>
+</Invoice>

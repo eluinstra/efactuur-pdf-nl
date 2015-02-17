@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doc:OrderResponse
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+	xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+	xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+	xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+	xmlns:doc="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:OrderResponse-2 ../xsdrt/maindoc/OrderResponse.xsd">
+	<cbc:UBLVersionID>2.0</cbc:UBLVersionID>
+	<cbc:CustomizationID>1.9</cbc:CustomizationID>
+	<cbc:ProfileID>NL</cbc:ProfileID>
+	<cbc:ID>55844255</cbc:ID>
+	<cbc:IssueDate>2011-12-15</cbc:IssueDate>
+	<cbc:Note>inhaalactie</cbc:Note>
+	<cbc:AccountingCostCode>88845@555-5552</cbc:AccountingCostCode>
+	<cac:OrderReference>
+		<cbc:ID>5588222255</cbc:ID>
+	</cac:OrderReference>
+	<cac:Contract>
+		<cbc:ID>55889</cbc:ID>
+	</cac:Contract>
+	<cac:SellerSupplierParty>
+		<cbc:CustomerAssignedAccountID>5555654</cbc:CustomerAssignedAccountID>
+		<cac:Party>
+			<cac:PartyIdentification>
+				<cbc:ID schemeAgencyID="NL" schemeAgencyName="KvK">NL1234567B02</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Leverancier BV</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>Wegweg</cbc:StreetName>
+				<cbc:BuildingNumber>1-III</cbc:BuildingNumber>
+				<cbc:CityName>Plaatsplaats</cbc:CityName>
+				<cbc:PostalZone>1234AB</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listAgencyID="6"
+						listAgencyName="United Nations Economic Commission for Europe"
+						listID="ISO3166-1" listName="Country"
+						listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode"
+						listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc"
+						listVersionID="0.3">NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+			<cac:Contact>
+				<cbc:Name>Ver Koper</cbc:Name>
+			</cac:Contact>
+		</cac:Party>
+	</cac:SellerSupplierParty>
+	<cac:BuyerCustomerParty>
+		<cbc:SupplierAssignedAccountID>88844442222</cbc:SupplierAssignedAccountID>
+		<cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeAgencyID="NL" schemeAgencyName="XXX">Q9</cbc:ID>
+            </cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>klant2</cbc:Name>
+			</cac:PartyName>
+			<!-- <cac:PhysicalLocation> </cac:PhysicalLocation> -->
+			<cac:Contact>
+				<cbc:Name>I.Nkoper</cbc:Name>
+			</cac:Contact>
+			<cac:AgentParty>
+				<cac:PartyIdentification>
+					<cbc:ID schemeAgencyID="NL" schemeAgencyName="XXX">a1234655</cbc:ID>
+				</cac:PartyIdentification>
+				<cac:PartyName>
+					<cbc:Name>SalesagencyZ</cbc:Name>
+				</cac:PartyName>
+			</cac:AgentParty>
+		</cac:Party>
+	</cac:BuyerCustomerParty>
+	<cac:FreightForwarderParty>
+		<cac:PartyIdentification>
+			<cbc:ID schemeAgencyID="NL" schemeAgencyName="XXX">b1234655</cbc:ID>
+		</cac:PartyIdentification>
+		<cac:PartyName>
+			<cbc:Name>Maersk</cbc:Name>
+		</cac:PartyName>
+	</cac:FreightForwarderParty>
+	<cac:AccountingCustomerParty>
+		<cac:Party>
+			<cac:PartyIdentification>
+                <cbc:ID schemeAgencyID="NL" schemeAgencyName="BTW">123456789</cbc:ID>
+			</cac:PartyIdentification>
+			<cac:PartyName>
+				<cbc:Name>Incassoburo</cbc:Name>
+			</cac:PartyName>
+			<cac:PostalAddress>
+				<cbc:StreetName>factuurstraatpostbus</cbc:StreetName>
+				<cbc:BuildingNumber>12</cbc:BuildingNumber>
+				<cbc:CityName>Zetten (NB)</cbc:CityName>
+				<cbc:PostalZone>1234AB</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listVersionID="0.3"
+						listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc"
+						listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode"
+						listName="Country" listID="ISO3166-1"
+						listAgencyName="United Nations Economic Commission for Europe"
+						listAgencyID="6">NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:PostalAddress>
+		</cac:Party>
+	</cac:AccountingCustomerParty>
+	<cac:Delivery>
+		<cac:Despatch>
+			<cac:DespatchAddress>
+				<cbc:StreetName>verzendWegweg</cbc:StreetName>
+				<cbc:BuildingNumber>1-III</cbc:BuildingNumber>
+				<cbc:CityName>Plaatsplaats</cbc:CityName>
+				<cbc:PostalZone>1234AB</cbc:PostalZone>
+				<cac:Country>
+					<cbc:IdentificationCode listAgencyID="6"
+						listAgencyName="United Nations Economic Commission for Europe"
+						listID="ISO3166-1" listName="Country"
+						listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode"
+						listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc"
+						listVersionID="0.3">NL</cbc:IdentificationCode>
+				</cac:Country>
+			</cac:DespatchAddress>
+		</cac:Despatch>
+	</cac:Delivery>
+	<cac:PaymentMeans>
+		<cbc:PaymentMeansCode listAgencyID="6"
+			listAgencyName="United Nations Economic Commission for Europe"
+			listID="UN/ECE 4461" listName="Payment Means"
+			listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:PaymentMeansCode"
+			listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/PaymentMeansCode-2.0.gc"
+			listVersionID="D03A">10</cbc:PaymentMeansCode>
+		<cac:PayeeFinancialAccount>
+			<cbc:ID>345345450000</cbc:ID>
+			<cac:FinancialInstitutionBranch>
+				<cac:FinancialInstitution>
+					<cbc:ID>ABNANL2A</cbc:ID>
+				</cac:FinancialInstitution>
+			</cac:FinancialInstitutionBranch>
+		</cac:PayeeFinancialAccount>
+	</cac:PaymentMeans>
+	<cac:AllowanceCharge>
+		<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+		<cbc:AllowanceChargeReason>administratiekosten</cbc:AllowanceChargeReason>
+		<cbc:Amount currencyID="EUR">40.44</cbc:Amount>
+	</cac:AllowanceCharge>
+	<cac:AllowanceCharge>
+		<cbc:ChargeIndicator>false</cbc:ChargeIndicator>
+		<cbc:Amount currencyID="EUR">25.00</cbc:Amount>
+	</cac:AllowanceCharge>
+	<cac:TransactionConditions>
+		<cbc:Description>60 dagen netto, 30 dagen 4%, 10 dagen 6% korting</cbc:Description>
+	</cac:TransactionConditions>
+    <cac:TaxTotal>
+        <cbc:TaxAmount currencyID="EUR">519.55</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+            <cbc:TaxAmount currencyID="EUR">112.06</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:Percent>5.50</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:Name>Accijns</cbc:Name>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+        <cac:TaxSubtotal>
+            <cbc:TaxAmount currencyID="EUR">407.49</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cbc:Percent>20.00</cbc:Percent>
+                <cac:TaxScheme>
+                    <cbc:Name>BTW</cbc:Name>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+    </cac:TaxTotal>
+	<cac:LegalMonetaryTotal>
+		<cbc:LineExtensionAmount currencyID="EUR">2037.44</cbc:LineExtensionAmount>
+		<cbc:TaxExclusiveAmount currencyID="EUR">2037.44</cbc:TaxExclusiveAmount>
+		<cbc:TaxInclusiveAmount currencyID="EUR">2556.99</cbc:TaxInclusiveAmount>
+        <cbc:PayableAmount currencyID="EUR">2556.99</cbc:PayableAmount>
+	</cac:LegalMonetaryTotal>
+	<cac:OrderLine>
+		<cac:LineItem>
+			<cbc:ID>1000</cbc:ID>
+			<cbc:Quantity unitCode="C62">10</cbc:Quantity>
+			<cac:Delivery>
+				<cac:DeliveryAddress>
+					<cbc:StreetName>afleverweg</cbc:StreetName>
+					<cbc:BuildingNumber>2</cbc:BuildingNumber>
+					<cbc:PlotIdentification>naast 9</cbc:PlotIdentification>
+					<cbc:CityName>Belgieplaats</cbc:CityName>
+					<cbc:PostalZone>B-1234</cbc:PostalZone>
+					<cac:Country>
+						<cbc:IdentificationCode listVersionID="0.3"
+							listURI="http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/default/CountryIdentificationCode-2.0.gc"
+							listSchemeURI="urn:oasis:names:specification:ubl:codelist:gc:CountryIdentificationCode"
+							listName="Country" listID="ISO3166-1"
+							listAgencyName="United Nations Economic Commission for Europe"
+							listAgencyID="6">BE</cbc:IdentificationCode>
+					</cac:Country>
+				</cac:DeliveryAddress>
+				<cac:PromisedDeliveryPeriod>
+					<cbc:EndDate>2012-01-15</cbc:EndDate>
+				</cac:PromisedDeliveryPeriod>
+				<cac:DeliveryParty>
+					<cac:PartyName>
+						<cbc:Name>Ont Vanger</cbc:Name>
+					</cac:PartyName>
+					<cac:Contact>
+						<cbc:Name>On Tvanger</cbc:Name>
+					</cac:Contact>
+				</cac:DeliveryParty>
+			</cac:Delivery>
+			<cac:DeliveryTerms>
+				<cbc:ID schemeID="NL-1002" schemeName="DeliveryTermsCode"
+					schemeURI="http://www.nltaxonomie.nl/ubl/2.0/NL/1.8/cl/gc/DeliveryTermsCode.gc"
+					schemeDataURI="urn:digi-inkoop:ubl:2.0:NL:1.8:gc:DeliveryTermsCode"
+					schemeAgencyID="88" schemeAgencyName="Logius Gegevensbeheer NL-Overheid"
+					schemeVersionID="1.8">EXW</cbc:ID>
+				<cac:DeliveryLocation>
+					<cbc:Description>Dubai</cbc:Description>
+				</cac:DeliveryLocation>
+			</cac:DeliveryTerms>
+			<cac:AllowanceCharge>
+				<cbc:ChargeIndicator>true</cbc:ChargeIndicator>
+				<cbc:Amount currencyID="EUR">22.00</cbc:Amount>
+			</cac:AllowanceCharge>
+			<cac:Price>
+				<cbc:PriceAmount currencyID="EUR">200.00</cbc:PriceAmount>
+			</cac:Price>
+			<cac:Item>
+				<cbc:Description>blauwe pen</cbc:Description>
+				<cbc:CatalogueIndicator>true</cbc:CatalogueIndicator>
+				<cbc:Name>12nc85564</cbc:Name>
+				<cac:CatalogueDocumentReference>
+					<cbc:ID>cat1234</cbc:ID>
+				</cac:CatalogueDocumentReference>
+				<cac:ItemSpecificationDocumentReference>
+					<cbc:ID>ISO90012nc</cbc:ID>
+				</cac:ItemSpecificationDocumentReference>
+				<cac:ClassifiedTaxCategory>
+					<cbc:Percent>5.50</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:Name>Accijns</cbc:Name>
+					</cac:TaxScheme>
+				</cac:ClassifiedTaxCategory>
+				<cac:ClassifiedTaxCategory>
+					<cbc:Percent>20.00</cbc:Percent>
+					<cac:TaxScheme>
+						<cbc:Name>BTW</cbc:Name>
+					</cac:TaxScheme>
+				</cac:ClassifiedTaxCategory>
+			</cac:Item>
+		</cac:LineItem>
+		<cac:DocumentReference>
+			<cbc:ID>357</cbc:ID>
+			<cbc:DocumentType>Contract</cbc:DocumentType>
+		</cac:DocumentReference>
+		<cac:DocumentReference>
+			<cbc:ID>4500123456</cbc:ID>
+			<cbc:DocumentType>Bestelling</cbc:DocumentType>
+		</cac:DocumentReference>
+	</cac:OrderLine>
+</doc:OrderResponse>

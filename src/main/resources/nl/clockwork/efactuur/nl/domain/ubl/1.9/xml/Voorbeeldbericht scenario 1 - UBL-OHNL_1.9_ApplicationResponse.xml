@@ -1,0 +1,35 @@
+<doc:ApplicationResponse
+xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2"
+xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2"
+xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDataTypes-2"
+xmlns:doc="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="urn:oasis:names:specification:ubl:schema:xsd:ApplicationResponse-2 ../xsdrt/maindoc/ApplicationResponse.xsd">
+	<cbc:UBLVersionID>2.0</cbc:UBLVersionID><!--De versie van de UBL standaard die van toepassing is op dit bericht-->
+	<cbc:CustomizationID>1.9</cbc:CustomizationID><!--De versie van de OHNL standaard die van toepassing is op dit bericht-->
+	<cbc:ProfileID>NL</cbc:ProfileID>
+	<cbc:ID>10000818</cbc:ID><!--Het nummer van het inkoopdocument waarop het antwoord betrekking heeft, dit kan een bestelaanvraag- of inkoopordernummer zijn-->
+	<cbc:IssueDate>2014-03-12</cbc:IssueDate>
+	<cbc:ResponseDate>2014-03-12</cbc:ResponseDate>
+	<cac:SenderParty>
+		<cac:PartyIdentification>
+			<cbc:ID schemeAgencyID="NL" schemeAgencyName="OIN">00000001003227522000</cbc:ID><!--Hier staat het OIN-nummer van de Overheidsorganisatie-->
+		</cac:PartyIdentification>
+	</cac:SenderParty>
+	<cac:ReceiverParty>
+		<cac:PartyIdentification>
+			<cbc:ID schemeAgencyID="NL" schemeAgencyName="OIN">00000001003227522000</cbc:ID><!--Hier staat het OIN-nummer van de Overheidsorganisatie-->
+		</cac:PartyIdentification>
+	</cac:ReceiverParty>
+	<cac:DocumentResponse>
+		<cac:Response>
+			<cbc:ReferenceID>120938-875234</cbc:ReferenceID><!--Hier dient de ID van het budgetcheckvraag bericht vermeld te worden-->
+			<cbc:ResponseCode listID="NL-1005" listAgencyID="88" listAgencyName="Logius Gegevensbeheer NL-Overheid" listName="ResponseCode" listVersionID="1.9" listURI="http://www.nltaxonomie.nl/ubl/2.0/NL/1.9/cl/gc/NL-ResponseCode-1.9.gc" listSchemeURI="urn:digi-inkoop:ubl:2.0:NL:1.9:gc:ResponseCode">OK</cbc:ResponseCode><!--OK indien de budgetcheck akkoord is, NOK indien de budgetcheck niet akkoord is-->
+			<cbc:Description>budgetcheck is OK</cbc:Description><!--Omschrijving bij het budgetcheck antwoord-->
+		</cac:Response>
+		<cac:DocumentReference>
+			<cbc:ID>10000818</cbc:ID>
+		</cac:DocumentReference>
+	</cac:DocumentResponse>
+</doc:ApplicationResponse>
