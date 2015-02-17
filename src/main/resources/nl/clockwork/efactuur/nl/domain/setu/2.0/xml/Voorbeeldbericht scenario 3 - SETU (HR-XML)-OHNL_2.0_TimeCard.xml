@@ -1,0 +1,218 @@
+	<TimeCard  xmlns="http://ns.hr-xml.org/2007-04-15"	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 ../SIDES/TimeCardAdditionalData.xsd">
+		<Id idOwner="StaffingCustomer">
+			<IdValue>135664</IdValue><!--TimecardID, dient mogelijk teruggegeven te worden in de factuur die wordt teruggestuurd, FACTUUR-HRXML-->
+		</Id>
+		<ReportedResource>
+			<Person>
+				<Id idOwner="StaffingCustomer">
+					<IdValue>2086707</IdValue>
+				</Id>
+				<PersonName>
+					<FormattedName>Bakker , T</FormattedName>
+					<LegalName>Bakker</LegalName>
+					<GivenName>Teo</GivenName>
+					<PreferredGivenName/>
+					<MiddleName>T</MiddleName>
+					<FamilyName  primary="true">Bakker</FamilyName>
+				</PersonName>
+			</Person>
+		</ReportedResource>
+		<ReportedTime>
+			<PeriodStartDate>2014-03-17</PeriodStartDate>
+			<PeriodEndDate>2014-03-23</PeriodEndDate>
+			<TimeInterval type="Regular" actionCode="Add" billable="true"><!--Informatie over het type uren (type) en factureerdbaarheid (billable)-->
+				<Id idOwner="StaffingCustomer">
+					<IdValue>135671</IdValue>
+				</Id>
+				<StartDateTime>2014-03-17</StartDateTime>
+				<EndDateTime>2014-03-17</EndDateTime>
+				<Duration>8.00</Duration>
+				<RateOrAmount multiplier="100.00" type="hourly" currency="EUR">43.78</RateOrAmount><!--Informatie over toeslagpercentage (multiplier), wijze urenschrijven (type) en uurtarief (RateOrAmount)-->
+				<AdditionalData>
+					<StaffingAdditionalData>
+						<CustomerReportingRequirements>
+							<PurchaseOrderLineItem>1.1.1</PurchaseOrderLineItem><!--Verwijzing naar het inkooporderregelnummer, dient mogelijk teruggegeven te worden in de factuur die wordt teruggestuurd, FACTUUR-HRXML-->
+						</CustomerReportingRequirements>
+					</StaffingAdditionalData>
+				</AdditionalData>
+				<Comment>Uren en ORT en OVW Teo Bakker, week 12-2014</Comment><!--Opmerking van tijdschrijver bij de urenregel-->
+			</TimeInterval>
+			<TimeInterval type="Overtime" actionCode="Add" billable="true">
+				<Id idOwner="StaffingCustomer">
+					<IdValue>135671</IdValue>
+				</Id>
+				<StartDateTime>2014-03-17</StartDateTime>
+				<EndDateTime>2014-03-17</EndDateTime>
+				<Duration>2.00</Duration>
+				<RateOrAmount multiplier="150.00" type="hourly" currency="EUR">34.34</RateOrAmount>
+				<AdditionalData>
+					<StaffingAdditionalData>
+						<CustomerReportingRequirements>
+							<PurchaseOrderLineItem>3.1.1</PurchaseOrderLineItem>
+						</CustomerReportingRequirements>
+					</StaffingAdditionalData>
+				</AdditionalData>
+				<Comment>Uren en ORT en OVW Teo Bakker, week 12-2014</Comment>
+			</TimeInterval>
+			<TimeInterval type="Regular" actionCode="Add" billable="true">
+				<Id idOwner="StaffingCustomer">
+					<IdValue>135670</IdValue>
+				</Id>
+				<StartDateTime>2014-03-18</StartDateTime>
+				<EndDateTime>2014-03-18</EndDateTime>
+				<Duration>8.00</Duration>
+				<RateOrAmount multiplier="100.00" type="hourly" currency="EUR">43.78</RateOrAmount>
+				<AdditionalData>
+					<StaffingAdditionalData>
+						<CustomerReportingRequirements>
+							<PurchaseOrderLineItem>1.1.1</PurchaseOrderLineItem>
+						</CustomerReportingRequirements>
+					</StaffingAdditionalData>
+				</AdditionalData>
+				<Comment>Uren en ORT en OVW Teo Bakker, week 12-2014</Comment>
+			</TimeInterval>
+			<TimeInterval type="Overtime" actionCode="Add" billable="true">
+				<Id idOwner="StaffingCustomer">
+					<IdValue>135670</IdValue>
+				</Id>
+				<StartDateTime>2014-03-18</StartDateTime>
+				<EndDateTime>2014-03-18</EndDateTime>
+				<Duration>2.00</Duration>
+				<RateOrAmount multiplier="150.00" type="hourly" currency="EUR">34.34</RateOrAmount>
+				<AdditionalData>
+					<StaffingAdditionalData>
+						<CustomerReportingRequirements>
+							<PurchaseOrderLineItem>3.1.1</PurchaseOrderLineItem>
+						</CustomerReportingRequirements>
+					</StaffingAdditionalData>
+				</AdditionalData>
+				<Comment>Uren en ORT en OVW Teo Bakker, week 12-2014</Comment>
+			</TimeInterval>
+			<TimeInterval type="Regular" actionCode="Add" billable="true">
+				<Id idOwner="StaffingCustomer">
+					<IdValue>135669</IdValue>
+				</Id>
+				<StartDateTime>2014-03-19</StartDateTime>
+				<EndDateTime>2014-03-19</EndDateTime>
+				<Duration>8.00</Duration>
+				<RateOrAmount multiplier="100.00" type="hourly" currency="EUR">43.78</RateOrAmount>
+				<AdditionalData>
+					<StaffingAdditionalData>
+						<CustomerReportingRequirements>
+							<PurchaseOrderLineItem>1.1.1</PurchaseOrderLineItem>
+						</CustomerReportingRequirements>
+					</StaffingAdditionalData>
+				</AdditionalData>
+				<Comment>Uren en ORT en OVW Teo Bakker, week 12-2014</Comment>
+			</TimeInterval>
+			<TimeInterval type="Regular" actionCode="Add" billable="true">
+				<Id idOwner="StaffingCustomer">
+					<IdValue>135668</IdValue>
+				</Id>
+				<StartDateTime>2014-03-20</StartDateTime>
+				<EndDateTime>2014-03-20</EndDateTime>
+				<Duration>8.00</Duration>
+				<RateOrAmount multiplier="100.00" type="hourly" currency="EUR">43.78</RateOrAmount>
+				<AdditionalData>
+					<StaffingAdditionalData>
+						<CustomerReportingRequirements>
+							<PurchaseOrderLineItem>1.1.1</PurchaseOrderLineItem>
+						</CustomerReportingRequirements>
+					</StaffingAdditionalData>
+				</AdditionalData>
+				<Comment>Uren en ORT en OVW Teo Bakker, week 12-2014</Comment>
+			</TimeInterval>
+			<TimeInterval type="Regular" actionCode="Add" billable="true">
+				<Id idOwner="StaffingCustomer">
+					<IdValue>135667</IdValue>
+				</Id>
+				<StartDateTime>2014-03-21</StartDateTime>
+				<EndDateTime>2014-03-21</EndDateTime>
+				<Duration>8.00</Duration>
+				<RateOrAmount multiplier="100.00" type="hourly" currency="EUR">43.78</RateOrAmount>
+				<AdditionalData>
+					<StaffingAdditionalData>
+						<CustomerReportingRequirements>
+							<PurchaseOrderLineItem>1.1.1</PurchaseOrderLineItem>
+						</CustomerReportingRequirements>
+					</StaffingAdditionalData>
+				</AdditionalData>
+				<Comment>Uren en ORT en OVW Teo Bakker, week 12-2014</Comment>
+			</TimeInterval>
+			<TimeInterval type="Shift" actionCode="Add" billable="true">
+				<Id idOwner="StaffingCustomer">
+					<IdValue>135666</IdValue>
+				</Id>
+				<StartDateTime>2014-03-22</StartDateTime>
+				<EndDateTime>2014-03-22</EndDateTime>
+				<Duration>8.00</Duration>
+				<RateOrAmount multiplier="150.00" type="hourlyconsolidated" currency="EUR">40.63</RateOrAmount>
+				<AdditionalData>
+					<StaffingAdditionalData>
+						<CustomerReportingRequirements>
+							<PurchaseOrderLineItem>2.1.1</PurchaseOrderLineItem>
+						</CustomerReportingRequirements>
+					</StaffingAdditionalData>
+				</AdditionalData>
+				<Comment>Uren en ORT en OVW Teo Bakker, week 12-2014</Comment>
+			</TimeInterval>
+			<Allowance type="Avondmaaltijd"><!--Tijdkaartregel voor declaraties, informatie over soort onkosten (type)-->
+				<Id idOwner="StaffingCustomer">
+					<IdValue name="expense">135664</IdValue>
+				</Id>
+				<StartDate>2014-03-17</StartDate>
+				<EndDate>2014-03-17</EndDate>
+				<Amount currency="EUR">50.00</Amount><!--bedrag van de declaraties-->
+				<AdditionalData>
+					<StaffingAdditionalData>
+						<CustomerReportingRequirements>
+							<PurchaseOrderLineItem>4.1.1</PurchaseOrderLineItem><!--Verwijzing naar het inkooporderregelnummer, dient mogelijk teruggegeven te worden in de factuur die wordt teruggestuurd, FACTUUR-HRXML-->
+						</CustomerReportingRequirements>
+					</StaffingAdditionalData>
+				</AdditionalData>
+				<Comment>Opmerking: Kosten eten</Comment><!--Opmerking van tijdschrijver bij de declaratieregel-->
+			</Allowance>
+			<Allowance type="Fietsvergoeding">
+				<Id idOwner="StaffingCustomer">
+					<IdValue name="expense">135664</IdValue>
+				</Id>
+				<StartDate>2014-03-18</StartDate>
+				<EndDate>2014-03-18</EndDate>
+				<Amount currency="EUR">19.00</Amount>
+				<AdditionalData>
+					<StaffingAdditionalData>
+						<CustomerReportingRequirements>
+							<PurchaseOrderLineItem>5.1.1</PurchaseOrderLineItem>
+						</CustomerReportingRequirements>
+					</StaffingAdditionalData>
+				</AdditionalData>
+				<Comment>Opmerking: Reiskosten</Comment>
+			</Allowance>
+		</ReportedTime>
+		<SubmitterInfo>
+			<SubmittedDateTime>2014-10-09T16:30:16</SubmittedDateTime>
+		</SubmitterInfo>
+		<AdditionalData>
+			<StaffingAdditionalData>
+				<CustomerReportingRequirements>
+					<PurchaseOrderNumber>40002147</PurchaseOrderNumber><!--Verwijzing naar het inkoopordernummer-->
+					<AdditionalRequirement requirementTitle="VersionId">2.0</AdditionalRequirement><!--De versie van de OHNL standaard die van toepassing is op dit bericht-->
+				</CustomerReportingRequirements>
+				<ReferenceInformation>
+					<StaffingSupplierId idOwner="KvK"><!--Het KvKnummer van de leverancier-->
+						<IdValue>98765432</IdValue>
+					</StaffingSupplierId>
+					<StaffingSupplierId idOwner="BTW">
+						<IdValue>NL009876543B01</IdValue><!--Het BTWnummer van de leverancier-->
+					</StaffingSupplierId>
+					<StaffingCustomerId idOwner="OIN">
+						<IdValue>00000002003182447001</IdValue><!--Het OIN-nummer van de Overheidsorganisatie--> 
+					</StaffingCustomerId>
+					<AssignmentId idOwner="StaffingCompany">
+						<IdValue>1234567</IdValue><!--Het plaatsingsnummer van de inhuurkracht--> 
+					</AssignmentId>
+				</ReferenceInformation>
+			</StaffingAdditionalData>
+		</AdditionalData>
+	</TimeCard>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HumanResource 	xmlns="http://ns.hr-xml.org/2007-04-15" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:nl="http://ns.setu.nl/2012-01"  
+	xsi:schemaLocation="http://ns.hr-xml.org/2007-04-15 ../SIDES/HumanResource.xsd http://ns.setu.nl/2012-01 ../SIDES/NL/2012-01/HumanResourceAdditionalNL.xsd">
+	<HumanResourceId idOwner="StaffingCompany">
+		<IdValue>55844255</IdValue>
+	</HumanResourceId>
+	<HumanResourceStatus status="accepted"/>
+	<ReferenceInformation>
+		<StaffingSupplierId idOwner="KvK">
+			<IdValue>32158479</IdValue>
+		</StaffingSupplierId>
+		<StaffingCustomerId idOwner="OIN">
+			<IdValue>00001540000442</IdValue>
+		</StaffingCustomerId>
+	</ReferenceInformation>
+	<ResourceInformation>
+		<PersonName/>
+		<EntityContactInfo>
+			<EntityName>Uit Zender</EntityName>
+			<ContactMethod/>
+		</EntityContactInfo>
+	</ResourceInformation>
+	<Profile/>
+	<Preferences/>
+	<HumanResourceComments>inhuur LB</HumanResourceComments>
+	<UserArea>
+		<nl:HumanResourceAdditionalNL>
+			<nl:SETUVersionId>1.2</nl:SETUVersionId>
+			<nl:OfferId idOwner="StaffingCompany">
+				<IdValue></IdValue>
+			</nl:OfferId>
+			<nl:CustomerReportingRequirements>
+				<PurchaseOrderNumber>45001577255</PurchaseOrderNumber>
+				<AdditionalRequirement requirementTitle="VersionId">2.0</AdditionalRequirement>
+			</nl:CustomerReportingRequirements>
+		</nl:HumanResourceAdditionalNL>	
+	</UserArea>
+</HumanResource>

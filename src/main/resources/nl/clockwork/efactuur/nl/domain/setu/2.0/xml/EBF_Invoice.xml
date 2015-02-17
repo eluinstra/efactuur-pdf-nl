@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Invoice
+	xmlns="http://www.openapplications.org/oagis"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:nl="http://ns.hr-xml.org/2007-04-15"
+	xsi:schemaLocation="http://www.openapplications.org/oagis ../SIDES/Invoice.xsd http://ns.hr-xml.org/2007-04-15 ../SIDES/NL/InvoiceAdditionalNL.xsd">
+	<Header>
+		<DocumentIds>
+			<DocumentId>
+				<Id>H5/09876DBF</Id>
+			</DocumentId>
+		</DocumentIds>
+		<DocumentDateTime>2012-01-22T00:00:00Z</DocumentDateTime>
+		<Note>inhuur LB</Note>
+		<ReasonCode>hours</ReasonCode>
+		<TotalAmount currency="EUR">1974.00</TotalAmount>
+		<PaymentTerms>
+			<DueDate>2012-02-21</DueDate>
+		</PaymentTerms>
+		<PaymentTerms>
+			<NumberOfDays>30</NumberOfDays>
+		</PaymentTerms>
+		<Parties>
+			<CustomerParty>
+				<PartyId>
+					<Id></Id>
+				</PartyId>
+				<Name>klant2</Name>
+				<TaxId>NL1234567B02</TaxId>
+				<Addresses>
+					<PrimaryAddress>
+						<AddressLine>afleverweg 2 naast 9</AddressLine>
+						<City>Belgieplaats</City>
+						<Country>BE</Country>
+						<PostalCode>B-1234</PostalCode>
+						<Description>PhysicalAddress</Description>
+					</PrimaryAddress>
+				</Addresses>
+				<Contacts>
+					<Contact>
+						<Person>
+							<PersonName>
+								<FormattedName>I.Nkoper</FormattedName>
+							</PersonName>
+						</Person>
+					</Contact>
+				</Contacts>
+			</CustomerParty>
+			<BillToParty>
+				<PartyId>
+					<Id></Id>
+				</PartyId>
+				<Name></Name>
+				<Addresses>
+					<PrimaryAddress>
+						<AddressLine>factuurstraatpostbus 2</AddressLine>
+						<City>Zetten (NB)</City>
+						<PostalCode>1234AB</PostalCode>
+						<Description>PostalAddress</Description>
+					</PrimaryAddress>
+				</Addresses>
+			</BillToParty>
+			<SupplierParty>
+				<PartyId>
+					<Id>90807060</Id>
+				</PartyId>
+				<Name>Inleenlev BV</Name>
+				<TaxId>NL12345678B02</TaxId>
+				<Addresses>
+					<PrimaryAddress>
+						<AddressLine>Wegweg 1 III</AddressLine>
+						<City>Plaatsplaats</City>
+						<Country>NL</Country>
+						<PostalCode>1234AB</PostalCode>
+						<Description>PhysicalAddress</Description>
+					</PrimaryAddress>
+				</Addresses>
+				<Contacts>
+					<Contact>
+						<Person>
+							<PersonName>
+								<FormattedName>Ver huurling</FormattedName>
+							</PersonName>
+						</Person>
+					</Contact>
+				</Contacts>
+			</SupplierParty>
+			<RemitToParty>
+				<PartyId>
+					<Id></Id>
+				</PartyId>
+				<Name></Name>
+				<TaxId>123456789</TaxId>
+				<Addresses>
+					<PrimaryAddress>
+						<AddressLine>Wegweg 1 V</AddressLine>
+						<City>Plaatsplaats</City>
+						<Country>NL</Country>
+						<PostalCode>1234AB</PostalCode>
+						<Description>PhysicalAddress</Description>
+					</PrimaryAddress>
+				</Addresses>
+			</RemitToParty>
+		</Parties>
+		<Type>Debit</Type>
+		<TotalCharges currency="EUR">2303.00</TotalCharges>
+		<TotalTax currency="EUR">329.00</TotalTax>
+		<Tax>
+			<TaxAmount currency="EUR">329.00</TaxAmount>
+			<TaxBaseAmount currency="EUR">1974.00</TaxBaseAmount>
+			<PercentQuantity uom="BTW">20</PercentQuantity>
+		</Tax>
+		<UserArea>
+			<nl:StaffingOrganizationNL>
+				<nl:ChamberofCommerceReference></nl:ChamberofCommerceReference>
+			</nl:StaffingOrganizationNL>
+			<nl:StaffingAdditionalData>
+				<nl:CustomerReportingRequirements>
+					<nl:PurchaseOrderNumber>020</nl:PurchaseOrderNumber>
+					<nl:AdditionalRequirement requirementTitle="VersionId">2.0</nl:AdditionalRequirement>
+				</nl:CustomerReportingRequirements>
+			</nl:StaffingAdditionalData>
+		</UserArea>
+	</Header>
+	<Line>
+		<LineNumber>00200</LineNumber>
+		<Description>messenslijpen</Description>
+		<ReasonCode>invoicing</ReasonCode>
+		<Charges>
+			<TotalCharge>
+				<Total currency="EUR">1170.00</Total>
+			</TotalCharge>
+		</Charges>
+		<Price>
+			<Amount currency="EUR">195.00</Amount>
+			<PerQuantity uom="regular">1</PerQuantity>
+		</Price>
+		<ItemQuantity uom="day">6</ItemQuantity>
+		<UserArea>
+			<nl:TimeCard>
+				<nl:Id idOwner="StaffingCustomer">
+					<nl:IdValue></nl:IdValue>
+				</nl:Id>
+				<nl:ReportedResource>
+					<nl:Person></nl:Person>
+				</nl:ReportedResource>
+				<nl:ReportedTime>
+					<nl:PeriodStartDate>2009-10-24</nl:PeriodStartDate>
+					<nl:PeriodEndDate>2009-10-31</nl:PeriodEndDate>
+					<nl:TimeInterval type="hourly">
+						<nl:StartDateTime>2009-10-26T08:00:00</nl:StartDateTime>
+						<nl:EndDateTime>2009-10-26T15:00:00</nl:EndDateTime>
+					</nl:TimeInterval>
+				</nl:ReportedTime>
+				<nl:AdditionalData>
+					<nl:StaffingAdditionalData>
+						<nl:CustomerReportingRequirements>
+							<nl:PurchaseOrderNumber>586</nl:PurchaseOrderNumber>
+							<nl:PurchaseOrderLineItem>PO450012345</nl:PurchaseOrderLineItem>
+						</nl:CustomerReportingRequirements>
+					</nl:StaffingAdditionalData>
+				</nl:AdditionalData>
+			</nl:TimeCard>
+		</UserArea>
+	</Line>
+</Invoice>

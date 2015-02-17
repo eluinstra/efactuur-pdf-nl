@@ -1,0 +1,221 @@
+<Invoice xmlns:hr="http://ns.hr-xml.org/2007-04-15" xmlns="http://www.openapplications.org/oagis"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.openapplications.org/oagis ../SIDES/Invoice.xsd http://ns.hr-xml.org/2007-04-15 ../SIDES/NL/InvoiceAdditionalNL.xsd">
+        <Header>
+          <DocumentIds>
+            <DocumentId>
+              <Id>60031861</Id><!--Hier vult u 'uw factuurnummer'--> 
+            </DocumentId>
+          </DocumentIds>
+          <DocumentDateTime>2014-10-06T00:00:00Z</DocumentDateTime><!--Hier vult u 'uw factuurdatum'--> 
+          <Note>Omschrijving van de factuur op kop</Note>
+          <ReasonCode>hours</ReasonCode>
+          <TotalAmount currency="EUR">+847.58</TotalAmount><!--Totaal factuurbedrag inclusief BTW--> 
+          <Parties>
+            <CustomerParty>
+              <PartyId>
+                <Id>OIN@00000002003182447001</Id><!--Het OIN-nummer van de Overheidsorganisatie met OIN@--> 
+              </PartyId>
+              <Name>Naam Overheidsorganisatie</Name>
+              <Addresses>
+                <PrimaryAddress>
+                  <AddressLine>Postbus 16056</AddressLine>
+                  <City>&amp;apos;S-GRAVENHAGE</City>
+                  <Country>NL</Country>
+                  <PostalCode>2500 BB</PostalCode>
+				  <Description>PhysicalAddress</Description>
+                </PrimaryAddress>
+              </Addresses>
+            </CustomerParty>
+            <SupplierParty>
+              <PartyId>
+                <Id>KvK@98765432</Id><!--Het KvK-nummer van de leverancier met KvK@--> 
+              </PartyId>
+              <Name>Naam Leverancier BV</Name>
+              <TaxId>NL009876543B01</TaxId><!--Het BTW-nummer van de leverancier-->
+              <Addresses>
+                <PrimaryAddress>
+                  <AddressLine>postbus 12345</AddressLine>
+                  <City>Amsterdam</City>
+                  <Country>NL</Country>
+                  <PostalCode>1000 AA</PostalCode>
+				  <Description>PhysicalAddress</Description>
+                  <Telephone>(020) 132 45 67</Telephone>
+                </PrimaryAddress>
+              </Addresses>
+            </SupplierParty>
+            <RemitToParty>
+              <PartyId>
+               <Id>KvK@98765432</Id><!--Het KvK-nummer van de leverancier met KvK@--> 
+              </PartyId>
+              <Name>Naam Leverancier BV</Name>
+              <TaxId>NL009876543B01</TaxId><!--Het BTW-nummer van de leverancier-->
+              <Addresses>
+                <PrimaryAddress>
+                 <AddressLine>postbus 12345</AddressLine>
+                  <City>Amsterdam</City>
+                  <Country>NL</Country>
+                  <PostalCode>1000 AA</PostalCode>
+				  <Description>PhysicalAddress</Description>
+                  <Telephone>(020) 132 45 67</Telephone>
+                </PrimaryAddress>
+              </Addresses>
+            </RemitToParty>
+            <BillToParty>
+              <PartyId>
+                <Id>OIN@00000002003182447001</Id><!--Het OIN-nummer van de Overheidsorganisatie met OIN@--> 
+              </PartyId>
+              <Name>Naam Overheidsorganisatie</Name>
+              <Addresses>
+                <PrimaryAddress>
+                  <AddressLine>Postbus 16056</AddressLine>
+                  <City>&amp;apos;S-GRAVENHAGE</City>
+                  <Country>NL</Country>
+                  <PostalCode>2500 BB</PostalCode>
+				  <Description>PhysicalAddress</Description>
+                </PrimaryAddress>
+              </Addresses>
+            </BillToParty>
+          </Parties>
+          <Type>Debit</Type><!--Dit geeft aan of het om debetfactuur D) of creditfactuur(C) gaat-->
+          <TotalCharges currency="EUR">+700.48</TotalCharges>
+          <TotalTax currency="EUR">+147.10</TotalTax>
+          <Tax>
+            <TaxAmount currency="EUR">+147.10</TaxAmount>
+            <TaxBaseAmount currency="EUR">+700.48</TaxBaseAmount>
+            <PercentQuantity uom="BTW">21.00</PercentQuantity>
+          </Tax>
+          <UserArea>
+            <hr:StaffingAdditionalData>
+              <hr:CustomerReportingRequirements>
+                <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+                <hr:AdditionalRequirement requirementTitle="TotalHours">+16.00</hr:AdditionalRequirement>
+                <nl:AdditionalRequirement requirementTitle="VersionId" xmlns:nl="http://ns.hr-xml.org/2007-04-15">2.0</nl:AdditionalRequirement><!--De versie van de OHNL standaard die van toepassing is op dit bericht-->
+              </hr:CustomerReportingRequirements>
+              <hr:ReferenceInformation>
+                <hr:StaffingSupplierId idOwner="StaffingCustomer">
+                  <hr:IdValue>2006146</hr:IdValue>
+                </hr:StaffingSupplierId>
+                <hr:StaffingCustomerId idOwner="StaffingCustomer">
+                  <hr:IdValue>OIN@00000002003182447001</hr:IdValue>
+                </hr:StaffingCustomerId>
+                <hr:StaffingSupplierOrgUnitId idOwner="StaffingCustomer">
+                  <hr:IdValue>2006146</hr:IdValue>
+                </hr:StaffingSupplierOrgUnitId>
+              </hr:ReferenceInformation>
+            </hr:StaffingAdditionalData>
+            <hr:StaffingOrganization typeOfOrganization="Supplier">
+              <hr:Organization>
+                <hr:OrganizationName>Naam Leverancier BV</hr:OrganizationName>
+              </hr:Organization>
+              <hr:PaymentInfo>
+                <hr:BankAccountInfo>
+                  <hr:BankInfoByJurisdiction bankJurisdiction="NL">
+                    <hr:BankCode>ABNANL2A</hr:BankCode><!--De BIC Code van de leverancier-->
+					<hr:BankWindow/>
+					<hr:BankAccountNumber>NL58ABNA0987654321</hr:BankAccountNumber><!--Het IBAN nummer van de leverancier-->
+					<hr:BankAccountKey/>
+                  </hr:BankInfoByJurisdiction>
+                </hr:BankAccountInfo>
+              </hr:PaymentInfo>
+            </hr:StaffingOrganization>
+            <hr:StaffingOrganizationNL>
+              <hr:ChamberofCommerceReference>98765432</hr:ChamberofCommerceReference><!--Het KvK-nummer van de leverancier--> 
+            </hr:StaffingOrganizationNL>
+          </UserArea>
+        </Header>
+        <Line>
+              <LineNumber>110</LineNumber><!--Regelnummer van de factuur-->
+            <Description>Teo Bakker week 05 regular</Description><!--Hier vult u de omschrijving van de factuurrgel-->
+			<ReasonCode>invoicing</ReasonCode>
+            <Charges>
+              <TotalCharge>
+                <Total currency="EUR">+700.48</Total><!--Totaalbedrag van de factuurregel excl BTW-->
+              </TotalCharge>
+            </Charges>
+            <Tax>
+              <TaxAmount currency="EUR">+147.10</TaxAmount><!-- BTW bedrag van de factuurregel per BTW type-->
+              <TaxBaseAmount currency="EUR">+700.48</TaxBaseAmount><!--Totaalbedrag van de factuurregel excl BTW-->
+              <PercentQuantity uom="BTW">21.00</PercentQuantity>
+            </Tax>
+            <Price>
+              <Amount currency="EUR">43.78</Amount><!--Uurtarief-->
+              <PerQuantity uom="regular">1</PerQuantity>
+            </Price>
+            <ItemQuantity uom="regular">+16.00</ItemQuantity><!--Aantal gefactureerde uren-->
+            <UserArea>     
+              <hr:TimeCard>
+              <hr:Id idOwner="StaffingCustomer">
+                <hr:IdValue>129532</hr:IdValue><!--Verwijzing naar het timecardID zoals eerder ontvangen via het bericht TIMECARD-HRXML-->
+              </hr:Id>
+              <hr:ReportedResource xmlns="http://ns.hr-xml.org/2007-04-15">
+                <hr:Person>
+                  <hr:Id idOwner="StaffingCustomer">
+                    <hr:IdValue>2086707</hr:IdValue>
+                  </hr:Id>
+                  <hr:PersonName>
+                    <hr:FormattedName>Teo Bakker</hr:FormattedName>
+                    <hr:GivenName>T.S.</hr:GivenName>
+                    <hr:PreferredGivenName>Teo</hr:PreferredGivenName>
+                    <hr:MiddleName>T.S.</hr:MiddleName>
+                    <hr:FamilyName primary="true">Bakker</hr:FamilyName>
+                  </hr:PersonName>
+                </hr:Person>
+              </hr:ReportedResource>
+              <hr:ReportedTime xmlns="http://ns.hr-xml.org/2007-04-15">
+                <hr:PeriodStartDate>2014-01-27</hr:PeriodStartDate>
+                <hr:PeriodEndDate>2014-02-02</hr:PeriodEndDate>
+                <hr:TimeInterval type="regular" billable="true">
+                  <hr:StartDateTime>2014-01-27</hr:StartDateTime>
+                  <hr:EndDateTime>2014-01-27</hr:EndDateTime>
+                  <hr:Duration>8</hr:Duration>
+                  <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+                  <hr:AdditionalData>
+                    <hr:CustomerReportingRequirements>
+                      <hr:CostCenterCode>129532</hr:CostCenterCode>
+                      <hr:ProjectCode>129532</hr:ProjectCode>
+                      <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+                    </hr:CustomerReportingRequirements>
+                  </hr:AdditionalData>
+                </hr:TimeInterval>
+                <hr:TimeInterval type="regular" billable="true">
+                  <hr:StartDateTime>2014-01-28</hr:StartDateTime>
+                  <hr:EndDateTime>2014-01-28</hr:EndDateTime>
+                  <hr:Duration>8</hr:Duration>
+                  <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+                  <hr:AdditionalData>
+                    <hr:CustomerReportingRequirements>
+                      <hr:CostCenterCode>129532</hr:CostCenterCode>
+                      <hr:ProjectCode>129532</hr:ProjectCode>
+                      <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+                    </hr:CustomerReportingRequirements>
+                  </hr:AdditionalData>
+                </hr:TimeInterval>
+              </hr:ReportedTime>
+              <hr:AdditionalData xmlns="http://ns.hr-xml.org/2007-04-15">
+                <hr:StaffingAdditionalData>
+                  <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+                    <hr:CustomerReferenceNumber>40002147</hr:CustomerReferenceNumber>
+                    <hr:AdditionalRequirement requirementTitle="InclusiveRate">false</hr:AdditionalRequirement>
+                  </hr:CustomerReportingRequirements>
+                  <hr:ReferenceInformation>
+                    <hr:StaffingCustomerId idOwner="StaffingCompany">
+                      <hr:IdValue>Naam Leverancier BV</hr:IdValue>
+                    </hr:StaffingCustomerId>
+                    <hr:AssignmentId idOwner="StaffingCompany">
+                      <hr:IdValue>1234567</hr:IdValue>
+                    </hr:AssignmentId>
+                  </hr:ReferenceInformation>
+                </hr:StaffingAdditionalData>
+              </hr:AdditionalData>
+            </hr:TimeCard>
+			    <hr:StaffingAdditionalData>
+                <hr:CustomerReportingRequirements>
+                  <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber><!--Verwijzing naar de inkoopordernummer waar de factuurregel betrekking op heeft-->
+                  <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem><!--Verwijzing naar het inkooporderregelnummer waar de factuurregel betrekking op heeft-->
+                </hr:CustomerReportingRequirements>
+              </hr:StaffingAdditionalData>
+          </UserArea>
+        </Line>
+      </Invoice>

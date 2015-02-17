@@ -1,0 +1,1298 @@
+<Invoice xmlns:hr="http://ns.hr-xml.org/2007-04-15" xmlns="http://www.openapplications.org/oagis"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.openapplications.org/oagis ../SIDES/Invoice.xsd http://ns.hr-xml.org/2007-04-15 ../SIDES/NL/InvoiceAdditionalNL.xsd">
+  <Header>
+    <DocumentIds>
+      <DocumentId>
+        <Id>Factuurnummer2</Id><!--Hier vult u 'uw factuurnummer'--> 
+      </DocumentId>
+    </DocumentIds>
+    <DocumentDateTime>2014-10-09T00:00:00Z</DocumentDateTime><!--Hier vult u 'uw factuurdatum'--> 
+    <Note>Omschrijving van de factuur op kop</Note>
+    <ReasonCode>hours</ReasonCode>
+    <TotalAmount currency="EUR">+3041.75</TotalAmount>
+    <Parties>
+      <CustomerParty>
+        <PartyId>
+          <Id>OIN@00000002003182447001</Id><!--Het OIN-nummer van de Overheidsorganisatie met OIN@--> 
+        </PartyId>
+        <Name>Naam Overheidsorganisatie</Name>
+        <Addresses>
+          <PrimaryAddress>
+            <AddressLine>Postbus 16056</AddressLine>
+            <City>&amp;apos;S-GRAVENHAGE</City>
+            <Country>NL</Country>
+            <PostalCode>2500 BB</PostalCode>
+			<Description>PhysicalAddress</Description>
+          </PrimaryAddress>
+        </Addresses>
+      </CustomerParty>
+      <SupplierParty>
+        <PartyId>
+               <Id>KvK@98765432</Id><!--Het KvK-nummer van de leverancier met KvK@--> 
+             </PartyId>
+             <Name>Naam Leverancier BV</Name>
+             <TaxId>NL009876543B01</TaxId><!--Het BTW-nummer van de leverancier-->
+             <Addresses>
+               <PrimaryAddress>
+                 <AddressLine>postbus 12345</AddressLine>
+                 <City>Amsterdam</City>
+                 <Country>NL</Country>
+                 <PostalCode>1000 AA</PostalCode>
+				 <Description>PhysicalAddress</Description>
+                 <Telephone>(020) 132 45 67</Telephone>
+          </PrimaryAddress>
+        </Addresses>
+      </SupplierParty>
+           <RemitToParty>
+             <PartyId>
+              <Id>KvK@98765432</Id><!--Het KvK-nummer van de leverancier met KvK@--> 
+             </PartyId>
+             <Name>Naam Leverancier BV</Name>
+             <TaxId>NL009876543B01</TaxId><!--Het BTW-nummer van de leverancier-->
+             <Addresses>
+               <PrimaryAddress>
+               <AddressLine>postbus 12345</AddressLine>
+                 <City>Amsterdam</City>
+                 <Country>NL</Country>
+                 <PostalCode>1000 AA</PostalCode>
+				 <Description>PhysicalAddress</Description>
+                 <Telephone>(020) 132 45 67</Telephone>
+               </PrimaryAddress>
+              </Addresses>
+            </RemitToParty>
+      <BillToParty>
+        <PartyId>
+          <Id>OIN@00000002003182447001</Id><!--Het OIN-nummer van de Overheidsorganisatie met OIN@--> 
+        </PartyId>
+        <Name>Naam Overheidsorganisatie</Name>
+        <Addresses>
+          <PrimaryAddress>
+            <AddressLine>Postbus 16056</AddressLine>
+            <City>&amp;apos;S-GRAVENHAGE</City>
+            <Country>NL</Country>
+            <PostalCode>2500 BB</PostalCode>
+			<Description>PhysicalAddress</Description>
+          </PrimaryAddress>
+        </Addresses>
+      </BillToParty>
+    </Parties>
+    <Type>Debit</Type>
+    <TotalCharges currency="EUR">+2513.84</TotalCharges>
+    <TotalTax currency="EUR">+527.91</TotalTax>
+    <Tax>
+      <TaxAmount currency="EUR">+527.91</TaxAmount>
+      <TaxBaseAmount currency="EUR">+2513.84</TaxBaseAmount>
+      <PercentQuantity uom="BTW">21.00</PercentQuantity>
+    </Tax>
+    <UserArea>
+      <hr:StaffingAdditionalData>
+        <hr:CustomerReportingRequirements>
+          <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+          <hr:CostCenterCode>135664</hr:CostCenterCode>
+          <hr:ProjectCode>135664</hr:ProjectCode>
+          <hr:AdditionalRequirement requirementTitle="TotalHours">+52.00</hr:AdditionalRequirement>
+          <nl:AdditionalRequirement requirementTitle="VersionId" xmlns:nl="http://ns.hr-xml.org/2007-04-15">2.0</nl:AdditionalRequirement>
+        </hr:CustomerReportingRequirements><!--De versie van de OHNL standaard die van toepassing is op dit bericht-->
+        <hr:ReferenceInformation>
+          <hr:StaffingSupplierId idOwner="StaffingCustomer">
+            <hr:IdValue>2006146</hr:IdValue>
+          </hr:StaffingSupplierId>
+          <hr:StaffingCustomerId idOwner="StaffingCustomer">
+            <hr:IdValue>OIN@00000002003182447001</hr:IdValue>
+          </hr:StaffingCustomerId>
+          <hr:StaffingSupplierOrgUnitId idOwner="StaffingCustomer">
+            <hr:IdValue>2006146</hr:IdValue>
+          </hr:StaffingSupplierOrgUnitId>
+        </hr:ReferenceInformation>
+      </hr:StaffingAdditionalData>
+      <hr:StaffingOrganization typeOfOrganization="Supplier">
+        <hr:Organization>
+          <hr:OrganizationName>Naam Leverancier BV</hr:OrganizationName>
+        </hr:Organization>
+        <hr:PaymentInfo>
+          <hr:BankAccountInfo>
+            <hr:BankInfoByJurisdiction bankJurisdiction="NL">
+              <hr:BankCode>ABNANL2A</hr:BankCode><!--De BIC Code van de leverancier-->
+              <hr:BankWindow/>
+              <hr:BankAccountNumber>NL58ABNA0987654321</hr:BankAccountNumber><!--Het IBAN nummer van de leverancier-->
+              <hr:BankAccountKey/>
+            </hr:BankInfoByJurisdiction>
+          </hr:BankAccountInfo>
+        </hr:PaymentInfo>
+      </hr:StaffingOrganization>
+      <hr:StaffingOrganizationNL>
+        <hr:ChamberofCommerceReference>98765432</hr:ChamberofCommerceReference><!--Het KvK-nummer van de leverancier--> 
+      </hr:StaffingOrganizationNL>
+    </UserArea>
+  </Header>
+  <Line>
+      <LineNumber>110</LineNumber><!--Regelnummer van de factuur-->
+      <Description>Teo Bakker week 12 regular</Description><!--Hier vult u de omschrijving van de factuurrgel-->
+	  <ReasonCode>invoicing</ReasonCode>
+      <Charges>
+        <TotalCharge>
+          <Total currency="EUR">+1751.20</Total><!--Totaalbedrag van de factuurregel excl BTW-->
+        </TotalCharge>
+      </Charges>
+      <Tax>
+        <TaxAmount currency="EUR">+367.75</TaxAmount><!-- BTW bedrag van de factuurregel per BTW type-->
+        <TaxBaseAmount currency="EUR">+1751.20</TaxBaseAmount><!--Totaalbedrag van de factuurregel excl BTW-->
+        <PercentQuantity uom="BTW">21.00</PercentQuantity>
+      </Tax>
+      <Price>
+        <Amount currency="EUR">43.78</Amount><!--Uurtarief-->
+        <PerQuantity uom="regular">1</PerQuantity>
+      </Price>
+      <ItemQuantity uom="regular">+40.00</ItemQuantity><!--Aantal gefactureerde uren-->
+    <UserArea>
+      <hr:TimeCard>
+        <hr:Id idOwner="StaffingCustomer">
+          <hr:IdValue>135664</hr:IdValue><!--Verwijzing naar het timecardID zoals eerder ontvangen via het bericht TIMECARD-HRXML-->
+        </hr:Id>
+        <hr:ReportedResource xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:Person>
+            <hr:Id idOwner="StaffingCustomer">
+              <hr:IdValue>2086707</hr:IdValue>
+            </hr:Id>
+            <hr:PersonName>
+              <hr:FormattedName>Teo Bakker</hr:FormattedName>
+              <hr:GivenName>T.S.</hr:GivenName>
+              <hr:PreferredGivenName>Teo</hr:PreferredGivenName>
+              <hr:MiddleName>T.S.</hr:MiddleName>
+              <hr:FamilyName primary="true">Bakker</hr:FamilyName>
+            </hr:PersonName>
+          </hr:Person>
+        </hr:ReportedResource>
+        <hr:ReportedTime xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:PeriodStartDate>2014-03-17</hr:PeriodStartDate>
+          <hr:PeriodEndDate>2014-03-23</hr:PeriodEndDate>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-19</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-19</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-20</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-20</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-21</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-21</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>0</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="shift" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">40.63</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:Allowance type="Maaltijd">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">50</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>4.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Maaltijdvergoeding</hr:Comment>
+          </hr:Allowance>
+          <hr:Allowance type="Fietsverg">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">19</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>5.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Fietsvergoeding</hr:Comment>
+          </hr:Allowance>
+        </hr:ReportedTime>
+        <hr:AdditionalData xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:StaffingAdditionalData>
+            <hr:CustomerReportingRequirements>
+              <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+                <hr:AdditionalRequirement requirementTitle="InclusiveRate">false</hr:AdditionalRequirement>
+            </hr:CustomerReportingRequirements>
+            <hr:ReferenceInformation>
+              <hr:StaffingCustomerId idOwner="StaffingCompany">
+                <hr:IdValue>Naam Leverancier BV</hr:IdValue>
+              </hr:StaffingCustomerId>
+              <hr:AssignmentId idOwner="StaffingCompany">
+                <hr:IdValue>7223807</hr:IdValue>
+              </hr:AssignmentId>
+            </hr:ReferenceInformation>
+          </hr:StaffingAdditionalData>
+        </hr:AdditionalData>
+      </hr:TimeCard>
+        <hr:StaffingAdditionalData>
+          <hr:CustomerReportingRequirements>
+            <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+            <hr:DepartmentName>1.1.1</hr:DepartmentName>
+            <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+          </hr:CustomerReportingRequirements>
+        </hr:StaffingAdditionalData>
+    </UserArea>
+  </Line>
+  <Line>
+      <LineNumber>210</LineNumber>
+      <Description>Teo Bakker week 12 regular</Description>
+	  <ReasonCode>invoicing</ReasonCode>
+      <Charges>
+        <TotalCharge>
+          <Total currency="EUR">+350.24</Total>
+        </TotalCharge>
+      </Charges>
+      <Tax>
+        <TaxAmount currency="EUR">+73.55</TaxAmount>
+        <TaxBaseAmount currency="EUR">+350.24</TaxBaseAmount>
+        <PercentQuantity uom="BTW">21.00</PercentQuantity>
+      </Tax>
+      <Price>
+        <Amount currency="EUR">43.78</Amount>
+        <PerQuantity uom="regular">1</PerQuantity>
+      </Price>
+      <ItemQuantity uom="regular">+8.00</ItemQuantity>
+    <UserArea>
+      <hr:TimeCard>
+        <hr:Id idOwner="StaffingCustomer">
+          <hr:IdValue>135664</hr:IdValue>
+        </hr:Id>
+        <hr:ReportedResource xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:Person>
+            <hr:Id idOwner="StaffingCustomer">
+              <hr:IdValue>2086707</hr:IdValue>
+            </hr:Id>
+            <hr:PersonName>
+              <hr:FormattedName>Teo Bakker</hr:FormattedName>
+              <hr:GivenName>T.S.</hr:GivenName>
+              <hr:PreferredGivenName>Teo</hr:PreferredGivenName>
+              <hr:MiddleName>T.S.</hr:MiddleName>
+              <hr:FamilyName primary="true">Bakker</hr:FamilyName>
+            </hr:PersonName>
+          </hr:Person>
+        </hr:ReportedResource>
+        <hr:ReportedTime xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:PeriodStartDate>2014-03-17</hr:PeriodStartDate>
+          <hr:PeriodEndDate>2014-03-23</hr:PeriodEndDate>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-19</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-19</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-20</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-20</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-21</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-21</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>0</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="shift" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">40.63</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:Allowance type="Maaltijd">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">50</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>4.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Maaltijdvergoeding</hr:Comment>
+          </hr:Allowance>
+          <hr:Allowance type="Fietsverg">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">19</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>5.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Fietsvergoeding</hr:Comment>
+          </hr:Allowance>
+        </hr:ReportedTime>
+        <hr:AdditionalData xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:StaffingAdditionalData>
+            <hr:CustomerReportingRequirements>
+              <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+                <hr:AdditionalRequirement requirementTitle="InclusiveRate">false</hr:AdditionalRequirement>
+            </hr:CustomerReportingRequirements>
+            <hr:ReferenceInformation>
+              <hr:StaffingCustomerId idOwner="StaffingCompany">
+                <hr:IdValue>Naam Leverancier BV</hr:IdValue>
+              </hr:StaffingCustomerId>
+              <hr:AssignmentId idOwner="StaffingCompany">
+                <hr:IdValue>7223807</hr:IdValue>
+              </hr:AssignmentId>
+            </hr:ReferenceInformation>
+          </hr:StaffingAdditionalData>
+        </hr:AdditionalData>
+      </hr:TimeCard>
+        <hr:StaffingAdditionalData>
+          <hr:CustomerReportingRequirements>
+            <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+            <hr:DepartmentName>2.1.1</hr:DepartmentName>
+            <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+          </hr:CustomerReportingRequirements>
+        </hr:StaffingAdditionalData>
+    </UserArea>
+  </Line>
+    <Line>
+      <LineNumber>310</LineNumber>
+      <Description>Teo Bakker week 12 overtime</Description>
+	  <ReasonCode>invoicing</ReasonCode>
+      <Charges>
+        <TotalCharge>
+          <Total currency="EUR">+206.04</Total>
+        </TotalCharge>
+      </Charges>
+      <Tax>
+        <TaxAmount currency="EUR">+43.27</TaxAmount>
+        <TaxBaseAmount currency="EUR">+206.04</TaxBaseAmount>
+        <PercentQuantity uom="BTW">21.00</PercentQuantity>
+      </Tax>
+      <Price>
+        <Amount currency="EUR">51.51</Amount>
+        <PerQuantity uom="overtime">1</PerQuantity>
+      </Price>
+      <ItemQuantity uom="overtime">+4.00</ItemQuantity>
+    <UserArea>
+      <hr:TimeCard>
+        <hr:Id idOwner="StaffingCustomer">
+          <hr:IdValue>135664</hr:IdValue>
+        </hr:Id>
+        <hr:ReportedResource xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:Person>
+            <hr:Id idOwner="StaffingCustomer">
+              <hr:IdValue>2086707</hr:IdValue>
+            </hr:Id>
+            <hr:PersonName>
+              <hr:FormattedName>Teo Bakker</hr:FormattedName>
+              <hr:GivenName>T.S.</hr:GivenName>
+              <hr:PreferredGivenName>Teo</hr:PreferredGivenName>
+              <hr:MiddleName>T.S.</hr:MiddleName>
+              <hr:FamilyName primary="true">Bakker</hr:FamilyName>
+            </hr:PersonName>
+          </hr:Person>
+        </hr:ReportedResource>
+        <hr:ReportedTime xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:PeriodStartDate>2014-03-17</hr:PeriodStartDate>
+          <hr:PeriodEndDate>2014-03-23</hr:PeriodEndDate>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-19</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-19</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-20</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-20</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-21</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-21</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>0</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="shift" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">40.63</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:Allowance type="Maaltijd">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">50</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>4.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Maaltijdvergoeding</hr:Comment>
+          </hr:Allowance>
+          <hr:Allowance type="Fietsverg">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">19</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>5.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Fietsvergoeding</hr:Comment>
+          </hr:Allowance>
+        </hr:ReportedTime>
+        <hr:AdditionalData xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:StaffingAdditionalData>
+            <hr:CustomerReportingRequirements>
+              <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+                <hr:AdditionalRequirement requirementTitle="InclusiveRate">false</hr:AdditionalRequirement>
+            </hr:CustomerReportingRequirements>
+            <hr:ReferenceInformation>
+              <hr:StaffingCustomerId idOwner="StaffingCompany">
+                <hr:IdValue>Naam Leverancier BV</hr:IdValue>
+              </hr:StaffingCustomerId>
+              <hr:AssignmentId idOwner="StaffingCompany">
+                <hr:IdValue>7223807</hr:IdValue>
+              </hr:AssignmentId>
+            </hr:ReferenceInformation>
+          </hr:StaffingAdditionalData>
+        </hr:AdditionalData>
+      </hr:TimeCard>
+     <hr:StaffingAdditionalData>
+          <hr:CustomerReportingRequirements>
+            <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+            <hr:DepartmentName>3.1.1</hr:DepartmentName>
+            <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+          </hr:CustomerReportingRequirements>
+        </hr:StaffingAdditionalData>
+    </UserArea>
+  </Line>
+     <Line>
+      <LineNumber>410</LineNumber>
+      <Description>Teo Bakker week 12 shift</Description>
+	  <ReasonCode>invoicing</ReasonCode>
+      <Charges>
+        <TotalCharge>
+          <Total currency="EUR">+137.36</Total>
+        </TotalCharge>
+      </Charges>
+      <Tax>
+        <TaxAmount currency="EUR">+28.85</TaxAmount>
+        <TaxBaseAmount currency="EUR">+137.36</TaxBaseAmount>
+        <PercentQuantity uom="BTW">21.00</PercentQuantity>
+      </Tax>
+      <Price>
+        <Amount currency="EUR">17.17</Amount>
+        <PerQuantity uom="shift">1</PerQuantity>
+      </Price>
+      <ItemQuantity uom="shift">+8.00</ItemQuantity>
+     <UserArea>
+      <hr:TimeCard>
+        <hr:Id idOwner="StaffingCustomer">
+          <hr:IdValue>135664</hr:IdValue>
+        </hr:Id>
+        <hr:ReportedResource xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:Person>
+            <hr:Id idOwner="StaffingCustomer">
+              <hr:IdValue>2086707</hr:IdValue>
+            </hr:Id>
+            <hr:PersonName>
+              <hr:FormattedName>Teo Bakker</hr:FormattedName>
+              <hr:GivenName>T.S.</hr:GivenName>
+              <hr:PreferredGivenName>Teo</hr:PreferredGivenName>
+              <hr:MiddleName>T.S.</hr:MiddleName>
+              <hr:FamilyName primary="true">Bakker</hr:FamilyName>
+            </hr:PersonName>
+          </hr:Person>
+        </hr:ReportedResource>
+        <hr:ReportedTime xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:PeriodStartDate>2014-03-17</hr:PeriodStartDate>
+          <hr:PeriodEndDate>2014-03-23</hr:PeriodEndDate>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-19</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-19</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-20</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-20</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-21</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-21</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>0</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="shift" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">40.63</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:Allowance type="Maaltijd">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">50</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>4.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Maaltijdvergoeding</hr:Comment>
+          </hr:Allowance>
+          <hr:Allowance type="Fietsverg">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">19</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>5.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Fietsvergoeding</hr:Comment>
+          </hr:Allowance>
+        </hr:ReportedTime>
+        <hr:AdditionalData xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:StaffingAdditionalData>
+            <hr:CustomerReportingRequirements>
+              <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+                <hr:AdditionalRequirement requirementTitle="InclusiveRate">false</hr:AdditionalRequirement>
+            </hr:CustomerReportingRequirements>
+            <hr:ReferenceInformation>
+              <hr:StaffingCustomerId idOwner="StaffingCompany">
+                <hr:IdValue>Naam Leverancier BV</hr:IdValue>
+              </hr:StaffingCustomerId>
+              <hr:AssignmentId idOwner="StaffingCompany">
+                <hr:IdValue>7223807</hr:IdValue>
+              </hr:AssignmentId>
+            </hr:ReferenceInformation>
+          </hr:StaffingAdditionalData>
+        </hr:AdditionalData>
+      </hr:TimeCard>
+        <hr:StaffingAdditionalData>
+          <hr:CustomerReportingRequirements>
+            <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+            <hr:DepartmentName>2.1.1</hr:DepartmentName>
+            <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+          </hr:CustomerReportingRequirements>
+        </hr:StaffingAdditionalData>
+    </UserArea>
+  </Line>
+    <Line>
+      <LineNumber>511</LineNumber>
+      <Description>Teo Bakker week 12 Fietsverg</Description>
+	  <ReasonCode>invoicing</ReasonCode>
+      <Charges>
+        <TotalCharge>
+          <Total currency="EUR">+19.00</Total>
+        </TotalCharge>
+      </Charges>
+      <Tax>
+        <TaxAmount currency="EUR">+3.99</TaxAmount>
+        <TaxBaseAmount currency="EUR">+19.00</TaxBaseAmount>
+        <PercentQuantity uom="BTW">21.00</PercentQuantity>
+      </Tax>
+      <Price>
+        <Amount currency="EUR">19</Amount>
+        <PerQuantity uom="Fietsverg">1</PerQuantity>
+      </Price>
+      <ItemQuantity uom="Fietsverg">+1.00</ItemQuantity>
+    <UserArea>
+      <hr:TimeCard>
+        <hr:Id idOwner="StaffingCustomer">
+          <hr:IdValue>135664</hr:IdValue>
+        </hr:Id>
+        <hr:ReportedResource xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:Person>
+            <hr:Id idOwner="StaffingCustomer">
+              <hr:IdValue>2086707</hr:IdValue>
+            </hr:Id>
+            <hr:PersonName>
+              <hr:FormattedName>Teo Bakker</hr:FormattedName>
+              <hr:GivenName>T.S.</hr:GivenName>
+              <hr:PreferredGivenName>Teo</hr:PreferredGivenName>
+              <hr:MiddleName>T.S.</hr:MiddleName>
+              <hr:FamilyName primary="true">Bakker</hr:FamilyName>
+            </hr:PersonName>
+          </hr:Person>
+        </hr:ReportedResource>
+        <hr:ReportedTime xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:PeriodStartDate>2014-03-17</hr:PeriodStartDate>
+          <hr:PeriodEndDate>2014-03-23</hr:PeriodEndDate>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-19</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-19</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-20</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-20</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-21</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-21</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>0</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="shift" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">40.63</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:Allowance type="Maaltijd">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">50</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>4.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Maaltijdvergoeding</hr:Comment>
+          </hr:Allowance>
+          <hr:Allowance type="Fietsverg">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">19</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>5.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Fietsvergoeding</hr:Comment>
+          </hr:Allowance>
+        </hr:ReportedTime>
+        <hr:AdditionalData xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:StaffingAdditionalData>
+            <hr:CustomerReportingRequirements>
+              <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+                <hr:AdditionalRequirement requirementTitle="InclusiveRate">false</hr:AdditionalRequirement>
+            </hr:CustomerReportingRequirements>
+            <hr:ReferenceInformation>
+              <hr:StaffingCustomerId idOwner="StaffingCompany">
+                <hr:IdValue>Naam Leverancier BV</hr:IdValue>
+              </hr:StaffingCustomerId>
+              <hr:AssignmentId idOwner="StaffingCompany">
+                <hr:IdValue>7223807</hr:IdValue>
+              </hr:AssignmentId>
+            </hr:ReferenceInformation>
+          </hr:StaffingAdditionalData>
+        </hr:AdditionalData>
+      </hr:TimeCard>
+        <hr:StaffingAdditionalData>
+          <hr:CustomerReportingRequirements>
+            <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+            <hr:DepartmentName>5.1.1</hr:DepartmentName>
+            <hr:PurchaseOrderLineItem>5.1.1</hr:PurchaseOrderLineItem>
+          </hr:CustomerReportingRequirements>
+        </hr:StaffingAdditionalData>
+    </UserArea>
+  </Line>
+     <Line>
+      <LineNumber>611</LineNumber>
+      <Description>Teo Bakker week 12 Maaltijd</Description>
+	  <ReasonCode>invoicing</ReasonCode>
+      <Charges>
+        <TotalCharge>
+          <Total currency="EUR">+50.00</Total>
+        </TotalCharge>
+      </Charges>
+      <Tax>
+        <TaxAmount currency="EUR">+10.50</TaxAmount>
+        <TaxBaseAmount currency="EUR">+50.00</TaxBaseAmount>
+        <PercentQuantity uom="BTW">21.00</PercentQuantity>
+      </Tax>
+      <Price>
+        <Amount currency="EUR">50</Amount>
+        <PerQuantity uom="Maaltijd">1</PerQuantity>
+      </Price>
+      <ItemQuantity uom="Maaltijd">+1.00</ItemQuantity>
+    <UserArea>
+      <hr:TimeCard>
+        <hr:Id idOwner="StaffingCustomer">
+          <hr:IdValue>135664</hr:IdValue>
+        </hr:Id>
+        <hr:ReportedResource xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:Person>
+            <hr:Id idOwner="StaffingCustomer">
+              <hr:IdValue>2086707</hr:IdValue>
+            </hr:Id>
+            <hr:PersonName>
+              <hr:FormattedName>Teo Bakker</hr:FormattedName>
+              <hr:GivenName>T.S.</hr:GivenName>
+              <hr:PreferredGivenName>Teo</hr:PreferredGivenName>
+              <hr:MiddleName>T.S.</hr:MiddleName>
+              <hr:FamilyName primary="true">Bakker</hr:FamilyName>
+            </hr:PersonName>
+          </hr:Person>
+        </hr:ReportedResource>
+        <hr:ReportedTime xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:PeriodStartDate>2014-03-17</hr:PeriodStartDate>
+          <hr:PeriodEndDate>2014-03-23</hr:PeriodEndDate>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-17</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-17</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="overtime" billable="true">
+            <hr:StartDateTime>2014-03-18</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-18</hr:EndDateTime>
+            <hr:Duration>2</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">34.34</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>3.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-19</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-19</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-20</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-20</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-21</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-21</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>1.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="regular" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>0</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="100">43.78</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:TimeInterval type="shift" billable="true">
+            <hr:StartDateTime>2014-03-22</hr:StartDateTime>
+            <hr:EndDateTime>2014-03-22</hr:EndDateTime>
+            <hr:Duration>8</hr:Duration>
+            <hr:RateOrAmount type="hourly" currency="EUR" multiplier="150">40.63</hr:RateOrAmount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>2.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+          </hr:TimeInterval>
+          <hr:Allowance type="Maaltijd">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">50</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>4.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Maaltijdvergoeding</hr:Comment>
+          </hr:Allowance>
+          <hr:Allowance type="Fietsverg">
+            <hr:Id idOwner="StaffingCompany">
+              <hr:IdValue name="allowance"/>
+            </hr:Id>
+            <hr:StartDate>2014-03-17</hr:StartDate>
+            <hr:EndDate>2014-03-17</hr:EndDate>
+            <hr:Amount currency="EUR">19</hr:Amount>
+            <hr:AdditionalData>
+              <hr:CustomerReportingRequirements>
+                    <hr:PurchaseOrderLineItem>5.1.1</hr:PurchaseOrderLineItem>
+              </hr:CustomerReportingRequirements>
+            </hr:AdditionalData>
+            <hr:Comment>Fietsvergoeding</hr:Comment>
+          </hr:Allowance>
+        </hr:ReportedTime>
+        <hr:AdditionalData xmlns="http://ns.hr-xml.org/2007-04-15">
+          <hr:StaffingAdditionalData>
+            <hr:CustomerReportingRequirements>
+              <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+                <hr:AdditionalRequirement requirementTitle="InclusiveRate">false</hr:AdditionalRequirement>
+            </hr:CustomerReportingRequirements>
+            <hr:ReferenceInformation>
+              <hr:StaffingCustomerId idOwner="StaffingCompany">
+                <hr:IdValue>Naam Leverancier BV</hr:IdValue>
+              </hr:StaffingCustomerId>
+              <hr:AssignmentId idOwner="StaffingCompany">
+                <hr:IdValue>7223807</hr:IdValue>
+              </hr:AssignmentId>
+            </hr:ReferenceInformation>
+          </hr:StaffingAdditionalData>
+        </hr:AdditionalData>
+      </hr:TimeCard>
+        <hr:StaffingAdditionalData>
+          <hr:CustomerReportingRequirements>
+            <hr:PurchaseOrderNumber>40002147</hr:PurchaseOrderNumber>
+            <hr:PurchaseOrderLineItem>4.1.1</hr:PurchaseOrderLineItem>
+          </hr:CustomerReportingRequirements>
+        </hr:StaffingAdditionalData>
+    </UserArea>
+  </Line>
+</Invoice>
