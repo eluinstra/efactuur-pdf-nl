@@ -44,9 +44,6 @@ xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="../SIDES/T
 	<xs:annotation>
 		<xs:documentation>**********     FOUND include file: Enums.xsd      **********</xs:documentation>
 	</xs:annotation>
-	<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="NL/InvoiceAdditionalNL.xsd"></xs:import>
-	<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="TimeCardAdditionalData.xsd"></xs:import>
-		
 	<xs:simpleType name="Currency">
 		<xs:restriction base="xs:string"/>
 	</xs:simpleType>

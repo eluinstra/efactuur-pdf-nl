@@ -27,9 +27,8 @@ Technical Note:
 Some parser implementations require the following import declaration be included in this schema in order to extend.  Others do not.  The schema is valid in either case.
 
 xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="../SIDES/TimeCardAdditionalData.xsd"
-		</xs:documentation>		
+		</xs:documentation>
 	</xs:annotation>
-	<xs:import namespace="http://ns.hr-xml.org/2007-04-15" schemaLocation="NL/InvoiceAdditionalNL.xsd"/>	
 	<xs:annotation>
 		<xs:documentation>**********     FOUND include file: Order.xsd      **********</xs:documentation>
 	</xs:annotation>

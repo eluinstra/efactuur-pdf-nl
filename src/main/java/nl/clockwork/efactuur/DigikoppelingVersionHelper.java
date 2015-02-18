@@ -91,12 +91,12 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			// SETU: Invoice
 			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_1),setuValidationRootPath + "/1.1/SIDES/Invoice.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/Invoice.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/Invoice.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/Invoice.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/SIDES/Invoice.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/Invoice.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/SIDES/Invoice.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/NL/2011-02/InvoiceLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/NL/2011-02/InvoiceLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/NL/2011-02/InvoiceLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/SIDES/NL/2011-02/InvoiceLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/NL/2011-02/InvoiceLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/SIDES/NL/2015-02/InvoiceOrdinaNL.xsd");
 			
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_1),"");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/Invoice-Schematron-Validation.xsl");
@@ -334,12 +334,12 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			
 			// SETU: Human Resource
 			
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/HumanResource.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/HumanResource.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/HumanResource.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/SIDES/HumanResource.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/HumanResource.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/SIDES/HumanResource.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/NL/2011-02/HumanResourceLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/NL/2011-02/HumanResourceLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/NL/2011-02/HumanResourceLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/SIDES/NL/2011-02/HumanResourceLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/NL/2011-02/HumanResourceLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/SIDES/NL/2015-02/HumanResourceOrdinaNL.xsd");
 			
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_1),"");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/HumanResource-Schematron-Validation.xsl");
@@ -351,12 +351,12 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			
 			// SETU: Time Card
 			
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/TimeCardAdditionalData.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/TimeCardAdditionalData.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/TimeCardAdditionalData.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/SIDES/TimeCardAdditionalData.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/TimeCardAdditionalData.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/SIDES/TimeCardAdditionalData.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/NL/2011-02/TimeCardLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/NL/2011-02/TimeCardLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/NL/2011-02/TimeCardLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/SIDES/NL/2011-02/TimeCardLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/NL/2011-02/TimeCardLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/SIDES/NL/2015-02/TimeCardOrdinaNL.xsd");
 
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_1),"");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/TimeCard-Schematron-Validation.xsl");
@@ -368,12 +368,12 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 
 			// SETU: Staffing Order 
 			
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/StaffingOrder.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/StaffingOrder.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/StaffingOrder.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/SIDES/StaffingOrder.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/StaffingOrder.xsd");
-			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/SIDES/StaffingOrder.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/2011-02/StaffingOrderLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/2011-02/StaffingOrderLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/2011-02/StaffingOrderLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8_1_beta01),setuValidationRootPath + "/1.8.1.beta01/SIDES/2011-02/StaffingOrderLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8_1),setuValidationRootPath + "/1.8.1/SIDES/2011-02/StaffingOrderLogiusNL.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/SIDES/2015-02/StaffingOrderOrdinaNL.xsd");
 			
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_1),"");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/StaffingOrder-Schematron-Validation.xsl");
