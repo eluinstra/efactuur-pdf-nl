@@ -19,7 +19,6 @@ import java.util.HashMap;
 
 public class Constants
 {
-	// HashMap containing the root-tag of a message mapped that message's messageType
 	public final static HashMap<String,nl.clockwork.efactuur.Constants.MessageType> rootTagToMessageType =
 			new HashMap<String,nl.clockwork.efactuur.Constants.MessageType>()
 			{
@@ -41,7 +40,6 @@ public class Constants
 				}
 			};
 
-	// HashMap containing the root-tag of a message mapped that message's messageType
 	public final static HashMap<BerichtSoort,MessageType> berichtSoortToMessageType = new HashMap<BerichtSoort,MessageType>()
 	{
 		private static final long serialVersionUID = 1L;
@@ -80,7 +78,6 @@ public class Constants
 		}
 	};
 
-	// HashMap containing the major ubl versions mapped to their specific versions in the efactuur project.
 	public final static HashMap<String,String> ublMajorVersionToSpecificVersion = new HashMap<String,String>()
 	{
 		private static final long serialVersionUID = 1L;
@@ -95,7 +92,6 @@ public class Constants
 		}
 	};
 
-	// HashMap containing the major setu versions mapped to their specific versions in the efactuur project.
 	public final static HashMap<String,String> setuMajorVersionToSpecificVersion = new HashMap<String,String>()
 	{
 		private static final long serialVersionUID = 1L;
@@ -113,7 +109,6 @@ public class Constants
 	public static final String MESSAGE_FORMAT_UBL = MessageFormat.UBL.name();
 	public static final String MESSAGE_FORMAT_SETU = MessageFormat.SETU.name();
 
-	public static final String MESSAGE_VERSION_UBL_old = "old";
 	public static final String MESSAGE_VERSION_UBL_1_1 = "1.1";
 	public static final String MESSAGE_VERSION_UBL_1_6_2 = "1.6.2";
 	public static final String MESSAGE_VERSION_UBL_1_6_3 = "1.6.3";
@@ -121,7 +116,6 @@ public class Constants
 	public static final String MESSAGE_VERSION_UBL_1_8_beta2 = "1.8.beta2";
 	public static final String MESSAGE_VERSION_UBL_1_8 = "1.8";
 	public static final String MESSAGE_VERSION_UBL_1_9 = "1.9";
-	public static final String MESSAGE_VERSION_UBL_DEFAULT = MESSAGE_VERSION_UBL_1_8;
 
 	public static final String MESSAGE_VERSION_SETU_1_1 = "1.1";
 	public static final String MESSAGE_VERSION_SETU_1_6_4 = "1.6.4";
@@ -130,7 +124,6 @@ public class Constants
 	public static final String MESSAGE_VERSION_SETU_1_8_1_beta01 = "1.8.1.beta01";
 	public static final String MESSAGE_VERSION_SETU_1_8_1 = "1.8.1";
 	public static final String MESSAGE_VERSION_SETU_2_0 = "2.0";
-	public static final String MESSAGE_VERSION_SETU_DEFAULT = MESSAGE_VERSION_SETU_1_8_1;
 
 	public static final String MESSAGE_TYPE_UNKNOWN = MessageType.UNKNOWN.name();
 	public static final String MESSAGE_TYPE_INVOICE = MessageType.INVOICE.name();
