@@ -20,7 +20,7 @@
 	<groupId>nl.clockwork</groupId>
 	<artifactId>efactuur-pdf-nl</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1.11-SNAPSHOT</version>
+	<version>1.2.0</version>
 	<name>efactuur-pdf-nl</name>
 	<url>http://maven.apache.org</url>
 	<distributionManagement>
@@ -51,6 +51,11 @@
 			<name>Edwin Luinstra</name>
 			<email>edwin.luinstra@clockwork.nl</email>
 		</developer>
+		<developer>
+			<id>h.dehaan</id>
+			<name>Hielke de Haan</name>
+			<email>hielke.de.haan@ordina.nl</email>
+		</developer>		
 	</developers>
 	<scm>
 		<connection>scm:git:ssh://git@git.clockwork.nl/dso/efactuur-pdf-nl.git</connection>
