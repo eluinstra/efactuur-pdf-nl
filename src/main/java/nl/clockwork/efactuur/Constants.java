@@ -105,7 +105,6 @@ public class Constants
 		}
 	};
 
-	public static final String MESSAGE_FORMAT_UNKNOWN = MessageFormat.UNKNOWN.name();
 	public static final String MESSAGE_FORMAT_UBL = MessageFormat.UBL.name();
 	public static final String MESSAGE_FORMAT_SETU = MessageFormat.SETU.name();
 
@@ -125,7 +124,6 @@ public class Constants
 	public static final String MESSAGE_VERSION_SETU_1_8_1 = "1.8.1";
 	public static final String MESSAGE_VERSION_SETU_2_0 = "2.0";
 
-	public static final String MESSAGE_TYPE_UNKNOWN = MessageType.UNKNOWN.name();
 	public static final String MESSAGE_TYPE_INVOICE = MessageType.INVOICE.name();
 	public static final String MESSAGE_TYPE_COMMITMENT = MessageType.COMMITMENT.name();
 	public static final String MESSAGE_TYPE_QUOTATION = MessageType.QUOTATION.name();
@@ -155,99 +153,82 @@ public class Constants
 
 	public enum BerichtSoort
 	{
-		BUDGETCHECK_ANTWOORD_UBL(0),
-		BUDGETCHECK_VRAAG_UBL(1),
-		BESTELLING_VERPLICHTING_UBL(2),
-		TIMECARD_HRXML(3),
-		FACTUUR_UBL(4),
-		FACTUUR_AKKOORD_UBL(5),
-		FACTUUR_HRXML(6),
-		FACTUUR_AKKOORD_HRXML(7),
-		ADVANCED_SHIPPING_NOTICE_UBL(8),
-		OFFERTE_HRXML(9),
-		BESTELLING_BEVESTIGING_HRXML(10),
-		VOORSTEL_FACTUUR_HRXML(11),
-		AFWIJZING_HRXML(12),
-		VOORSTEL_FACTUUR_UBL(13),
-		BESTELLING_UBL(14),
-		BESTELLING_BEVESTIGING_UBL(15),
-		OFFERTE_AANVRAAG_HRXML(16),
-		BESTELLING_HRXML(17),
-		OFFERTE_UBL(18),
-		OFFERTE_AANVRAAG_UBL(19),
-		AFWIJZING_UBL(20),
-		E_FACTUUR(21),
-		M_FACTUUR(22);
+		BUDGETCHECK_ANTWOORD_UBL("BUDGETCHECK-ANTWOORD-UBL"),
+		BUDGETCHECK_VRAAG_UBL("BUDGETCHECK-VRAAG-UBL"),
+		BESTELLING_VERPLICHTING_UBL("BESTELLING-VERPLICHTING-UBL"),
+		TIMECARD_HRXML("TIMECARD-HRXML"),
+		FACTUUR_UBL("FACTUUR-UBL"),
+		FACTUUR_AKKOORD_UBL("FACTUUR-AKKOORD-UBL"),
+		FACTUUR_HRXML("FACTUUR-HRXML"),
+		FACTUUR_AKKOORD_HRXML("FACTUUR-AKKOORD-HRXML"),
+		ADVANCED_SHIPPING_NOTICE_UBL("ADVANCED-SHIPPING-NOTICE-UBL"),
+		OFFERTE_HRXML("OFFERTE-HRXML"),
+		BESTELLING_BEVESTIGING_HRXML("BESTELLING-BEVESTIGING-HRXML"),
+		VOORSTEL_FACTUUR_HRXML("VOORSTEL-FACTUUR-HRXML"),
+		AFWIJZING_HRXML("AFWIJZING-HRXML"),
+		VOORSTEL_FACTUUR_UBL("VOORSTEL-FACTUUR-UBL"),
+		BESTELLING_UBL("BESTELLING-UBL"),
+		BESTELLING_BEVESTIGING_UBL("BESTELLING-BEVESTIGING-UBL"),
+		OFFERTE_AANVRAAG_HRXML("OFFERTE-AANVRAAG-HRXML"),
+		BESTELLING_HRXML("BESTELLING-HRXML"),
+		OFFERTE_UBL("OFFERTE-UBL"),
+		OFFERTE_AANVRAAG_UBL("OFFERTE-AANVRAAG-UBL"),
+		AFWIJZING_UBL("AFWIJZING-UBL"),
+		E_FACTUUR("E-Factuur"),
+		M_FACTUUR("M-Factuur");
 
-		private final int id;
-
-		BerichtSoort(int id)
+		private final String value;
+		
+		BerichtSoort(String value)
 		{
-			this.id = id;
+			this.value = value;
 		}
 
-		public final int id()
+		public final String value()
 		{
-			return id;
+			return value;
 		}
 
-		public final static BerichtSoort getBerichtSoort(int id)
+		public final static BerichtSoort getBerichtSoort(String value)
 		{
 			for (BerichtSoort berichtSoort: BerichtSoort.values())
-				if (id == berichtSoort.id)
+				if (value.equals(berichtSoort.value))
 					return berichtSoort;
 			return null;
-		}
-
-		public final static BerichtSoort parseString(String messageFormatStr)
-		{
-			try
-			{
-				return valueOf(messageFormatStr);
-			}
-			catch (NullPointerException e)
-			{
-				throw new RuntimeException("Can not parse null value for message format",e);
-			}
-			catch (IllegalArgumentException e)
-			{
-				throw new RuntimeException("Message format value '" + messageFormatStr + "' unknown",e);
-			}
 		}
 	};
 
 	public enum MessageType
 	{
-		UNKNOWN(0),
-		INVOICE(1),
-		COMMITMENT(2),
-		QUOTATION(3),
-		ORDER_RESPONSE(4),
-		DESPATCH_ADVICE(5),
-		APPLICATION_RESPONSE(6),
-		REQUEST_FOR_QUOTATION(7),
-		REQUEST_FOR_QUOTATION_CANCELLATION(8),
-		ORDER(9),
-		HUMAN_RESOURCE(10),
-		TIME_CARD(11),
-		STAFFING_ORDER(12);
+		INVOICE("Invoice"),
+		COMMITMENT("Commitment"),
+		QUOTATION("Quotation"),
+		ORDER_RESPONSE("OrderResponse"),
+		DESPATCH_ADVICE("DespatchAdvice"),
+		APPLICATION_RESPONSE("ApplicationResponse"),
+		REQUEST_FOR_QUOTATION("RequestForQuotation"),
+		REQUEST_FOR_QUOTATION_CANCELLATION("RequestForQuotationCancellation"),
+		ORDER("Order"),
+		HUMAN_RESOURCE("HumanResource"),
+		TIME_CARD("TimeCard"),
+		STAFFING_ORDER("StaffingOrder");
 
-		private final int id;
+		private final String value;
 
-		MessageType(int id)
+		MessageType(String value)
 		{
-			this.id = id;
+			this.value = value;
 		}
 
-		public final int id()
+		public final String value()
 		{
-			return id;
+			return value;
 		}
 
-		public final static MessageType getMessageType(int id)
+		public final static MessageType getMessageType(String value)
 		{
 			for (MessageType messageType: MessageType.values())
-				if (id == messageType.id)
+				if (value.equals(messageType.value))
 					return messageType;
 			return null;
 		}
@@ -255,43 +236,7 @@ public class Constants
 
 	public enum MessageFormat
 	{
-		UNKNOWN(0), UBL(1), SETU(2);
-
-		private final int id;
-
-		MessageFormat(int id)
-		{
-			this.id = id;
-		}
-
-		public final int id()
-		{
-			return id;
-		}
-
-		public final static MessageFormat getMessageFormat(int id)
-		{
-			for (MessageFormat messageFormat: MessageFormat.values())
-				if (id == messageFormat.id)
-					return messageFormat;
-			return null;
-		}
-
-		public final static MessageFormat parseString(String messageFormatStr)
-		{
-			try
-			{
-				return valueOf(messageFormatStr);
-			}
-			catch (NullPointerException e)
-			{
-				throw new RuntimeException("Can not parse null value for message format",e);
-			}
-			catch (IllegalArgumentException e)
-			{
-				throw new RuntimeException("Message format value '" + messageFormatStr + "' unknown",e);
-			}
-		}
+		UBL, SETU;
 	};
 
 	public enum ValidationType

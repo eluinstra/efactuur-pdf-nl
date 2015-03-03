@@ -132,7 +132,7 @@ public class DigikoppelingVersionHelperTest
 	{
 		try
 		{
-			helper.getXsdPath(MessageType.UNKNOWN,MessageFormat.UNKNOWN,Constants.MESSAGE_VERSION_SETU_1_8);
+			helper.getXsdPath(null,null,Constants.MESSAGE_VERSION_SETU_1_8);
 			fail("Expecting VersionNotFoundException when message format is unknown");
 		}
 		catch (Exception e)
@@ -193,7 +193,7 @@ public class DigikoppelingVersionHelperTest
 
 		try
 		{
-			helper.getGenericodeXslPath(MessageType.UNKNOWN,MessageFormat.UNKNOWN,Constants.MESSAGE_VERSION_SETU_1_8);
+			helper.getGenericodeXslPath(null,null,Constants.MESSAGE_VERSION_SETU_1_8);
 			fail("Expecting VersionNotFoundException when message format is unknown");
 		}
 		catch (Exception e)
@@ -217,7 +217,7 @@ public class DigikoppelingVersionHelperTest
 	{
 		try
 		{
-			helper.getSchematronXslPath(MessageType.UNKNOWN,MessageFormat.UNKNOWN,Constants.MESSAGE_VERSION_SETU_1_8);
+			helper.getSchematronXslPath(null,null,Constants.MESSAGE_VERSION_SETU_1_8);
 			fail("Expecting VersionNotFoundException when message format is unknown");
 		}
 		catch (Exception e)
