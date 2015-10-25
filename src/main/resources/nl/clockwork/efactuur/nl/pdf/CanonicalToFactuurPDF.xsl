@@ -612,7 +612,14 @@
 					<fo:table-row font-weight="bold" border-top="black 1px solid">
 						<fo:table-cell padding-top="1em">
 							<fo:block>
-								Totaal te betalen:
+								<xsl:choose>
+									<xsl:when test="/bericht/type = 'Credit'">
+										<xsl:text>Totaal te ontvangen:</xsl:text>
+									</xsl:when>
+									<xsl:otherwise>
+										<xsl:text>Totaal te betalen:</xsl:text>
+									</xsl:otherwise>
+								</xsl:choose>
 							</fo:block>
 						</fo:table-cell>
 						<fo:table-cell padding-top="1em" text-align="right">
@@ -726,7 +733,7 @@
 	 						<fo:block>Tarief</fo:block>
 	 					</fo:table-cell>
 	 					<fo:table-cell>
-	 						<fo:block><xsl:apply-templates select="nl:RateOrAmount" mode="number"/><xsl:text> </xsl:text><xsl:value-of select="nl:RateOrAmount/@currency"/> (<xsl:value-of select="nl:RateOrAmount/@type"/>)</fo:block>
+	 						<fo:block><xsl:apply-templates select="nl:RateOrAmount" mode="number"/><xsl:text> </xsl:text><xsl:value-of select="nl:RateOrAmount/@currency"/> (<xsl:value-of select="nl:RateOrAmount/@type"/><xsl:if test="nl:RateOrAmount/@multiplier and number(nl:RateOrAmount/@multiplier) != 100"><xsl:text> * </xsl:text><xsl:value-of select="nl:RateOrAmount/@multiplier"/></xsl:if>)</fo:block>
 	 					</fo:table-cell>
 	 				</fo:table-row>
 	 				<fo:table-row>

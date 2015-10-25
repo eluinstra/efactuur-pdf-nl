@@ -21,6 +21,7 @@
   <xsl:variable name="date_format" select="'[D01]-[M01]-[Y]'"/>
   <xsl:template match="/">
     <bericht>
+      <type><xsl:value-of select="/in:Invoice/in:Header/in:Type"/></type>
       <xsl:call-template name="factuur"/>
       <xsl:apply-templates select="/in:Invoice/in:Header/in:Parties/in:BillToParty"/>
       <xsl:apply-templates select="/in:Invoice/in:Header/in:Parties/in:SupplierParty"/>
