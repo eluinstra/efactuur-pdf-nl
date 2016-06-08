@@ -44,12 +44,8 @@
 			</xsl:for-each>
 			<factuurtype>
 				<xsl:choose>
-					<xsl:when test="/in:Invoice/cbc:InvoiceTypeCode = 'C'">
-						Credit
-					</xsl:when>
-					<xsl:otherwise>
-						Debet
-					</xsl:otherwise>
+					<xsl:when test="/in:Invoice/cbc:InvoiceTypeCode = 'C'">Credit</xsl:when>
+					<xsl:otherwise>Debet</xsl:otherwise>
 				</xsl:choose>
 			</factuurtype>
 			<inkooporder>
