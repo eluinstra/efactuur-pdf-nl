@@ -21,7 +21,6 @@
   <xsl:variable name="date_format" select="'[D01]-[M01]-[Y]'"/>
   <xsl:template match="/">
     <bericht>
-      <type><xsl:value-of select="/in:Invoice/in:Header/in:Type"/></type>
       <xsl:call-template name="factuur"/>
       <xsl:apply-templates select="/in:Invoice/in:Header/in:Parties/in:BillToParty"/>
       <xsl:apply-templates select="/in:Invoice/in:Header/in:Parties/in:SupplierParty"/>
@@ -39,6 +38,7 @@
           </xsl:attribute>
         </xsl:if>
       </xsl:for-each>
+      <factuurtype><xsl:value-of select="/in:Invoice/in:Header/in:Type"/></factuurtype>
       <inkooporder>
       	<xsl:for-each select="//in:Line/in:UserArea/nl:StaffingAdditionalData/nl:CustomerReportingRequirements/nl:PurchaseOrderNumber">
       		<xsl:if test="position() = 1">

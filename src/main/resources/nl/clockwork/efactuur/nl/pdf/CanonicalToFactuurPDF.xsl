@@ -97,7 +97,7 @@
 					<fo:table-row>
 						<fo:table-cell>
 							<fo:block text-align="left" font-weight="bold">
-								<xsl:value-of select="/bericht/factuur/factuurtype"/> Factuurs
+								<xsl:value-of select="/bericht/factuur/factuurtype"/> Factuur
 							</fo:block>							
 						</fo:table-cell>												
 						<fo:table-cell>
@@ -613,7 +613,7 @@
 						<fo:table-cell padding-top="1em">
 							<fo:block>
 								<xsl:choose>
-									<xsl:when test="/bericht/type = 'Credit'">
+									<xsl:when test="/bericht/factuur/factuurtype = 'Credit'">
 										<xsl:text>Totaal te ontvangen:</xsl:text>
 									</xsl:when>
 									<xsl:otherwise>
