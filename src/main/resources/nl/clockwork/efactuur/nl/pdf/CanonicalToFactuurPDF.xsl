@@ -186,7 +186,6 @@
 		<fo:block font-weight="bold">
 			Leverancier
 		</fo:block>
-		
 		<xsl:apply-templates select="/bericht/leverancier/niet_natuurlijk_persoon"/>	
 		<xsl:apply-templates select="/bericht/leverancier/adres"/>				
 	</xsl:template>
@@ -247,9 +246,8 @@
 		<fo:block font-weight="bold">
 			Crediteur
 		</fo:block>
-				
-		<xsl:apply-templates select="/bericht/crediteur/adres"/>
 		<xsl:apply-templates select="/bericht/crediteur/niet_natuurlijk_persoon"/>
+		<xsl:apply-templates select="/bericht/crediteur/adres"/>
 	</xsl:template>
 
 	<xsl:template name="crediteur_info">
