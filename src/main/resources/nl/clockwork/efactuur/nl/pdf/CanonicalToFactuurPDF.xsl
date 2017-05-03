@@ -453,7 +453,7 @@
 		<fo:table-row>
 			<fo:table-cell text-align="right" xsl:use-attribute-sets="factuur-table-cell">
 				<fo:block>
-					<xsl:value-of select="regelnummer"/>
+					<xsl:value-of select="replace(regelnummer,'^0*(..*)','$1')"/>
 				</fo:block>
 			</fo:table-cell>
 			<fo:table-cell xsl:use-attribute-sets="factuur-table-cell">
