@@ -47,6 +47,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xsd/maindoc/Invoice.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xsd/maindoc/Invoice.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/xsd/maindoc/Invoice.xsd");
+			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/xsd/maindoc/UBL-Invoice-2.1.xsd");
 
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Genericode-Validation.xsl");
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Genericode-Validation.xsl");
@@ -55,6 +56,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/Genericode-Validation.xsl");
 
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Schematron-Validation.xsl");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Schematron-Validation.xsl");
@@ -63,6 +65,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Schematron-Validation.xsl");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Schematron-Validation.xsl");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/Invoice-Schematron-Validation.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/si-ubl-2.0.1.xsl");
 
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical_1_1_namespace_patch.xsl");
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
@@ -71,6 +74,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
+			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
 
 			put(new Version(ValidationType.CANONICAL_TO_PDF,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),pdfTransformationRootPath + "/CanonicalToFactuurPDF.xsl");
 			put(new Version(ValidationType.CANONICAL_TO_PDF,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),pdfTransformationRootPath + "/CanonicalToFactuurPDF.xsl");
@@ -79,6 +83,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.CANONICAL_TO_PDF,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),pdfTransformationRootPath + "/CanonicalToFactuurPDF.xsl");
 			put(new Version(ValidationType.CANONICAL_TO_PDF,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),pdfTransformationRootPath + "/CanonicalToFactuurPDF.xsl");
 			put(new Version(ValidationType.CANONICAL_TO_PDF,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),pdfTransformationRootPath + "/CanonicalToFactuurPDF.xsl");
+			put(new Version(ValidationType.CANONICAL_TO_PDF,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),pdfTransformationRootPath + "/CanonicalToFactuurPDF.xsl");
 
 			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/xml/UBL-NL-Invoice-1.0-Example00.xml");
 			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xml/UBL-Invoice-1.6-Example07.xml");
@@ -87,6 +92,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xml/UBL-Invoice-Example07.xml");
 			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xml/UBL-Invoice-Example07.xml");
 			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/xml/UBL-NL-Invoice-1.9-Example07.xml");
+			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/xml/UBL-Invoice-2.1-Example.xml");
 			
 			// SETU: Invoice
 			

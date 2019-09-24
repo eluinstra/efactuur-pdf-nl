@@ -89,6 +89,7 @@ public class Constants
 			put("1.7",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_7);
 			put("1.8",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_8);
 			put("1.9",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_9);
+			put("urn:cen.eu:en16931:2017#compliant#urn:fdc:nen.nl:nlcius:v1.0",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_2_0);
 		}
 	};
 
@@ -115,7 +116,8 @@ public class Constants
 	public static final String MESSAGE_VERSION_UBL_1_8_beta2 = "1.8.beta2";
 	public static final String MESSAGE_VERSION_UBL_1_8 = "1.8";
 	public static final String MESSAGE_VERSION_UBL_1_9 = "1.9";
-
+	public static final String MESSAGE_VERSION_UBL_2_0 = "2.0";
+	
 	public static final String MESSAGE_VERSION_SETU_1_1 = "1.1";
 	public static final String MESSAGE_VERSION_SETU_1_6_4 = "1.6.4";
 	public static final String MESSAGE_VERSION_SETU_1_7 = "1.7";
@@ -140,6 +142,8 @@ public class Constants
 	// Efactureren
 	public static final String AFLEVERBERICHT_BERICHTSOORT_EFACTUUR = "e-factuur";
 	public static final String AFLEVERBERICHT_BERICHTSOORT_MFACTUUR = "m-factuur";
+	public static final String AFLEVERBERICHT_BERICHTSOORT_EFACTUUR_UBL = "e-factuur-ubl";
+	public static final String AFLEVERBERICHT_BERICHTSOORT_MFACTUUR_HRXML = "m-factuur-hrxml";
 
 	// DigiInkoop : Stroom A
 	public static final String AFLEVERBERICHT_BERICHTSOORT_BUDGETCHECK_VRAAG_UBL = "BUDGETCHECK-VRAAG-UBL";
@@ -175,7 +179,9 @@ public class Constants
 		OFFERTE_AANVRAAG_UBL("OFFERTE-AANVRAAG-UBL"),
 		AFWIJZING_UBL("AFWIJZING-UBL"),
 		E_FACTUUR("E-Factuur"),
-		M_FACTUUR("M-Factuur");
+		M_FACTUUR("M-Factuur"),
+		E_FACTUUR_UBL("E-Factuur-UBL"),
+		E_FACTUUR_HRXML("E-Factuur-HRXML");
 
 		private final String value;
 		
