@@ -150,6 +150,11 @@
           			</xsl:attribute>
 					<xsl:value-of select="cac:Price/cbc:PriceAmount" />
 				</prijs>
+				<btw>
+					<percentage>
+						<xsl:value-of select="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent"/>
+					</percentage>
+				</btw>
 				<totaal_ex_btw>
 					<xsl:attribute name="currency">
 		            	<xsl:value-of select="cbc:LineExtensionAmount/@currencyID" />
