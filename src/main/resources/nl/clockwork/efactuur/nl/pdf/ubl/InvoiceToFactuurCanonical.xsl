@@ -290,7 +290,7 @@
 						<xsl:value-of select="cac:Party/cac:PartyIdentification/cbc:ID[@schemeAgencyName='KvK']" />
 					</xsl:when>
 					<xsl:otherwise>
-						<xsl:value-of select="cac:Party/cac:PartyTaxScheme/cbc:CompanyID" />
+						<xsl:value-of select="cac:Party/cac:PartyLegalEntity/cbc:CompanyID[@schemeID='0106' or @schemeID='0190']" />
 					</xsl:otherwise>
 				</xsl:choose>
 			</kvk_nummer>
