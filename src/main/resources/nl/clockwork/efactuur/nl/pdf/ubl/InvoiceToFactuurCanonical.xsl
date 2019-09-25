@@ -285,8 +285,14 @@
 	<xsl:template match="cac:AccountingSupplierParty">
 		<crediteur>
 			<kvk_nummer>
-				<xsl:value-of
-					select="cac:Party/cac:PartyIdentification/cbc:ID[@schemeAgencyName='KvK']" />
+				<xsl:choose>
+					<xsl:when test="cac:Party/cac:PartyIdentification/cbc:ID[@schemeAgencyName='KvK']">
+						<xsl:value-of select="cac:Party/cac:PartyIdentification/cbc:ID[@schemeAgencyName='KvK']" />
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="cac:Party/cac:PartyTaxScheme/cbc:CompanyID" />
+					</xsl:otherwise>
+				</xsl:choose>
 			</kvk_nummer>
 			<btw_nummer>
 				<xsl:choose>
