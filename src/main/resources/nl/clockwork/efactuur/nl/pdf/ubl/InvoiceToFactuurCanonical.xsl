@@ -150,11 +150,6 @@
           			</xsl:attribute>
 					<xsl:value-of select="cac:Price/cbc:PriceAmount" />
 				</prijs>
-				<btw>
-					<percentage>
-						<xsl:value-of select="cac:Item/cac:ClassifiedTaxCategory/cbc:Percent"/>
-					</percentage>
-				</btw>
 				<totaal_ex_btw>
 					<xsl:attribute name="currency">
 		            	<xsl:value-of select="cbc:LineExtensionAmount/@currencyID" />
@@ -285,14 +280,7 @@
 	<xsl:template match="cac:AccountingSupplierParty">
 		<crediteur>
 			<kvk_nummer>
-				<xsl:choose>
-					<xsl:when test="cac:Party/cac:PartyIdentification/cbc:ID[@schemeAgencyName='KvK']">
-						<xsl:value-of select="cac:Party/cac:PartyIdentification/cbc:ID[@schemeAgencyName='KvK']" />
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:value-of select="cac:Party/cac:PartyLegalEntity/cbc:CompanyID[@schemeID='0106' or @schemeID='0190']" />
-					</xsl:otherwise>
-				</xsl:choose>
+				<xsl:value-of select="cac:Party/cac:PartyIdentification/cbc:ID[@schemeAgencyName='KvK']" />
 			</kvk_nummer>
 			<btw_nummer>
 				<xsl:choose>
