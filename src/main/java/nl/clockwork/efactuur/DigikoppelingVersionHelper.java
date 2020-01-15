@@ -56,7 +56,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Genericode-Validation.xsl");
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Genericode-Validation.xsl");
 			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/Genericode-Validation.xsl");
-			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/Genericode-Validation.xsl");
+			put(new Version(ValidationType.GENERICODE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/si-ubl-2.0.2.xsl");
 
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/Invoice-Schematron-Validation.xsl");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/Invoice-Schematron-Validation.xsl");
@@ -65,7 +65,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Schematron-Validation.xsl");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Schematron-Validation.xsl");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/Invoice-Schematron-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/si-ubl-2.0.1.xsl");
+			//put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/si-ubl-2.0.2.xsl");
 
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical_1_1_namespace_patch.xsl");
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
