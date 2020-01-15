@@ -74,7 +74,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
-			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
+			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublPdfTransformationRootPath + "/NLCIUSInvoiceToFactuurCanonical.xsl");
 
 			put(new Version(ValidationType.CANONICAL_TO_PDF,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),pdfTransformationRootPath + "/CanonicalToFactuurPDF.xsl");
 			put(new Version(ValidationType.CANONICAL_TO_PDF,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),pdfTransformationRootPath + "/CanonicalToFactuurPDF.xsl");
