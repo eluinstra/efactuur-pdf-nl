@@ -28,8 +28,6 @@
 		<bericht>
 			<xsl:call-template name="factuur" />
 			<xsl:apply-templates select="/in:Invoice/cac:AccountingSupplierParty" />
-			<xsl:apply-templates select="/in:Invoice/cac:SellerSupplierParty" /><!-- REMOVE??? -->
-			<xsl:apply-templates select="/in:Invoice/cac:BuyerCustomerParty" /><!-- REMOVE??? -->
 			<xsl:apply-templates select="/in:Invoice/cac:AccountingCustomerParty" />
 		</bericht>
 	</xsl:template>
@@ -54,12 +52,8 @@
 				<xsl:value-of select="/in:Invoice/cbc:ID" />
 			</factuurnummer>
 			<indicatie_kopie>
-<!-- 				<xsl:value-of select="/in:Invoice/cbc:CopyIndicator" /> -->
-				<xsl:text>/in:Invoice/cbc:CopyIndicator</xsl:text>
+				<xsl:value-of select="/in:Invoice/cbc:CopyIndicator" />
 			</indicatie_kopie>
-			<plaatsingadres>
-				<xsl:apply-templates select="/in:Invoice/cac:DeliveryTerms/cac:DeliveryLocation/cac:Address"/><!-- REMOVE??? -->
-			</plaatsingadres>
 			<omschrijving>
 				<xsl:if test="/in:Invoice/cac:OrderReference/cbc:ID!=''">
 					<item>
@@ -112,14 +106,12 @@
 			<extra_omschrijving>
 				<xsl:if test="cac:Item/cbc:AdditionalInformation != ''">
 					<omschrijving_regel>
-<!-- 						<xsl:value-of select="cac:Item/cbc:AdditionalInformation"/> -->
-						<xsl:text>cac:InvoiceLine/cac:Item/cbc:AdditionalInformation</xsl:text>
+						<xsl:value-of select="cac:Item/cbc:AdditionalInformation"/>
 					</omschrijving_regel>
 				</xsl:if>
 				<xsl:for-each select="cac:Item/cac:AdditionalItemProperty">
 					<omschrijving_regel>
-<!-- 						<xsl:value-of select="cbc:Name"/>: <xsl:value-of select="cbc:Value"/> -->
-						<xsl:text>cac:InvoiceLine/cac:Item/cac:AdditionalItemProperty/cbc:Name</xsl:text>
+						<xsl:value-of select="cbc:Name"/>: <xsl:value-of select="cbc:Value"/>
 					</omschrijving_regel>				
 				</xsl:for-each>	
 			</extra_omschrijving>
@@ -141,7 +133,7 @@
           			</xsl:attribute>
 					<xsl:value-of select="cbc:LineExtensionAmount" />
 				</totaal_ex_btw>
-				<xsl:for-each select="cac:AllowanceCharge"><!-- REMOVE??? -->
+				<xsl:for-each select="cac:AllowanceCharge">
 					<xsl:apply-templates select="." />
 				</xsl:for-each>
 			</bedrag>
@@ -174,8 +166,7 @@
 		<referentie>
 			<contract>
 				<nummer>
-<!-- 					<xsl:value-of select="/in:Invoice/cac:ContractDocumentReference/cbc:ID" /> -->
-					<xsl:text>/in:Invoice/cac:ContractDocumentReference/cbc:ID</xsl:text>
+					<xsl:value-of select="/in:Invoice/cac:ContractDocumentReference/cbc:ID" />
 				</nummer>
 			</contract>
 			<factuur_oorspronkelijk>
@@ -186,8 +177,7 @@
 					<xsl:value-of select="/in:Invoice/cac:InvoicePeriod/cbc:EndDate" />					
 				</verval_datum>			
 				<factuurnummer_leverancier>
-<!-- 					<xsl:value-of	select="/in:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID" /> -->
-					<xsl:text>/in:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID</xsl:text>
+					<xsl:value-of	select="/in:Invoice/cac:BillingReference/cac:InvoiceDocumentReference/cbc:ID" />
 				</factuurnummer_leverancier>
 			</factuur_oorspronkelijk>
 		</referentie>
@@ -222,19 +212,16 @@
 	<xsl:template match="cac:PaymentTerms">
 		<conditie>
 			<kortingspercentage>
-<!-- 				<xsl:value-of select="cbc:SettlementDiscountPercent" /> -->
-				<xsl:text>cbc:SettlementDiscountPercent</xsl:text>
+				<xsl:value-of select="cbc:SettlementDiscountPercent" />
 			</kortingspercentage>
 			<omschrijving>
 				<xsl:value-of select="cbc:Note" />
 			</omschrijving>
 			<ubl_looptijd>
 				<xsl:attribute name="type">
-<!--           <xsl:value-of select="cac:SettlementPeriod/cbc:DurationMeasure/@unitCode" /> -->
-          <xsl:text>cac:SettlementPeriod/cbc:DurationMeasure/@unitCode</xsl:text>
+          <xsl:value-of select="cac:SettlementPeriod/cbc:DurationMeasure/@unitCode" />
         </xsl:attribute>
-<!-- 				<xsl:value-of select="cac:SettlementPeriod/cbc:DurationMeasure" /> -->
-					<xsl:text>cac:SettlementPeriod/cbc:DurationMeasure</xsl:text>
+				<xsl:value-of select="cac:SettlementPeriod/cbc:DurationMeasure" />
 			</ubl_looptijd>
 		</conditie>
 	</xsl:template>
@@ -243,8 +230,7 @@
 		<contactpersoon>
 			<naam><xsl:value-of select="cbc:Name" /></naam>
 			<telefoonnummer>
-<!-- 				<xsl:value-of select="cbc:Telephone"/> -->
-				<xsl:text>cbc:Telephone</xsl:text>
+				<xsl:value-of select="cbc:Telephone"/>
 			</telefoonnummer>
 			<email><xsl:value-of select="cbc:ElectronicMail"/></email>				
 		</contactpersoon>	
@@ -282,13 +268,11 @@
 					<xsl:value-of select="/in:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID" />
 				</nummer>
 				<bic>
-<!-- 					<xsl:value-of select="/in:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID" /> -->
-					<xsl:text>/in:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID</xsl:text>
+					<xsl:value-of select="/in:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID" />
 				</bic>
 			</bankrekening>
 			<adres>
 				<xsl:apply-templates select="cac:Party/cac:PostalAddress" />
-				<xsl:apply-templates select="cac:Party/cac:PhysicalLocation/cac:Address" /><!-- REMOVE??? -->
 			</adres>
 			<niet_natuurlijk_persoon>
 				<naam>
@@ -300,95 +284,29 @@
 				</naam>
 				<xsl:apply-templates select="cac:Party/cac:Contact" />
 			</niet_natuurlijk_persoon>
-			<xsl:apply-templates select="cac:Party/cac:Person" /><!-- REMOVE??? -->
 		</crediteur>
 	</xsl:template>
 
-	<xsl:template match="cac:SellerSupplierParty"><!-- REMOVE??? -->
-		<leverancier>
-			<btw_nummer>
-<!-- 				<xsl:value-of select="cac:Party/cac:PartyTaxScheme/cbc:CompanyID" /> -->
-				<xsl:text>cac:Party/cac:PartyTaxScheme/cbc:CompanyID</xsl:text>
-			</btw_nummer>
-			<registratienummer>
-<!-- 				<xsl:value-of select="cac:Party/cac:PartyIdentification/cbc:ID" /> -->
-				<xsl:text>cac:Party/cac:PartyIdentification/cbc:ID</xsl:text>
-			</registratienummer>
-			<bankrekening>
-				<nummer>
-					<xsl:value-of select="/in:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID" /><!-- 2nd time -->
-				</nummer>
-				<bic>
-<!-- 					<xsl:value-of select="/in:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID" /> 2nd time -->
-					<xsl:text>/in:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cac:FinancialInstitutionBranch/cac:FinancialInstitution/cbc:ID 2nd time</xsl:text>
-				</bic>
-			</bankrekening>
-			<adres>
-				<xsl:apply-templates select="cac:Party/cac:PostalAddress" /><!-- REMOVE??? -->
-				<xsl:apply-templates select="cac:Party/cac:PhysicalLocation/cac:Address" /><!-- REMOVE??? -->
-			</adres>
-			<niet_natuurlijk_persoon>
-				<naam>
-<!-- 					<xsl:value-of select="cac:Party/cac:PartyName/cbc:Name" /> -->
-					<xsl:text>cac:Party/cac:PartyName/cbc:Name</xsl:text>
-				</naam>
-				<xsl:apply-templates select="cac:Party/cac:Contact" /><!-- REMOVE??? -->
-			</niet_natuurlijk_persoon>
-			<xsl:apply-templates select="cac:Party/cac:Person" /><!-- REMOVE??? -->
-		</leverancier>
-	</xsl:template>
-	<xsl:template match="cac:BuyerCustomerParty"><!-- REMOVE??? -->
-		<afnemer>
-			<btw_nummer>
-<!-- 				<xsl:value-of select="cac:Party/cac:PartyTaxScheme/cbc:CompanyID" /> -->
-				<xsl:text>cac:Party/cac:PartyTaxScheme/cbc:CompanyID</xsl:text>
-			</btw_nummer>
-			<registratienummer>
-<!-- 				<xsl:value-of select="cac:Party/cac:PartyIdentification/cbc:ID" /> -->
-				<xsl:text>cac:Party/cac:PartyIdentification/cbc:ID</xsl:text>
-			</registratienummer>
-			<adres>
-				<xsl:apply-templates select="cac:Party/cac:PostalAddress" /><!-- REMOVE??? -->
-				<xsl:apply-templates select="cac:Party/cac:PhysicalLocation/cac:Address" /><!-- REMOVE??? -->
-			</adres>
-			<niet_natuurlijk_persoon>
-				<naam>
-<!-- 					<xsl:value-of select="cac:Party/cac:PartyName/cbc:Name" /> -->
-					<xsl:text>cac:Party/cac:PartyName/cbc:Name</xsl:text>
-				</naam>
-				<departement>
-<!-- 					<xsl:value-of select="cac:Party/cac:PostalAddress/cbc:Department" /> -->
-					<xsl:text>cac:Party/cac:PostalAddress/cbc:Department</xsl:text>
-				</departement>
-				<xsl:apply-templates select="cac:Party/cac:Contact" /><!-- REMOVE??? -->		
-			</niet_natuurlijk_persoon>
-			<xsl:apply-templates select="cac:Party/cac:Person" /><!-- REMOVE??? -->
-		</afnemer>
-	</xsl:template>
 	<xsl:template match="cac:AccountingCustomerParty">
 		<debiteur>
 			<btw_nummer>
-<!-- 				<xsl:value-of select="cac:Party/cac:PartyTaxScheme/cbc:CompanyID" /> -->
-				<xsl:text>cac:Party/cac:PartyTaxScheme/cbc:CompanyID</xsl:text>
+				<xsl:value-of select="cac:Party/cac:PartyTaxScheme/cbc:CompanyID" />
 			</btw_nummer>
 			<registratienummer>
 				<xsl:value-of select="/in:Invoice/cac:AccountingCustomerParty/cac:Party/cac:PartyIdentification/cbc:ID"></xsl:value-of>
 			</registratienummer>
 			<adres>
 				<xsl:apply-templates select="cac:Party/cac:PostalAddress" />
-				<xsl:apply-templates select="cac:Party/cac:PhysicalLocation/cac:Address" /><!-- REMOVE??? -->
 			</adres>
 			<niet_natuurlijk_persoon>
 				<naam>
 					<xsl:value-of select="cac:Party/cac:PartyName/cbc:Name" />
 				</naam>
 				<departement>
-<!-- 					<xsl:value-of select="cac:Party/cac:PostalAddress/cbc:Department" /> -->
-					<xsl:text>cac:Party/cac:PostalAddress/cbc:Department</xsl:text>
+					<xsl:value-of select="cac:Party/cac:PostalAddress/cbc:Department" />
 				</departement>
-				<xsl:apply-templates select="cac:Party/cac:Contact" /><!-- REMOVE??? -->
+				<xsl:apply-templates select="cac:Party/cac:Contact" />
 			</niet_natuurlijk_persoon>
-			<xsl:apply-templates select="cac:Party/cac:Person" /><!-- REMOVE??? -->
 		</debiteur>
 	</xsl:template>
 	<xsl:template match="cac:PostalAddress">
@@ -415,57 +333,5 @@
 				<xsl:value-of select="cac:Country/cbc:IdentificationCode" />
 			</landcode>
 		</postadres>
-	</xsl:template>
-	<xsl:template match="cac:Address"><!-- REMOVE??? -->
-		<adres>
-			<postbusnummer>
-<!-- 				<xsl:value-of select="cbc:Postbox" /> -->
-				<xsl:text>cbc:Postbox</xsl:text>
-			</postbusnummer>
-			<straat>
-<!-- 				<xsl:value-of select="cbc:StreetName" /> -->
-				<xsl:text>cbc:StreetName</xsl:text>
-			</straat>
-			<huisnummer>
-<!-- 				<xsl:value-of select="cbc:BuildingNumber" /> -->
-				<xsl:text>cbc:BuildingNumber</xsl:text>
-			</huisnummer>
-			<postcode>
-<!-- 				<xsl:value-of select="cbc:PostalZone" /> -->
-				<xsl:text>cbc:PostalZone</xsl:text>
-			</postcode>
-			<woonplaats>
-<!-- 				<xsl:value-of select="cbc:CityName" /> -->
-				<xsl:text>cbc:CityName</xsl:text>
-			</woonplaats>
-			<regio>
-<!-- 				<xsl:value-of select="cbc:Region" /> -->
-				<xsl:text>cbc:Region</xsl:text>
-			</regio>
-			<landcode>
-<!-- 				<xsl:value-of select="cac:Country/cbc:IdentificationCode" /> -->
-				<xsl:text>cac:Country/cbc:IdentificationCode</xsl:text>
-			</landcode>
-		</adres>
-	</xsl:template>
-	<xsl:template match="cac:Person"><!-- REMOVE??? -->
-		<natuurlijk_persoon>
-			<voorletters>
-<!-- 				<xsl:value-of select="cbc:NameSuffix" /> -->
-				<xsl:text>cbc:NameSuffix</xsl:text>
-			</voorletters>
-			<voornamen>
-<!-- 				<xsl:value-of select="cbc:FirstName" /> -->
-				<xsl:text>cbc:FirstName</xsl:text>
-			</voornamen>
-			<voorvoegsel>
-<!-- 				<xsl:value-of select="cbc:MiddleName" /> -->
-				<xsl:text>cbc:MiddleName</xsl:text>
-			</voorvoegsel>
-			<achternaam>
-<!-- 				<xsl:value-of select="cbc:FamilyName" /> -->
-				<xsl:text>cbc:FamilyName</xsl:text>
-			</achternaam>
-		</natuurlijk_persoon>
 	</xsl:template>
 </xsl:stylesheet>
