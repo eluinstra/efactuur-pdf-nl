@@ -185,6 +185,10 @@
 			<xsl:for-each select="/in:Invoice/cac:TaxTotal/cac:TaxSubtotal">
 				<xsl:apply-templates select="." />
 			</xsl:for-each>
+			<afrondingscorrectie>
+				<xsl:value-of
+					select="/in:Invoice/cac:LegalMonetaryTotal/cbc:PayableRoundingAmount" />
+			</afrondingscorrectie>
 		</totalen_factuur>
 	</xsl:template>
 	<xsl:template name="referentie">
@@ -237,6 +241,9 @@
         		</xsl:attribute>
 				<xsl:value-of select="cbc:TaxAmount" />
 			</bedrag>
+			<over>
+				<xsl:value-of select="cbc:TaxableAmount" />
+			</over>
 			<percentage>
 				<xsl:choose>
 					<xsl:when test="cbc:Percent != ''">

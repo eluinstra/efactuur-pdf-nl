@@ -641,19 +641,33 @@
 						</fo:table-cell>
 					</fo:table-row>
 					<xsl:for-each select="/bericht/factuur/totalen_factuur/btw">
-					<fo:table-row>
-						<fo:table-cell>
-							<fo:block>
-								BTW (<xsl:apply-templates select="percentage" mode="number"/>%):
-							</fo:block>
-						</fo:table-cell>
-						<fo:table-cell text-align="right">
-							<fo:block>
-								<xsl:apply-templates select="bedrag" mode="number"/>
-							</fo:block>
-						</fo:table-cell>
-					</fo:table-row>
+						<fo:table-row>
+							<fo:table-cell>
+								<fo:block>
+									BTW (<xsl:apply-templates select="percentage" mode="number"/>%)<xsl:if test="over and over != ''"> over <xsl:value-of select="over"/></xsl:if>:
+								</fo:block>
+							</fo:table-cell>
+							<fo:table-cell text-align="right">
+								<fo:block>
+									<xsl:apply-templates select="bedrag" mode="number"/>
+								</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
 					</xsl:for-each>
+					<xsl:if test="/bericht/factuur/totalen_factuur/afrondingscorrectie and /bericht/factuur/totalen_factuur/afrondingscorrectie != ''">
+						<fo:table-row>
+							<fo:table-cell>
+								<fo:block>
+									Afrondingscorrectie:
+								</fo:block>
+							</fo:table-cell>
+							<fo:table-cell text-align="right">
+								<fo:block>
+									<xsl:apply-templates select="/bericht/factuur/totalen_factuur/afrondingscorrectie" mode="number"/>
+								</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+					</xsl:if>
 				</fo:table-body>
 			</fo:table>
 		</fo:block>
