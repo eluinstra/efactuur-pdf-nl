@@ -14,13 +14,11 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 
--->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>nl.clockwork</groupId>
+	<groupId>nl.clockwork.efactuur</groupId>
 	<artifactId>efactuur-pdf-nl</artifactId>
 	<packaging>jar</packaging>
-	<version>1.2.7</version>
+	<version>2.0.0-SNAPSHOT</version>
 	<name>efactuur-pdf-nl</name>
 	<url>http://maven.apache.org</url>
 	<distributionManagement>
@@ -55,10 +53,10 @@
 			<id>h.dehaan</id>
 			<name>Hielke de Haan</name>
 			<email>hielke.de.haan@ordina.nl</email>
-		</developer>		
+		</developer>
 	</developers>
 	<scm>
-		<connection>scm:git:ssh://git@git.clockwork.nl/dso/efactuur-pdf-nl.git</connection>
+		<connection>scm:git:ssh://git.code.sf.net/p/efactuurnl2pdf/code</connection>
 	</scm>
 	<build>
 		<plugins>
@@ -67,37 +65,37 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>1.8</source>
+					<target>1.8</target>
 					<encoding>ISO-8859-1</encoding>
 				</configuration>
 			</plugin>
-                        <plugin>
-                                <groupId>com.mycila</groupId>
-                                <artifactId>license-maven-plugin</artifactId>
-                                <version>2.5</version>
-                                <configuration>
-                                        <strictCheck>true</strictCheck>
-                                        <header>${project.basedir}/resources/license/header.txt</header>
-                                        <failIfMissing>true</failIfMissing>
-                                        <aggregate>true</aggregate>
-                                        <includes>
-                                                <include>pom.xml</include>
-                                                <include>src/main/java/**/*.java</include>
-                                                <include>src/main/resources/**/*</include>
-                                        </includes>
-                                        <excludes>
-                                                <exclude>src/main/resources/nl/clockwork/efactuur/nl/domain/**</exclude>
-                                        </excludes>
-                                </configuration>
-                                <executions>
-                                        <execution>
-                                                <goals>
-                                                        <goal>check</goal>
-                                                </goals>
-                                        </execution>
-                                </executions>
-                        </plugin>
+			<plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<version>2.5</version>
+				<configuration>
+					<strictCheck>true</strictCheck>
+					<header>${project.basedir}/resources/license/header.txt</header>
+					<failIfMissing>true</failIfMissing>
+					<aggregate>true</aggregate>
+					<includes>
+						<include>pom.xml</include>
+						<include>src/main/java/**/*.java</include>
+						<include>src/main/resources/**/*</include>
+					</includes>
+					<excludes>
+						<exclude>src/main/resources/nl/clockwork/efactuur/nl/domain/**</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 		<resources>
 			<!-- Only include relevant files in the build -->
@@ -105,24 +103,31 @@
 				<directory>src/main/resources</directory>
 				<excludes>
 					<!-- Exclude documentation Excel sheets -->
+					<exclude>**/*.doc</exclude>
+					<exclude>**/*.docx</exclude>
 					<exclude>**/*.xls</exclude>
+					<exclude>**/*.xlsx</exclude>
 				</excludes>
 				<includes>
 					<!-- Include schema's and stylesheets -->
 					<include>**/*.xsd</include>
 					<include>**/*.xsl</include>
-					<include>**/*.xml</include>					
+					<include>**/*.xml</include>
 				</includes>
 			</resource>
 		</resources>
 	</build>
-
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.9</version>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.12</version>
+			<scope>provided</scope>
+		</dependency>
 	</dependencies>
-
 </project>

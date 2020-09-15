@@ -17,12 +17,29 @@ package nl.clockwork.efactuur;
 
 import java.util.HashMap;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.experimental.FieldDefaults;
 import nl.clockwork.efactuur.Constants.MessageFormat;
 import nl.clockwork.efactuur.Constants.MessageType;
 import nl.clockwork.efactuur.Constants.ValidationType;
 
 public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.VersionHelper
 {
+	@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+	@AllArgsConstructor
+	@Getter
+	enum NLCIUSVersion
+	{
+		V2_0_1("2.0.1"), V2_0_2("2.0.2"), V2_0_3_1("2.0.3.1");
+		@NonNull
+		String version;
+	}
+
+	static NLCIUSVersion defaultNLCIUSVersion = NLCIUSVersion.V2_0_1;
+
 	// regular expression that a version should match
 	// 1 . 8 . 1 . beta 02
 	static String versionRegExp = "[0-9a-zA-Z]{1}[\\.|_]{1}[0-9a-zA-Z]+[\\.|_]?[0-9a-zA-Z]*[\\.|_]?(beta)?[0-9]*";
