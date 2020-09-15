@@ -17,6 +17,11 @@ package nl.clockwork.efactuur;
 
 import java.util.HashMap;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.experimental.FieldDefaults;
+
 public class Constants
 {
 	public final static HashMap<String,nl.clockwork.efactuur.Constants.MessageType> rootTagToMessageType =
@@ -155,6 +160,9 @@ public class Constants
 	public static final String AFLEVERBERICHT_BERICHTSOORT_FACTUUR_HRXML = "FACTUUR-HRXML";
 	public static final String AFLEVERBERICHT_BERICHTSOORT_FACTUUR_AKKOORD_HRXML = "FACTUUR-AKKOORD-HRXML";
 
+	@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+	@AllArgsConstructor
+	@Getter
 	public enum BerichtSoort
 	{
 		BUDGETCHECK_ANTWOORD_UBL("BUDGETCHECK-ANTWOORD-UBL"),
@@ -183,18 +191,8 @@ public class Constants
 		E_FACTUUR_UBL("E-Factuur-UBL"),
 		E_FACTUUR_HRXML("E-Factuur-HRXML");
 
-		private final String value;
+		String value;
 		
-		BerichtSoort(String value)
-		{
-			this.value = value;
-		}
-
-		public final String value()
-		{
-			return value;
-		}
-
 		public final static BerichtSoort getBerichtSoort(String value)
 		{
 			for (BerichtSoort berichtSoort: BerichtSoort.values())
@@ -204,6 +202,9 @@ public class Constants
 		}
 	};
 
+	@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+	@AllArgsConstructor
+	@Getter
 	public enum MessageType
 	{
 		INVOICE("Invoice"),
@@ -219,17 +220,7 @@ public class Constants
 		TIME_CARD("TimeCard"),
 		STAFFING_ORDER("StaffingOrder");
 
-		private final String value;
-
-		MessageType(String value)
-		{
-			this.value = value;
-		}
-
-		public final String value()
-		{
-			return value;
-		}
+		String value;
 
 		public final static MessageType getMessageType(String value)
 		{
@@ -245,25 +236,18 @@ public class Constants
 		UBL, SETU;
 	};
 
+	@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+	@AllArgsConstructor
+	@Getter
 	public enum ValidationType
 	{
 		UNKNOWN(0), SCHEMA(1), SCHEMATRON(2), GENERICODE(3), INVOICE_TO_CANONICAL(4), CANONICAL_TO_PDF(5), TESTCASE(6);
 
-		private final int id;
+		int id;
 
 		ValidationType()
 		{
 			this(0);
-		}
-
-		ValidationType(int id)
-		{
-			this.id = id;
-		}
-
-		public final int id()
-		{
-			return id;
 		}
 
 		public final static ValidationType getValidationType(int id)

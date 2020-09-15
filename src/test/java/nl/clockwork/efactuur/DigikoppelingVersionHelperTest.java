@@ -235,30 +235,4 @@ public class DigikoppelingVersionHelperTest
 			assertTrue("Expecting VersionNotFoundException when message version is unknown",e instanceof VersionNotFoundException);
 		}
 	}
-
-	@Test
-	public void testRegularExpressions()
-	{
-		try
-		{
-			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_1);
-			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_6_2);
-			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_6_3);
-			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_7);
-			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_8);
-			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_8_beta2);
-			helper.versionToPath(Constants.MESSAGE_VERSION_UBL_1_9);
-			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_1_1);
-			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_1_6_4);
-			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_1_7);
-			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_1_8);
-			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_1_8_1_beta01);
-			helper.versionToPath(Constants.MESSAGE_VERSION_SETU_2_0);
-		}
-		catch (Exception e)
-		{
-			e.printStackTrace();
-			assertFalse("Test should not throw exception",true);
-		}
-	}
 }

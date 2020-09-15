@@ -21,12 +21,14 @@ import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
+import lombok.val;
 import lombok.experimental.FieldDefaults;
 import nl.clockwork.efactuur.Constants.MessageFormat;
 import nl.clockwork.efactuur.Constants.MessageType;
 import nl.clockwork.efactuur.Constants.ValidationType;
 
-public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.VersionHelper
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+public class DigikoppelingVersionHelper implements VersionHelper
 {
 	@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 	@AllArgsConstructor
@@ -38,25 +40,24 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 		String version;
 	}
 
-	static NLCIUSVersion defaultNLCIUSVersion = NLCIUSVersion.V2_0_1;
+	NLCIUSVersion defaultNLCIUSVersion = NLCIUSVersion.V2_0_1;
 
 	// regular expression that a version should match
 	// 1 . 8 . 1 . beta 02
-	static String versionRegExp = "[0-9a-zA-Z]{1}[\\.|_]{1}[0-9a-zA-Z]+[\\.|_]?[0-9a-zA-Z]*[\\.|_]?(beta)?[0-9]*";
+	String versionRegExp = "[0-9a-zA-Z]{1}[\\.|_]{1}[0-9a-zA-Z]+[\\.|_]?[0-9a-zA-Z]*[\\.|_]?(beta)?[0-9]*";
 
-	static String pdfTransformationRootPath = "/nl/clockwork/efactuur/nl/pdf";
-	static String ublPdfTransformationRootPath = pdfTransformationRootPath + "/ubl";
-	static String setuPdfTransformationValidationRootPath = pdfTransformationRootPath + "/setu";
+	String pdfTransformationRootPath = "/nl/clockwork/efactuur/nl/pdf";
+	String ublPdfTransformationRootPath = pdfTransformationRootPath + "/ubl";
+	String setuPdfTransformationValidationRootPath = pdfTransformationRootPath + "/setu";
 
-	static String ublValidationRootPath = "/nl/clockwork/efactuur/nl/domain/ubl";
-	static String setuValidationRootPath = "/nl/clockwork/efactuur/nl/domain/setu";
+	String ublValidationRootPath = "/nl/clockwork/efactuur/nl/domain/ubl";
+	String setuValidationRootPath = "/nl/clockwork/efactuur/nl/domain/setu";
 
-	private final static HashMap<Version,String> pathResolver = new HashMap<Version,String>()
+	HashMap<Version,String> pathResolver = new HashMap<Version,String>()
 	{
 		private static final long serialVersionUID = 1L;
 		{
 			// UBL Invoice
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/xsd/maindoc/Invoice.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/Invoice.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xsd/maindoc/Invoice.xsd");
@@ -82,7 +83,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Invoice-Schematron-Validation.xsl");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Invoice-Schematron-Validation.xsl");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/Invoice-Schematron-Validation.xsl");
-			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/si-ubl-2.0.1.xsl");
+			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/si-ubl-" + defaultNLCIUSVersion.getVersion() + ".xsl");
 
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical_1_1_namespace_patch.xsl");
 			put(new Version(ValidationType.INVOICE_TO_CANONICAL,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublPdfTransformationRootPath + "/InvoiceToFactuurCanonical.xsl");
@@ -102,17 +103,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.CANONICAL_TO_PDF,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),pdfTransformationRootPath + "/CanonicalToFactuurPDF.xsl");
 			put(new Version(ValidationType.CANONICAL_TO_PDF,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),pdfTransformationRootPath + "/CanonicalToFactuurPDF.xsl");
 
-			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_1),ublValidationRootPath + "/1.1/xml/UBL-NL-Invoice-1.0-Example00.xml");
-			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xml/UBL-Invoice-1.6-Example07.xml");
-			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xml/UBL-Invoice-1.6-Example07.xml");
-			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/xml/UBL-Invoice-Example07.xml");
-			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/xml/UBL-Invoice-Example07.xml");
-			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/xml/UBL-Invoice-Example07.xml");
-			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/xml/UBL-NL-Invoice-1.9-Example07.xml");
-			put(new Version(ValidationType.TESTCASE,MessageFormat.UBL,MessageType.INVOICE,Constants.MESSAGE_VERSION_UBL_2_0),ublValidationRootPath + "/2.0/xml/UBL-Invoice-2.1-Example.xml");
-			
 			// SETU: Invoice
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_1),setuValidationRootPath + "/1.1/SIDES/Invoice.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/NL/2011-02/InvoiceLogiusNL.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/NL/2011-02/InvoiceLogiusNL.xsd");
@@ -154,7 +145,6 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.TESTCASE,MessageFormat.SETU,MessageType.INVOICE,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/XML/EBF_Invoice.xml");
 			
 			// UBL: Commitment
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/Commitment.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xsd/maindoc/Commitment.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/xsd/maindoc/Commitment-NL-1.7.xsd");
@@ -179,7 +169,6 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.COMMITMENT,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/Commitment-Schematron-Validation.xsl");
 			
 			// UBL: Quotation
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/Quotation.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xsd/maindoc/Quotation.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/xsd/maindoc/Quotation.xsd");
@@ -204,7 +193,6 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/Quotation-Schematron-Validation.xsl");
 			
 			// UBL: Order Response
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/OrderResponse.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xsd/maindoc/OrderResponse.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/xsd/maindoc/OrderResponse.xsd");
@@ -229,7 +217,6 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/OrderResponse-Schematron-Validation.xsl");
 			
 			// UBL: Despatch Advice
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/DespatchAdvice.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xsd/maindoc/DespatchAdvice.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/xsd/maindoc/DespatchAdvice.xsd");
@@ -254,7 +241,6 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/DespatchAdvice-Schematron-Validation.xsl");
 
 			// UBL: Application Response 
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/ApplicationResponse.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xsd/maindoc/ApplicationResponse.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/xsd/maindoc/ApplicationResponse.xsd");
@@ -279,7 +265,6 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/ApplicationResponse-Schematron-Validation.xsl");
 			
 			// UBL: Request For Quotation
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/RequestForQuotation.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xsd/maindoc/RequestForQuotation.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/xsd/maindoc/RequestForQuotation.xsd");
@@ -304,7 +289,6 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/RequestForQuotation-Schematron-Validation.xsl");
 			
 			// UBL: Request for Quotation Cancellation
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/RequestForQuotationCancellation.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xsd/maindoc/RequestForQuotationCancellation.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/xsd/maindoc/RequestForQuotationCancellation.xsd");
@@ -329,7 +313,6 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/RequestForQuotationCancellation-Schematron-Validation.xsl");
 			
 			// UBL: Order
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/Order.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_3),ublValidationRootPath + "/1.6.3/xsd/maindoc/Order.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/xsd/maindoc/Order.xsd");
@@ -353,10 +336,7 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Order-Schematron-Validation.xsl");
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/Order-Schematron-Validation.xsl");
 			
-			// SETU Messages 
-			
 			// SETU: Human Resource
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/NL/2011-02/HumanResourceLogiusNL.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/NL/2011-02/HumanResourceLogiusNL.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/NL/2011-02/HumanResourceLogiusNL.xsd");
@@ -373,7 +353,6 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.HUMAN_RESOURCE,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/HumanResource-Schematron-Validation.xsl");
 			
 			// SETU: Time Card
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/NL/2011-02/TimeCardLogiusNL.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/NL/2011-02/TimeCardLogiusNL.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/NL/2011-02/TimeCardLogiusNL.xsd");
@@ -390,7 +369,6 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 			put(new Version(ValidationType.SCHEMATRON,MessageFormat.SETU,MessageType.TIME_CARD,Constants.MESSAGE_VERSION_SETU_2_0),setuValidationRootPath + "/2.0/TimeCard-Schematron-Validation.xsl");
 
 			// SETU: Staffing Order 
-			
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_6_4),setuValidationRootPath + "/1.6.4/SIDES/2011-02/StaffingOrderLogiusNL.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_7),setuValidationRootPath + "/1.7/SIDES/2011-02/StaffingOrderLogiusNL.xsd");
 			put(new Version(ValidationType.SCHEMA,MessageFormat.SETU,MessageType.STAFFING_ORDER,Constants.MESSAGE_VERSION_SETU_1_8),setuValidationRootPath + "/1.8/SIDES/2011-02/StaffingOrderLogiusNL.xsd");
@@ -408,59 +386,43 @@ public class DigikoppelingVersionHelper implements nl.clockwork.efactuur.Version
 		}
 	};
 
-	public String findPathFor(ValidationType validationType, MessageType messageType, MessageFormat format, String version) throws VersionNotFoundException
-	{
-		Version v = new Version(validationType,format,messageType,version);
-		if (pathResolver.containsKey(v))
-		{
-			String path = pathResolver.get(v);
-			return path;
-		}
-		throw new VersionNotFoundException("Could not find " + validationType + " for " + format + " " + version);
-	}
-
 	public String getCanonicalToPDFPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		version = versionToPath(version);
 		return findPathFor(ValidationType.CANONICAL_TO_PDF,type,format,version);
 	}
 
 	public String getInvoiceToCanonicalPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		version = versionToPath(version);
 		return findPathFor(ValidationType.INVOICE_TO_CANONICAL,type,format,version);
 	}
 
 	public String getXsdPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		version = versionToPath(version);
 		return findPathFor(ValidationType.SCHEMA,type,format,version);
 	}
 
 	public String getGenericodeXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		version = versionToPath(version);
 		return findPathFor(ValidationType.GENERICODE,type,format,version);
 	}
 
 	public String getSchematronXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		version = versionToPath(version);
 		return findPathFor(ValidationType.SCHEMATRON,type,format,version);
 	}
 
-	public String getTestXmlPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
+	private String findPathFor(ValidationType validationType, MessageType messageType, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		version = versionToPath(version);
-		return findPathFor(ValidationType.TESTCASE,type,format,version);
+		val v = new Version(validationType,format,messageType,versionToPath(version));
+		if (pathResolver.containsKey(v))
+			return pathResolver.get(v);
+		throw new VersionNotFoundException("Could not find " + v);
 	}
 
-	public String versionToPath(String version)
+	private String versionToPath(String version)
 	{
 		if (!version.matches(versionRegExp))
-		{
 			throw new IllegalArgumentException("Version '" + version + "' does not match regexp '" + versionRegExp + "'");
-		}
 		return version.replace("_",".");
 	}
 }
