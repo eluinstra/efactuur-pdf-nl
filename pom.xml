@@ -22,19 +22,7 @@
 	<packaging>jar</packaging>
 	<version>2.0.0-SNAPSHOT</version>
 	<name>efactuur-pdf-nl</name>
-	<url>http://maven.apache.org</url>
-	<distributionManagement>
-		<repository>
-			<id>maven.clockwork.nl</id>
-			<uniqueVersion>false</uniqueVersion>
-			<url>https://maven.clockwork.nl/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>maven.clockwork.nl</id>
-			<uniqueVersion>false</uniqueVersion>
-			<url>https://maven.clockwork.nl/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
+	<url>https://sourceforge.net/projects/efactuurnl2pdf/</url>
 	<developers>
 		<developer>
 			<id>b.vandriel</id>
@@ -60,15 +48,58 @@
 	<scm>
 		<connection>scm:git:ssh://git.code.sf.net/p/efactuurnl2pdf/code</connection>
 	</scm>
+	<properties>
+		<jdk.version>1.8</jdk.version>
+		<junit.jupiter.version>5.6.2</junit.jupiter.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-engine</artifactId>
+			<version>${junit.jupiter.version}</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.12</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
 	<build>
+		<resources>
+			<!-- Only include relevant files in the build -->
+			<resource>
+				<directory>src/main/resources</directory>
+				<excludes>
+					<!-- Exclude documentation Excel sheets -->
+					<exclude>**/*.doc</exclude>
+					<exclude>**/*.docx</exclude>
+					<exclude>**/*.xls</exclude>
+					<exclude>**/*.xlsx</exclude>
+				</excludes>
+				<includes>
+					<!-- Include schema's and stylesheets -->
+					<include>**/*.xsd</include>
+					<include>**/*.xsl</include>
+					<include>**/*.xml</include>
+				</includes>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
 					<encoding>ISO-8859-1</encoding>
 				</configuration>
 			</plugin>
@@ -99,37 +130,5 @@
 				</executions>
 			</plugin>
 		</plugins>
-		<resources>
-			<!-- Only include relevant files in the build -->
-			<resource>
-				<directory>src/main/resources</directory>
-				<excludes>
-					<!-- Exclude documentation Excel sheets -->
-					<exclude>**/*.doc</exclude>
-					<exclude>**/*.docx</exclude>
-					<exclude>**/*.xls</exclude>
-					<exclude>**/*.xlsx</exclude>
-				</excludes>
-				<includes>
-					<!-- Include schema's and stylesheets -->
-					<include>**/*.xsd</include>
-					<include>**/*.xsl</include>
-					<include>**/*.xml</include>
-				</includes>
-			</resource>
-		</resources>
 	</build>
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.9</version>
-		</dependency>
-		<dependency>
-			<groupId>org.projectlombok</groupId>
-			<artifactId>lombok</artifactId>
-			<version>1.18.12</version>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
 </project>
