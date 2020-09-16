@@ -64,7 +64,7 @@
 	
 	<xsl:template name="header">
 		<fo:block>
-			<fo:table>
+			<fo:table table-layout="fixed" width="100%">
 				<fo:table-column column-width="30%"/>
 				<fo:table-column column-width="70%"/>
 				<fo:table-body>
@@ -118,7 +118,7 @@
 	</xsl:template>
 
 	<xsl:template name="body">
-		<fo:table>
+		<fo:table table-layout="fixed" width="100%">
 			<fo:table-column column-width="50%"/>
  			<fo:table-column column-width="50%"/>
 			<fo:table-body>
@@ -393,7 +393,7 @@
 
 	<xsl:template name="factuurregels_ubl">
 		<fo:block border="solid 1px black">
-			<fo:table table-omit-header-at-break="false">
+			<fo:table table-omit-header-at-break="false" table-layout="fixed" width="100%">
 				<fo:table-column column-width="5%" border-right="solid 1px black"/>
 	 			<fo:table-column column-width="41%" border-right="solid 1px black"/>
 	 			<fo:table-column column-width="11%" border-right="solid 1px black"/>
@@ -503,7 +503,7 @@
 
 	<xsl:template name="opmerkingen_en_betalingscondities">
 		<fo:block>
-			<fo:table>
+			<fo:table table-layout="fixed" width="100%">
 				<fo:table-column column-width="100%"/>
 				<fo:table-body>
 					<xsl:if test="/bericht/factuur/opmerkingen!=''">	
@@ -594,7 +594,7 @@
 
 	<xsl:template name="totaalbedragen">
 		<fo:block>
-			<fo:table>
+			<fo:table table-layout="fixed" width="100%">
 				<fo:table-column column-width="70%"/>
 	 			<fo:table-column column-width="30%"/>
 	 			<fo:table-header>
