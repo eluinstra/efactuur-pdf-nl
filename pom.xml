@@ -20,7 +20,7 @@
 	<groupId>nl.clockwork.efactuur</groupId>
 	<artifactId>efactuur-pdf-nl</artifactId>
 	<packaging>jar</packaging>
-	<version>2.0.0</version>
+	<version>2.1.0</version>
 	<name>efactuur-pdf-nl</name>
 	<url>https://sourceforge.net/projects/efactuurnl2pdf/</url>
 	<developers>
@@ -37,7 +37,7 @@
 		<developer>
 			<id>e.luinstra</id>
 			<name>Edwin Luinstra</name>
-			<email>edwin.luinstra@clockwork.nl</email>
+			<email>edwin.luinstra@ordina.nl</email>
 		</developer>
 		<developer>
 			<id>h.dehaan</id>
