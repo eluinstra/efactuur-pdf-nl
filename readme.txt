@@ -5,7 +5,7 @@ The EfactuurNL2PDF project provides the following functionality:
 - Genericode validation stylesheets
 
 The following HR-XML-NL and UBL-NL message versions are currently supported in this project :
-- NLCIUS (si-ubl-2.0.1)
+- NLCIUS (si-ubl-2.0.3.4)
 - UBL Invoice 1.9
 - UBL Invoice 1.8
 - UBL Invoice 1.7
@@ -17,3 +17,5 @@ The following HR-XML-NL and UBL-NL message versions are currently supported in t
 - SETU Invoice 1.7
 - SETU Invoice 1.6.4
 - SETU Invoice 1.1
+
+The NLCIUS specs can be downloaded from https://github.com/peppolautoriteit-nl/validation/tree/master/xsl
