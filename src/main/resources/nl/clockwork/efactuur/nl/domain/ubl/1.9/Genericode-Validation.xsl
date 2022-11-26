@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<axsl:stylesheet xmlns:axsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:nl-cbc="urn:digi-inkoop:ubl:2.0:NL:1.6:UBL-NL-CommonBasicComponents-2" xmlns:cva="http://docs.oasis-open.org/codelist/ns/ContextValueAssociation/1.0/" version="1.0"><!--Importing stylesheet additions-->
+<axsl:stylesheet xmlns:axsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:sch="http://www.ascc.net/xml/schematron" xmlns:iso="http://purl.oclc.org/dsdl/schematron" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:nl-cbc="urn:digi-inkoop:ubl:2.0:NL:1.7:UBL-NL-CommonBasicComponents-2" version="1.0"><!--Importing stylesheet additions-->
    <axsl:output method="text"/><!--Implementers: please note that overriding process-prolog or process-root is 
     the preferred method for meta-stylesheets to use where possible. -->
 
@@ -145,7 +145,7 @@
 
    <axsl:template match="/"><!--Root node processing collects all assertions-->
       <axsl:variable name="result">
-         <axsl:apply-templates select="/" mode="M5"/>
+         <axsl:apply-templates select="/" mode="M4"/>
       </axsl:variable>
       <axsl:if test="normalize-space(string($result))">
          <axsl:message terminate="yes">
@@ -162,7 +162,7 @@
 
 	<!--RULE -->
 
-   <axsl:template match="@currencyID" priority="1021" mode="M5">
+   <axsl:template match="@currencyID" priority="1021" mode="M4">
 
 		<!--ASSERT -->
 
@@ -175,12 +175,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:AllowanceChargeReasonCode" priority="1020" mode="M5">
+   <axsl:template match="cbc:AllowanceChargeReasonCode" priority="1020" mode="M4">
 
 		<!--ASSERT -->
 
@@ -193,12 +193,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:ChannelCode" priority="1019" mode="M5">
+   <axsl:template match="cbc:ChannelCode" priority="1019" mode="M4">
 
 		<!--ASSERT -->
 
@@ -211,12 +211,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:CardChipCode" priority="1018" mode="M5">
+   <axsl:template match="cbc:CardChipCode" priority="1018" mode="M4">
 
 		<!--ASSERT -->
 
@@ -229,12 +229,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:IdentificationCode" priority="1017" mode="M5">
+   <axsl:template match="cbc:IdentificationCode" priority="1017" mode="M4">
 
 		<!--ASSERT -->
 
@@ -247,12 +247,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:DocumentCurrencyCode |                         cbc:TaxCurrencyCode |                         cbc:PricingCurrencyCode |                         cbc:PaymentCurrencyCode |                         cbc:PaymentAlternativeCurrencyCode |                         cbc:RequestedInvoiceCurrencyCode |                         cbc:SourceCurrencyCode |                         cbc:TargetCurrencyCode |                         cbc:CurrencyCode" priority="1016" mode="M5">
+   <axsl:template match="cbc:DocumentCurrencyCode |                          cbc:TaxCurrencyCode |                          cbc:PricingCurrencyCode |                          cbc:PaymentCurrencyCode |                          cbc:PaymentAlternativeCurrencyCode |                          cbc:RequestedInvoiceCurrencyCode |                          cbc:SourceCurrencyCode |                          cbc:TargetCurrencyCode |                          cbc:CurrencyCode" priority="1016" mode="M4">
 
 		<!--ASSERT -->
 
@@ -260,17 +260,17 @@
          <axsl:when test="( false() or ( ( not(@listName!='Currency') ) and ( not(@listID!='ISO 4217 Alpha') ) and ( not(@listVersionID!='2001') ) and ( not(@listSchemeURI!='urn:un:unece:uncefact:codelist:specification:54217') ) and ( not(@listURI!='http://docs.oasis-open.org/ubl/os-UBL-2.0-update/cl/gc/cefact/CurrencyCode-2.0.gc') ) and ( not(@listAgencyName!='United Nations Economic Commission for Europe') ) and ( not(@listAgencyID!='6') ) and contains('AEDAFNALLAMDANGAOAARSAUDAWGAZMBAMBBDBDTBGNBHDBIFBMDBNDBOBBRLBSDBTNBWPBYRBZDCADCDFCHFCLPCNYCOPCRCCUPCVECYPCZKDJFDKKDOPDZDEEKEGPERNETBEURFJDFKPGBPGELGHCGIPGMDGNFGTQGYDHKDHNLHRKHTGHUFIDRILSINRIQDIRRISKJMDJODJPYKESKGSKHRKMFKPWKRWKWDKYDKZTLAKLBPLKRLRDLSLLTLLVLLYDMADMDLMGFMKDMMKMNTMOPMROMTLMURMVRMWKMXNMYRMZMNADNGNNIONOKNPRNZDOMRPABPENPGKPHPPKRPLNPYGQARROLRUBRWFSARSBDSCRSDDSEKSGDSHPSITSKKSLLSOSSRGSTDSVCSYPSZLTHBTJSTMMTNDTOPTRLTTDTWDTZSUAHUGXUSDUYUUZSVEBVNDVUVWSTXAFXAGXAUXCDXDRXOFXPDXPFXPTYERYUMZARZMKZWD',concat('',.,'')) ) ) "/>
          <axsl:otherwise>Value supplied '<axsl:text/>
             <axsl:value-of select="."/>
-            <axsl:text/>' is unacceptable for constraints identified by 'Currency' in the context 'cbc:DocumentCurrencyCode |                         cbc:TaxCurrencyCode |                         cbc:PricingCurrencyCode |                         cbc:PaymentCurrencyCode |                         cbc:PaymentAlternativeCurrencyCode |                         cbc:RequestedInvoiceCurrencyCode |                         cbc:SourceCurrencyCode |                         cbc:TargetCurrencyCode |                         cbc:CurrencyCode'<axsl:text>: </axsl:text>
+            <axsl:text/>' is unacceptable for constraints identified by 'Currency' in the context 'cbc:DocumentCurrencyCode |                          cbc:TaxCurrencyCode |                          cbc:PricingCurrencyCode |                          cbc:PaymentCurrencyCode |                          cbc:PaymentAlternativeCurrencyCode |                          cbc:RequestedInvoiceCurrencyCode |                          cbc:SourceCurrencyCode |                          cbc:TargetCurrencyCode |                          cbc:CurrencyCode'<axsl:text>: </axsl:text>
             <axsl:apply-templates select="." mode="schematron-get-full-path-3"/>
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:DocumentStatusCode" priority="1015" mode="M5">
+   <axsl:template match="cbc:DocumentStatusCode" priority="1015" mode="M4">
 
 		<!--ASSERT -->
 
@@ -283,12 +283,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:LatitudeDirectionCode" priority="1014" mode="M5">
+   <axsl:template match="cbc:LatitudeDirectionCode" priority="1014" mode="M4">
 
 		<!--ASSERT -->
 
@@ -301,12 +301,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:LineStatusCode" priority="1013" mode="M5">
+   <axsl:template match="cbc:LineStatusCode" priority="1013" mode="M4">
 
 		<!--ASSERT -->
 
@@ -319,12 +319,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:LongitudeDirectionCode" priority="1012" mode="M5">
+   <axsl:template match="cbc:LongitudeDirectionCode" priority="1012" mode="M4">
 
 		<!--ASSERT -->
 
@@ -337,12 +337,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:MathematicOperatorCode" priority="1011" mode="M5">
+   <axsl:template match="cbc:MathematicOperatorCode" priority="1011" mode="M4">
 
 		<!--ASSERT -->
 
@@ -355,12 +355,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:PackagingTypeCode" priority="1010" mode="M5">
+   <axsl:template match="cbc:PackagingTypeCode" priority="1010" mode="M4">
 
 		<!--ASSERT -->
 
@@ -373,12 +373,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:PaymentMeansCode" priority="1009" mode="M5">
+   <axsl:template match="cbc:PaymentMeansCode" priority="1009" mode="M4">
 
 		<!--ASSERT -->
 
@@ -391,12 +391,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:SubstitutionStatusCode" priority="1008" mode="M5">
+   <axsl:template match="cbc:SubstitutionStatusCode" priority="1008" mode="M4">
 
 		<!--ASSERT -->
 
@@ -409,12 +409,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:TransportEquipmentTypeCode" priority="1007" mode="M5">
+   <axsl:template match="cbc:TransportEquipmentTypeCode" priority="1007" mode="M4">
 
 		<!--ASSERT -->
 
@@ -427,12 +427,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:TransportModeCode" priority="1006" mode="M5">
+   <axsl:template match="cbc:TransportModeCode" priority="1006" mode="M4">
 
 		<!--ASSERT -->
 
@@ -445,12 +445,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:InvoiceTypeCode" priority="1005" mode="M5">
+   <axsl:template match="cbc:InvoiceTypeCode" priority="1005" mode="M4">
 
 		<!--ASSERT -->
 
@@ -463,12 +463,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cbc:ActionCode" priority="1004" mode="M5">
+   <axsl:template match="cbc:ActionCode" priority="1004" mode="M4">
 
 		<!--ASSERT -->
 
@@ -481,12 +481,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cac:DeliveryTerms/cbc:ID" priority="1003" mode="M5">
+   <axsl:template match="cac:DeliveryTerms/cbc:ID" priority="1003" mode="M4">
 
 		<!--ASSERT -->
 
@@ -499,12 +499,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cac:InvoicePeriod/cbc:DescriptionCode" priority="1002" mode="M5">
+   <axsl:template match="cac:InvoicePeriod/cbc:DescriptionCode" priority="1002" mode="M4">
 
 		<!--ASSERT -->
 
@@ -517,12 +517,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="nl-cbc:NegotiationStyle" priority="1001" mode="M5">
+   <axsl:template match="nl-cbc:NegotiationStyle" priority="1001" mode="M4">
 
 		<!--ASSERT -->
 
@@ -535,12 +535,12 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 
 	<!--RULE -->
 
-   <axsl:template match="cac:Response/cbc:ResponseCode" priority="1000" mode="M5">
+   <axsl:template match="cac:Response/cbc:ResponseCode" priority="1000" mode="M4">
 
 		<!--ASSERT -->
 
@@ -553,10 +553,10 @@
             <axsl:text xml:space="preserve">
 </axsl:text></axsl:otherwise>
       </axsl:choose>
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
-   <axsl:template match="text()" priority="-1" mode="M5"/>
-   <axsl:template match="@*|node()" priority="-2" mode="M5">
-      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M5"/>
+   <axsl:template match="text()" priority="-1" mode="M4"/>
+   <axsl:template match="@*|node()" priority="-2" mode="M4">
+      <axsl:apply-templates select="@*|*|comment()|processing-instruction()" mode="M4"/>
    </axsl:template>
 </axsl:stylesheet>

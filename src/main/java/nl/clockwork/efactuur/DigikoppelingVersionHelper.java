@@ -196,7 +196,7 @@ public class DigikoppelingVersionHelper implements VersionHelper
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/Quotation-Schematron-Validation.xsl");
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/Quotation-Schematron-Validation.xsl");
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/Quotation-Schematron-Validation.xsl");
-				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/Quotation-Schematron-Validation.xsl");
+				// put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.QUOTATION,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/Quotation-Schematron-Validation.xsl");
 				
 				// UBL: Order Response
 				put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/OrderResponse.xsd");
@@ -244,7 +244,7 @@ public class DigikoppelingVersionHelper implements VersionHelper
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/DespatchAdvice-Schematron-Validation.xsl");
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/DespatchAdvice-Schematron-Validation.xsl");
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/DespatchAdvice-Schematron-Validation.xsl");
-				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/DespatchAdvice-Schematron-Validation.xsl");
+				// put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.DESPATCH_ADVICE,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/DespatchAdvice-Schematron-Validation.xsl");
 
 				// UBL: Application Response 
 				put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.APPLICATION_RESPONSE,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/ApplicationResponse.xsd");
@@ -292,7 +292,7 @@ public class DigikoppelingVersionHelper implements VersionHelper
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/RequestForQuotation-Schematron-Validation.xsl");
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/RequestForQuotation-Schematron-Validation.xsl");
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/RequestForQuotation-Schematron-Validation.xsl");
-				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/RequestForQuotation-Schematron-Validation.xsl");
+				// put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/RequestForQuotation-Schematron-Validation.xsl");
 				
 				// UBL: Request for Quotation Cancellation
 				put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/RequestForQuotationCancellation.xsd");
@@ -316,7 +316,7 @@ public class DigikoppelingVersionHelper implements VersionHelper
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_7),ublValidationRootPath + "/1.7/RequestForQuotationCancellation-Schematron-Validation.xsl");
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8_beta2),ublValidationRootPath + "/1.8.beta2/RequestForQuotationCancellation-Schematron-Validation.xsl");
 				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_8),ublValidationRootPath + "/1.8/RequestForQuotationCancellation-Schematron-Validation.xsl");
-				put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/RequestForQuotationCancellation-Schematron-Validation.xsl");
+				// put(new Version(ValidationType.SCHEMATRON,MessageFormat.UBL,MessageType.REQUEST_FOR_QUOTATION_CANCELLATION,Constants.MESSAGE_VERSION_UBL_1_9),ublValidationRootPath + "/1.9/RequestForQuotationCancellation-Schematron-Validation.xsl");
 				
 				// UBL: Order
 				put(new Version(ValidationType.SCHEMA,MessageFormat.UBL,MessageType.ORDER,Constants.MESSAGE_VERSION_UBL_1_6_2),ublValidationRootPath + "/1.6.2/xsd/maindoc/Order.xsd");
