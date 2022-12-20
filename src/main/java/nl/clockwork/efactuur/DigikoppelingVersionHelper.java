@@ -36,7 +36,7 @@ public class DigikoppelingVersionHelper implements VersionHelper
 	@Getter
 	enum NLCIUSVersion
 	{
-		V2_0_1("2.0.1"), V2_0_2("2.0.2"), V2_0_3_1("2.0.3.1"), V2_0_3_2("2.0.3.2"), V2_0_3_3("2.0.3.3"), V2_0_3_4("2.0.3.4");
+		V2_0_1("2.0.1"), V2_0_2("2.0.2"), V2_0_3_1("2.0.3.1"), V2_0_3_2("2.0.3.2"), V2_0_3_3("2.0.3.3"), V2_0_3_4("2.0.3.4"), V2_0_3_5("2.0.3.5");
 		@NonNull
 		String version;
 	}
@@ -395,7 +395,7 @@ public class DigikoppelingVersionHelper implements VersionHelper
 
 	public DigikoppelingVersionHelper()
 	{
-		this(NLCIUSVersion.V2_0_3_4);
+		this(NLCIUSVersion.V2_0_3_5);
 	}
 
 	public DigikoppelingVersionHelper(@NonNull NLCIUSVersion nlciusVersion)
