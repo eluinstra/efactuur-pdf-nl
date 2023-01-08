@@ -15,6 +15,7 @@
  */
 package nl.clockwork.efactuur;
 
+import lombok.NonNull;
 import lombok.Value;
 import nl.clockwork.efactuur.Constants.MessageFormat;
 import nl.clockwork.efactuur.Constants.MessageType;
@@ -23,8 +24,12 @@ import nl.clockwork.efactuur.Constants.ValidationType;
 @Value
 public class Version
 {
+	@NonNull
 	ValidationType validationType;
+	@NonNull
 	MessageFormat messageFormat;
+	@NonNull
 	MessageType messageType;
+	@NonNull
 	String version;
 }

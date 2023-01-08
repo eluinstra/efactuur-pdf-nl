@@ -15,18 +15,20 @@
  */
 package nl.clockwork.efactuur;
 
+import java.util.Optional;
+
 import nl.clockwork.efactuur.Constants.MessageFormat;
 import nl.clockwork.efactuur.Constants.MessageType;
 
 public interface VersionHelper
 {
-	public String getCanonicalToPDFPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException;
+	public Optional<String> getCanonicalToPDFPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException;
 
-	public String getInvoiceToCanonicalPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException;
+	public Optional<String> getInvoiceToCanonicalPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException;
 
-	public String getXsdPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException;
+	public Optional<String> getXsdPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException;
 
-	public String getGenericodeXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException;
+	public Optional<String> getGenericodeXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException;
 
-	public String getSchematronXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException;
+	public Optional<String> getSchematronXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException;
 }
