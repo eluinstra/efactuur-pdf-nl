@@ -15,14 +15,14 @@
  */
 package nl.clockwork.efactuur;
 
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
-
 import lombok.AccessLevel;
 import lombok.NonNull;
-import lombok.val;
 import lombok.experimental.FieldDefaults;
+import lombok.val;
 import nl.clockwork.efactuur.Constants.MessageFormat;
 import nl.clockwork.efactuur.Constants.MessageType;
 import nl.clockwork.efactuur.Constants.ValidationType;

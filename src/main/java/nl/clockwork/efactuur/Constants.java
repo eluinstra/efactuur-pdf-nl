@@ -15,8 +15,8 @@
  */
 package nl.clockwork.efactuur;
 
-import java.util.HashMap;
 
+import java.util.HashMap;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -122,7 +122,7 @@ public class Constants
 	public static final String MESSAGE_VERSION_UBL_1_8 = "1.8";
 	public static final String MESSAGE_VERSION_UBL_1_9 = "1.9";
 	public static final String MESSAGE_VERSION_UBL_2_0 = "2.0";
-	
+
 	public static final String MESSAGE_VERSION_SETU_1_1 = "1.1";
 	public static final String MESSAGE_VERSION_SETU_1_6_4 = "1.6.4";
 	public static final String MESSAGE_VERSION_SETU_1_7 = "1.7";
@@ -192,10 +192,10 @@ public class Constants
 		E_FACTUUR_HRXML("E-Factuur-HRXML");
 
 		String value;
-		
+
 		public final static BerichtSoort getBerichtSoort(String value)
 		{
-			for (BerichtSoort berichtSoort: BerichtSoort.values())
+			for (BerichtSoort berichtSoort : BerichtSoort.values())
 				if (value.equals(berichtSoort.value))
 					return berichtSoort;
 			return null;
@@ -224,7 +224,7 @@ public class Constants
 
 		public final static MessageType getMessageType(String value)
 		{
-			for (MessageType messageType: MessageType.values())
+			for (MessageType messageType : MessageType.values())
 				if (value.equals(messageType.value))
 					return messageType;
 			return null;
@@ -254,7 +254,7 @@ public class Constants
 		{
 			// return ValidationType.values().length < id ?
 			// ValidationType.values()[id] : null;
-			for (ValidationType validationType: ValidationType.values())
+			for (ValidationType validationType : ValidationType.values())
 				if (id == validationType.id)
 					return validationType;
 			return null;

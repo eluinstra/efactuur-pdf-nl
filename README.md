@@ -1,5 +1,6 @@
-The EfactuurNL2PDF project provides the following functionality:
+# EfactuurNL2PDF
 
+The EfactuurNL2PDF project provides the following functionality:
 - PDF generation for UBL or SETU Invoice documents.
 - Schematron validation stylesheets
 - Genericode validation stylesheets
@@ -19,3 +20,5 @@ The following HR-XML-NL and UBL-NL message versions are currently supported in t
 - SETU Invoice 1.1
 
 The NLCIUS specs can be downloaded from https://github.com/peppolautoriteit-nl/validation/tree/master/xsl
+
+Testfiles can be downloaded from https://github.com/peppolautoriteit-nl/testset

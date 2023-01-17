@@ -15,6 +15,7 @@
  */
 package nl.clockwork.efactuur;
 
+
 import lombok.NonNull;
 import lombok.Value;
 import nl.clockwork.efactuur.Constants.MessageFormat;

@@ -15,8 +15,8 @@
  */
 package nl.clockwork.efactuur;
 
-import java.util.Optional;
 
+import java.util.Optional;
 import nl.clockwork.efactuur.Constants.MessageFormat;
 import nl.clockwork.efactuur.Constants.MessageType;
 

@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2011 Clockwork
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -21,16 +21,14 @@ import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 import java.util.Optional;
 import java.util.stream.Stream;
-
+import nl.clockwork.efactuur.Constants.MessageFormat;
+import nl.clockwork.efactuur.Constants.MessageType;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-
-import nl.clockwork.efactuur.Constants.MessageFormat;
-import nl.clockwork.efactuur.Constants.MessageType;
 
 @TestInstance(Lifecycle.PER_CLASS)
 public class DigikoppelingVersionHelperTest
