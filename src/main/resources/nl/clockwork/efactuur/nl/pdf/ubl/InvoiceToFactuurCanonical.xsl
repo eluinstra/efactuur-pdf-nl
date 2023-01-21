@@ -175,6 +175,22 @@
         </xsl:attribute>
 				<xsl:value-of select="/in:Invoice/cac:LegalMonetaryTotal/cbc:PayableAmount" />
 			</bedrag_totaal>
+			<korting>
+				<xsl:attribute name="currency">
+          <xsl:value-of
+					select="/in:Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount/@currencyID" />
+        </xsl:attribute>
+				<xsl:value-of
+				select="/in:Invoice/cac:LegalMonetaryTotal/cbc:AllowanceTotalAmount" />
+			</korting>
+			<toeslag>
+				<xsl:attribute name="currency">
+          <xsl:value-of
+					select="/in:Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount/@currencyID" />
+        </xsl:attribute>
+				<xsl:value-of
+				select="/in:Invoice/cac:LegalMonetaryTotal/cbc:ChargeTotalAmount" />
+			</toeslag>
 			<excl_btw_incl_korting>
 				<xsl:attribute name="currency">
           <xsl:value-of

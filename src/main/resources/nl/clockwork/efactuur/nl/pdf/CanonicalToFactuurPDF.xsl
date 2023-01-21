@@ -285,7 +285,10 @@
 		</fo:block>
 		<xsl:apply-templates select="/bericht/debiteur/niet_natuurlijk_persoon"/>	
 		<xsl:apply-templates select="/bericht/debiteur/adres"/>
-	</xsl:template>
+		<fo:block>
+			<xsl:value-of select="/bericht/debiteur/btw_nummer"/>
+		</fo:block>
+</xsl:template>
 
 	<xsl:template name="betreft">
 		<fo:block font-weight="bold">
@@ -628,6 +631,34 @@
 					</fo:table-row>
 	 			</fo:table-footer>
 				<fo:table-body>
+					<xsl:if test="/bericht/factuur/totalen_factuur/korting != ''">
+						<fo:table-row>
+							<fo:table-cell>
+								<fo:block>
+									Kortingen:
+								</fo:block>
+							</fo:table-cell>
+							<fo:table-cell text-align="right">
+								<fo:block>
+									-<xsl:apply-templates select="/bericht/factuur/totalen_factuur/korting" mode="number"/>
+								</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+					</xsl:if>
+					<xsl:if test="/bericht/factuur/totalen_factuur/toeslag!=''">
+						<fo:table-row>
+							<fo:table-cell>
+								<fo:block>
+									Toeslagen:
+								</fo:block>
+							</fo:table-cell>
+							<fo:table-cell text-align="right">
+								<fo:block>
+									<xsl:apply-templates select="/bericht/factuur/totalen_factuur/toeslag" mode="number"/>
+								</fo:block>
+							</fo:table-cell>
+						</fo:table-row>
+					</xsl:if>
 					<fo:table-row>
 						<fo:table-cell>
 							<fo:block>
