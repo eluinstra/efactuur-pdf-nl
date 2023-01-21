@@ -17,6 +17,7 @@ package nl.clockwork.efactuur;
 
 
 import java.util.HashMap;
+import java.util.Map;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -24,7 +25,7 @@ import lombok.experimental.FieldDefaults;
 
 public class Constants
 {
-	public final static HashMap<String,nl.clockwork.efactuur.Constants.MessageType> rootTagToMessageType =
+	public static final Map<String,nl.clockwork.efactuur.Constants.MessageType> rootTagToMessageType =
 			new HashMap<String,nl.clockwork.efactuur.Constants.MessageType>()
 			{
 				private static final long serialVersionUID = 1L;
@@ -45,7 +46,7 @@ public class Constants
 				}
 			};
 
-	public final static HashMap<BerichtSoort,MessageType> berichtSoortToMessageType = new HashMap<BerichtSoort,MessageType>()
+	public static final Map<BerichtSoort,MessageType> berichtSoortToMessageType = new HashMap<BerichtSoort,MessageType>()
 	{
 		private static final long serialVersionUID = 1L;
 
@@ -83,7 +84,7 @@ public class Constants
 		}
 	};
 
-	public final static HashMap<String,String> ublMajorVersionToSpecificVersion = new HashMap<String,String>()
+	public static final Map<String,String> ublMajorVersionToSpecificVersion = new HashMap<String,String>()
 	{
 		private static final long serialVersionUID = 1L;
 
@@ -98,7 +99,7 @@ public class Constants
 		}
 	};
 
-	public final static HashMap<String,String> setuMajorVersionToSpecificVersion = new HashMap<String,String>()
+	public static final Map<String,String> setuMajorVersionToSpecificVersion = new HashMap<String,String>()
 	{
 		private static final long serialVersionUID = 1L;
 
@@ -193,7 +194,7 @@ public class Constants
 
 		String value;
 
-		public final static BerichtSoort getBerichtSoort(String value)
+		public static final BerichtSoort getBerichtSoort(String value)
 		{
 			for (BerichtSoort berichtSoort : BerichtSoort.values())
 				if (value.equals(berichtSoort.value))
@@ -222,7 +223,7 @@ public class Constants
 
 		String value;
 
-		public final static MessageType getMessageType(String value)
+		public static final MessageType getMessageType(String value)
 		{
 			for (MessageType messageType : MessageType.values())
 				if (value.equals(messageType.value))
@@ -250,7 +251,7 @@ public class Constants
 			this(0);
 		}
 
-		public final static ValidationType getValidationType(int id)
+		public static final ValidationType getValidationType(int id)
 		{
 			// return ValidationType.values().length < id ?
 			// ValidationType.values()[id] : null;

@@ -1,5 +1,8 @@
+lib
+resources
 target
 .classpath
+.factorypath
 .project
 .settings
 *.xls

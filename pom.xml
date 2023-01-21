@@ -151,6 +151,17 @@
                 </config>
               </prettier>
             </format>
+            <!-- <format>
+              <includes>
+                <include>src/main/resources/nl/clockwork/efactuur/nl/pdf/**/*.xsl</include>
+              </includes>
+              <eclipseWtp>
+                <type>XML</type>
+                <files>
+                  <file>${project.basedir}/.spotless.xml.prefs</file>
+                </files>
+              </eclipseWtp>
+            </format> -->
           </formats>
           <java>
             <eclipse>
