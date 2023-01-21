@@ -66,21 +66,22 @@
 			<omschrijving>
 				<xsl:if test="in:Invoice/cac:OrderReference/cbc:CustomerReference!=''">
 					<item>
-						Referentie:
-						<xsl:value-of
-							select="in:Invoice/cac:OrderReference/cbc:CustomerReference" />
+						Referentie: <xsl:value-of select="in:Invoice/cac:OrderReference/cbc:CustomerReference" />
+					</item>
+				</xsl:if>
+				<xsl:if test="/in:Invoice/cac:PaymentMeans/cbc:PaymentID!=''">
+					<item>
+						Betalingskenmerk:<xsl:value-of select="/in:Invoice/cac:PaymentMeans/cbc:PaymentID" />
 					</item>
 				</xsl:if>
 				<xsl:if test="in:Invoice/cbc:AccountingCostCode!=''">
 					<item>
-						Boeksleutel:
-						<xsl:value-of select="in:Invoice/cbc:AccountingCostCode" />
+						Boeksleutel: <xsl:value-of select="in:Invoice/cbc:AccountingCostCode" />
 					</item>
 				</xsl:if>
 				<xsl:if test="in:Invoice/cac:OrderReference/cbc:SalesOrderID!=''">
 					<item>
-						Verkoopordernummer:
-						<xsl:value-of select="in:Invoice/cac:OrderReference/cbc:SalesOrderID" />
+						Verkoopordernummer: <xsl:value-of select="in:Invoice/cac:OrderReference/cbc:SalesOrderID" />
 					</item>
 				</xsl:if>			
 			</omschrijving>
@@ -299,11 +300,6 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</btw_nummer>
-			
-			<!-- <registratienummer> -->
-			<!-- 	<xsl:value-of select="cac:Party/cac:PartyIdentification/cbc:ID" /> -->
-			<!-- </registratienummer> -->
-			
 			<bankrekening>
 				<nummer>
 					<xsl:value-of

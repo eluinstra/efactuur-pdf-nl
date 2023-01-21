@@ -55,9 +55,14 @@
 				<xsl:value-of select="/in:Invoice/cbc:CopyIndicator" />
 			</indicatie_kopie>
 			<omschrijving>
-				<xsl:if test="/in:Invoice/cac:OrderReference/cbc:ID!=''">
+				<xsl:if test="in:Invoice/cac:OrderReference/cbc:ID!=''">
 					<item>
 						Referentie: <xsl:value-of select="/in:Invoice/cac:OrderReference/cbc:ID" />
+					</item>
+				</xsl:if>
+				<xsl:if test="/in:Invoice/cac:PaymentMeans/cbc:PaymentID!=''">
+					<item>
+						Betalingskenmerk: <xsl:value-of select="/in:Invoice/cac:PaymentMeans/cbc:PaymentID" />
 					</item>
 				</xsl:if>
 			</omschrijving>
@@ -265,11 +270,6 @@
 					</xsl:otherwise>
 				</xsl:choose>
 			</btw_nummer>
-			
-			<!-- <registratienummer> -->
-			<!-- 	<xsl:value-of select="cac:Party/cac:PartyIdentification/cbc:ID" /> -->
-			<!-- </registratienummer> -->
-			
 			<bankrekening>
 				<nummer>
 					<xsl:value-of select="/in:Invoice/cac:PaymentMeans/cac:PayeeFinancialAccount/cbc:ID" />
