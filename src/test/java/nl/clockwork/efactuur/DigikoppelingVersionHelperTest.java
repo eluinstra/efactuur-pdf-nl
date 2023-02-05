@@ -39,180 +39,187 @@ public class DigikoppelingVersionHelperTest
 	@MethodSource
 	void testUblXsdVersion(String version, Optional<String> path) throws VersionNotFoundException
 	{
-		assertThat(helper.getXsdPath(MessageType.INVOICE,MessageFormat.UBL,version)).isEqualTo(path);
+		assertThat(helper.getXsdPath(MessageType.INVOICE, MessageFormat.UBL, version)).isEqualTo(path);
 		path.ifPresent(p -> assertThat(getClass().getResource(p)).isNotNull());
 	}
 
 	private Stream<Arguments> testUblXsdVersion()
 	{
-		return Stream.of(arguments(Constants.MESSAGE_VERSION_UBL_1_1,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.1/xsd/maindoc/Invoice.xsd")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_6_3,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.6.3/xsd/maindoc/Invoice.xsd")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_7,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.7/xsd/maindoc/Invoice.xsd")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_8,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.8/xsd/maindoc/Invoice.xsd")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_9,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.9/xsd/maindoc/Invoice.xsd")),
-				arguments(Constants.MESSAGE_VERSION_UBL_2_0,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/2.0/xsd/maindoc/UBL-Invoice-2.1.xsd")));
+		return Stream.of(
+				arguments(Constants.MESSAGE_VERSION_UBL_1_1, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.1/xsd/maindoc/Invoice.xsd")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_6_3, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.6.3/xsd/maindoc/Invoice.xsd")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_7, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.7/xsd/maindoc/Invoice.xsd")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_8, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.8/xsd/maindoc/Invoice.xsd")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_9, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.9/xsd/maindoc/Invoice.xsd")),
+				arguments(Constants.MESSAGE_VERSION_UBL_2_0, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/2.0/xsd/maindoc/UBL-Invoice-2.1.xsd")));
 	}
 
 	@ParameterizedTest
 	@MethodSource
 	void testSetuXsdVersion(String version, Optional<String> path) throws VersionNotFoundException
 	{
-		assertThat(helper.getXsdPath(MessageType.INVOICE,MessageFormat.SETU,version)).isEqualTo(path);
+		assertThat(helper.getXsdPath(MessageType.INVOICE, MessageFormat.SETU, version)).isEqualTo(path);
 		path.ifPresent(p -> assertThat(getClass().getResource(p)).isNotNull());
 	}
 
 	private Stream<Arguments> testSetuXsdVersion()
 	{
 		return Stream.of(
-				arguments(Constants.MESSAGE_VERSION_SETU_1_6_4,Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.6.4/SIDES/NL/2011-02/InvoiceLogiusNL.xsd")),
-				arguments(Constants.MESSAGE_VERSION_SETU_1_7,Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.7/SIDES/NL/2011-02/InvoiceLogiusNL.xsd")),
-				arguments(Constants.MESSAGE_VERSION_SETU_1_8,Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.8/SIDES/NL/2011-02/InvoiceLogiusNL.xsd")),
-				arguments(Constants.MESSAGE_VERSION_SETU_2_0,Optional.of("/nl/clockwork/efactuur/nl/domain/setu/2.0/SIDES/NL/2015-02/InvoiceOrdinaNL.xsd")));
+				arguments(Constants.MESSAGE_VERSION_SETU_1_6_4, Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.6.4/SIDES/NL/2011-02/InvoiceLogiusNL.xsd")),
+				arguments(Constants.MESSAGE_VERSION_SETU_1_7, Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.7/SIDES/NL/2011-02/InvoiceLogiusNL.xsd")),
+				arguments(Constants.MESSAGE_VERSION_SETU_1_8, Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.8/SIDES/NL/2011-02/InvoiceLogiusNL.xsd")),
+				arguments(Constants.MESSAGE_VERSION_SETU_2_0, Optional.of("/nl/clockwork/efactuur/nl/domain/setu/2.0/SIDES/NL/2015-02/InvoiceOrdinaNL.xsd")));
 	}
 
 	@ParameterizedTest
 	@MethodSource
 	void testUblGenericodeVersion(String version, Optional<String> path) throws VersionNotFoundException
 	{
-		assertThat(helper.getGenericodeXslPath(MessageType.INVOICE,MessageFormat.UBL,version)).isEqualTo(path);
+		assertThat(helper.getGenericodeXslPath(MessageType.INVOICE, MessageFormat.UBL, version)).isEqualTo(path);
 		path.ifPresent(p -> assertThat(getClass().getResource(p)).isNotNull());
 	}
 
 	private Stream<Arguments> testUblGenericodeVersion()
 	{
-		return Stream.of(arguments(Constants.MESSAGE_VERSION_UBL_1_1,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.1/Genericode-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_6_3,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.6.3/Genericode-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_7,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.7/Genericode-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_8,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.8/Genericode-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_9,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.9/Genericode-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_2_0,Optional.empty()));
+		return Stream.of(
+				arguments(Constants.MESSAGE_VERSION_UBL_1_1, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.1/Genericode-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_6_3, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.6.3/Genericode-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_7, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.7/Genericode-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_8, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.8/Genericode-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_9, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.9/Genericode-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_UBL_2_0, Optional.empty()));
 	}
 
 	@ParameterizedTest
 	@MethodSource
 	void testUblSchematronVersion(String version, Optional<String> path) throws VersionNotFoundException
 	{
-		assertThat(helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.UBL,version)).isEqualTo(path);
+		assertThat(helper.getSchematronXslPath(MessageType.INVOICE, MessageFormat.UBL, version)).isEqualTo(path);
 		path.ifPresent(p -> assertThat(getClass().getResource(p)).isNotNull());
 	}
 
 	private Stream<Arguments> testUblSchematronVersion()
 	{
-		return Stream.of(arguments(Constants.MESSAGE_VERSION_UBL_1_1,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.1/Invoice-Schematron-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_6_3,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.6.3/Invoice-Schematron-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_7,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.7/Invoice-Schematron-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_8,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.8/Invoice-Schematron-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_1_9,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.9/Invoice-Schematron-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_2_0,Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/2.0/si-ubl-2.0.3.5.xsl")));
+		return Stream.of(
+				arguments(Constants.MESSAGE_VERSION_UBL_1_1, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.1/Invoice-Schematron-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_6_3, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.6.3/Invoice-Schematron-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_7, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.7/Invoice-Schematron-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_8, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.8/Invoice-Schematron-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_UBL_1_9, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.9/Invoice-Schematron-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_UBL_2_0, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/2.0/si-ubl-2.0.3.5.xsl")));
 	}
 
 	@ParameterizedTest
 	@MethodSource
 	void testSetuSchematronVersion(String version, Optional<String> path) throws VersionNotFoundException
 	{
-		assertThat(helper.getSchematronXslPath(MessageType.INVOICE,MessageFormat.SETU,version)).isEqualTo(path);
+		assertThat(helper.getSchematronXslPath(MessageType.INVOICE, MessageFormat.SETU, version)).isEqualTo(path);
 		path.ifPresent(p -> assertThat(getClass().getResource(p)).isNotNull());
 	}
 
 	private Stream<Arguments> testSetuSchematronVersion()
 	{
 		return Stream.of(
-				arguments(Constants.MESSAGE_VERSION_SETU_1_6_4,Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.6.4/Invoice-Schematron-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_SETU_1_7,Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.7/Invoice-Schematron-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_SETU_1_8,Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.8/Invoice-Schematron-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_SETU_2_0,Optional.of("/nl/clockwork/efactuur/nl/domain/setu/2.0/Invoice-Schematron-Validation.xsl")));
+				arguments(Constants.MESSAGE_VERSION_SETU_1_6_4, Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.6.4/Invoice-Schematron-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_SETU_1_7, Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.7/Invoice-Schematron-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_SETU_1_8, Optional.of("/nl/clockwork/efactuur/nl/domain/setu/1.8/Invoice-Schematron-Validation.xsl")),
+				arguments(Constants.MESSAGE_VERSION_SETU_2_0, Optional.of("/nl/clockwork/efactuur/nl/domain/setu/2.0/Invoice-Schematron-Validation.xsl")));
 	}
 
 	@ParameterizedTest
 	@MethodSource
 	void testIllegalArgumentXsdPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		Assertions.assertThatIllegalArgumentException().isThrownBy(() -> helper.getXsdPath(type,format,version));
+		Assertions.assertThatIllegalArgumentException().isThrownBy(() -> helper.getXsdPath(type, format, version));
 	}
 
 	private Stream<Arguments> testIllegalArgumentXsdPath()
 	{
-		return Stream.of(arguments(null,null,null),
-				arguments(null,null,""),
-				arguments(null,null,"0"),
-				arguments(null,null,"a"),
-				arguments(null,null,"A"),
-				arguments(null,null,"!"),
-				arguments(null,null,Constants.MESSAGE_VERSION_SETU_1_8));
+		return Stream.of(
+				arguments(null, null, null),
+				arguments(null, null, ""),
+				arguments(null, null, "0"),
+				arguments(null, null, "a"),
+				arguments(null, null, "A"),
+				arguments(null, null, "!"),
+				arguments(null, null, Constants.MESSAGE_VERSION_SETU_1_8));
 	}
 
 	@ParameterizedTest
 	@MethodSource
 	void testInvalidXsdPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		assertThatExceptionOfType(VersionNotFoundException.class).isThrownBy(() -> helper.getXsdPath(type,format,version));
+		assertThatExceptionOfType(VersionNotFoundException.class).isThrownBy(() -> helper.getXsdPath(type, format, version));
 	}
 
 	private Stream<Arguments> testInvalidXsdPath()
 	{
-		return Stream.of(arguments(MessageType.INVOICE,MessageFormat.UBL,"0.0.0"));
+		return Stream.of(arguments(MessageType.INVOICE, MessageFormat.UBL, "0.0.0"));
 	}
 
 	@ParameterizedTest
 	@MethodSource
 	void testIllegalArgumentGenericodeXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		Assertions.assertThatIllegalArgumentException().isThrownBy(() -> helper.getGenericodeXslPath(type,format,version));
+		Assertions.assertThatIllegalArgumentException().isThrownBy(() -> helper.getGenericodeXslPath(type, format, version));
 	}
 
 	private Stream<Arguments> testIllegalArgumentGenericodeXslPath()
 	{
-		return Stream.of(arguments(null,null,null),
-				arguments(null,null,""),
-				arguments(null,null,"0"),
-				arguments(null,null,"a"),
-				arguments(null,null,"A"),
-				arguments(null,null,"!"),
-				arguments(null,null,Constants.MESSAGE_VERSION_SETU_1_8));
+		return Stream.of(
+				arguments(null, null, null),
+				arguments(null, null, ""),
+				arguments(null, null, "0"),
+				arguments(null, null, "a"),
+				arguments(null, null, "A"),
+				arguments(null, null, "!"),
+				arguments(null, null, Constants.MESSAGE_VERSION_SETU_1_8));
 	}
 
 	@ParameterizedTest
 	@MethodSource
 	void testInvalidGenericodeXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		assertThatExceptionOfType(VersionNotFoundException.class).isThrownBy(() -> helper.getGenericodeXslPath(type,format,version));
+		assertThatExceptionOfType(VersionNotFoundException.class).isThrownBy(() -> helper.getGenericodeXslPath(type, format, version));
 	}
 
 	private Stream<Arguments> testInvalidGenericodeXslPath()
 	{
-		return Stream.of(arguments(MessageType.INVOICE,MessageFormat.SETU,Constants.MESSAGE_VERSION_SETU_1_6_4),
-				arguments(MessageType.INVOICE,MessageFormat.SETU,Constants.MESSAGE_VERSION_SETU_1_7),
-				arguments(MessageType.INVOICE,MessageFormat.SETU,Constants.MESSAGE_VERSION_SETU_1_8),
-				arguments(MessageType.INVOICE,MessageFormat.UBL,"0.0.0"));
+		return Stream.of(
+				arguments(MessageType.INVOICE, MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_6_4),
+				arguments(MessageType.INVOICE, MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_7),
+				arguments(MessageType.INVOICE, MessageFormat.SETU, Constants.MESSAGE_VERSION_SETU_1_8),
+				arguments(MessageType.INVOICE, MessageFormat.UBL, "0.0.0"));
 	}
 
 	@ParameterizedTest
 	@MethodSource
 	void testIllegalArgumentSchematronXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		Assertions.assertThatIllegalArgumentException().isThrownBy(() -> helper.getSchematronXslPath(type,format,version));
+		Assertions.assertThatIllegalArgumentException().isThrownBy(() -> helper.getSchematronXslPath(type, format, version));
 	}
 
 	private Stream<Arguments> testIllegalArgumentSchematronXslPath()
 	{
-		return Stream.of(arguments(null,null,null),
-				arguments(null,null,""),
-				arguments(null,null,"0"),
-				arguments(null,null,"a"),
-				arguments(null,null,"A"),
-				arguments(null,null,"!"),
-				arguments(null,null,Constants.MESSAGE_VERSION_SETU_1_8));
+		return Stream.of(
+				arguments(null, null, null),
+				arguments(null, null, ""),
+				arguments(null, null, "0"),
+				arguments(null, null, "a"),
+				arguments(null, null, "A"),
+				arguments(null, null, "!"),
+				arguments(null, null, Constants.MESSAGE_VERSION_SETU_1_8));
 	}
 
 	@ParameterizedTest
 	@MethodSource
 	void testInvalidSchematronXslPath(MessageType type, MessageFormat format, String version) throws VersionNotFoundException
 	{
-		assertThatExceptionOfType(VersionNotFoundException.class).isThrownBy(() -> helper.getSchematronXslPath(type,format,version));
+		assertThatExceptionOfType(VersionNotFoundException.class).isThrownBy(() -> helper.getSchematronXslPath(type, format, version));
 	}
 
 	private Stream<Arguments> testInvalidSchematronXslPath()
 	{
-		return Stream.of(arguments(MessageType.INVOICE,MessageFormat.UBL,"0.0.0"));
+		return Stream.of(arguments(MessageType.INVOICE, MessageFormat.UBL, "0.0.0"));
 	}
 }

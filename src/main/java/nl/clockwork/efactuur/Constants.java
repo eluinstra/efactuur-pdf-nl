@@ -25,90 +25,90 @@ import lombok.experimental.FieldDefaults;
 
 public class Constants
 {
-	public static final Map<String,nl.clockwork.efactuur.Constants.MessageType> rootTagToMessageType =
-			new HashMap<String,nl.clockwork.efactuur.Constants.MessageType>()
+	public static final Map<String, nl.clockwork.efactuur.Constants.MessageType> rootTagToMessageType =
+			new HashMap<String, nl.clockwork.efactuur.Constants.MessageType>()
 			{
 				private static final long serialVersionUID = 1L;
 
 				{
-					put("ApplicationResponse",nl.clockwork.efactuur.Constants.MessageType.APPLICATION_RESPONSE);
-					put("Commitment",nl.clockwork.efactuur.Constants.MessageType.COMMITMENT);
-					put("DespatchAdvice",nl.clockwork.efactuur.Constants.MessageType.DESPATCH_ADVICE);
-					put("HumanResource",nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
-					put("Invoice",nl.clockwork.efactuur.Constants.MessageType.INVOICE);
-					put("Order",nl.clockwork.efactuur.Constants.MessageType.ORDER);
-					put("OrderResponse",nl.clockwork.efactuur.Constants.MessageType.ORDER_RESPONSE);
-					put("Quotation",nl.clockwork.efactuur.Constants.MessageType.QUOTATION);
-					put("RequestForQuotation",nl.clockwork.efactuur.Constants.MessageType.REQUEST_FOR_QUOTATION);
-					put("RequestForQuotationCancellation",nl.clockwork.efactuur.Constants.MessageType.REQUEST_FOR_QUOTATION_CANCELLATION);
-					put("StaffingOrder",nl.clockwork.efactuur.Constants.MessageType.STAFFING_ORDER);
-					put("TimeCard",nl.clockwork.efactuur.Constants.MessageType.TIME_CARD);
+					put("ApplicationResponse", nl.clockwork.efactuur.Constants.MessageType.APPLICATION_RESPONSE);
+					put("Commitment", nl.clockwork.efactuur.Constants.MessageType.COMMITMENT);
+					put("DespatchAdvice", nl.clockwork.efactuur.Constants.MessageType.DESPATCH_ADVICE);
+					put("HumanResource", nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
+					put("Invoice", nl.clockwork.efactuur.Constants.MessageType.INVOICE);
+					put("Order", nl.clockwork.efactuur.Constants.MessageType.ORDER);
+					put("OrderResponse", nl.clockwork.efactuur.Constants.MessageType.ORDER_RESPONSE);
+					put("Quotation", nl.clockwork.efactuur.Constants.MessageType.QUOTATION);
+					put("RequestForQuotation", nl.clockwork.efactuur.Constants.MessageType.REQUEST_FOR_QUOTATION);
+					put("RequestForQuotationCancellation", nl.clockwork.efactuur.Constants.MessageType.REQUEST_FOR_QUOTATION_CANCELLATION);
+					put("StaffingOrder", nl.clockwork.efactuur.Constants.MessageType.STAFFING_ORDER);
+					put("TimeCard", nl.clockwork.efactuur.Constants.MessageType.TIME_CARD);
 				}
 			};
 
-	public static final Map<BerichtSoort,MessageType> berichtSoortToMessageType = new HashMap<BerichtSoort,MessageType>()
+	public static final Map<BerichtSoort, MessageType> berichtSoortToMessageType = new HashMap<BerichtSoort, MessageType>()
 	{
 		private static final long serialVersionUID = 1L;
 
 		{
-			put(BerichtSoort.BUDGETCHECK_ANTWOORD_UBL,nl.clockwork.efactuur.Constants.MessageType.APPLICATION_RESPONSE);
+			put(BerichtSoort.BUDGETCHECK_ANTWOORD_UBL, nl.clockwork.efactuur.Constants.MessageType.APPLICATION_RESPONSE);
 
-			put(BerichtSoort.ADVANCED_SHIPPING_NOTICE_UBL,nl.clockwork.efactuur.Constants.MessageType.DESPATCH_ADVICE);
+			put(BerichtSoort.ADVANCED_SHIPPING_NOTICE_UBL, nl.clockwork.efactuur.Constants.MessageType.DESPATCH_ADVICE);
 
-			put(BerichtSoort.OFFERTE_HRXML,nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
-			put(BerichtSoort.BESTELLING_BEVESTIGING_HRXML,nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
-			put(BerichtSoort.AFWIJZING_HRXML,nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
+			put(BerichtSoort.OFFERTE_HRXML, nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
+			put(BerichtSoort.BESTELLING_BEVESTIGING_HRXML, nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
+			put(BerichtSoort.AFWIJZING_HRXML, nl.clockwork.efactuur.Constants.MessageType.HUMAN_RESOURCE);
 
-			put(BerichtSoort.OFFERTE_AANVRAAG_HRXML,nl.clockwork.efactuur.Constants.MessageType.STAFFING_ORDER);
-			put(BerichtSoort.BESTELLING_HRXML,nl.clockwork.efactuur.Constants.MessageType.STAFFING_ORDER);
+			put(BerichtSoort.OFFERTE_AANVRAAG_HRXML, nl.clockwork.efactuur.Constants.MessageType.STAFFING_ORDER);
+			put(BerichtSoort.BESTELLING_HRXML, nl.clockwork.efactuur.Constants.MessageType.STAFFING_ORDER);
 
-			put(BerichtSoort.OFFERTE_AANVRAAG_UBL,nl.clockwork.efactuur.Constants.MessageType.REQUEST_FOR_QUOTATION);
-			put(BerichtSoort.AFWIJZING_UBL,nl.clockwork.efactuur.Constants.MessageType.REQUEST_FOR_QUOTATION_CANCELLATION);
+			put(BerichtSoort.OFFERTE_AANVRAAG_UBL, nl.clockwork.efactuur.Constants.MessageType.REQUEST_FOR_QUOTATION);
+			put(BerichtSoort.AFWIJZING_UBL, nl.clockwork.efactuur.Constants.MessageType.REQUEST_FOR_QUOTATION_CANCELLATION);
 
-			put(BerichtSoort.OFFERTE_UBL,nl.clockwork.efactuur.Constants.MessageType.QUOTATION);
+			put(BerichtSoort.OFFERTE_UBL, nl.clockwork.efactuur.Constants.MessageType.QUOTATION);
 
-			put(BerichtSoort.BUDGETCHECK_VRAAG_UBL,nl.clockwork.efactuur.Constants.MessageType.COMMITMENT);
-			put(BerichtSoort.BESTELLING_VERPLICHTING_UBL,nl.clockwork.efactuur.Constants.MessageType.COMMITMENT);
+			put(BerichtSoort.BUDGETCHECK_VRAAG_UBL, nl.clockwork.efactuur.Constants.MessageType.COMMITMENT);
+			put(BerichtSoort.BESTELLING_VERPLICHTING_UBL, nl.clockwork.efactuur.Constants.MessageType.COMMITMENT);
 
-			put(BerichtSoort.BESTELLING_UBL,nl.clockwork.efactuur.Constants.MessageType.ORDER);
-			put(BerichtSoort.BESTELLING_BEVESTIGING_UBL,nl.clockwork.efactuur.Constants.MessageType.ORDER_RESPONSE);
+			put(BerichtSoort.BESTELLING_UBL, nl.clockwork.efactuur.Constants.MessageType.ORDER);
+			put(BerichtSoort.BESTELLING_BEVESTIGING_UBL, nl.clockwork.efactuur.Constants.MessageType.ORDER_RESPONSE);
 
-			put(BerichtSoort.VOORSTEL_FACTUUR_HRXML,nl.clockwork.efactuur.Constants.MessageType.INVOICE);
-			put(BerichtSoort.VOORSTEL_FACTUUR_UBL,nl.clockwork.efactuur.Constants.MessageType.INVOICE);
-			put(BerichtSoort.FACTUUR_HRXML,nl.clockwork.efactuur.Constants.MessageType.INVOICE);
-			put(BerichtSoort.FACTUUR_AKKOORD_HRXML,nl.clockwork.efactuur.Constants.MessageType.INVOICE);
-			put(BerichtSoort.FACTUUR_UBL,nl.clockwork.efactuur.Constants.MessageType.INVOICE);
-			put(BerichtSoort.FACTUUR_AKKOORD_UBL,nl.clockwork.efactuur.Constants.MessageType.INVOICE);
+			put(BerichtSoort.VOORSTEL_FACTUUR_HRXML, nl.clockwork.efactuur.Constants.MessageType.INVOICE);
+			put(BerichtSoort.VOORSTEL_FACTUUR_UBL, nl.clockwork.efactuur.Constants.MessageType.INVOICE);
+			put(BerichtSoort.FACTUUR_HRXML, nl.clockwork.efactuur.Constants.MessageType.INVOICE);
+			put(BerichtSoort.FACTUUR_AKKOORD_HRXML, nl.clockwork.efactuur.Constants.MessageType.INVOICE);
+			put(BerichtSoort.FACTUUR_UBL, nl.clockwork.efactuur.Constants.MessageType.INVOICE);
+			put(BerichtSoort.FACTUUR_AKKOORD_UBL, nl.clockwork.efactuur.Constants.MessageType.INVOICE);
 
-			put(BerichtSoort.TIMECARD_HRXML,nl.clockwork.efactuur.Constants.MessageType.TIME_CARD);
+			put(BerichtSoort.TIMECARD_HRXML, nl.clockwork.efactuur.Constants.MessageType.TIME_CARD);
 		}
 	};
 
-	public static final Map<String,String> ublMajorVersionToSpecificVersion = new HashMap<String,String>()
+	public static final Map<String, String> ublMajorVersionToSpecificVersion = new HashMap<String, String>()
 	{
 		private static final long serialVersionUID = 1L;
 
 		{
-			put("1.0",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_1);
-			put("1.1",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_1);
-			put("1.6",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_6_3);
-			put("1.7",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_7);
-			put("1.8",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_8);
-			put("1.9",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_9);
-			put("urn:cen.eu:en16931:2017#compliant#urn:fdc:nen.nl:nlcius:v1.0",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_2_0);
+			put("1.0", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_1);
+			put("1.1", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_1);
+			put("1.6", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_6_3);
+			put("1.7", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_7);
+			put("1.8", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_8);
+			put("1.9", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_1_9);
+			put("urn:cen.eu:en16931:2017#compliant#urn:fdc:nen.nl:nlcius:v1.0", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_UBL_2_0);
 		}
 	};
 
-	public static final Map<String,String> setuMajorVersionToSpecificVersion = new HashMap<String,String>()
+	public static final Map<String, String> setuMajorVersionToSpecificVersion = new HashMap<String, String>()
 	{
 		private static final long serialVersionUID = 1L;
 
 		{
-			put("1.1",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_1);
-			put("1.6",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_6_4);
-			put("1.7",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_7);
-			put("1.8",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_8_1);
-			put("2.0",nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_2_0);
+			put("1.1", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_1);
+			put("1.6", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_6_4);
+			put("1.7", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_7);
+			put("1.8", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_1_8_1);
+			put("2.0", nl.clockwork.efactuur.Constants.MESSAGE_VERSION_SETU_2_0);
 		}
 	};
 
@@ -253,8 +253,6 @@ public class Constants
 
 		public static final ValidationType getValidationType(int id)
 		{
-			// return ValidationType.values().length < id ?
-			// ValidationType.values()[id] : null;
 			for (ValidationType validationType : ValidationType.values())
 				if (id == validationType.id)
 					return validationType;
