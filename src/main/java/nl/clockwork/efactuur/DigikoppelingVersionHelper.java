@@ -122,7 +122,7 @@ public class DigikoppelingVersionHelper implements VersionHelper
 						ublValidationRootPath + "/1.9/Invoice-Schematron-Validation.xsl");
 				put(
 						new Version(ValidationType.SCHEMATRON, MessageFormat.UBL, MessageType.INVOICE, Constants.MESSAGE_VERSION_UBL_2_0),
-						ublValidationRootPath + "/2.0/si-ubl-2.0.3.5.xsl");
+						ublValidationRootPath + "/2.0/si-ubl-2.0.xsl");
 
 				put(
 						new Version(ValidationType.INVOICE_TO_CANONICAL, MessageFormat.UBL, MessageType.INVOICE, Constants.MESSAGE_VERSION_UBL_1_1),

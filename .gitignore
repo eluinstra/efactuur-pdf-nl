@@ -1,11 +1,6 @@
-lib
-resources
-target
 .classpath
 .factorypath
 .project
 .settings
-*.xls
-*.xlsx
-/bin
-.DS_Store
+resources
+target

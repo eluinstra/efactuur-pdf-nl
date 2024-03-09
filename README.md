@@ -8,7 +8,7 @@ The EfactuurNL2PDF project provides the following functionality:
 See [here](https://github.com/eluinstra/efactuur2pdf) for the standalone application.
 
 The following HR-XML-NL and UBL-NL message versions are currently supported in this project :
-- NLCIUS (si-ubl-2.0.3.5)
+- NLCIUS (si-ubl-2.0.3.8)
 - UBL Invoice 1.9
 - UBL Invoice 1.8
 - UBL Invoice 1.7

@@ -106,7 +106,7 @@ public class DigikoppelingVersionHelperTest
 				arguments(Constants.MESSAGE_VERSION_UBL_1_7, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.7/Invoice-Schematron-Validation.xsl")),
 				arguments(Constants.MESSAGE_VERSION_UBL_1_8, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.8/Invoice-Schematron-Validation.xsl")),
 				arguments(Constants.MESSAGE_VERSION_UBL_1_9, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/1.9/Invoice-Schematron-Validation.xsl")),
-				arguments(Constants.MESSAGE_VERSION_UBL_2_0, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/2.0/si-ubl-2.0.3.5.xsl")));
+				arguments(Constants.MESSAGE_VERSION_UBL_2_0, Optional.of("/nl/clockwork/efactuur/nl/domain/ubl/2.0/si-ubl-2.0.xsl")));
 	}
 
 	@ParameterizedTest
