@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 - 2016 Clockwork
+ * Copyright 2012 - 2026 Clockwork
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 package nl.clockwork.efactuur;
-
 
 import java.util.Optional;
 import nl.clockwork.efactuur.Constants.MessageFormat;
